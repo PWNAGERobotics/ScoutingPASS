@@ -1,0 +1,134 @@
+@font-face {
+    font-family: 'Alexis';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Alexis'), url('../fonts/alex.woff') format('woff');
+    src: url("../fonts/alexisv3.ttf") format('truetype');
+}
+
+html, body{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    color: white;
+    background-color: black;
+}
+
+.field-image{
+    margin: 2vw;
+}
+
+.field-image-src{
+    background-position: center;
+    border: 1px solid;
+}
+
+.main-panel{
+    display: none;
+    height: 100%;
+    min-height: 100%;
+    width: 100vw;
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: white;
+    background-color: black;
+}
+
+.main-panel table{
+    border: none;
+}
+
+#prematch{
+    display: table;
+}
+
+#auton{
+}
+
+#teleop{
+}
+
+#endgame{
+}
+
+#postmatch{
+}
+
+#qr-code{
+  text-align: center;
+}
+
+h1{
+    font-family: Alexis;
+    text-align: center;
+}
+
+h2{
+    font-family: Alexis;
+    text-align: center;
+}
+
+.match-label{
+    text-align: center;
+    font-family: calibri
+}
+
+.half-button-l{
+    width: 48%;
+    margin: 1vw;
+    height: 100%;
+}
+
+.half-button-r{
+    flex-grow: 1;
+    height: 100%;
+    width: 48%;
+    margin: 1vw;
+}
+
+.half-button-container{
+    display: flex;
+}
+
+h1 .odd {
+    font-family: Alexis;
+    text-align: center;
+    color: #0AB4EC;
+}
+
+h1 .even {
+    font-family: Alexis;
+    text-align: center;
+    color: #42B333;
+}
+
+table {
+    border: 1px solid black;
+    width: 100%;
+}
+
+td {
+    padding: 10px 4px;
+}
+
+input {
+    font-size: 16px;
+}
+
+.title {
+    width: "50%";
+    text-align: right;
+}
+
+.field {
+    width: "50%";
+    text-align: left;
+}
+
+#qr-table {
+    text-align: center;
+    color: black;
+    background-color: white;
+}
