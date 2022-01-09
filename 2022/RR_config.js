@@ -1,6 +1,6 @@
 var config_data = `
 {
-  "title":"Scouting PASS 2020",
+  "title":"Scouting PASS 2022",
   "page_title":"Rapid React",
   "elements":{
     "prematch": {
@@ -57,69 +57,105 @@ var config_data = `
         "min":1,
         "max":99999,
         "disabled":"true"
+      },
+      "Auto Start Position": {
+        "code":"as",
+        "title": "Auto Start Position",
+        "type":"field_image",
+        "filename":"2022/field_image.png"
       }
     },
     "auton": {
-      "Exit line": {
-        "code":"ae",
-        "title": "Exit Line",
+      "Taxi": {
+        "code":"at",
+        "title": "Taxied?",
         "type":"bool"
       },
-      "Score Game Piece": {
-        "code":"sg",
-        "title": "Score Game Piece",
+      "Upper Cargo Scored": {
+        "code":"au",
+        "title": "Uppoer Cargo Scored",
         "type":"counter"
       },
-      "Auto Aquire Game Piece": {
-        "code":"ag",
-        "title": "Picked up more GP",
-        "type":"bool"
+      "Lower Cargo Scored": {
+        "code":"al",
+        "title": "Lower Cargo Scored",
+        "type":"counter"
       },
-      "Special Auto Task": {
-        "code":"at",
-        "title": "Special Task",
+      "Auto Aquired Cargo": {
+        "code":"ac",
+        "title": "Picked up more cargo?",
         "type":"bool"
       }
     },
     "teleop": {
-      "Score Game Piece": {
-        "code":"gp",
-        "title": "Score GP:",
+      "Upper Cargo Scored": {
+        "code":"tu",
+        "title": "Uppoer Cargo Scored",
         "type":"counter"
       },
-      "Special Task": {
-        "code":"ts",
-        "title": "Special Task",
-        "type":"pass_fail",
+      "Lower Cargo Scored": {
+        "code":"tl",
+        "title": "Lower Cargo Scored",
+        "type":"counter"
+      },
+      "Upper Cargo Missed": {
+        "code":"tm",
+        "title": "Uppoer Cargo Missed",
+        "type":"counter"
+      },
+      "Lower Cargo Missed": {
+        "code":"tn",
+        "title": "Lower Cargo Missed",
+        "type":"counter"
+      },
+      "Was Defended": {
+        "code":"wd",
+        "title": "Was Defended",
+        "type":"bool"
+      },
+      "Cargo Loading": {
+        "code":"cl",
+        "title": "Pick up Cargo where",
+        "type":"radio",
         "choices":{
-          "pass":"Pass<br>",
-          "fail":"Fail<br>",
+          "t":"Terminal<br>",
+          "g":"Ground<br>",
+          "b":"Both<br>",
           "x":"Not Attempted"
         },
         "defaultValue":"x"
+      },
+      "Shooting Spot": {
+        "code":"ss",
+        "title": "Shooting Spot",
+        "type":"field_image",
+        "filename":"2022/field_image.png"
       }
     },
     "endgame": {
       "Climb": {
         "code":"c",
         "title": "Climb",
-        "type":"pass_fail",
+        "type":"radio",
         "choices":{
-          "pass":"Pass<br>",
-          "fail":"Fail<br>",
+          "1":"Low<br>",
+          "2":"Mid<br>",
+          "3":"High<br>",
+          "4":"Traversal<br>",
+          "f":"Attempted but Failed<br>",
           "x":"Not Attempted"
         },
         "defaultValue":"x"
+      },
+      "Started Climb before Endgame": {
+        "code":"be",
+        "title": "Started climb before EndGame",
+        "type":"bool"
       },
       "Num of Robots Climbed": {
         "code":"cn",
         "title": "# of alliance bots climbed",
         "type":"counter"
-      },
-      "Parked": {
-        "code":"p",
-        "title": "Parked",
-        "type":"bool"
       }
     },
     "postmatch": {
@@ -146,11 +182,6 @@ var config_data = `
           "x":"Not Observed"
         },
         "defaultValue":"x"
-      },
-      "Was Defended": {
-        "code":"wd",
-        "title": "Was Defended",
-        "type":"bool"
       },
       "Died": {
         "code":"d",
