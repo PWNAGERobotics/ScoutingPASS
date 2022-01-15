@@ -15,6 +15,7 @@
     <li><a href="#live-demo">Live Demo</a></li>
     <li><a href="#description">Description</a></li>
     <li><a href="#getting-started">Getting Started</a></li>
+    <li><a href="#how-we-scout">How We Scout</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#faq">FAQ</a></li>
     <li><a href="#things-to-add">Things To Add Someday</a></li>
@@ -83,6 +84,23 @@ It's really simple to get started:
   * Change the data elements to capture (if desired)
 * Enable GitHub Pages in your repository settings ([GitHub Pages Instructions](https://pages.github.com/))
 * Load page via GitHub pages (https://<your_username>.github.io/ScoutingPASS)
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+<div id="how-we-scout"></div>
+
+## How We Scout
+
+We have 6 scouts per match.  One for each robot.  Each scout has this web site pre-loaded on their phone or a team tablet.
+
+The lead scout has a laptop with Excel and a wired hand held scanner in the stands with the scouts.  ([Nadomoo Bur3072 - ~$55](https://www.amazon.com/NADAMOO-Wireless-Barcode-Cordless-Computer/dp/B06Y2RMM51?th=1))
+
+At the end of each match the lead scout kicks off an Excel macro that pops up an input box. (See an example Excel spreadsheet in the Excel directory)  The scouts show their QR code to the lead scout, one by one, who scans the QR code.  The data from the QR code is parsed and a row is added to the Scouting Data Table in Excel.   If the table doesn't exist, it will create it.
+
+We use custom Excel screens and graphs to determine strategy for each of our matches.
+
+The night before Eliminations we load the Excel data into Tableau where we use the data mining/graphing capabilities to make a pick list.
+
+The pick list can be modified up to Alliance Selection based on the data that is continued to be collected all the way up to the last match.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 <div id="contributing"></div>
