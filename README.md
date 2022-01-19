@@ -134,6 +134,24 @@ JSON is a stickler for commas and brackets.  If you see JSON errors check your J
 PWNAGE Analytical Strategy System
 </details>
 
+<details><summary>How does the Field Image element work?</summary>
+<br />
+The Field Image element allows tracking of the location of a robot.  It does this by dividing the field into 72 different boxes, 12 boxes (across the longest side of a field) by 6 boxes (across the shortest side of the field).   A box represents a 4.5' x 4.5' square on the field.  Each box is numbered from 1-72 per the diagram below.
+<br />
+<br />
+Field Location Key:
+  
+![Field Location Key](resources/images/field_location_key.png)
+  
+When a scouter clicks on the image the coordinates of the click location are translated into a box and that number is stored into an array.   The array is passed as the data for the field element.  
+  
+The scouter can click as many times as they want and duplicate clicks (boxes) are recorded.  
+  
+This could be used (as in our demo) to collect shooting information and create heat maps for each robot.
+  
+Note: The Auto Start (as) element is special in that it will only keep track of one location.  There can only be one starting location.  Therefore if you click more than once it will only record the last location.
+</details>
+
 <p align="right">(<a href="#top">back to top</a>)</p>
 <div id="things-to-add"></div>
 
