@@ -97,16 +97,6 @@ var config_data = `
         "title": "Lower Cargo Scored",
         "type":"counter"
       },
-      "Upper Cargo Missed": {
-        "code":"tm",
-        "title": "Uppoer Cargo Missed",
-        "type":"counter"
-      },
-      "Lower Cargo Missed": {
-        "code":"tn",
-        "title": "Lower Cargo Missed",
-        "type":"counter"
-      },
       "Was Defended": {
         "code":"wd",
         "title": "Was Defended",
@@ -146,6 +136,19 @@ var config_data = `
         },
         "defaultValue":"x"
       },
+      "Last successful rung": {
+        "code":"lsr",
+        "title": "If failed, last succcessful rung",
+        "type":"radio",
+        "choices":{
+          "1":"Low<br>",
+          "2":"Mid<br>",
+          "3":"High<br>",
+          "4":"Traversal<br>",
+          "x":"Successful/Not Attempted"
+        },
+        "defaultValue":"x"
+      },
       "Started Climb before Endgame": {
         "code":"be",
         "title": "Started climb before EndGame",
@@ -182,19 +185,24 @@ var config_data = `
         },
         "defaultValue":"x"
       },
-      "Died": {
-        "code":"d",
-        "title": "Died",
+      "Balls in Air": {
+        "code":"ba",
+        "title": "Shot opponent balls in the air?",
         "type":"bool"
       },
-      "Tipped": {
-        "code":"to",
-        "title": "Tipped Over",
+      "Died/Tipped": {
+        "code":"d",
+        "title": "Died/Tipped",
         "type":"bool"
       },
       "Card Foul": {
         "code":"cf",
         "title": "Yellow/Red Card",
+        "type":"bool"
+      },
+      "Alliance": {
+        "code":"all",
+        "title": "Make a good alliance partner?",
         "type":"bool"
       },
       "Comments": {
@@ -203,7 +211,17 @@ var config_data = `
         "type":"text",
         "size":15,
         "maxSize":50
-      }
+      },
+      "Confidence": {
+        "code":"cnf",
+        "title": "Confidence Rating",
+        "type":"radio",
+        "choices":{
+          "v":"Very Confident<br>",
+          "a":"Average<br>",
+          "n":"Not Confident"
+      },
+       "defaultValue":"a"
     }
   }
 }`;
