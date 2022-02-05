@@ -512,7 +512,7 @@ function getData() {
 					str=str+code+'=N'
 				}
 			} else {
-				str=str+code+'='+e.value.replace(";", "-")
+				str=str+code+'='+e.value.split(';').join('-')
 			}
 		}
 	}
