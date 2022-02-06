@@ -818,7 +818,7 @@ function counter(element, step)
 function undo(element)
 {
     var fi = element.getElementsByClassName("counter")[0];
-
+}
 		
 
 window.onload = function(){
