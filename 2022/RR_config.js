@@ -223,5 +223,6 @@ var config_data = `
       },
        "defaultValue":"a"
     }
+    }
   }
-}`;
+}';
