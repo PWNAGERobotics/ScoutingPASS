@@ -102,9 +102,9 @@ var config_data = `
         "title": "Was Defended",
         "type":"bool"
       },
-      "Cargo Loading": {
-        "code":"cl",
-        "title": "Pick up Cargo where",
+      "Cargo Intake From": {
+        "code":"cif",
+        "title": "Cargo Intake From",
         "type":"radio",
         "choices":{
           "t":"Terminal<br>",
@@ -138,7 +138,7 @@ var config_data = `
       },
       "Last successful rung": {
         "code":"lsr",
-        "title": "If failed, last succcessful rung",
+        "title": "last succcessful rung",
         "type":"radio",
         "choices":{
           "1":"Low<br>",
@@ -185,9 +185,9 @@ var config_data = `
         },
         "defaultValue":"x"
       },
-      "Balls in Air": {
+      "Shot enemy balls away?": {
         "code":"ba",
-        "title": "Shot opponent balls in the air?",
+        "title": "Shot enemy balls away?",
         "type":"bool"
       },
       "Died/Tipped": {
@@ -200,9 +200,9 @@ var config_data = `
         "title": "Yellow/Red Card",
         "type":"bool"
       },
-      "Alliance": {
+      "Make good alliance partner?": {
         "code":"all",
-        "title": "Make a good alliance partner?",
+        "title": "Make good alliance partner?",
         "type":"bool"
       },
       "Comments": {
@@ -212,7 +212,7 @@ var config_data = `
         "size":15,
         "maxSize":50
       },
-      "Confidence": {
+      "Confidence Rating": {
         "code":"cnf",
         "title": "Confidence Rating",
         "type":"radio",
