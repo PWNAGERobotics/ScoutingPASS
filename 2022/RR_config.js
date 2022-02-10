@@ -97,24 +97,14 @@ var config_data = `
         "title": "Lower Cargo Scored",
         "type":"counter"
       },
-      "Upper Cargo Missed": {
-        "code":"tm",
-        "title": "Uppoer Cargo Missed",
-        "type":"counter"
-      },
-      "Lower Cargo Missed": {
-        "code":"tn",
-        "title": "Lower Cargo Missed",
-        "type":"counter"
-      },
       "Was Defended": {
         "code":"wd",
         "title": "Was Defended",
         "type":"bool"
       },
-      "Cargo Loading": {
-        "code":"cl",
-        "title": "Pick up Cargo where",
+      "Cargo Intake From": {
+        "code":"cif",
+        "title": "Cargo Intake From",
         "type":"radio",
         "choices":{
           "t":"Terminal<br>",
@@ -143,6 +133,19 @@ var config_data = `
           "4":"Traversal<br>",
           "f":"Attempted but Failed<br>",
           "x":"Not Attempted"
+        },
+        "defaultValue":"x"
+      },
+      "Last successful rung": {
+        "code":"lsr",
+        "title": "last succcessful rung",
+        "type":"radio",
+        "choices":{
+          "1":"Low<br>",
+          "2":"Mid<br>",
+          "3":"High<br>",
+          "4":"Traversal<br>",
+          "x":"Successful/Not Attempted"
         },
         "defaultValue":"x"
       },
@@ -182,19 +185,24 @@ var config_data = `
         },
         "defaultValue":"x"
       },
-      "Died": {
-        "code":"d",
-        "title": "Died",
+      "Shot enemy balls away?": {
+        "code":"ba",
+        "title": "Shot enemy balls away?",
         "type":"bool"
       },
-      "Tipped": {
-        "code":"to",
-        "title": "Tipped Over",
+      "Died/Tipped": {
+        "code":"d",
+        "title": "Died/Tipped",
         "type":"bool"
       },
       "Card Foul": {
         "code":"cf",
         "title": "Yellow/Red Card",
+        "type":"bool"
+      },
+      "Make good alliance partner?": {
+        "code":"all",
+        "title": "Make good alliance partner?",
         "type":"bool"
       },
       "Comments": {
@@ -203,7 +211,18 @@ var config_data = `
         "type":"text",
         "size":15,
         "maxSize":50
-      }
+      },
+      "Confidence Rating": {
+        "code":"cnf",
+        "title": "Confidence Rating",
+        "type":"radio",
+        "choices":{
+          "v":"Very Confident<br>",
+          "a":"Average<br>",
+          "n":"Not Confident"
+      },
+       "defaultValue":"a"
+    }
     }
   }
 }`;
