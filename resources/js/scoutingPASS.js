@@ -815,9 +815,20 @@ function counter(element, step)
 		}
 }
 
-function undo(element)
+function undo(event)
 {
-    var fi = element.getElementsByClassName("counter")[0];
+   let target = event.target;
+   //Getting rid of last value
+   changingXY = document.getElementById("XY" + getIdBase(target.id));
+   changingInput = document.getElementById("input" + getIdBase(target.id));
+   var tempValue = Array.from(JSON.parse(changingXY.value));
+   tempValue.pop(coords);
+   changingXY.value = JSON.stringify(tempValue);
+
+   tempValue = Array.from(JSON.parse(changingInput.value));
+   tempValue.pop(box);
+   changingInput.value = JSON.stringify(tempValue);
+    
 }
 		
 
