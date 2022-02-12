@@ -12,9 +12,9 @@ var config_data = `
         "required":"true"
       },
       "Event":{
-        "code":"NHGRS",
+        "code":"e",
         "type":"event",
-        "defaultValue":"2022GSD",
+        "defaultValue":"2022flwp",
         "required":"true",
         "disabled":"true"
       },
