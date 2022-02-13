@@ -19,7 +19,7 @@ html, body{
     margin: 2vw;
 }
 
-.field-image-src{
+.field-image-src{  
     background-position: center;
     border: 1px solid;
 }
@@ -37,7 +37,9 @@ html, body{
 }
 
 .main-panel table{
-    border: none;
+    border-style: groove;
+    border-color: white;
+    border-width: 5px; 
 }
 
 #prematch{
@@ -63,6 +65,9 @@ html, body{
 h1{
     font-family: Alexis;
     text-align: center;
+    border-style: groove;
+    border-color: white; 
+    border-width: 4px;
 }
 
 h2{
