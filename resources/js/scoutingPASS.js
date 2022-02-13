@@ -818,10 +818,10 @@ function counter(element, step)
 
 function undo(event)
 {
-   let undoID = event.firstchild.id;
+   let undoID = event.firstchild;
    //Getting rid of last value
-   changingXY = document.getElementById("XY" + getIdBase(undoID));
-   changingInput = document.getElementById("input" + getIdBase(undoID));
+   changingXY = document.getElementById("XY" + getIdBase(undoID.id));
+   changingInput = document.getElementById("input" + getIdBase(undoID.id));
    var tempValue = Array.from(JSON.parse(changingXY.value));
    tempValue.pop(coords);
    changingXY.value = JSON.stringify(tempValue);
