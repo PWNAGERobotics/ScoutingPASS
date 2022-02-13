@@ -829,6 +829,7 @@ function undo(event)
    tempValue = Array.from(JSON.parse(changingInput.value));
    tempValue.pop();
    changingInput.value = JSON.stringify(tempValue);
+   drawFields();
     
 }
 		
