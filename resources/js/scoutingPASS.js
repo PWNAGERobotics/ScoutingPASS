@@ -823,11 +823,11 @@ function undo(event)
    changingXY = document.getElementById("XY" + getIdBase(undoID.id));
    changingInput = document.getElementById("input" + getIdBase(undoID.id));
    var tempValue = Array.from(JSON.parse(changingXY.value));
-   tempValue.pop(coords);
+   tempValue.pop();
    changingXY.value = JSON.stringify(tempValue);
 
    tempValue = Array.from(JSON.parse(changingInput.value));
-   tempValue.pop(box);
+   tempValue.pop();
    changingInput.value = JSON.stringify(tempValue);
     
 }
