@@ -73,6 +73,7 @@ function addFieldImage(table, idx, name, data) {
   undoButton.setAttribute("type", "checkbox");
   undoButton.setAttribute("onclick", "undo(this.parentElement)");
   undoButton.innerHTML += "Undo";
+  undoButton.setAttribute("id", "undo_"+data.code);
   cell.appendChild(undoButton);
 
   row = table.insertRow(idx);
