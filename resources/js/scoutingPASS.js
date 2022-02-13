@@ -818,7 +818,7 @@ function counter(element, step)
 
 function undo(event)
 {
-   let undoID = event.firstchild;
+   let undoID = event.firstChild;
    //Getting rid of last value
    changingXY = document.getElementById("XY" + getIdBase(undoID.id));
    changingInput = document.getElementById("input" + getIdBase(undoID.id));
