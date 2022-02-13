@@ -73,6 +73,7 @@ function addFieldImage(table, idx, name, data) {
   undoButton.setAttribute("type", "checkbox");
   undoButton.setAttribute("onclick", "undo(this.parentElement)");
   undoButton.innerHTML += "Undo";
+  undoButton.setAttribute("id", "undo_"+data.code);
   cell.appendChild(undoButton);
 
   row = table.insertRow(idx);
@@ -815,9 +816,21 @@ function counter(element, step)
 		}
 }
 
-function undo(element)
+function undo(event)
 {
-    var fi = element.getElementsByClassName("counter")[0];
+   let undoID = event.firstChild;
+   //Getting rid of last value
+   changingXY = document.getElementById("XY" + getIdBase(undoID.id));
+   changingInput = document.getElementById("input" + getIdBase(undoID.id));
+   var tempValue = Array.from(JSON.parse(changingXY.value));
+   tempValue.pop();
+   changingXY.value = JSON.stringify(tempValue);
+
+   tempValue = Array.from(JSON.parse(changingInput.value));
+   tempValue.pop();
+   changingInput.value = JSON.stringify(tempValue);
+   drawFields();
+    
 }
 		
 
