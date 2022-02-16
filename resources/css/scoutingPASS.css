@@ -36,12 +36,6 @@ html, body{
     background-color: black;
 }
 
-.main-panel table{
-    border-style: groove;
-    border-color: white;
-    border-width: 5px; 
-}
-
 #prematch{
     display: table;
 }
