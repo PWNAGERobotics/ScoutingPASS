@@ -64,14 +64,14 @@ h1{
     border-width: 2px;
     font-size: 40px;
     padding: 10px;
-    font-color: light blue; 
+    font-color: white; 
 }
 
 h2{
-    font-family: Alexis;
+    font-family: roboto;
     text-align: center;
     font-size: 30px;
-    font-color: light blue;
+    font-color: white;
 }
 
 .match-label{
@@ -83,6 +83,7 @@ h2{
     width: 48%;
     margin: 1vw;
     height: 100%;
+    font-family: roboto;
 }
 
 .half-button-r{
@@ -90,6 +91,7 @@ h2{
     height: 100%;
     width: 48%;
     margin: 1vw;
+    font-family: roboto;
 }
 
 .half-button-container{
