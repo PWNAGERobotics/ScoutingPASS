@@ -64,12 +64,14 @@ h1{
     border-width: 2px;
     font-size: 50px;
     padding: 10px;
+    font-color: light blue; 
 }
 
 h2{
     font-family: Alexis;
     text-align: center;
     font-size: 30px;
+    font-color: light blue;
 }
 
 .match-label{
