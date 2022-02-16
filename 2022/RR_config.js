@@ -14,7 +14,7 @@ var config_data = `
       "Event":{
         "code":"e",
         "type":"event",
-        "defaultValue":"2022NHGRS",
+        "defaultValue":"2022WK0",
         "required":"true",
         "disabled":"true"
       },
