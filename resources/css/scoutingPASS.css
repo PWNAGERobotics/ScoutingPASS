@@ -59,8 +59,9 @@ h1{
     text-align: center;
     border-style: groove;
     border-color: white; 
-    border-width: 4px;
+    border-width: 2px;
     font-size: 50px;
+    padding: 10px;
 }
 
 h2{
