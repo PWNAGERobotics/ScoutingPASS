@@ -11,7 +11,6 @@ html, body{
     width: 100%;
     margin: 0;
     padding: 0;
-    color: white;
     background-color: black;
 }
 
@@ -32,7 +31,6 @@ html, body{
     position: absolute;
     left: 0;
     top: 0;
-    color: white;
     background-color: black;
 }
 
@@ -62,11 +60,13 @@ h1{
     border-style: groove;
     border-color: white; 
     border-width: 4px;
+    font-size: 50px;
 }
 
 h2{
     font-family: Alexis;
     text-align: center;
+    font-size: 30px;
 }
 
 .match-label{
@@ -99,7 +99,7 @@ h2{
     font-color: grey;
 }
 
-#nextButton1{
+#nextButton2{
     font-family: Alexis;
     color: white; 
     padding: 10px;
