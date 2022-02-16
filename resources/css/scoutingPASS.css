@@ -97,6 +97,18 @@ h2{
     display: flex;
 }
 
+#nextButton1{
+    font-family: Alexis;
+    color: dark green; 
+    padding: 10px;
+}
+
+#nextButton1{
+    font-family: Alexis;
+    color: dark green; 
+    padding: 10px;
+}
+
 h1 .odd {
     font-family: Alexis;
     text-align: center;
