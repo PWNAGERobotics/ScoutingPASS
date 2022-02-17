@@ -77,14 +77,14 @@ h2{
 
 .match-label{
     text-align: center;
-    font-family: roboto
+    font-family: Monaco
 }
 
 .half-button-l{
     width: 48%;
     margin: 1vw;
     height: 100%;
-    font-family: roboto;
+    font-family: Monaco;
 }
 
 .half-button-r{
@@ -92,7 +92,7 @@ h2{
     height: 100%;
     width: 48%;
     margin: 1vw;
-    font-family: roboto;
+    font-family: Monaco;
 }
 
 .half-button-container{
