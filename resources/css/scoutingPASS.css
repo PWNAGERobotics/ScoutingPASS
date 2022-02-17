@@ -101,16 +101,18 @@ h2{
 
 #nextButton1{
     font-family: Alexis;
-    background-color: blue; 
+    background-color: rgb(117, 195, 255); 
     padding: 10px;
     border-radius: 10px;
+    font-color: white;
 }
 
 #nextButton2{
     font-family: Alexis;
-    background-color: blue; 
+    background-color: rgb(117, 195, 255); 
     padding: 10px;
     border-radius: 10px;
+    font-color: white;
 }
 
 h1 .odd {
