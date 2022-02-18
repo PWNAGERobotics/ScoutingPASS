@@ -85,6 +85,10 @@ h1{
     font-weight: 350;
 }
 
+#page2, #page4 {
+    color: black;
+}
+
 h2{
     font-family: Alexis;
     text-align: center;
