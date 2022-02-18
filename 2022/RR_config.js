@@ -22,14 +22,11 @@ var config_data = `
         "code":"l",
         "type":"level",
         "choices":{
-          "qm":"Quals<br>",
-          "ef":"Eighth-Final<br>",
-          "qf":"Quarter-Final<br>",
-          "sf":"Semi-Final<br>",
-          "f":"Final"
+          "qm":"Quals<br>"
         },
         "defaultValue":"qm",
-        "required":"true"
+        "required":"true",
+	  "disabled":"true"
       },
       "Match #":{
         "code":"m",
