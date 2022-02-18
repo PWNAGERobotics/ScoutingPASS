@@ -29,6 +29,8 @@ html, body{
 
 #autonHeader, #endgameHeader{
     color: black;
+    border-color: black;
+    border-width: 2px;
 }
 
 .field-image {
