@@ -130,11 +130,20 @@ h2{
     border-radius: 10px;
 }
 
-#prevButton1, #prevButton2, #prevButton3, #prevButton4, #prevButton5, #prevButton6{
+#prevButton3, #prevButton4, #prevButton7, #prevButton8, #prevButton9{
     font-family: Alexis;
     background-color: rgb(117, 195, 255); 
     padding: 10px;
     border-radius: 10px;
+}
+
+#prevButton1, #prevButton2, #prevButton5, #prevButton6{
+    font-family: Alexis;
+    background-color: black; 
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    
 }
 
 #prematch_table{
