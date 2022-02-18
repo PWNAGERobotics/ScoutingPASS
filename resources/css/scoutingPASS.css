@@ -120,16 +120,16 @@ h2{
     display: flex;
 }
 
-#nextButton1{
+#nextButton1, #nextButton2, #nextButton5, #nextButton6, #nextButton9, #nextButton10{
     font-family: Alexis;
     background-color: rgb(117, 195, 255); 
     padding: 10px;
     border-radius: 10px;
 }
 
-#nextButton2{
+#nextButton3, #nextButton4, #nextButton7, #nextButton8{
     font-family: Alexis;
-    background-color: rgb(117, 195, 255); 
+    background-color: black; 
     padding: 10px;
     border-radius: 10px;
 }
