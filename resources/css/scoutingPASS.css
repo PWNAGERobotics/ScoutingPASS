@@ -54,6 +54,10 @@ html, body{
     border-color: white;
     border-width: 4px;
 }
+
+#qrHeader1, #qrHeader2 {
+    color: black;
+}
     
 .field-image {
     margin: 2vw;
