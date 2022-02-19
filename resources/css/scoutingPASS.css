@@ -37,12 +37,18 @@ html, body{
     border-color: white;
 }
 
-#autonHeader, #endgameHeader, #teleopHeader1, #teleopHeader2, #prematchHeader1, #prematchHeader2{
+#autonHeader, #endgameHeader, #teleopHeader1, #teleopHeader2{
     color: black;
     border-color: black;
-    border-width: 2px;
+    border-width: 4px;
 }
 
+#prematchHeader1, #prematchHeader2{
+    color: white;
+    border-color: white;
+    border-width: 4px;
+}
+    
 .field-image {
     margin: 2vw;
 }
