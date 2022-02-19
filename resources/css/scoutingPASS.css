@@ -33,7 +33,7 @@ html, body{
     letter-spacing: 1px;
 }
 
-#autonHeader, #endgameHeader, #teleopHeader1, #teleopHeader2{
+#autonHeader, #endgameHeader, #teleopHeader1, #teleopHeader2, #prematchHeader1, #prematchHeader2{
     color: black;
     border-color: black;
     border-width: 2px;
