@@ -25,7 +25,7 @@ html, body{
     letter-spacing: 1px;
 }
 
-#auton_table, #endgame_table, #teleop_table, #prematch_table,{
+#auton_table, #endgame_table, #teleop_table, #prematch_table{
     font-family : -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
     color: black;
     font-size: 13px;
