@@ -131,9 +131,7 @@ h2{
 #nextButton1, #nextButton2, #nextButton5, #nextButton6, #nextButton9, #nextButton10, #clearForm{
     font-family: Alexis; 
     padding: 10px;
-    border-width: 4px;
-    border-color: white;
-    background-color: rgb(197, 215, 230);
+    background-color: rgb(151, 199, 240);
     text-decoration: none;
     display: inline-block;
 }
@@ -142,16 +140,12 @@ h2{
     font-family: Alexis;
     background-color: black; 
     padding: 10px;
-    border-width: 4px;
-    border-color: white;
     color: white;
 }
 
 #prevButton3, #prevButton4, #prevButton7, #prevButton8, #prevButton9{
     font-family: Alexis;
-    background-color: rgb(197, 215, 230); 
-    border-color: white;
-    border-width: 4px;
+    background-color: rgb(151, 199, 240); 
     padding: 10px;
 }
 
@@ -159,8 +153,6 @@ h2{
     font-family: Alexis;
     background-color: black; 
     padding: 10px;
-    border-color: white;
-    border-width: 4px;
     color: white;
     
 }
