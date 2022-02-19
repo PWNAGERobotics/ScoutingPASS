@@ -17,7 +17,7 @@ html, body{
 
 #prematch_table, #postmatch_table, #teleop_table {
 
-    font-family : 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif !important;
+    font-family : Verdana, sans-serif !important;
     text-align: center;
     color: white;
     font-size: 10px;
