@@ -34,13 +34,18 @@ html, body{
     font-style: bold;
     letter-spacing: 1px;
     border-width: 4px;
-    border-color: white;
+    border-color: black;
 }
 
 #autonHeader, #endgameHeader, #teleopHeader1, #teleopHeader2{
     color: black;
     border-color: black;
     border-width: 4px;
+}
+
+#postmatchHeader{
+    border-width: 4px;
+    border-color: white;
 }
 
 #prematchHeader1, #prematchHeader2{
