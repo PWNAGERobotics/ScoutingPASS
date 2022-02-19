@@ -17,16 +17,20 @@ html, body{
 
 #prematch_table, #postmatch_table, #teleop_table {
 
-    font-family : Verdana, sans-serif !important;
+    font-family : -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
     text-align: center;
     color: white;
-    font-size: 10px;
+    font-size: 13px;
+    font-style: bold;
+    letter-spacing: 1px;
 }
 
 #auton_table, #endgame_table {
-    font-family : 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif !important;
+    font-family : -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
     color: black;
-    font-size: 10px;
+    font-size: 13px;
+    font-style: bold;
+    letter-spacing: 1px;
 }
 
 #autonHeader, #endgameHeader{
