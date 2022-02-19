@@ -20,13 +20,13 @@ html, body{
     font-family : 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif !important;
     text-align: center;
     color: white;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 #auton_table, #endgame_table {
     font-family : 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif !important;
     color: black;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 #autonHeader, #endgameHeader{
