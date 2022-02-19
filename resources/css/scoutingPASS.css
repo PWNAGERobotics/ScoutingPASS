@@ -128,7 +128,7 @@ h2{
     display: flex;
 }
 
-#nextButton1, #nextButton2, #nextButton5, #nextButton6, #nextButton9, #nextButton10{
+#nextButton1, #nextButton2, #nextButton5, #nextButton6, #nextButton9, #nextButton10, #clearForm{
     font-family: Alexis;
     background-color: rgb(49, 211, 247); 
     padding: 10px;
