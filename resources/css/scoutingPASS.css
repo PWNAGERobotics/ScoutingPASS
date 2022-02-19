@@ -130,7 +130,7 @@ h2{
 
 #nextButton1, #nextButton2, #nextButton5, #nextButton6, #nextButton9, #nextButton10{
     font-family: Alexis;
-    background-color: rgb(117, 195, 255); 
+    background-color: rgb(49, 211, 247); 
     padding: 10px;
     border-radius: 10px;
 }
@@ -145,7 +145,7 @@ h2{
 
 #prevButton3, #prevButton4, #prevButton7, #prevButton8, #prevButton9{
     font-family: Alexis;
-    background-color: rgb(117, 195, 255); 
+    background-color: rgb(49, 211, 247); 
     padding: 10px;
     border-radius: 7px;
 }
