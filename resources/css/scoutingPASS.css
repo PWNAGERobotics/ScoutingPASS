@@ -20,13 +20,13 @@ html, body{
     font-family : 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif !important;
     text-align: center;
     color: white;
-    font-size: 12px;
+    font-size: 10px;
 }
 
 #auton_table, #endgame_table {
     font-family : 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif !important;
     color: black;
-    font-size: 12px;
+    font-size: 10px;
 }
 
 #autonHeader, #endgameHeader{
@@ -135,7 +135,7 @@ h2{
     font-family: Alexis;
     background-color: black; 
     padding: 10px;
-    border-radius: 10px;
+    border-radius: 7px;
     color: white;
 }
 
@@ -143,7 +143,7 @@ h2{
     font-family: Alexis;
     background-color: rgb(117, 195, 255); 
     padding: 10px;
-    border-radius: 10px;
+    border-radius: 7px;
 }
 
 #prevButton1, #prevButton2, #prevButton5, #prevButton6{
