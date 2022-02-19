@@ -15,7 +15,7 @@ html, body{
     background-color: black;
 }
 
-#postmatch_table, #prematch_table {
+#prematch_table {
 
     font-family : -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
     text-align: center;
@@ -27,7 +27,7 @@ html, body{
     border-color: white;
 }
 
-#auton_table, #endgame_table, #teleop_table {
+#auton_table, #endgame_table, #teleop_table, #postmatch_table {
     font-family : -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
     color: black;
     font-size: 13px;
@@ -36,6 +36,7 @@ html, body{
     border-width: 4px;
     border-color: black;
 }
+
 
 #autonHeader, #endgameHeader, #teleopHeader1, #teleopHeader2{
     color: black;
