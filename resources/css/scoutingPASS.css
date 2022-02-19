@@ -15,7 +15,7 @@ html, body{
     background-color: black;
 }
 
-#prematch_table, #postmatch_table, #teleop_table {
+#prematch_table, #postmatch_table {
 
     font-family : -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
     text-align: center;
@@ -25,7 +25,7 @@ html, body{
     letter-spacing: 1px;
 }
 
-#auton_table, #endgame_table {
+#auton_table, #endgame_table, #teleop_table {
     font-family : -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
     color: black;
     font-size: 13px;
@@ -33,7 +33,7 @@ html, body{
     letter-spacing: 1px;
 }
 
-#autonHeader, #endgameHeader{
+#autonHeader, #endgameHeader, #teleopHeader{
     color: black;
     border-color: black;
     border-width: 2px;
@@ -128,7 +128,7 @@ h2{
     display: flex;
 }
 
-#nextButton1, #nextButton2, #nextButton5, #nextButton6, #nextButton9, #nextButton10, #clearForm{
+#nextButton1, #nextButton2, #nextButton9, #nextButton10, #clearForm{
     font-family: Alexis; 
     padding: 10px;
     background-color: rgb(151, 199, 240);
@@ -136,20 +136,20 @@ h2{
     display: inline-block;
 }
 
-#nextButton3, #nextButton4, #nextButton7, #nextButton8{
+#nextButton3, #nextButton4, #nextButton5, #nextButton6, #nextButton7, #nextButton8{
     font-family: Alexis;
     background-color: black; 
     padding: 10px;
     color: white;
 }
 
-#prevButton3, #prevButton4, #prevButton7, #prevButton8, #prevButton9{
+#prevButton7, #prevButton8, #prevButton9{
     font-family: Alexis;
     background-color: rgb(151, 199, 240); 
     padding: 10px;
 }
 
-#prevButton1, #prevButton2, #prevButton5, #prevButton6{
+#prevButton1, #prevButton2, #prevButton3, #prevButton4, #prevButton5, #prevButton6{
     font-family: Alexis;
     background-color: black; 
     padding: 10px;
