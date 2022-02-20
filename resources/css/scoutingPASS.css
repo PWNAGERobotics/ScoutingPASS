@@ -15,7 +15,51 @@ html, body{
     background-color: black;
 }
 
-.field-image{
+#prematch_table {
+
+    font-family : -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
+    text-align: center;
+    color: white;
+    font-size: 13px;
+    font-style: bold;
+    letter-spacing: 1px;
+    border-width: 4px;
+    border-color: white;
+}
+
+#auton_table, #endgame_table, #teleop_table, #postmatch_table {
+    font-family : -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
+    color: black;
+    font-size: 13px;
+    font-style: bold;
+    letter-spacing: 1px;
+    border-width: 4px;
+    border-color: black;
+}
+
+
+#autonHeader, #endgameHeader, #teleopHeader1, #teleopHeader2{
+    color: black;
+    border-color: black;
+    border-width: 4px;
+}
+
+#postmatchHeader{
+    border-width: 4px;
+    border-color: white;
+}
+
+#prematchHeader1, #prematchHeader2{
+    color: white;
+    border-color: white;
+    border-width: 4px;
+}
+
+#qrHeader1, #qrHeader2 {
+    color: black;
+}
+    
+.field-image {
     margin: 2vw;
 }
 
@@ -34,12 +78,8 @@ html, body{
     top: 0;
     color: white;
     background-color: black;
-}
-
-.main-panel table{
-    border-style: groove;
-    border-color: white;
-    border-width: 5px; 
+    font-family : -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
+    text-align: justify;
 }
 
 #prematch{
@@ -67,23 +107,33 @@ h1{
     text-align: center;
     border-style: groove;
     border-color: white; 
-    border-width: 4px;
+    border-width: 2px;
+    font-size: 40px;
+    padding: 10px; 
+    font-weight: 350;
+}
+
+#page2, #page4 {
+    color: black;
 }
 
 h2{
     font-family: Alexis;
     text-align: center;
+    font-size: 30px;
+    font-weight: 300;
+    font-style: italic;
 }
 
 .match-label{
     text-align: center;
-    font-family: calibri
 }
 
 .half-button-l{
     width: 48%;
     margin: 1vw;
     height: 100%;
+    font: roboto;
 }
 
 .half-button-r{
@@ -91,11 +141,47 @@ h2{
     height: 100%;
     width: 48%;
     margin: 1vw;
+    font: roboto;
 }
 
 .half-button-container{
     display: flex;
 }
+
+#nextButton1, #nextButton2, #nextButton9, #nextButton10, .clearForm{
+    font-family: Alexis; 
+    padding: 10px;
+    background-color: rgb(151, 199, 240);
+    text-decoration: none;
+    display: inline-block;
+}
+
+#nextButton3, #nextButton4, #nextButton5, #nextButton6, #nextButton7, #nextButton8, .undoButton{
+    font-family: Alexis;
+    background-color: black; 
+    padding: 10px;
+    color: white;
+}
+
+#prevButton7, #prevButton8, #prevButton9{
+    font-family: Alexis;
+    background-color: rgb(151, 199, 240); 
+    padding: 10px;
+}
+
+#prevButton1, #prevButton2, #prevButton3, #prevButton4, #prevButton5, #prevButton6{
+    font-family: Alexis;
+    background-color: black; 
+    padding: 10px;
+    color: white;
+    
+}
+
+#prematch_table{
+    font: Alexis;
+    text-align: center;
+}
+
 
 h1 .odd {
     font-family: Alexis;
@@ -120,6 +206,7 @@ td {
 
 input {
     font-size: 16px;
+    font: roboto;
 }
 
 .title {

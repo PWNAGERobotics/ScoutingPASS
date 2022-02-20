@@ -102,6 +102,11 @@ var config_data = `
         "title": "Was Defended",
         "type":"bool"
       },
+      "Wallbot?": {
+        "code":"wbt",
+        "title": "Wallbot?",
+        "type":"bool"
+      },
       "Cargo Intake From": {
         "code":"cif",
         "title": "Cargo Intake From",
