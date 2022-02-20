@@ -106,7 +106,7 @@ var config_data = `
         "code":"wbt",
         "title": "Wallbot?",
         "type":"bool"
-      }
+      },
       "Cargo Intake From": {
         "code":"cif",
         "title": "Cargo Intake From",
