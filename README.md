@@ -5,7 +5,10 @@
 #### A scouting system for FIRST FRC competitions developed by [PWNAGE - Team #2451](https://pwnagerobotics.org).
 
 <a href="https://PWNAGERobotics.github.io/ScoutingPASS">Live Demo</a> . <a href="#getting-started">Getting Started</a> . <a href="#faq">FAQ</a>
+
+![Stars](https://img.shields.io/github/stars/PWNAGERobotics/ScoutingPASS?style=plastic) ![Forks](https://img.shields.io/github/forks/PWNAGERobotics/ScoutingPASS?style=plastic) ![watchers](https://img.shields.io/github/watchers/PWNAGERobotics/ScoutingPASS?style=plastic)
 <h1></h1>
+
 
 <!-- TABLE OF CONTENTS -->
 <details>
@@ -84,7 +87,14 @@ It's really simple to get started:
   * Change the data elements to capture (if desired)
 * Enable GitHub Pages in your repository settings ([GitHub Pages Instructions](https://pages.github.com/))
 * Load page via GitHub pages (https://<your_username>.github.io/ScoutingPASS)
-
+<p>
+To enable The Blue Alliance API:
+  
+* Put your API token in the authKey variable in resources/js/TBAInterface.js.  (line 4)
+* Reload your page.
+  
+Note: In order for this to work, the schedule has to be posted to The Blue Alliance.  That usually doesn't happen until just before the event. (a few days to a few hours)  To test this you can point it to a past event.   Set the event to 2020ilch.   Reload the page to load the schedule for that event. Select Match 6 and Blue-2.  You should see it populate the Team # to 2451, and the next line will show the team name, PWNAGE.
+  
 <p align="right">(<a href="#top">back to top</a>)</p>
 <div id="how-we-scout"></div>
 

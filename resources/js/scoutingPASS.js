@@ -51,7 +51,7 @@ function addCounter(table, idx, name, data){
   var button2 = document.createElement("button");
   button2.setAttribute("type", "checkbox");
   button2.setAttribute("onclick", "counter(this.parentElement, 1)");
-  button2.innerHTML += "+"
+  button2.innerHTML += "+";
   cell2.appendChild(button2);
   return idx+1;
 }
@@ -63,6 +63,19 @@ function addFieldImage(table, idx, name, data) {
   cell.setAttribute("colspan", 2);
   cell.setAttribute("style", "text-align: center;");
   cell.innerHTML = name;
+	
+  row = table.insertRow(idx); 
+  idx += 1;
+  cell = row.insertCell(0);
+  cell.setAttribute("colspan", 2);
+  cell.setAttribute("style", "text-align: center;");
+  var undoButton = document.createElement("button");
+  undoButton.setAttribute("type", "checkbox");
+  undoButton.setAttribute("onclick", "undo(this.parentElement)");
+  undoButton.innerHTML += "Undo";
+  undoButton.setAttribute("id", "undo_"+data.code);
+  undoButton.setAttribute("class", "undoButton");
+  cell.appendChild(undoButton);
 
   row = table.insertRow(idx);
   idx += 1;
@@ -512,7 +525,7 @@ function getData() {
 					str=str+code+'=N'
 				}
 			} else {
-				str=str+code+'='+e.value.replace(";", "-")
+				str=str+code+'='+e.value.split(';').join('-')
 			}
 		}
 	}
@@ -803,6 +816,24 @@ function counter(element, step)
 				ctr.value = 0;
 		}
 }
+
+function undo(event)
+{
+   let undoID = event.firstChild;
+   //Getting rid of last value
+   changingXY = document.getElementById("XY" + getIdBase(undoID.id));
+   changingInput = document.getElementById("input" + getIdBase(undoID.id));
+   var tempValue = Array.from(JSON.parse(changingXY.value));
+   tempValue.pop();
+   changingXY.value = JSON.stringify(tempValue);
+
+   tempValue = Array.from(JSON.parse(changingInput.value));
+   tempValue.pop();
+   changingInput.value = JSON.stringify(tempValue);
+   drawFields();
+    
+}
+		
 
 window.onload = function(){
 	configure();
