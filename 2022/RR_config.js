@@ -54,6 +54,7 @@ var config_data = `
       "Team #": {
         "code":"t",
         "type":"team",
+        "defaultValue":"4561",
         "min":1,
         "max":99999
       },
@@ -136,7 +137,7 @@ var config_data = `
           "2":"Mid<br>",
           "3":"High<br>",
           "4":"Traversal<br>",
-          "f":"Attempted but Failed<br>",
+          "f":"Attempted<br>",
           "x":"Not Attempted"
         },
         "defaultValue":"x"
@@ -159,7 +160,7 @@ var config_data = `
         "title": "Started climb before EndGame",
         "type":"bool"
       },
-      "Num of Robots Climbed": {
+      "# of Robots Climbed": {
         "code":"cn",
         "title": "# of alliance bots climbed",
         "type":"counter"
@@ -174,7 +175,7 @@ var config_data = `
           "n":"Not Effective<br>",
           "a":"Average<br>",
           "v":"Very Effective<br>",
-          "x":"Not Observed"
+          "x":"Dunno"
         },
         "defaultValue":"x"
       },
@@ -186,7 +187,7 @@ var config_data = `
           "n":"Not Effective<br>",
           "a":"Average<br>",
           "v":"Very Effective<br>",
-          "x":"Not Observed"
+          "x":"Dunno"
         },
         "defaultValue":"x"
       },
