@@ -1,4 +1,5 @@
-var config_data = `
+/* eslint no-unused-vars: "off" */
+const configData = `
 {
   "title":"Scouting PASS 2022",
   "page_title":"Rapid React",
@@ -231,4 +232,4 @@ var config_data = `
     }
     }
   }
-}`;
+}`
