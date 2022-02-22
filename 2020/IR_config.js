@@ -1,4 +1,5 @@
-var config_data = `
+/* eslint no-unused-vars: "off" */
+const configData = `
 {
   "title":"Scouting PASS 2020",
   "page_title":"InFInItE RECHARGE",
@@ -272,4 +273,4 @@ var config_data = `
       }
     }
   }
-}`;
+}`
