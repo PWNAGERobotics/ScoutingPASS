@@ -84,22 +84,28 @@ html, body{
 
 #prematch{
     display: table;
+    background-color: rgb(0, 0, 0);
 }
 
 #auton{
+    background-color: rgb(123, 168, 184);
 }
 
 #teleop{
+    background-color: rgb(175, 207, 163);
 }
 
 #endgame{
+    background-color: rgb(198, 186, 222);
 }
 
-#postmatch{
+#post-match{
+    background-color: rgb(89, 134, 168);;
 }
 
 #qr-code{
   text-align: center;
+  background-color: white;
 }
 
 h1{
