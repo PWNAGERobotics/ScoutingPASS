@@ -141,9 +141,9 @@ var config_data = `
         },
         "defaultValue":"x"
       },
-      "Last successful rung": {
+      "If climb failed,<br>Last successful rung,<br>if any": {
         "code":"lsr",
-        "title": "last succcessful rung",
+        "title": "If climb failed,<br>last successful rung,<br>if any",
         "type":"radio",
         "choices":{
           "1":"Low<br>",
