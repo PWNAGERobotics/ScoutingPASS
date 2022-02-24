@@ -91,12 +91,22 @@ const configData = `
     "teleop": {
       "Upper Cargo Scored": {
         "code":"tu",
-        "title": "Uppoer Cargo Scored",
+        "title": "Upper Cargo Scored",
+        "type":"counter"
+      },
+      "Upper Cargo Attempted": {
+        "code":"ta",
+        "title": "Upper Cargo Attempted",
         "type":"counter"
       },
       "Lower Cargo Scored": {
         "code":"tl",
         "title": "Lower Cargo Scored",
+        "type":"counter"
+      },
+      "Lower Cargo Attempted": {
+        "code":"tc",
+        "title": "Lower Cargo Attempted",
         "type":"counter"
       },
       "Was Defended": {
