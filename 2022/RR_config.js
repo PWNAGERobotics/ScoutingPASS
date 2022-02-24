@@ -137,7 +137,7 @@ var config_data = `
           "3":"High<br>",
           "4":"Traversal<br>",
           "n":"No successful rung<br>",
-          "x":"n/a"
+          "x":"Not attempted"
         },
         "defaultValue":"x"
       },
