@@ -136,21 +136,22 @@ var config_data = `
           "2":"Mid<br>",
           "3":"High<br>",
           "4":"Traversal<br>",
-          "f":"Attempted but Failed<br>",
-          "x":"Not Attempted"
+          "a":"Attempted but failed<br>",
+          "x":"Not attempted"
         },
         "defaultValue":"x"
       },
-      "Last successful rung": {
+      "If climb failed,<br>Last successful rung,<br>if any": {
         "code":"lsr",
-        "title": "last succcessful rung",
+        "title": "If climb failed,<br>last successful rung,<br>if any",
         "type":"radio",
         "choices":{
           "1":"Low<br>",
           "2":"Mid<br>",
           "3":"High<br>",
           "4":"Traversal<br>",
-          "x":"Successful/Not Attempted"
+          "n":"No successful rung<br>",
+          "x":"n/a"
         },
         "defaultValue":"x"
       },
