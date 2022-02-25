@@ -136,7 +136,7 @@ var config_data = `
           "2":"Mid<br>",
           "3":"High<br>",
           "4":"Traversal<br>",
-          "n":"No successful rung<br>",
+          "a":"Attempted but failed<br>",
           "x":"Not attempted"
         },
         "defaultValue":"x"
