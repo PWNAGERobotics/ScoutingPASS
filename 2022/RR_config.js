@@ -72,13 +72,23 @@ const configData = `
         "title": "Taxied?",
         "type":"bool"
       },
-      "Upper Cargo Scored": {
+      "Upper Cargo Attempted": {
         "code":"au",
+        "title": "Upper Cargo Attempted",
+        "type":"counter"
+      },
+      "Upper Cargo Scored": {
+        "code":"as",
         "title": "Uppoer Cargo Scored",
         "type":"counter"
       },
-      "Lower Cargo Scored": {
+      "Lower Cargo Attempted": {
         "code":"al",
+        "title": "Lower Cargo Attempted",
+        "type":"counter"
+      },
+      "Lower Cargo Scored": {
+        "code":"ad",
         "title": "Lower Cargo Scored",
         "type":"counter"
       },
@@ -89,24 +99,24 @@ const configData = `
       }
     },
     "teleop": {
-      "Upper Cargo Scored": {
-        "code":"tu",
-        "title": "Upper Cargo Scored",
-        "type":"counter"
-      },
       "Upper Cargo Attempted": {
         "code":"ta",
         "title": "Upper Cargo Attempted",
         "type":"counter"
       },
-      "Lower Cargo Scored": {
-        "code":"tl",
-        "title": "Lower Cargo Scored",
+      "Upper Cargo Scored": {
+        "code":"tu",
+        "title": "Upper Cargo Scored",
         "type":"counter"
       },
       "Lower Cargo Attempted": {
         "code":"tc",
         "title": "Lower Cargo Attempted",
+        "type":"counter"
+      },
+      "Lower Cargo Scored": {
+        "code":"tl",
+        "title": "Lower Cargo Scored",
         "type":"counter"
       },
       "Was Defended": {
