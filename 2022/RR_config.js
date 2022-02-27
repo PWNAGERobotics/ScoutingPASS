@@ -22,14 +22,11 @@ var config_data = `
         "code":"l",
         "type":"level",
         "choices":{
-          "qm":"Quals<br>",
-          "ef":"Eighth-Final<br>",
-          "qf":"Quarter-Final<br>",
-          "sf":"Semi-Final<br>",
-          "f":"Final"
+          "qm":"Quals<br>"
         },
         "defaultValue":"qm",
-        "required":"true"
+        "required":"true",
+	  "disabled":"true"
       },
       "Match #":{
         "code":"m",
@@ -136,19 +133,6 @@ var config_data = `
         },
         "defaultValue":"x"
       },
-      "Last successful rung": {
-        "code":"lsr",
-        "title": "last succcessful rung",
-        "type":"radio",
-        "choices":{
-          "1":"Low<br>",
-          "2":"Mid<br>",
-          "3":"High<br>",
-          "4":"Traversal<br>",
-          "x":"Successful/Not Attempted"
-        },
-        "defaultValue":"x"
-      },
       "Started Climb before Endgame": {
         "code":"be",
         "title": "Started climb before EndGame",
@@ -209,7 +193,7 @@ var config_data = `
         "code":"co",
         "title": "Comments",
         "type":"text",
-        "size":15,
+        "size":25,
         "maxSize":50
       },
       "Confidence Rating": {
