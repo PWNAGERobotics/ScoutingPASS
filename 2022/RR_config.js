@@ -105,7 +105,7 @@ var config_data = `
     },
     "endgame": {
       "Climb": {
-        "code":"c",
+        "code":"cl",
         "title": "Climb",
         "type":"radio",
         "choices":{
