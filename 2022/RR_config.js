@@ -15,7 +15,7 @@ const configData = `
       "Event":{
         "code":"e",
         "type":"event",
-        "defaultValue":"2022flwp",
+        "defaultValue":"2022ncgre",
         "required":"true",
         "disabled":"true"
       },
