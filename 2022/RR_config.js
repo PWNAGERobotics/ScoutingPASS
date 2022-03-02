@@ -72,7 +72,7 @@ var config_data = `
       },
       "Upper Cargo Scored": {
         "code":"au",
-        "title": "Uppoer Cargo Scored",
+        "title": "Upper Cargo Scored",
         "type":"counter"
       },
       "Lower Cargo Scored": {
@@ -80,7 +80,7 @@ var config_data = `
         "title": "Lower Cargo Scored",
         "type":"counter"
       },
-      "Auto Aquired Cargo": {
+      "Auto Acquired Cargo": {
         "code":"ac",
         "title": "Picked up more cargo?",
         "type":"bool"
@@ -89,7 +89,7 @@ var config_data = `
     "teleop": {
       "Upper Cargo Scored": {
         "code":"tu",
-        "title": "Uppoer Cargo Scored",
+        "title": "Upper Cargo Scored",
         "type":"counter"
       },
       "Lower Cargo Scored": {
