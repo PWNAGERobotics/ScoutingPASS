@@ -129,7 +129,8 @@ var config_data = `
           "x":"Did not see (or no climb)"
         },
         "defaultValue":"x"
-      },
+      }
+    },
     "postmatch": {
       "Driver Skill": {
         "code":"ds",
