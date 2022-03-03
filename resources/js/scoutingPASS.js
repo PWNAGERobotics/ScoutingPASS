@@ -322,7 +322,17 @@ function addElement(table, idx, name, data){
 }
 
 function configure(){
-  var mydata = JSON.parse(config_data);
+  try {
+    var mydata = JSON.parse(config_data);
+  } catch(err) {
+    console.log(`Error parsing configuration file`)
+    console.log(err.message)
+    var table = document.getElementById("prematch_table")
+    var row = table.insertRow(0);
+    var cell1 = row.insertCell(0);
+    cell1.innerHTML = `Error parsing configuration file: ${err.message}`
+    return -1
+  }
 
   if (mydata.hasOwnProperty('title')) {
     document.title = mydata.title;
@@ -379,6 +389,8 @@ function configure(){
     const [key, value] = el;
     idx = addElement(pmt, idx, key, value);
   });
+	
+  return 0
 }
 
 function getRobot(){
@@ -803,18 +815,18 @@ function onTeamnameChange(event){
  */
 function counter(element, step)
 {
-		var ctr = element.getElementsByClassName("counter")[0];
-		var result = parseInt(ctr.value) + step;
+  var ctr = element.getElementsByClassName("counter")[0];
+  var result = parseInt(ctr.value) + step;
 
-		if(isNaN(result)) {
-				result = 0;
-		}
+  if(isNaN(result)) {
+    result = 0;
+  }
 
-		if(result >= 0 || ctr.hasAttribute('data-negative')) {
-				ctr.value = result;
-		} else {
-				ctr.value = 0;
-		}
+  if(result >= 0 || ctr.hasAttribute('data-negative')) {
+    ctr.value = result;
+  } else {
+    ctr.value = 0;
+  }
 }
 
 function undo(event)
@@ -831,14 +843,14 @@ function undo(event)
    tempValue.pop();
    changingInput.value = JSON.stringify(tempValue);
    drawFields();
-    
-}
-		
+}		
 
 window.onload = function(){
-	configure();
-	var ec = document.getElementById("input_e").value;
-	getTeams(ec);
-	getSchedule(ec);
-	this.drawFields();
+  var ret = configure();
+  if (ret != -1) {
+    var ec = document.getElementById("input_e").value;
+    getTeams(ec);
+    getSchedule(ec);
+    this.drawFields();
+  }
 };
