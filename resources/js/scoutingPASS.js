@@ -315,6 +315,7 @@ function configure(){
     document.title = mydata.title;
   }
 
+
   if (mydata.hasOwnProperty('page_title')) {
     var elements = document.getElementsByClassName("page_title");
     for(var i = 0; i < elements.length; i++) {
@@ -587,7 +588,7 @@ function clearForm() {
 		if (code.substring(0,2) == "l_") continue
 		if (code == "e") continue
 		if (code == "s") continue
-
+		if (code == idx) continue 
 
 		radio = code.indexOf("_")
 		if (radio > -1) {
