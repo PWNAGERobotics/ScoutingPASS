@@ -315,7 +315,6 @@ function configure(){
     document.title = mydata.title;
   }
 
-
   if (mydata.hasOwnProperty('page_title')) {
     var elements = document.getElementsByClassName("page_title");
     for(var i = 0; i < elements.length; i++) {
