@@ -14,7 +14,7 @@ var config_data = `
       "Event":{
         "code":"e",
         "type":"event",
-        "defaultValue":"2022gadal",
+        "defaultValue":"2022txwac",
         "required":"true",
         "disabled":"true"
       },
