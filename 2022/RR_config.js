@@ -24,10 +24,9 @@ const configData = `
         "type":"level",
         "choices":{
           "qm":"Quals<br>",
-          "ef":"Eighth-Final<br>",
-          "qf":"Quarter-Final<br>",
-          "sf":"Semi-Final<br>",
-          "f":"Final"
+          "qf":"Quarter-Finals<br>",
+          "sf":"Semi-Finals<br>",
+          "f":"Finals"
         },
         "defaultValue":"qm",
         "required":"true"
@@ -92,7 +91,7 @@ const configData = `
         "title": "Lower Cargo Scored",
         "type":"counter"
       },
-      "Auto Aquired Cargo": {
+      "Auto Acquired Cargo": {
         "code":"ac",
         "title": "Picked up more cargo?",
         "type":"bool"
@@ -124,15 +123,10 @@ const configData = `
         "title": "Was Defended",
         "type":"bool"
       },
-      "Wallbot?": {
-        "code":"wbt",
-        "title": "Wallbot?",
-        "type":"bool"
-      },
       "Cargo Intake From": {
         "code":"cif",
         "title": "Cargo Intake From",
-        "type":"radio",
+        "type":"bool",
         "choices":{
           "t":"Terminal<br>",
           "g":"Ground<br>",
@@ -165,14 +159,14 @@ const configData = `
       },
       "Last successful rung": {
         "code":"lsr",
-        "title": "last succcessful rung",
+        "title": "Last succcessful rung",
         "type":"radio",
         "choices":{
           "1":"Low<br>",
           "2":"Mid<br>",
           "3":"High<br>",
           "4":"Traversal<br>",
-          "x":"Successful/Not Attempted"
+          "x":"Not Successful/Attempted"
         },
         "defaultValue":"x"
       },
@@ -188,18 +182,6 @@ const configData = `
       }
     },
     "postmatch": {
-      "Driver Skill": {
-        "code":"ds",
-        "title": "Driver Skill",
-        "type":"radio",
-        "choices":{
-          "n":"Not Effective<br>",
-          "a":"Average<br>",
-          "v":"Very Effective<br>",
-          "x":"Dunno"
-        },
-        "defaultValue":"x"
-      },
       "Defense Rating": {
         "code":"dr",
         "title": "Defense Rating",
@@ -222,15 +204,10 @@ const configData = `
         "title": "Died/Tipped",
         "type":"bool"
       },
-      "Card Foul": {
+      "Foul Number": {
         "code":"cf",
         "title": "Yellow/Red Card",
-        "type":"bool"
-      },
-      "Make good alliance partner?": {
-        "code":"all",
-        "title": "Make good alliance partner?",
-        "type":"bool"
+        "type":"counter"
       },
       "Comments": {
         "code":"co",
