@@ -147,7 +147,7 @@ const configData = `
       "Climb": {
         "code":"c",
         "title": "Climb",
-        "type":"bool",
+        "type":"radio",
         "choices":{
           "1":"Low<br>",
           "2":"Mid<br>",
