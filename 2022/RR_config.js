@@ -126,7 +126,7 @@ const configData = `
       "Cargo Intake From": {
         "code":"cif",
         "title": "Cargo Intake From",
-        "type":"bool",
+        "type":"radio",
         "choices":{
           "t":"Terminal<br>",
           "g":"Ground<br>",
