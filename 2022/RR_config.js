@@ -118,7 +118,7 @@ const configData = `
         "title": "Lower Cargo Scored",
         "type":"counter"
       },
-      "Was Defended": {
+      "Was Defended Against": {
         "code":"wd",
         "title": "Was Defended",
         "type":"bool"
@@ -139,6 +139,7 @@ const configData = `
         "code":"ss",
         "title": "Shooting Spot",
         "type":"field_image",
+        "size":15,
         "filename":"2022/field_image.png"
       }
     },
@@ -146,7 +147,7 @@ const configData = `
       "Climb": {
         "code":"c",
         "title": "Climb",
-        "type":"radio",
+        "type":"bool",
         "choices":{
           "1":"Low<br>",
           "2":"Mid<br>",
@@ -174,11 +175,6 @@ const configData = `
         "code":"be",
         "title": "Started climb before EndGame",
         "type":"bool"
-      },
-      "# of Robots Climbed": {
-        "code":"cn",
-        "title": "# of alliance bots climbed",
-        "type":"counter"
       }
     },
     "postmatch": {
