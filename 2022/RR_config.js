@@ -77,7 +77,7 @@ const configData = `
         "type":"counter"
       },
       "Upper Cargo Scored": {
-        "code":"as",
+        "code":"us",
         "title": "Uppoer Cargo Scored",
         "type":"counter"
       },
