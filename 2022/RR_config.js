@@ -54,7 +54,6 @@ const configData = `
       "Team #": {
         "code":"t",
         "type":"team",
-        "defaultValue":"4561",
         "min":1,
         "max":99999
       },

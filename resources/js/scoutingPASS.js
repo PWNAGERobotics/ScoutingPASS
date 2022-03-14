@@ -400,26 +400,26 @@ function validateRobot () {
   }
 }
 
-function resetRobot () {
-  if (document.getElementById('input_r_r1').checked) {
-    document.getElementById('input_r_r1').checked = false
-  }
-  if (document.getElementById('input_r_r2').checked) {
-    document.getElementById('input_r_r2').checked = false
-  }
-  if (document.getElementById('input_r_r3').checked) {
-    document.getElementById('input_r_r3').checked = false
-  }
-  if (document.getElementById('input_r_b1').checked) {
-    document.getElementById('input_r_b1').checked = false
-  }
-  if (document.getElementById('input_r_b2').checked) {
-    document.getElementById('input_r_b2').checked = false
-  }
-  if (document.getElementById('input_r_b3').checked) {
-    document.getElementById('input_r_b3').checked = false
-  }
-}
+// function resetRobot () {
+//   if (document.getElementById('input_r_r1').checked) {
+//     document.getElementById('input_r_r1').checked = false
+//   }
+//   if (document.getElementById('input_r_r2').checked) {
+//     document.getElementById('input_r_r2').checked = false
+//   }
+//   if (document.getElementById('input_r_r3').checked) {
+//     document.getElementById('input_r_r3').checked = false
+//   }
+//   if (document.getElementById('input_r_b1').checked) {
+//     document.getElementById('input_r_b1').checked = false
+//   }
+//   if (document.getElementById('input_r_b2').checked) {
+//     document.getElementById('input_r_b2').checked = false
+//   }
+//   if (document.getElementById('input_r_b3').checked) {
+//     document.getElementById('input_r_b3').checked = false
+//   }
+// }
 
 function getLevel () {
   if (document.getElementById('input_l_qm').checked) {
@@ -567,7 +567,7 @@ function clearForm () { // eslint-disable-line
   }
 
   // Robot
-  resetRobot()
+  // resetRobot()
 
   // Clear XY coordinates
   let inputs = document.querySelectorAll("[id*='XY_']")
@@ -587,6 +587,7 @@ function clearForm () { // eslint-disable-line
     if (code.substring(0, 2) === 'l_') continue
     if (code === 'e') continue
     if (code === 's') continue
+    if (code === 'r') continue
 
     const radio = code.indexOf('_')
     if (radio > -1) {
