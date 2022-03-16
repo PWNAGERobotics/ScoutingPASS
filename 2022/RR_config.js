@@ -14,7 +14,7 @@ var config_data = `
       "Event":{
         "code":"e",
         "type":"event",
-        "defaultValue":"2022gadal",
+        "defaultValue":"2022gacol",
         "required":"true",
         "disabled":"true"
       },
@@ -132,10 +132,10 @@ var config_data = `
         "title": "Climb",
         "type":"radio",
         "choices":{
-          "1":"Low<br>",
-          "2":"Mid<br>",
-          "3":"High<br>",
-          "4":"Traversal<br>",
+          "4":"Low<br>",
+          "6":"Mid<br>",
+          "10":"High<br>",
+          "15":"Traversal<br>",
           "a":"Attempted but failed<br>",
           "x":"Not attempted"
         },
