@@ -135,7 +135,7 @@ function addText (table, idx, name, data) {
   const cell2 = row.insertCell(1)
   cell1.innerHTML = name + '&nbsp;'
   cell2.classList.add('field')
-  const inp = document.createElement('input')
+  const inp = document.createElement('textarea')
   inp.setAttribute('id', 'input_' + data.code)
   inp.setAttribute('type', 'text')
   inp.setAttribute('name', data.code)

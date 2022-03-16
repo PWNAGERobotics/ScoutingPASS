@@ -199,11 +199,6 @@ const configData = `
         "title": "Died/Tipped",
         "type":"bool"
       },
-      "Foul Number": {
-        "code":"cf",
-        "title": "Yellow/Red Card",
-        "type":"counter"
-      },
       "Comments": {
         "code":"co",
         "title": "Comments",
