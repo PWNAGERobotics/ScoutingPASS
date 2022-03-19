@@ -68,7 +68,12 @@ var config_data = `
       "Taxi": {
         "code":"at",
         "title": "Taxied?",
-        "type":"bool"
+        "type":"radio"
+        "choices":{
+          "1":"Yes<br>",
+          "0":"No<br>",
+        },
+        "defaultValue":"0"
       },
       "Upper Cargo Scored": {
         "code":"au",
