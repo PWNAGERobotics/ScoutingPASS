@@ -14,7 +14,7 @@ var config_data = `
       "Event":{
         "code":"e",
         "type":"event",
-        "defaultValue":"2022gacol",
+        "defaultValue":"2022gaalb",
         "required":"true",
         "disabled":"true"
       },
