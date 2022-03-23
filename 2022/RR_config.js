@@ -68,7 +68,11 @@ var config_data = `
       "Taxi": {
         "code":"at",
         "title": "Taxied?",
-        "type":"bool"
+        "choices":{
+          "2":"OffTarmac<br>",
+          "1":"Moved<br>",
+          "0":"NotMoved<br>",
+        },
       },
       "Upper Cargo Scored": {
         "code":"au",
