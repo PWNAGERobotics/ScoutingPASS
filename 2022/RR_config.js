@@ -188,6 +188,19 @@ var config_data = `
         "title": "Swerve drive?",
         "type":"bool"
       },
+       "Speed Rating": {
+        "code":"sr",
+        "title": "Speed Rating",
+        "type":"radio",
+        "choices":{
+          "o":"1",
+          "t":"2",
+          "th":"3",
+          "f":"4",
+          "fi":"5"
+        },
+        "defaultValue":"g"
+      },
       "Died/Tipped": {
         "code":"d",
         "title": "Died/Tipped",
