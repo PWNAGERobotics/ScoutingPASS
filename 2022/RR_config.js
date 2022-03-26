@@ -199,7 +199,7 @@ var config_data = `
           "f":"4<br>",
           "fi":"5"
         },
-        "defaultValue":"g"
+        "defaultValue":"th"
       },
       "Died/Tipped": {
         "code":"d",
