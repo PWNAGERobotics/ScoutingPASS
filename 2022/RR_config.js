@@ -193,10 +193,10 @@ var config_data = `
         "title": "Speed Rating",
         "type":"radio",
         "choices":{
-          "o":"1",
-          "t":"2",
-          "th":"3",
-          "f":"4",
+          "o":"1<br>",
+          "t":"2<br>",
+          "th":"3<br>",
+          "f":"4<br>",
           "fi":"5"
         },
         "defaultValue":"g"
