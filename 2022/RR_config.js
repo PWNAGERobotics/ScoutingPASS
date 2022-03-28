@@ -170,21 +170,21 @@ var config_data = `
         "title": "Defense Rating",
         "type":"radio",
         "choices":{
-          "n":"Below Average<br>",
+          "b":"Below Average<br>",
           "a":"Average<br>",
           "g":"Good<br>",
           "e":"Excellent<br>",
-          "x":"Did not play any"
+          "x":"Did not play defense"
         },
-        "defaultValue":"a"
+        "defaultValue":"x"
       },
-       "Strategically held enemy balls during match?": {
-        "code":"d",
+       "Strategically held enemy cargo during match?": {
+        "code":"hc",
         "title": "Enemy Balls",
         "type":"bool"
       },
        "Swerve drive?": {
-        "code":"d",
+        "code":"sd",
         "title": "Swerve drive?",
         "type":"bool"
       },
@@ -193,13 +193,13 @@ var config_data = `
         "title": "Speed Rating",
         "type":"radio",
         "choices":{
-          "o":"1<br>",
-          "t":"2<br>",
-          "th":"3<br>",
-          "f":"4<br>",
-          "fi":"5"
+          "1":"1 (slow)<br>",
+          "2":"2<br>",
+          "3":"3<br>",
+          "4":"4<br>",
+          "5":"5 (fast)"
         },
-        "defaultValue":"th"
+        "defaultValue":"3"
       },
       "Died/Tipped": {
         "code":"d",
