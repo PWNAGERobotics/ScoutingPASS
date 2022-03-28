@@ -14,7 +14,7 @@ var config_data = `
       "Event":{
         "code":"e",
         "type":"event",
-        "defaultValue":"2022flwp",
+        "defaultValue":"2022ilpe",
         "required":"true",
         "disabled":"true"
       },
@@ -141,20 +141,6 @@ var config_data = `
         },
         "defaultValue":"x"
       },
-      "If climb failed,<br>Last successful rung,<br>if any": {
-        "code":"lsr",
-        "title": "If climb failed,<br>last successful rung,<br>if any",
-        "type":"radio",
-        "choices":{
-          "1":"Low<br>",
-          "2":"Mid<br>",
-          "3":"High<br>",
-          "4":"Traversal<br>",
-          "n":"No successful rung<br>",
-          "x":"n/a"
-        },
-        "defaultValue":"x"
-      },
       "Started Climb before Endgame": {
         "code":"be",
         "title": "Started climb before EndGame",
@@ -184,26 +170,40 @@ var config_data = `
         "title": "Defense Rating",
         "type":"radio",
         "choices":{
-          "n":"Not Effective<br>",
+          "b":"Below Average<br>",
           "a":"Average<br>",
-          "v":"Very Effective<br>",
-          "x":"Not Observed"
+          "g":"Good<br>",
+          "e":"Excellent<br>",
+          "x":"Did not play defense"
         },
         "defaultValue":"x"
       },
-      "Shot enemy balls away?": {
-        "code":"ba",
-        "title": "Shot enemy balls away?",
+       "Strategically held enemy cargo during match?": {
+        "code":"hc",
+        "title": "Enemy Balls",
         "type":"bool"
+      },
+       "Swerve drive?": {
+        "code":"sd",
+        "title": "Swerve drive?",
+        "type":"bool"
+      },
+       "Speed Rating": {
+        "code":"sr",
+        "title": "Speed Rating",
+        "type":"radio",
+        "choices":{
+          "1":"1 (slow)<br>",
+          "2":"2<br>",
+          "3":"3<br>",
+          "4":"4<br>",
+          "5":"5 (fast)"
+        },
+        "defaultValue":"3"
       },
       "Died/Tipped": {
         "code":"d",
         "title": "Died/Tipped",
-        "type":"bool"
-      },
-      "Card Foul": {
-        "code":"cf",
-        "title": "Yellow/Red Card",
         "type":"bool"
       },
       "Make good alliance partner?": {
