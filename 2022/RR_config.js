@@ -180,7 +180,7 @@ var config_data = `
       },
        "Strategically held enemy cargo during match?": {
         "code":"hc",
-        "title": "Enemy Balls",
+        "title": "Enemy Cargo",
         "type":"bool"
       },
        "Swerve drive?": {
