@@ -78,7 +78,7 @@ var config_data = `
       "Lower Cargo Scored": {
         "code":"al",
         "title": "Lower Cargo Scored",
-        "type":"counter"
+        "type":"counter"}
       },
       "Auto Aquired Cargo": {
         "code":"ac",
