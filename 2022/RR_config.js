@@ -172,9 +172,9 @@ var config_data = `
         "title": "Driver Skill",
         "type":"radio",
         "choices":{
-          "0:"Not Effective<br>",
-          "1:"Average<br>",
-          "2:"Very Effective<br>",
+          "0":"Not Effective<br>",
+          "1":"Average<br>",
+          "2":"Very Effective<br>",
           "x":"Not Observed"
         },
         "defaultValue":"x"
@@ -184,9 +184,9 @@ var config_data = `
         "title": "Defense Rating",
         "type":"radio",
         "choices":{
-          "0:"Not Effective<br>",
-          "1:"Average<br>",
-          "2:"Very Effective<br>",
+          "0":"Not Effective<br>",
+          "1":"Average<br>",
+          "2":"Very Effective<br>",
           "x":"Not Observed"
         },
         "defaultValue":"x"
