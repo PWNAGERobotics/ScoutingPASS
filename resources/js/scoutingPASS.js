@@ -376,10 +376,11 @@ function configure(){
   } catch(err) {
     console.log(`Error parsing configuration file`)
     console.log(err.message)
+    console.log('Use a tool like http://jsonlint.com/ to help you debug your config file')
     var table = document.getElementById("prematch_table")
     var row = table.insertRow(0);
     var cell1 = row.insertCell(0);
-    cell1.innerHTML = `Error parsing configuration file: ${err.message}`
+    cell1.innerHTML = `Error parsing configuration file: ${err.message}<br><br>Use a tool like <a href="http://jsonlint.com/">http://jsonlint.com/</a> to help you debug your config file`
     return -1
   }
 
