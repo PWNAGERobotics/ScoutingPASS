@@ -331,8 +331,9 @@ function addElement(table, idx, data){
     type = data.type
   } else {
     console.log("No type specified");
-    console.log("Data: "+data);
-    err = {"code": "err", "defaultValue": "No type specified: "+data};
+    console.log("Data: ")
+    console.log(data);
+    err = {code: "err", defaultValue: "No type specified: "+data};
     idx = addText(table, idx, name, err);
     return
   }
