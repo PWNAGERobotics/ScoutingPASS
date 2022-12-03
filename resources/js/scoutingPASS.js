@@ -405,7 +405,6 @@ function configure(){
   var pmc = mydata.prematch;
   var pmt = document.getElementById("prematch_table");
   var idx = 0;
-  console.log(pmc);
   pmc.forEach(element => {
     idx = addElement(pmt, idx, element);
   });
@@ -414,32 +413,32 @@ function configure(){
   var ac = mydata.auton;
   var at = document.getElementById("auton_table");
   idx = 0;
-  Object.entries(ac).forEach((el) => {
-    idx = addElement(at, idx, el);
+  ac.forEach(element => {
+    idx = addElement(at, idx, element);
   });
 
   // Configure teleop screen
   var tc = mydata.teleop;
   var tt = document.getElementById("teleop_table");
   idx = 0;
-  Object.entries(tc).forEach((el) => {
-    idx = addElement(tt, idx, el);
+  tc.forEach(element => {
+    idx = addElement(tt, idx, element);
   });
 
   // Configure endgame screen
   var egc = mydata.endgame;
   var egt = document.getElementById("endgame_table");
   idx = 0;
-  Object.entries(egc).forEach((el) => {
-    idx = addElement(egt, idx, el);
+  egc.forEach(element => {
+    idx = addElement(egt, idx, element);
   });
 
   // Configure postmatch screen
   pmc = mydata.postmatch;
   pmt = document.getElementById("postmatch_table");
   var idx = 0;
-  Object.entries(pmc).forEach((el) => {
-    idx = addElement(pmt, idx, el);
+  pmc.forEach(element => {
+    idx = addElement(pmt, idx, element);
   });
 	
   return 0
