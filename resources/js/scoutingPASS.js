@@ -321,8 +321,12 @@ function addCheckbox(table, idx, name, data){
   return idx+1;
 }
 
-function addElement(table, idx, name, data){
+function addElement(table, idx, data){
   var type = null;
+  var name = 'Default Name';
+  if (data.hasOwnProperty('name')){
+    name = data.name
+  }
   if (data.hasOwnProperty('type')){
     type = data.type
   } else {
@@ -396,48 +400,43 @@ function configure(){
   }
 
   // Configure prematch screen
-  var pmc = mydata.elements.prematch;
+  var pmc = mydata.prematch;
   var pmt = document.getElementById("prematch_table");
   var idx = 0;
   Object.entries(pmc).forEach((el) => {
-    const [key, value] = el;
-    idx = addElement(pmt, idx, key, value);
+    idx = addElement(pmt, idx, el);
   });
 
   // Configure auton screen
-  var ac = mydata.elements.auton;
+  var ac = mydata.auton;
   var at = document.getElementById("auton_table");
   idx = 0;
   Object.entries(ac).forEach((el) => {
-    const [key, value] = el;
-    idx = addElement(at, idx, key, value);
+    idx = addElement(at, idx, el);
   });
 
   // Configure teleop screen
-  var tc = mydata.elements.teleop;
+  var tc = mydata.teleop;
   var tt = document.getElementById("teleop_table");
   idx = 0;
   Object.entries(tc).forEach((el) => {
-    const [key, value] = el;
-    idx = addElement(tt, idx, key, value);
+    idx = addElement(tt, idx, el);
   });
 
   // Configure endgame screen
-  var egc = mydata.elements.endgame;
+  var egc = mydata.endgame;
   var egt = document.getElementById("endgame_table");
   idx = 0;
   Object.entries(egc).forEach((el) => {
-    const [key, value] = el;
-    idx = addElement(egt, idx, key, value);
+    idx = addElement(egt, idx, el);
   });
 
   // Configure postmatch screen
-  pmc = mydata.elements.postmatch;
+  pmc = mydata.postmatch;
   pmt = document.getElementById("postmatch_table");
   var idx = 0;
   Object.entries(pmc).forEach((el) => {
-    const [key, value] = el;
-    idx = addElement(pmt, idx, key, value);
+    idx = addElement(pmt, idx, el);
   });
 	
   return 0
