@@ -33,6 +33,9 @@ function addCounter(table, idx, name, data){
   }
   var cell2 = row.insertCell(1);
   cell1.innerHTML = name+'&nbsp;';
+  if (data.hasOwnProperty('tooltip')) {
+    cell1.setAttribute("title", data.tooltip);
+  }
   cell2.classList.add("field");
 
   var button1 = document.createElement("button");
@@ -77,6 +80,9 @@ function addFieldImage(table, idx, name, data) {
   cell.setAttribute("colspan", 2);
   cell.setAttribute("style", "text-align: center;");
   cell.innerHTML = name;
+  if (data.hasOwnProperty('tooltip')) {
+    cell.setAttribute("title", data.tooltip);
+  }
 	
   row = table.insertRow(idx); 
   idx += 1;
@@ -146,6 +152,9 @@ function addText(table, idx, name, data) {
   }
   var cell2 = row.insertCell(1);
   cell1.innerHTML = name+'&nbsp;';
+  if (data.hasOwnProperty('tooltip')) {
+    cell1.setAttribute("title", data.tooltip);
+  }
   cell2.classList.add("field");
   var inp = document.createElement("input");
   inp.setAttribute("id", "input_"+data.code);
@@ -189,6 +198,9 @@ function addNumber(table, idx, name, data) {
   }
   var cell2 = row.insertCell(1);
   cell1.innerHTML = name+'&nbsp;';
+  if (data.hasOwnProperty('tooltip')) {
+    cell1.setAttribute("title", data.tooltip);
+  }
   cell2.classList.add("field");
   var inp = document.createElement("input");
   inp.setAttribute("id", "input_"+data.code);
@@ -246,6 +258,9 @@ function addRadio(table, idx, name, data) {
   }
   var cell2 = row.insertCell(1);
   cell1.innerHTML = name+'&nbsp;';
+  if (data.hasOwnProperty('tooltip')) {
+    cell1.setAttribute("title", data.tooltip);
+  }
   cell2.classList.add("field");
 	if ((data.type == 'level') ||
 			(data.type == 'robot')
@@ -299,6 +314,9 @@ function addCheckbox(table, idx, name, data){
   }
   var cell2 = row.insertCell(1);
   cell1.innerHTML = name+'&nbsp;';
+  if (data.hasOwnProperty('tooltip')) {
+    cell1.setAttribute("title", data.tooltip);
+  }
   cell2.classList.add("field");
   var inp = document.createElement("input");
   inp.setAttribute("id", "input_"+data.code);
@@ -321,13 +339,19 @@ function addCheckbox(table, idx, name, data){
   return idx+1;
 }
 
-function addElement(table, idx, name, data){
+function addElement(table, idx, data){
   var type = null;
+  var name = 'Default Name';
+  if (data.hasOwnProperty('name')){
+    name = data.name
+  }
   if (data.hasOwnProperty('type')){
     type = data.type
   } else {
     console.log("No type specified");
-    err = (("defaultValue", "No type specified"));
+    console.log("Data: ")
+    console.log(data);
+    err = {code: "err", defaultValue: "No type specified: "+data};
     idx = addText(table, idx, name, err);
     return
   }
@@ -376,10 +400,11 @@ function configure(){
   } catch(err) {
     console.log(`Error parsing configuration file`)
     console.log(err.message)
+    console.log('Use a tool like http://jsonlint.com/ to help you debug your config file')
     var table = document.getElementById("prematch_table")
     var row = table.insertRow(0);
     var cell1 = row.insertCell(0);
-    cell1.innerHTML = `Error parsing configuration file: ${err.message}`
+    cell1.innerHTML = `Error parsing configuration file: ${err.message}<br><br>Use a tool like <a href="http://jsonlint.com/">http://jsonlint.com/</a> to help you debug your config file`
     return -1
   }
 
@@ -395,48 +420,43 @@ function configure(){
   }
 
   // Configure prematch screen
-  var pmc = mydata.elements.prematch;
+  var pmc = mydata.prematch;
   var pmt = document.getElementById("prematch_table");
   var idx = 0;
-  Object.entries(pmc).forEach((el) => {
-    const [key, value] = el;
-    idx = addElement(pmt, idx, key, value);
+  pmc.forEach(element => {
+    idx = addElement(pmt, idx, element);
   });
 
   // Configure auton screen
-  var ac = mydata.elements.auton;
+  var ac = mydata.auton;
   var at = document.getElementById("auton_table");
   idx = 0;
-  Object.entries(ac).forEach((el) => {
-    const [key, value] = el;
-    idx = addElement(at, idx, key, value);
+  ac.forEach(element => {
+    idx = addElement(at, idx, element);
   });
 
   // Configure teleop screen
-  var tc = mydata.elements.teleop;
+  var tc = mydata.teleop;
   var tt = document.getElementById("teleop_table");
   idx = 0;
-  Object.entries(tc).forEach((el) => {
-    const [key, value] = el;
-    idx = addElement(tt, idx, key, value);
+  tc.forEach(element => {
+    idx = addElement(tt, idx, element);
   });
 
   // Configure endgame screen
-  var egc = mydata.elements.endgame;
+  var egc = mydata.endgame;
   var egt = document.getElementById("endgame_table");
   idx = 0;
-  Object.entries(egc).forEach((el) => {
-    const [key, value] = el;
-    idx = addElement(egt, idx, key, value);
+  egc.forEach(element => {
+    idx = addElement(egt, idx, element);
   });
 
   // Configure postmatch screen
-  pmc = mydata.elements.postmatch;
+  pmc = mydata.postmatch;
   pmt = document.getElementById("postmatch_table");
   var idx = 0;
-  Object.entries(pmc).forEach((el) => {
-    const [key, value] = el;
-    idx = addElement(pmt, idx, key, value);
+  pmc.forEach(element => {
+    idx = addElement(pmt, idx, element);
   });
 	
   return 0
