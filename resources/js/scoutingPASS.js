@@ -406,9 +406,8 @@ function configure(){
   var pmt = document.getElementById("prematch_table");
   var idx = 0;
   console.log(pmc);
-  Object.entries(pmc).forEach((el) => {
-    console.log(el);
-    idx = addElement(pmt, idx, el);
+  pmc.forEach(element => {
+    idx = addElement(pmt, idx, element);
   });
 
   // Configure auton screen
