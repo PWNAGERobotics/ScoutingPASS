@@ -331,7 +331,7 @@ function addElement(table, idx, data){
     type = data.type
   } else {
     console.log("No type specified");
-    console.log(data);
+    console.log("Data: "+data);
     err = (("code", "err"), ("defaultValue", "No type specified: "+data));
     idx = addText(table, idx, name, err);
     return
@@ -404,7 +404,9 @@ function configure(){
   var pmc = mydata.prematch;
   var pmt = document.getElementById("prematch_table");
   var idx = 0;
+  console.log(pmc);
   Object.entries(pmc).forEach((el) => {
+    console.log(el);
     idx = addElement(pmt, idx, el);
   });
 
