@@ -33,6 +33,9 @@ function addCounter(table, idx, name, data){
   }
   var cell2 = row.insertCell(1);
   cell1.innerHTML = name+'&nbsp;';
+  if (data.hasOwnProperty('tooltip')) {
+    cell1.setAttribute("title", data.tooltip);
+  }
   cell2.classList.add("field");
 
   var button1 = document.createElement("button");
@@ -51,9 +54,6 @@ function addCounter(table, idx, name, data){
   inp.setAttribute("value", 0);
   inp.setAttribute("size", 2);
   inp.setAttribute("maxLength", 2);
-  if (data.hasOwnProperty('tooltip')) {
-    inp.setAttribute("title", data.tooltip);
-  }
   cell2.appendChild(inp);
 
   var button2 = document.createElement("button");
@@ -80,6 +80,9 @@ function addFieldImage(table, idx, name, data) {
   cell.setAttribute("colspan", 2);
   cell.setAttribute("style", "text-align: center;");
   cell.innerHTML = name;
+  if (data.hasOwnProperty('tooltip')) {
+    cell.setAttribute("title", data.tooltip);
+  }
 	
   row = table.insertRow(idx); 
   idx += 1;
@@ -121,9 +124,6 @@ function addFieldImage(table, idx, name, data) {
   inp.setAttribute("hidden", "");
   inp.setAttribute("id", "input_"+data.code);
   inp.setAttribute("value", "");
-  if (data.hasOwnProperty('tooltip')) {
-    inp.setAttribute("title", data.tooltip);
-  }
   cell.appendChild(inp);
 
   row = table.insertRow(idx);
@@ -152,6 +152,9 @@ function addText(table, idx, name, data) {
   }
   var cell2 = row.insertCell(1);
   cell1.innerHTML = name+'&nbsp;';
+  if (data.hasOwnProperty('tooltip')) {
+    cell1.setAttribute("title", data.tooltip);
+  }
   cell2.classList.add("field");
   var inp = document.createElement("input");
   inp.setAttribute("id", "input_"+data.code);
@@ -171,9 +174,6 @@ function addText(table, idx, name, data) {
   }
   if (data.hasOwnProperty('disabled')) {
     inp.setAttribute("disabled", "");
-  }
-  if (data.hasOwnProperty('tooltip')) {
-    inp.setAttribute("title", data.tooltip);
   }
   cell2.appendChild(inp);
 
@@ -198,6 +198,9 @@ function addNumber(table, idx, name, data) {
   }
   var cell2 = row.insertCell(1);
   cell1.innerHTML = name+'&nbsp;';
+  if (data.hasOwnProperty('tooltip')) {
+    cell1.setAttribute("title", data.tooltip);
+  }
   cell2.classList.add("field");
   var inp = document.createElement("input");
   inp.setAttribute("id", "input_"+data.code);
@@ -222,9 +225,6 @@ function addNumber(table, idx, name, data) {
   }
   if (data.hasOwnProperty('required')) {
     inp.setAttribute("required", "");
-  }
-  if (data.hasOwnProperty('tooltip')) {
-    inp.setAttribute("title", data.tooltip);
   }
   cell2.appendChild(inp);
 
@@ -258,6 +258,9 @@ function addRadio(table, idx, name, data) {
   }
   var cell2 = row.insertCell(1);
   cell1.innerHTML = name+'&nbsp;';
+  if (data.hasOwnProperty('tooltip')) {
+    cell1.setAttribute("title", data.tooltip);
+  }
   cell2.classList.add("field");
 	if ((data.type == 'level') ||
 			(data.type == 'robot')
@@ -288,9 +291,6 @@ function addRadio(table, idx, name, data) {
   inp.setAttribute("id", "display_"+data.code);
   inp.setAttribute("hidden", "");
   inp.setAttribute("value", "");
-  if (data.hasOwnProperty('tooltip')) {
-    inp.setAttribute("title", data.tooltip);
-  }
   cell2.appendChild(inp);
 
   if (data.hasOwnProperty('defaultValue')) {
@@ -314,14 +314,14 @@ function addCheckbox(table, idx, name, data){
   }
   var cell2 = row.insertCell(1);
   cell1.innerHTML = name+'&nbsp;';
+  if (data.hasOwnProperty('tooltip')) {
+    cell1.setAttribute("title", data.tooltip);
+  }
   cell2.classList.add("field");
   var inp = document.createElement("input");
   inp.setAttribute("id", "input_"+data.code);
   inp.setAttribute("type", "checkbox");
   inp.setAttribute("name", data.code);
-  if (data.hasOwnProperty('tooltip')) {
-    inp.setAttribute("title", data.tooltip);
-  }
   cell2.appendChild(inp);
 
   if (data.type == 'bool') {
