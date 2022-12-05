@@ -935,12 +935,11 @@ function undo(event)
 function flip(event)
 {
   let flipID = event.firstChild;
-  //Getting rid of last value
-  img = document.getElementById("canvas" + getIdBase(flipID.id));
-  if (img.style.transform == '') {
-    img.style.transform = 'rotate(180deg)';
+  var flipImg = document.getElementById("canvas" + getIdBase(flipID.id));
+  if (flipImg.style.transform == "") {
+    flipImg.style.transform = 'rotate(180deg)';
   } else {
-    img.style.transform = '';
+    flipImg.style.transform = '';
   }
   drawFields();
 }
