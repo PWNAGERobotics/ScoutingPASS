@@ -104,7 +104,7 @@ function addFieldImage(table, idx, name, data) {
   flipButton.innerHTML += "Flip Image";
   flipButton.setAttribute("id", "flip_"+data.code);
   flipButton.setAttribute("class", "flipButton");
-  flipButton.setAttribute("margin-right", '8px');
+  flipButton.setAttribute("margin-left", '8px');
   cell.appendChild(flipButton);
 
   row = table.insertRow(idx);
