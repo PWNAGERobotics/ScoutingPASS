@@ -936,11 +936,12 @@ function flip(event)
 {
   let flipID = event.firstChild;
   //Getting rid of last value
-  var img = document.getElementById("canvas" + getIdBase(flipID.id));
-  if img.style.transform == '':
+  img = document.getElementById("canvas" + getIdBase(flipID.id));
+  if (img.style.transform == '') {
     img.style.transform = 'rotate(180deg)';
-  else:
+  } else {
     img.style.transform = '';
+  }
   drawFields();
 }
 
