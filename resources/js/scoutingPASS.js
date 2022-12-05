@@ -89,6 +89,7 @@ function addFieldImage(table, idx, name, data) {
   cell = row.insertCell(0);
   cell.setAttribute("colspan", 2);
   cell.setAttribute("style", "text-align: center;");
+  // Undo button
   var undoButton = document.createElement("button");
   undoButton.setAttribute("type", "checkbox");
   undoButton.setAttribute("onclick", "undo(this.parentElement)");
@@ -96,6 +97,15 @@ function addFieldImage(table, idx, name, data) {
   undoButton.setAttribute("id", "undo_"+data.code);
   undoButton.setAttribute("class", "undoButton");
   cell.appendChild(undoButton);
+  // Flip button
+  var flipButton = document.createElement("button");
+  flipButton.setAttribute("type", "checkbox");
+  flipButton.setAttribute("onclick", "flip(this.parentElement)");
+  flipButton.innerHTML += "Flip Image";
+  flipButton.setAttribute("id", "flip_"+data.code);
+  flipButton.setAttribute("class", "flipButton");
+  flipButton.setAttribute("margin-left", '8px');
+  cell.appendChild(flipButton);
 
   row = table.insertRow(idx);
   idx += 1;
@@ -922,6 +932,18 @@ function undo(event)
    changingInput.value = JSON.stringify(tempValue);
    drawFields();
 }		
+
+function flip(event)
+{
+  let flipID = event.firstChild;
+  var flipImg = document.getElementById("canvas" + getIdBase(flipID.id));
+  if (flipImg.style.transform == "") {
+    flipImg.style.transform = 'rotate(180deg)';
+  } else {
+    flipImg.style.transform = '';
+  }
+  drawFields();
+}
 
 window.onload = function(){
   var ret = configure();
