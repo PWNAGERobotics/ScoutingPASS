@@ -936,9 +936,7 @@ function flip(event)
 {
   let flipID = event.firstChild;
   //Getting rid of last value
-  console.log(flipID.id)
-  img = document.getElementById("canvas" + getIdBase(flipID.id));
-  console.log(img)
+  var img = document.getElementById("canvas" + getIdBase(flipID.id));
   if img.style.transform == '':
     img.style.transform = 'rotate(180deg)';
   else:
