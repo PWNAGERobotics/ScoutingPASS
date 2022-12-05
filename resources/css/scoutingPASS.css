@@ -156,7 +156,7 @@ h2{
     display: inline-block;
 }
 
-#nextButton3, #nextButton4, #nextButton5, #nextButton6, #nextButton7, #nextButton8, .undoButton{
+#nextButton3, #nextButton4, #nextButton5, #nextButton6, #nextButton7, #nextButton8, .undoButton, .flipButton {
     font-family: Alexis;
     background-color: black; 
     padding: 10px;
