@@ -23,6 +23,7 @@
     <li><a href="#faq">FAQ</a></li>
     <li><a href="#things-to-add">Things To Add Someday</a></li>
     <li><a href="#license">License</a></li>
+    <li><a href="#2023">2023 Changes</a></li>
   </ol>
 </details>
 
@@ -175,3 +176,13 @@ Note: The Auto Start (as) element is special in that it will only keep track of 
 
 ## License
 Distributed under the GNU GPL v3.0 License. See `LICENSE` for more information.
+
+## 2023
+
+Scouting PASS continues to evolve.   Here are the changes for the 2023 Season:
+
+<ul>
+  <li>JSON simplification - The JSON structure has been simplified to make it a little easier to maintain.  The previous years configuration files have been updated to use the new structure.</li>
+  <li>Add "Flip Image" button to the Field Image component</li>
+  <li>Add "tooltip" option for components - Tooltips will appear when hovering over the name of the component</li>
+</ul>
