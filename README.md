@@ -184,7 +184,7 @@ Distributed under the GNU GPL v3.0 License. See `LICENSE` for more information.
 
 Scouting PASS continues to evolve.   Here are the changes for the 2023 Season:
 
+* New Timer component - Start/Stop and Clear Buttons
 * JSON simplification - The JSON structure has been simplified to make it a little easier to maintain.  The previous years configuration files have been updated to use the new structure.
 * Add "Flip Image" button to the Field Image component
 * Add "tooltip" option for components - Tooltips will appear when hovering over the name of the component
-
