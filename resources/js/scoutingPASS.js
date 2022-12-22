@@ -23,6 +23,74 @@ var options = {
 //var requiredFields = ["e", "m", "l", "t", "r", "s", "as"];
 var requiredFields = ["e", "m", "l", "r", "s", "as"];
 
+function addTimer(table, idx, name, data){
+  var row = table.insertRow(idx);
+  var cell1 = row.insertCell(0);
+  cell1.classList.add("title");
+  if (!data.hasOwnProperty('code')) {
+    cell1.innerHTML = `Error: No code specified for ${name}`;
+    return idx+1;
+  }
+  var cell2 = row.insertCell(1);
+  cell1.innerHTML = name+'&nbsp;';
+  if (data.hasOwnProperty('tooltip')) {
+    cell1.setAttribute("title", data.tooltip);
+  }
+  cell2.classList.add("field");
+
+  var button1 = document.createElement("button");
+  button1.setAttribute("id", "start_"+data.code);
+  button1.setAttribute("type", "checkbox");
+  button1.setAttribute("onclick", "timer(this.parentElement)");
+  button1.innerHTML += "Start"
+  cell2.appendChild(button1);
+
+  var inp = document.createElement("input");
+  inp.classList.add("timer");
+  inp.setAttribute("id", "input_"+data.code);
+  inp.setAttribute("type", "text");
+  inp.setAttribute("name", data.code);
+  inp.setAttribute("style", "background-color: black; color: white;border: none; text-align: center;");
+  inp.setAttribute("disabled", "");
+  inp.setAttribute("value", 0);
+  inp.setAttribute("size", 5);
+  inp.setAttribute("maxLength", 5);
+  cell2.appendChild(inp);
+
+  var button2 = document.createElement("button");
+  button2.setAttribute("id", "clear_"+data.code);
+  button2.setAttribute("type", "checkbox");
+  button2.setAttribute("onclick", "resetTimer(this.parentElement)");
+  button2.innerHTML += "Reset"
+  cell2.appendChild(button2);
+
+  row = table.insertRow(idx);
+  idx += 1
+  row.setAttribute("style", "display:none");
+  cell = row.insertCell(0);
+  cell.setAttribute("colspan", 2);
+  var inp = document.createElement('input');
+  inp.setAttribute("type", "hidden");
+  inp.setAttribute("id", "status_"+data.code);
+  inp.setAttribute("value", "stopped");
+  cell.appendChild(inp);
+  inp = document.createElement('input');
+  inp.setAttribute("hidden", "");
+  inp.setAttribute("id", "intervalId_"+data.code);
+  inp.setAttribute("value", "");
+  cell.appendChild(inp);
+
+  if (data.hasOwnProperty('defaultValue')) {
+    var def = document.createElement("input");
+    def.setAttribute("id", "default_"+data.code)
+    def.setAttribute("type", "hidden");
+    def.setAttribute("value", data.defaultValue);
+    cell2.appendChild(def);
+  }
+
+  return idx+1;
+}
+
 function addCounter(table, idx, name, data){
   var row = table.insertRow(idx);
   var cell1 = row.insertCell(0);
@@ -397,6 +465,9 @@ function addElement(table, idx, data){
   } else if (data.type == 'counter')
   {
     idx = addCounter(table, idx, name, data);
+  } else if (data.type == 'timer')
+  {
+  	idx = addTimer(table, idx, name, data);
   } else
   {
     console.log(`Unrecognized type: ${data.type}`);
@@ -915,6 +986,45 @@ function counter(element, step)
   } else {
     ctr.value = 0;
   }
+}
+
+function resetTimer(event)
+{
+  let timerID = event.firstChild;
+  let inp = document.getElementById("input" + getIdBase(timerID.id))
+  inp.value = 0
+}
+
+function timer(event)
+{
+  let timerID = event.firstChild;
+  let tId = getIdBase(timerID.id)
+  timerStatus = document.getElementById("status" + tId);
+  startButton = document.getElementById("start" + tId);
+  intervalIdField = document.getElementById("intervalId" + tId);
+  var statusValue = timerStatus.value;
+  var intervalId = intervalIdField.value;
+  if (statusValue == 'stopped') {
+  	timerStatus.value = 'started';
+  	startButton.innerHTML = "Stop";
+  	
+  	var intId = setInterval(() => {
+      if (document.getElementById("status" + tId).value == 'started') {
+        inp = document.getElementById("input" + tId);
+        var t = parseFloat(inp.value);
+        t += 0.1;
+        tTrunc = t.toFixed(1)
+        inp.value = tTrunc;
+      }
+    }, 100);
+	intervalIdField.value = intId;
+  } else {
+  	timerStatus.value = 'stopped';
+  	startButton.innerHTML = "Start";
+  	
+  	clearInterval(intervalId);
+  }
+  drawFields();
 }
 
 function undo(event)
