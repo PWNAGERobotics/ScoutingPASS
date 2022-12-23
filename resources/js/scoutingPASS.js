@@ -64,8 +64,8 @@ function addTimer(table, idx, name, data){
   button2.innerHTML += "Reset"
   cell2.appendChild(button2);
 
-  row = table.insertRow(idx);
   idx += 1
+  row = table.insertRow(idx);
   row.setAttribute("style", "display:none");
   cell = row.insertCell(0);
   cell.setAttribute("colspan", 2);
@@ -143,7 +143,6 @@ function addCounter(table, idx, name, data){
 
 function addFieldImage(table, idx, name, data) {
   var row = table.insertRow(idx);
-  idx += 1
   var cell = row.insertCell(0);
   cell.setAttribute("colspan", 2);
   cell.setAttribute("style", "text-align: center;");
@@ -152,8 +151,8 @@ function addFieldImage(table, idx, name, data) {
     cell.setAttribute("title", data.tooltip);
   }
 	
+  idx += 1
   row = table.insertRow(idx); 
-  idx += 1;
   cell = row.insertCell(0);
   cell.setAttribute("colspan", 2);
   cell.setAttribute("style", "text-align: center;");
@@ -175,8 +174,8 @@ function addFieldImage(table, idx, name, data) {
   flipButton.setAttribute("margin-left", '8px');
   cell.appendChild(flipButton);
 
-  row = table.insertRow(idx);
   idx += 1;
+  row = table.insertRow(idx);
   cell = row.insertCell(0);
   cell.setAttribute("colspan", 2);
   cell.setAttribute("style", "text-align: center;");
@@ -188,8 +187,8 @@ function addFieldImage(table, idx, name, data) {
   canvas.innerHTML = "No canvas support";
   cell.appendChild(canvas);
 
+  idx += 1;
   row = table.insertRow(idx);
-  idx += 1
   row.setAttribute("style", "display:none");
   cell = row.insertCell(0);
   cell.setAttribute("colspan", 2);
@@ -204,9 +203,9 @@ function addFieldImage(table, idx, name, data) {
   inp.setAttribute("value", "");
   cell.appendChild(inp);
 
+  idx += 1
   row = table.insertRow(idx);
   row.setAttribute("style", "display:none");
-  idx += 1
   //row.setAttribute("style", "display:none");
   cell = row.insertCell(0);
   cell.setAttribute("colspan", 2);
@@ -218,6 +217,8 @@ function addFieldImage(table, idx, name, data) {
   //img.setAttribute("onclick", "onFieldClick(event)");
   img.setAttribute("hidden", "");
   cell.appendChild(img);
+  
+  return idx + 1
 }
 
 function addText(table, idx, name, data) {
@@ -315,12 +316,12 @@ function addNumber(table, idx, name, data) {
   }
 
   if (data.type == 'team') {
-    row = table.insertRow(idx+1);
+  	idx += 1
+    row = table.insertRow(idx);
     cell1 = row.insertCell(0);
     cell1.setAttribute("id", "teamname-label");
     cell1.setAttribute("colspan", 2);
     cell1.setAttribute("style", "text-align: center;");
-    return idx+2;
   }
 
   return idx+1;
