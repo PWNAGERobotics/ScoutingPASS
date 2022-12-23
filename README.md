@@ -188,3 +188,4 @@ Scouting PASS continues to evolve.   Here are the changes for the 2023 Season:
 * JSON simplification - The JSON structure has been simplified to make it a little easier to maintain.  The previous years configuration files have been updated to use the new structure.
 * Add "Flip Image" button to the Field Image component
 * Add "tooltip" option for components - Tooltips will appear when hovering over the name of the component
+* Bug Fix: Two field image elements on the same page will now render correctly
