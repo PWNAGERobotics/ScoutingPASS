@@ -10,6 +10,7 @@ document.addEventListener("touchend", moveTouch, false);
 var initialX = null;
 var xThreshold = 0.3;
 var slide = 0;
+var enableGoogleSheets = false;
 
 // Options
 var options = {
@@ -498,6 +499,13 @@ function configure(){
     var elements = document.getElementsByClassName("page_title");
     for(var i = 0; i < elements.length; i++) {
         elements[i].innerHTML = mydata.page_title;
+    }
+  }
+
+  if (mydata.hasOwnProperty('enable_google_sheets')) {
+    var egs = document.getElementByClassName("enable_google_sheets");
+    if ((egs == 'true') || (egs == 'True') || (egs == 'TRUE')) {
+      enableGoogleSheets = true;
     }
   }
 
@@ -1063,5 +1071,8 @@ window.onload = function(){
     getTeams(ec);
     getSchedule(ec);
     this.drawFields();
+    if (enableGoogleSheets) {
+      setUpGoogleSheets();
+    }
   }
 };
