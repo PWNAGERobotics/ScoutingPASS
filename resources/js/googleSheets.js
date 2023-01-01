@@ -7,7 +7,10 @@ function setUpGoogleSheets() {
     submitButton.disabled = true
     e.preventDefault()
     let requestBody = new FormData(form)
-    fetch(scriptURL, { method: 'POST', body: requestBody})
+    fetch(scriptURL, { method: 'POST',
+                       headers: { 'Access-Control-Allow-Origin': '*' },
+                       body: requestBody
+                      })
       .then(response => {
         alert('Success!', response)
         submitButton.disabled = false
