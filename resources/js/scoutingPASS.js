@@ -107,8 +107,8 @@ function addCounter(table, idx, name, data){
   }
   cell2.classList.add("field");
 
-  var button1 = document.createElement("button");
-  button1.setAttribute("type", "checkbox");
+  var button1 = document.createElement("input");
+  button1.setAttribute("type", "button");
   button1.setAttribute("onclick", "counter(this.parentElement, -1)");
   button1.innerHTML += "-"
   cell2.appendChild(button1);
@@ -125,8 +125,8 @@ function addCounter(table, idx, name, data){
   inp.setAttribute("maxLength", 2);
   cell2.appendChild(inp);
 
-  var button2 = document.createElement("button");
-  button2.setAttribute("type", "checkbox");
+  var button2 = document.createElement("input");
+  button2.setAttribute("type", "button");
   button2.setAttribute("onclick", "counter(this.parentElement, 1)");
   button2.innerHTML += "+";
   cell2.appendChild(button2);
