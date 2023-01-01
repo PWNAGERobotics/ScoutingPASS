@@ -158,18 +158,18 @@ function addFieldImage(table, idx, name, data) {
   cell.setAttribute("colspan", 2);
   cell.setAttribute("style", "text-align: center;");
   // Undo button
-  var undoButton = document.createElement("button");
-  undoButton.setAttribute("type", "checkbox");
+  var undoButton = document.createElement("input");
+  undoButton.setAttribute("type", "button");
   undoButton.setAttribute("onclick", "undo(this.parentElement)");
-  undoButton.innerHTML += "Undo";
+  undoButton.setAttribute("value", "Undo");
   undoButton.setAttribute("id", "undo_"+data.code);
   undoButton.setAttribute("class", "undoButton");
   cell.appendChild(undoButton);
   // Flip button
-  var flipButton = document.createElement("button");
-  flipButton.setAttribute("type", "checkbox");
+  var flipButton = document.createElement("input");
+  flipButton.setAttribute("type", "button");
   flipButton.setAttribute("onclick", "flip(this.parentElement)");
-  flipButton.innerHTML += "Flip Image";
+  flipButton.setAttribute("value", "Flip Image");
   flipButton.setAttribute("id", "flip_"+data.code);
   flipButton.setAttribute("class", "flipButton");
   flipButton.setAttribute("margin-left", '8px');
