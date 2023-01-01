@@ -504,8 +504,8 @@ function configure(){
 
   if (mydata.hasOwnProperty('enable_google_sheets')) {
     if ((mydata.enable_google_sheets == 'true') || 
-	(mydata.enable_google_sheets == 'True') ||
-	(mydata.enable_google_sheets == 'TRUE')) {
+      	(mydata.enable_google_sheets == 'True') ||
+	      (mydata.enable_google_sheets == 'TRUE')) {
       enableGoogleSheets = true;
     }
   }
