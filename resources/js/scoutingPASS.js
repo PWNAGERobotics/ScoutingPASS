@@ -503,7 +503,7 @@ function configure(){
   }
 
   if (mydata.hasOwnProperty('enable_google_sheets')) {
-    var egs = document.getElementByClassName("enable_google_sheets");
+    var egs = document.getElementsByClassName("enable_google_sheets");
     if ((egs == 'true') || (egs == 'True') || (egs == 'TRUE')) {
       enableGoogleSheets = true;
     }
