@@ -7,6 +7,9 @@ function setUpGoogleSheets() {
     submitButton.disabled = true
     e.preventDefault()
     let requestBody = new FormData(form)
+    console.log(requestBody);
+    console.log("------");
+    console.log(form);
     fetch(scriptURL, { method: 'POST',
                        mode: 'no-cors',
                        body: requestBody
