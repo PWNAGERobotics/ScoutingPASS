@@ -8,7 +8,7 @@ function setUpGoogleSheets() {
     e.preventDefault()
     let requestBody = new FormData(form)
     fetch(scriptURL, { method: 'POST',
-                       headers: { 'Access-Control-Allow-Origin': '*' },
+                       mode: 'no-cors',
                        body: requestBody
                       })
       .then(response => {
