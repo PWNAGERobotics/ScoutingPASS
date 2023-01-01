@@ -46,7 +46,7 @@
       btn.innerHTML = "Loading..."
 
       console.log(form)
-      fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+      fetch(scriptURL, { method: 'POST', mode: 'no-cors', body: new FormData(form) })
         .then(response => { 
               btn.disabled = false
       btn.innerHTML = "Submit"
