@@ -503,8 +503,9 @@ function configure(){
   }
 
   if (mydata.hasOwnProperty('enable_google_sheets')) {
-    var egs = document.getElementsByClassName("enable_google_sheets");
-    if ((egs == 'true') || (egs == 'True') || (egs == 'TRUE')) {
+    if ((mydata.enable_google_sheets == 'true') || 
+      	(mydata.enable_google_sheets == 'True') ||
+	      (mydata.enable_google_sheets == 'TRUE')) {
       enableGoogleSheets = true;
     }
   }
@@ -548,7 +549,11 @@ function configure(){
   pmc.forEach(element => {
     idx = addElement(pmt, idx, element);
   });
-	
+
+  if (!enableGoogleSheets) {
+    document.getElementById("submit").style.display = "none";
+  }
+
   return 0
 }
 
