@@ -1071,5 +1071,8 @@ window.onload = function(){
     getTeams(ec);
     getSchedule(ec);
     this.drawFields();
+    if (enableGoogleSheets) {
+      setUpGoogleSheets();
+    }
   }
 };
