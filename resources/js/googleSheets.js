@@ -10,6 +10,9 @@ function setUpGoogleSheets() {
 
       console.log(form)
       let fd = new FormData(form)
+      for (const [key, value] of formData) {
+        console.log(`${key}: ${value}\n`);
+      }
       console.log(fd.values())
       console.log(fd.keys())
       console.log(fd.getAll())
