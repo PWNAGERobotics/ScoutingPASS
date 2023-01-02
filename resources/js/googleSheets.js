@@ -11,15 +11,9 @@ function setUpGoogleSheets() {
       console.log(form)
       let fd = new FormData(form)
       for (const [key, value] of fd) {
-        console.log("Key = ")
-        console.log(key)
-        console.log("Value = ")
-        console.log(value)
         console.log(`${key}: ${value}\n`);
       }
-      console.log(fd.values())
-      console.log(fd.keys())
-      console.log(fd.getAll())
+
       fetch(scriptURL, { method: 'POST', mode: 'no-cors', body: new FormData(form) })
         .then(response => { 
               alert('Success!', response) })
