@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML to Sheets</title>
-       <script src="https://cdn.tailwindcss.com" defer></script>
+    		<script src="resources/js/googleSheets.js"></script>
 </head>
 <body>
         <div class="flex items-center h-screen w-full bg-orange-100">
@@ -36,25 +36,26 @@
 </body>
 
 <script>
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbxSyy853BpmXoKLv2VOVmS8PJ4yqC_XIuQI-aeFFXPRxAuCmEbaF5N27uu-hcPweMC-/exec'
-    const form = document.querySelector('#form')
-    const btn = document.querySelector('#submit')
+    setUpGoogleSheets()
+//     const scriptURL = 'https://script.google.com/macros/s/AKfycbxSyy853BpmXoKLv2VOVmS8PJ4yqC_XIuQI-aeFFXPRxAuCmEbaF5N27uu-hcPweMC-/exec'
+//     const form = document.querySelector('#form')
+//     const btn = document.querySelector('#submit')
 
-    form.addEventListener('submit', e => {
-      e.preventDefault()
-      btn.disabled = true
-      btn.innerHTML = "Loading..."
+//     form.addEventListener('submit', e => {
+//       e.preventDefault()
+//       btn.disabled = true
+//       btn.innerHTML = "Loading..."
 
-      console.log(form)
-      fetch(scriptURL, { method: 'POST', mode: 'no-cors', body: new FormData(form) })
-        .then(response => { 
-              btn.disabled = false
-              btn.innerHTML = "Submit"
-              alert('Success!', response) })
-        .catch(error => {
-              btn.disabled = false
-              btn.innerHTML = "Submit"
-              alert('Error!', error.message)})
-    })
+//       console.log(form)
+//       fetch(scriptURL, { method: 'POST', mode: 'no-cors', body: new FormData(form) })
+//         .then(response => { 
+//               btn.disabled = false
+//               btn.innerHTML = "Submit"
+//               alert('Success!', response) })
+//         .catch(error => {
+//               btn.disabled = false
+//               btn.innerHTML = "Submit"
+//               alert('Error!', error.message)})
+//     })
 </script> 
 </html>
