@@ -9,7 +9,10 @@ function setUpGoogleSheets() {
       btn.innerHTML = "Loading..."
 
       console.log(form)
-      console.log(new FormData(form))
+      let fd = new FormData(form)
+      console.log(fd.values())
+      console.log(fd.keys())
+      console.log(fd.getAll())
       fetch(scriptURL, { method: 'POST', mode: 'no-cors', body: new FormData(form) })
         .then(response => { 
               alert('Success!', response) })
