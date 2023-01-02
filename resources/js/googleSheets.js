@@ -2,9 +2,6 @@ function setUpGoogleSheets() {
     const scriptURL = 'https://script.google.com/macros/s/AKfycbxSyy853BpmXoKLv2VOVmS8PJ4yqC_XIuQI-aeFFXPRxAuCmEbaF5N27uu-hcPweMC-/exec'
     const form = document.querySelector('#scoutingForm')
     const btn = document.querySelector('#submit')
-
-    console.log("form = ");
-    console.log(form);
  
     form.addEventListener('submit', e => {
       e.preventDefault()
@@ -12,6 +9,7 @@ function setUpGoogleSheets() {
       btn.innerHTML = "Loading..."
 
       console.log(form)
+      console.log(new FormData(form))
       fetch(scriptURL, { method: 'POST', mode: 'no-cors', body: new FormData(form) })
         .then(response => { 
               alert('Success!', response) })
