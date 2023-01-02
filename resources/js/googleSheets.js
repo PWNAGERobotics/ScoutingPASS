@@ -3,6 +3,9 @@ function setUpGoogleSheets() {
     const form = document.querySelector('#scoutingForm')
     const btn = document.querySelector('#submit')
 
+    console.log("form = ");
+    console.log(form);
+ 
     form.addEventListener('submit', e => {
       e.preventDefault()
       btn.disabled = true
