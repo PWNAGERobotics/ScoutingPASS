@@ -12,7 +12,8 @@
       <div class="w-full bg-white rounded shadow-lg p-8 m-4 md:max-w-sm md:mx-auto">
         <h1 class="block w-full text-center text-grey-darkest mb-6">Feedback</h1>
 
-        <form class="mb-4 flex flex-wrap justify-between" id="form" method="POST" action="https://script.google.com/macros/s/AKfycbxSyy853BpmXoKLv2VOVmS8PJ4yqC_XIuQI-aeFFXPRxAuCmEbaF5N27uu-hcPweMC-/exec">
+        <!--form class="mb-4 flex flex-wrap justify-between" id="form" method="POST" action="https://script.google.com/macros/s/AKfycbxSyy853BpmXoKLv2VOVmS8PJ4yqC_XIuQI-aeFFXPRxAuCmEbaF5N27uu-hcPweMC-/exec"-->
+        <form class="mb-4 flex flex-wrap justify-between" id="form">
   
        
           <div class="flex flex-col w-full mb-4">
@@ -35,26 +36,25 @@
 </body>
 
 <script>
-//     const scriptURL = 'https://script.google.com/macros/s/AKfycbxSyy853BpmXoKLv2VOVmS8PJ4yqC_XIuQI-aeFFXPRxAuCmEbaF5N27uu-hcPweMC-/exec'
-//     const form = document.querySelector('#form')
-//     const btn = document.querySelector('#submit')
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxSyy853BpmXoKLv2VOVmS8PJ4yqC_XIuQI-aeFFXPRxAuCmEbaF5N27uu-hcPweMC-/exec'
+    const form = document.querySelector('#form')
+    const btn = document.querySelector('#submit')
 
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      btn.disabled = true
+      btn.innerHTML = "Loading..."
 
-//     form.addEventListener('submit', e => {
-//       e.preventDefault()
-//       btn.disabled = true
-//       btn.innerHTML = "Loading..."
-
-//       console.log(form)
-//       fetch(scriptURL, { method: 'POST', mode: 'no-cors', body: new FormData(form) })
-//         .then(response => { 
-//               btn.disabled = false
-//       btn.innerHTML = "Submit"
-//             alert('Success!', response) })
-//         .catch(error => {
-//                      btn.disabled = false
-//       btn.innerHTML = "Submit"
-//             alert('Error!', error.message)})
-//     })
-</script>
+      console.log(form)
+      fetch(scriptURL, { method: 'POST', mode: 'no-cors', body: new FormData(form) })
+        .then(response => { 
+              btn.disabled = false
+              btn.innerHTML = "Submit"
+              alert('Success!', response) })
+        .catch(error => {
+              btn.disabled = false
+              btn.innerHTML = "Submit"
+              alert('Error!', error.message)})
+    })
+</script> 
 </html>
