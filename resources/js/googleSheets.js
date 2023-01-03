@@ -1,6 +1,4 @@
 function setUpGoogleSheets() {
-  const form = document.querySelector("#scoutingForm")
-  const submitButton = document.querySelector("#submit")
     const scriptURL = '<SCRIPT URL>'
     const form = document.querySelector('#scoutingForm')
     const btn = document.querySelector('#submit')
@@ -26,3 +24,4 @@ function setUpGoogleSheets() {
       btn.innerHTML = "Send to Google Sheets"
     })
 }
+
