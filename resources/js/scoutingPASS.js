@@ -703,6 +703,7 @@ function getData(useStr) {
 	inputs = document.querySelectorAll("[id*='input_']");
 	for (e of inputs) {
 		code = e.id.substring(6)
+		name = e.name
 		radio = code.indexOf("_")
 		if (radio > -1) {
 			if (e.checked) {
@@ -716,7 +717,7 @@ function getData(useStr) {
 				if (useStr) {
 					str=str+code.substr(0,radio)+'='+e.value
 				} else {
-					fd.append(code.substr(0,radio), e.value)
+					fd.append(name, e.value)
 				}
 				document.getElementById("display_"+code.substr(0, radio)).value = e.value
 			}
@@ -731,20 +732,20 @@ function getData(useStr) {
 					if (useStr) {
 						str=str+code+'=Y'
 					} else {
-						fd.append(code, 'Y')
+						fd.append(name, 'Y')
 					}
 				} else {
 					if (useStr) {
 						str=str+code+'=N'
 					} else {
-						fd.append(code, 'N')
+						fd.append(name, 'N')
 					}
 				}
 			} else {
 				if (useStr) {
 					str=str+code+'='+e.value.split(';').join('-')
 				} else {
-					fd.append(code, e.value.split(';').join('-'))
+					fd.append(name, e.value.split(';').join('-'))
 				}
 			}
 		}
