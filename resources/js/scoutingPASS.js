@@ -985,11 +985,11 @@ function updateMatchStart(event){
 		 (!teams)) {
 		return;
 	}
-	if(event.target.name == "r"){
+	if(event.target.id.startsWith("input_r")) {
 		document.getElementById("input_t").value = getCurrentTeamNumberFromRobot().replace("frc", "");
 		onTeamnameChange();
 	}
-	if(event.target.name == "m"){
+	if(event.target.id == "input_m") {
 		if(getRobot() != "" && typeof getRobot()){
 			document.getElementById("input_t").value = getCurrentTeamNumberFromRobot().replace("frc", "");
 			onTeamnameChange();
