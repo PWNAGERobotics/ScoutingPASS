@@ -50,7 +50,11 @@ function addTimer(table, idx, name, data){
   inp.classList.add("timer");
   inp.setAttribute("id", "input_"+data.code);
   inp.setAttribute("type", "text");
-  inp.setAttribute("name", data.code);
+  if (enableGoogleSheets) {
+    inp.setAttribute("name", data.gname);
+  } else {
+    inp.setAttribute("name", data.code);
+  }
   inp.setAttribute("style", "background-color: black; color: white;border: none; text-align: center;");
   inp.setAttribute("disabled", "");
   inp.setAttribute("value", 0);
@@ -117,7 +121,11 @@ function addCounter(table, idx, name, data){
   inp.classList.add("counter");
   inp.setAttribute("id", "input_"+data.code);
   inp.setAttribute("type", "text");
-  inp.setAttribute("name", data.code);
+  if (enableGoogleSheets) {
+    inp.setAttribute("name", data.gname);
+  } else {
+    inp.setAttribute("name", data.code);
+  }
   inp.setAttribute("style", "background-color: black; color: white;border: none; text-align: center;");
   inp.setAttribute("disabled", "");
   inp.setAttribute("value", 0);
@@ -200,6 +208,9 @@ function addFieldImage(table, idx, name, data) {
   cell.appendChild(inp);
   inp = document.createElement('input');
   inp.setAttribute("hidden", "");
+  if (enableGoogleSheets) {
+    inp.setAttribute("name", data.gname);
+  }
   inp.setAttribute("id", "input_"+data.code);
   inp.setAttribute("value", "");
   cell.appendChild(inp);
@@ -239,7 +250,11 @@ function addText(table, idx, name, data) {
   var inp = document.createElement("input");
   inp.setAttribute("id", "input_"+data.code);
   inp.setAttribute("type", "text");
-  inp.setAttribute("name", data.code);
+  if (enableGoogleSheets) {
+    inp.setAttribute("name", data.gname);
+  } else {
+    inp.setAttribute("name", data.code);
+  }
   if (data.hasOwnProperty('size')) {
     inp.setAttribute("size", data.size);
   }
@@ -285,12 +300,16 @@ function addNumber(table, idx, name, data) {
   var inp = document.createElement("input");
   inp.setAttribute("id", "input_"+data.code);
   inp.setAttribute("type", "number");
-  inp.setAttribute("name", data.code);
-	if ((data.type == 'team') ||
-	 	  (data.type == 'match'))
-	{
-		inp.setAttribute("onchange", "updateMatchStart(event)");
-	}
+  if (enableGoogleSheets) {
+    inp.setAttribute("name", data.gname);
+  } else {
+    inp.setAttribute("name", data.code);
+  }
+  if ((data.type == 'team') ||
+    (data.type == 'match'))
+  {
+    inp.setAttribute("onchange", "updateMatchStart(event)");
+  }
   if (data.hasOwnProperty('min')) {
     inp.setAttribute("min", data.min);
   }
@@ -358,8 +377,12 @@ function addRadio(table, idx, name, data) {
       var inp = document.createElement("input");
       inp.setAttribute("id", "input_"+data.code+"_"+c);
       inp.setAttribute("type", "radio");
-      inp.setAttribute("name", data.code);
-			inp.setAttribute("value", c);
+      if (enableGoogleSheets) {
+        inp.setAttribute("name", data.gname);
+      } else {
+        inp.setAttribute("name", data.code);
+      }
+      inp.setAttribute("value", c);
       if (checked == c) {
         inp.setAttribute("checked", "");
       }
@@ -401,7 +424,11 @@ function addCheckbox(table, idx, name, data){
   var inp = document.createElement("input");
   inp.setAttribute("id", "input_"+data.code);
   inp.setAttribute("type", "checkbox");
-  inp.setAttribute("name", data.code);
+  if (enableGoogleSheets) {
+    inp.setAttribute("name", data.gname);
+  } else {
+    inp.setAttribute("name", data.code);
+  }
   cell2.appendChild(inp);
 
   if (data.type == 'bool') {
