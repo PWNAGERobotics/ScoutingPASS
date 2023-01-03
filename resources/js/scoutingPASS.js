@@ -744,7 +744,7 @@ function getData(useStr) {
 				if (useStr) {
 					str=str+code+'='+e.value.split(';').join('-')
 				} else {
-					fd.append(code, e.value.split(';').join('-')
+					fd.append(code, e.value.split(';').join('-'))
 				}
 			}
 		}
