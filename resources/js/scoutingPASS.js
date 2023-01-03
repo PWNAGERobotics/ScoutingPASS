@@ -695,8 +695,9 @@ function validateData() {
 	return ret
 }
 
-function getData() {
+function getData(useStr) {
 	var str = ''
+	var fd = new FormData()
 	var rep = ''
 	var start = true
 	inputs = document.querySelectorAll("[id*='input_']");
@@ -712,7 +713,11 @@ function getData() {
 				}
 				// str=str+code.substr(0,radio)+'='+code.substr(radio+1)
 				// document.getElementById("display_"+code.substr(0, radio)).value = code.substr(radio+1)
-				str=str+code.substr(0,radio)+'='+e.value
+				if (useStr) {
+					str=str+code.substr(0,radio)+'='+e.value
+				} else {
+					fd.append(code.substr(0,radio), e.value)
+				}
 				document.getElementById("display_"+code.substr(0, radio)).value = e.value
 			}
 		} else {
@@ -723,16 +728,32 @@ function getData() {
 			}
 			if (e.value == "on") {
 				if (e.checked) {
-					str=str+code+'=Y'
+					if (useStr) {
+						str=str+code+'=Y'
+					} else {
+						fd.append(code, 'Y')
+					}
 				} else {
-					str=str+code+'=N'
+					if (useStr) {
+						str=str+code+'=N'
+					} else {
+						fd.append(code, 'N')
+					}
 				}
 			} else {
-				str=str+code+'='+e.value.split(';').join('-')
+				if (useStr) {
+					str=str+code+'='+e.value.split(';').join('-')
+				} else {
+					fd.append(code, e.value.split(';').join('-')
+				}
 			}
 		}
 	}
-	return str
+	if (useStr) {
+		return str
+	} else {
+		return fd
+	}
 }
 
 function updateQRHeader() {
@@ -756,7 +777,7 @@ function qr_regenerate() {
 	}
 
 	// Get data
-	data = getData()
+	data = getData(true)
 
   // Regenerate QR Code
 	qr.makeCode(data)
