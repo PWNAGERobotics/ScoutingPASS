@@ -983,8 +983,11 @@ function getCurrentMatch(){
 function updateMatchStart(event){
 	if((getCurrentMatch() == "") ||
 		 (!teams)) {
+		console.log("No match or team data.");
 		return;
 	}
+	console.log("event = ");
+	console.log(event);
 	if(event.target.name == "r"){
 		document.getElementById("input_t").value = getCurrentTeamNumberFromRobot().replace("frc", "");
 		onTeamnameChange();
