@@ -5,7 +5,7 @@ var config_data = `
   "enable_google_sheets": "true",
   "prematch": [
     { "name": "Scouter Initials",
-      "gname": "scouter",
+      "gsCol": "scouter",
       "code": "s",
       "type": "scouter",
       "size": 5,
@@ -13,7 +13,7 @@ var config_data = `
       "required": "true"
     },
     { "name": "Event",
-      "gname": "event",
+      "gsCol": "event",
       "code": "e",
       "type": "event",
       "defaultValue": "2022ilpe",
@@ -21,7 +21,7 @@ var config_data = `
       "disabled": "true"
     },
     { "name": "Match Level",
-      "gname": "match",
+      "gsCol": "match",
       "code": "l",
       "type": "level",
       "choices": {
@@ -35,7 +35,7 @@ var config_data = `
       "required": "true"
     },
     { "name": "Match #",
-      "gname": "matchNum",
+      "gsCol": "matchNum",
       "code": "m",
       "type": "match",
       "min": 1,
@@ -43,7 +43,7 @@ var config_data = `
       "required": "true"
     },
     { "name": "Robot",
-      "gname": "robot",
+      "gsCol": "robot",
       "code": "r",
       "type": "robot",
       "choices": {
@@ -57,14 +57,14 @@ var config_data = `
       "required":"true"
     },
     { "name": "Team #",
-      "gname": "teamNum",
+      "gsCol": "teamNum",
       "code": "t",
       "type": "team",
       "min": 1,
       "max": 99999
     },
     { "name": "Auto Start Position",
-      "gname": "autoStartPos",
+      "gsCol": "autoStartPos",
       "code": "as",
       "type": "field_image",
       "filename": "2022/field_image.png"
@@ -72,49 +72,49 @@ var config_data = `
   ],
   "auton": [
     { "name": "Taxied?",
-      "gname": "taxi",
+      "gsCol": "taxi",
       "code": "at",
       "type": "bool"
     },
     { "name": "Upper Cargo Scored",
-      "gname": "autoUpper",
+      "gsCol": "autoUpper",
       "code": "au",
       "type": "counter"
     },
     { "name": "Lower Cargo Scored",
-      "gname": "autoLower",
+      "gsCol": "autoLower",
       "code": "al",
       "type": "counter"
     },
     { "name": "Picked up more cargo?",
-      "gname": "autoPickUp",
+      "gsCol": "autoPickUp",
       "code": "ac",
       "type": "bool"
     }
   ],
   "teleop": [
     { "name": "Upper Cargo Scored",
-      "gname": "upper",
+      "gsCol": "upper",
       "code": "tu",
       "type": "counter"
     },
     { "name": "Lower Cargo Scored",
-      "gname": "lower",
+      "gsCol": "lower",
       "code": "tl",
       "type": "counter"
     },
     { "name": "Was Defended",
-      "gname": "defended",
+      "gsCol": "defended",
       "code": "wd",
       "type": "bool"
     },
     { "name": "Wallbot?",
-      "gname": "wallbot",
+      "gsCol": "wallbot",
       "code": "wbt",
       "type": "bool"
     },
     { "name": "Cargo Intake From",
-      "gname": "cargoIntake",
+      "gsCol": "cargoIntake",
       "code": "cif",
       "type": "radio",
       "choices": {
@@ -126,7 +126,7 @@ var config_data = `
       "defaultValue": "x"
     },
     { "name": "Shooting Spot",
-      "gname": "shootingSpots",
+      "gsCol": "shootingSpots",
       "code": "ss",
       "type": "field_image",
       "filename": "2022/field_image.png"
@@ -134,7 +134,7 @@ var config_data = `
   ],
   "endgame": [
     { "name": "Climb",
-      "gname": "climb",
+      "gsCol": "climb",
       "code": "c",
       "type":"radio",
       "choices": {
@@ -148,19 +148,19 @@ var config_data = `
       "defaultValue": "x"
     },
     { "name": "Started Climb before Endgame",
-      "gname": "climbBeforeEndgame",
+      "gsCol": "climbBeforeEndgame",
       "code": "be",
       "type": "bool"
     },
     { "name": "# of alliance bots climbed",
-      "gname": "numClimbed",
+      "gsCol": "numClimbed",
       "code": "cn",
       "type": "counter"
     }
   ],
   "postmatch": [
     { "name": "Driver Skill",
-      "gname": "driverSkill",
+      "gsCol": "driverSkill",
       "code": "ds",
       "type": "radio",
       "choices": {
@@ -172,7 +172,7 @@ var config_data = `
       "defaultValue": "x"
     },
     { "name": "Defense Rating",
-      "gname": "defenseRating",
+      "gsCol": "defenseRating",
       "code": "dr",
       "type": "radio",
       "choices": {
@@ -185,18 +185,18 @@ var config_data = `
       "defaultValue": "x"
     },
     { "name": "Enemy Balls",
-      "gname": "heldBalls",
+      "gsCol": "heldBalls",
       "tooltip": "Strategically held enemy cargo during the match",
       "code": "hc",
       "type": "bool"
     },
     { "name": "Swerve drive?",
-      "gname": "swerve",
+      "gsCol": "swerve",
       "code": "sd",
       "type": "bool"
     },
     { "name": "Speed Rating",
-      "gname": "speedRating",
+      "gsCol": "speedRating",
       "code": "sr",
       "type": "radio",
       "choices": {
@@ -209,25 +209,25 @@ var config_data = `
       "defaultValue":"3"
     },
     { "name": "Died/Tipped",
-      "gname": "died",
+      "gsCol": "died",
       "code": "d",
       "type": "bool"
     },
     { "name": "Make good alliance partner?",
-      "gname": "goodPartner",
+      "gsCol": "goodPartner",
       "tooltip": "Would you want this robot on your alliance in eliminations?",
       "code": "all",
       "type": "bool"
     },
     { "name": "Comments",
-      "gname": "comments",
+      "gsCol": "comments",
       "code": "co",
       "type": "text",
       "size": 15,
       "maxSize": 50
     },
     { "name": "Confidence Rating",
-      "gname": "confidenceRating",
+      "gsCol": "confidenceRating",
       "code": "cnf",
       "type": "radio",
       "choices": {
