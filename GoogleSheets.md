@@ -1,15 +1,16 @@
 <div id="top"></div>
 
-# Scouting P.A.S.S. Google Sheets
+# Scouting P.A.S.S. Google Sheets <BETA>
 
-#### Now supporting data storage in Google Sheets!
+## Now supporting data storage in Google Sheets!
+### **^^^^^ This feature is in BETA looking for teams to test it ^^^^^**
+
 
 <!-- TABLE OF CONTENTS -->
 <details>
   <summary>Table of Contents</summary>
   <ol>
     <li><a href="#disclaimer">Disclaimer</a></li>
-    <li><a href="#features">Features</a></li>
     <li><a href="#description">Description</a></li>
     <li><a href="#getting-started">Set Up</a></li>
   </ol>
