@@ -726,8 +726,6 @@ function getData(useStr) {
 	  checkedChar = '1';
 	  uncheckedChar = '0';
 	}
-	console.log("checked char = "+checkedChar);
-	console.log("unchecked char = "+uncheckedChar);
 	inputs = document.querySelectorAll("[id*='input_']");
 	for (e of inputs) {
 		code = e.id.substring(6)
