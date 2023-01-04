@@ -546,6 +546,7 @@ function configure(){
     if ((mydata.checkboxAs == 'YN') ||
 	(mydata.checkboxAs == 'TF') ||
 	(mydata.checkboxAs == '10')) {
+      console.log("Setting checkboxAs to "+mydata.checkboxAs);
       checkboxAs = mydata.checkboxAs;
     } else {
       console.log("unrecognized checkboxAs setting.  Defaulting to YN.")
