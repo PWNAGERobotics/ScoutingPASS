@@ -11,6 +11,7 @@ var initialX = null;
 var xThreshold = 0.3;
 var slide = 0;
 var enableGoogleSheets = false;
+var checkboxAs = 'YN';
 
 // Options
 var options = {
@@ -537,6 +538,21 @@ function configure(){
     }
   }
 
+  if (mydata.hasOwnProperty('checkboxAs')) {
+    // Supported modes
+    // YN - Y or N
+    // TF - T or F
+    // 10 - 1 or 0
+    if ((mydata.checkboxAs == 'YN') ||
+	(mydata.checkboxAs == 'TF') ||
+	(mydata.checkboxAs == '10')) {
+      checkboxAs = mydata.checkboxAs;
+    } else {
+      console.log("unrecognized checkboxAs setting.  Defaulting to YN.")
+      checkboxAs = 'YN';
+    }
+  }
+
   // Configure prematch screen
   var pmc = mydata.prematch;
   var pmt = document.getElementById("prematch_table");
@@ -700,6 +716,15 @@ function getData(useStr) {
 	var fd = new FormData()
 	var rep = ''
 	var start = true
+	var checkedChar = 'Y'
+	var uncheckedChar = 'N'
+	if (checkboxAs == 'TF') {
+	  checkedChar = 'T';
+	  uncheckedChar = 'F';
+	} else if (checkboxAs == '10') {
+	  checkedChar = '1';
+	  uncheckedChar = '0';
+	}
 	inputs = document.querySelectorAll("[id*='input_']");
 	for (e of inputs) {
 		code = e.id.substring(6)
