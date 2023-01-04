@@ -717,7 +717,7 @@ function getData(useStr) {
 				if (useStr) {
 					str=str+code.substr(0,radio)+'='+e.value
 				} else {
-					fd.append(name, e.value)
+					fd.append(name, ''+e.value)
 				}
 				document.getElementById("display_"+code.substr(0, radio)).value = e.value
 			}
