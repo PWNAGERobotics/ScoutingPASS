@@ -2,7 +2,7 @@ var config_data = `
 {
   "title": "Scouting PASS 2022",
   "page_title": "Rapid React",
-  "checkboxAs": "YN",
+  "checkboxAs": "TF",
   "prematch": [
     { "name": "Scouter Initials",
       "code": "s",
