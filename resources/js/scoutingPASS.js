@@ -756,15 +756,15 @@ function getData(useStr) {
 			if (e.value == "on") {
 				if (e.checked) {
 					if (useStr) {
-						str=str+code+'=Y'
+						str=str+code+'='+checkedChar
 					} else {
-						fd.append(name, 'Y')
+						fd.append(name, checkedChar)
 					}
 				} else {
 					if (useStr) {
-						str=str+code+'=N'
+						str=str+code+'='+uncheckedChar
 					} else {
-						fd.append(name, 'N')
+						fd.append(name, uncheckedChar)
 					}
 				}
 			} else {
