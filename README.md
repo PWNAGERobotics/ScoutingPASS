@@ -40,7 +40,7 @@
   * Self hosting via GitHub. (See directions below)
 ### **[The Blue Alliance Integration](https://thebluealliance.com)**
   * Pull data for the event from The Blue Alliance.  Team #s, Team Names and Schedules
-### **[Google Sheets Integration](GoogleSheets.md)**
+### **[Google Sheets Integration](GoogleSheets.md) <BETA>**
   * Send data to a Google Sheets spreadsheet
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -191,4 +191,4 @@ Scouting PASS continues to evolve.   Here are the changes for the 2023 Season:
 * Add "Flip Image" button to the Field Image component
 * Add "tooltip" option for components - Tooltips will appear when hovering over the name of the component
 * Bug Fix: Two field image elements on the same page will now render correctly
-* Google Sheets data export (See the [Google Sheets](GoogleSheets.md) page for more details)
+* Google Sheets data export <BETA> (See the [Google Sheets](GoogleSheets.md) page for more details)
