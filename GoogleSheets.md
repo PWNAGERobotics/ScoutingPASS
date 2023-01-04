@@ -149,7 +149,9 @@ There is an extensive set-up process described in following section.  Follow the
             },
 ```
     * The scouter initials will be put in the column with the header "scouter"
-    * Add that gsCol tag to all your elements to map that element to a header in your Google Sheets spreadsheet.
+    * Add that gsCol tag to all your elements to map that element to a header in your Google Sheets spreadsheet
     * If you mispell it or omit it, it will not populate in your spreadsheet
+  
+## See 2022/RR_GS_config.js as an example of a configuration file that uses Google Sheets.
   
 <p align="right">(<a href="#top">back to top</a>)</p>
