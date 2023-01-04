@@ -67,6 +67,7 @@ User defined fields can be of several different types:
 * Counter - A counter that can be increased or decreased with a click or touch
 * Radio Buttons - A single choice between several options (Ball pick up: ()Ground ()Loading Bay ()Both ()None)
 * Checkbox - A single on/off or yes/no check box (Exit Start Line?  []Yes if checked)
+* Timer - A time counter to count the number of seconds it takes to do something (How long did it take to climb?)
 * Field Image - Using an image of the field, select positions on the field. (Use to record starting point, or shooting locations)
 
 These should cover most of your scouting team's data collection needs.  PWNAGE's 2020 Infinite Recharge configuration file is included as an example.  The import of the configuration file is in index.html and would need to be updated to import a different configuration file. Only import one configuration file.
@@ -167,7 +168,6 @@ Note: The Auto Start (as) element is special in that it will only keep track of 
 <div id="things-to-add"></div>
 
 ## Things we might want to add someday:
-* Timing Element
 * Pit Scouting
 * More options for processing the QR code
 
