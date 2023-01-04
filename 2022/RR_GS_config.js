@@ -21,7 +21,7 @@ var config_data = `
       "disabled": "true"
     },
     { "name": "Match Level",
-      "gsCol": "match",
+      "gsCol": "level",
       "code": "l",
       "type": "level",
       "choices": {
