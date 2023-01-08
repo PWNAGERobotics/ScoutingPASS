@@ -63,13 +63,26 @@ function addTimer(table, idx, name, data){
   inp.setAttribute("maxLength", 5);
   cell2.appendChild(inp);
 
-  var button2 = document.createElement("button");
-  button2.setAttribute("id", "clear_"+data.code);
-  button2.setAttribute("type", "checkbox");
-  button2.setAttribute("onclick", "resetTimer(this.parentElement)");
-  button2.innerHTML += "Reset"
-  cell2.appendChild(button2);
-
+  if (data.type == 'timer') {
+    var button2 = document.createElement("button");
+    button2.setAttribute("id", "clear_"+data.code);
+    button2.setAttribute("type", "checkbox");
+    button2.setAttribute("onclick", "resetTimer(this.parentElement)");
+    button2.innerHTML += "Reset"
+    cell2.appendChild(button2);
+  } else if (data.type == 'cycle') {
+    var button2 = document.createElement("button");
+    button2.setAttribute("id", "cycle_"+data.code);
+    button2.setAttribute("type", "checkbox");
+    button2.setAttribute("onclick", "newCycle(this.parentElement)");
+    button2.innerHTML += "New Cycle"
+    cell2.appendChild(button2);
+    var ct = document.createElement('input');
+    ct.setAttribute("type", "text"); // Change back to hidden?
+    ct.setAttribute("id", "cycletime_"+data.code);
+    ct.setAttribute("value", "");
+    cell2.appendChild(ct);
+  }
   idx += 1
   row = table.insertRow(idx);
   row.setAttribute("style", "display:none");
@@ -495,9 +508,10 @@ function addElement(table, idx, data){
   } else if (data.type == 'counter')
   {
     idx = addCounter(table, idx, name, data);
-  } else if (data.type == 'timer')
+  } else if ((data.type == 'timer') ||
+	     (data.type == 'cycle'))
   {
-  	idx = addTimer(table, idx, name, data);
+    idx = addTimer(table, idx, name, data);
   } else
   {
     console.log(`Unrecognized type: ${data.type}`);
@@ -670,9 +684,7 @@ function getLevel(){
 
 function validateLevel() {
 	if (document.getElementById("input_l_qm").checked ||
-		document.getElementById("input_l_ef").checked ||
-		document.getElementById("input_l_qf").checked ||
-		document.getElementById("input_l_sf").checked ||
+		document.getElementById("input_l_de").checked ||
 		document.getElementById("input_l_f").checked
 	) {
 		return true
@@ -866,7 +878,8 @@ function clearForm() {
 			}
 		} else {
 			if (e.type=="number" || e.type=="text" || e.type=="hidden") {
-				if (e.className == "counter") {
+				if ((e.className == "counter") ||
+				    (e.className == "timer" {
 					e.value = 0
 				} else {
 					e.value = ""
@@ -1072,6 +1085,22 @@ function counter(element, step)
   } else {
     ctr.value = 0;
   }
+}
+
+function newCycle(event)
+{
+  let timerID = event.firstChild;
+  let inp = document.getElementById("input" + getIdBase(timerID.id))
+  let cycleTime = inp.value
+  inp.value = 0
+
+  let target = event.target;
+
+  cycleInput = document.getElementById("cycletime" + getIdBase(target.id));
+
+  var tempValue = Array.from(JSON.parse(cycleInput.value));
+  tempValue.push(cycleTime);
+  cycleInput.value = JSON.stringify(tempValue);
 }
 
 function resetTimer(event)
