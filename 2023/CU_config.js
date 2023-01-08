@@ -180,6 +180,10 @@ var config_data = `
       },
       "defaultValue": "x"
     },
+    { "name": "Links Scored",
+      "code": "ls",
+      "type": "counter"
+    },
     { "name": "Defense Rating",
       "code": "dr",
       "type": "radio",
