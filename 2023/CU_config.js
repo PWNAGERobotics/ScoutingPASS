@@ -101,6 +101,7 @@ var config_data = `
         "a": "Attempted but failed<br>",
         "x": "Not attempted"
       }
+    }
   ],
   "teleop": [
     { "name": "High Cube Scored",
