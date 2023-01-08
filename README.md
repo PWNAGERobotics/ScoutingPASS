@@ -23,6 +23,7 @@
     <li><a href="#faq">FAQ</a></li>
     <li><a href="#things-to-add">Things To Add Someday</a></li>
     <li><a href="#license">License</a></li>
+    <li><a href="#2023-changes">2023 Changes</a></li>
   </ol>
 </details>
 
@@ -39,6 +40,8 @@
   * Self hosting via GitHub. (See directions below)
 ### **[The Blue Alliance Integration](https://thebluealliance.com)**
   * Pull data for the event from The Blue Alliance.  Team #s, Team Names and Schedules
+### **[Google Sheets Integration](GoogleSheets.md) <BETA>**
+  * Send data to a Google Sheets spreadsheet
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 <div id="live-demo"></div>
@@ -55,7 +58,7 @@ Scouting PASS is a web page displayed in a browser.  It consists of 5 "swipeable
 Configuration is as easy as creating a JSON file with the fields that your scouting team wants to track.  Some fields are common to all teams and years.  The basic fields are:
 * Scouter - who is scouting this robot
 * Event - the event that is being scouted
-* Level - The level of competition (Qualifications, Semi-Finals, Finals, etc)
+* Level - The level of competition (Qualifications, Double Elimination, Finals, etc)
 * Match - the match number that is being scouted
 * Robot - Which robot is being scouted (Red-1, Blue-1, etc.)
 * Team # - What team is being scouted
@@ -66,6 +69,7 @@ User defined fields can be of several different types:
 * Counter - A counter that can be increased or decreased with a click or touch
 * Radio Buttons - A single choice between several options (Ball pick up: ()Ground ()Loading Bay ()Both ()None)
 * Checkbox - A single on/off or yes/no check box (Exit Start Line?  []Yes if checked)
+* Timer - A time counter to count the number of seconds it takes to do something (How long did it take to climb?)
 * Field Image - Using an image of the field, select positions on the field. (Use to record starting point, or shooting locations)
 
 These should cover most of your scouting team's data collection needs.  PWNAGE's 2020 Infinite Recharge configuration file is included as an example.  The import of the configuration file is in index.html and would need to be updated to import a different configuration file. Only import one configuration file.
@@ -166,7 +170,6 @@ Note: The Auto Start (as) element is special in that it will only keep track of 
 <div id="things-to-add"></div>
 
 ## Things we might want to add someday:
-* Timing Element
 * Pit Scouting
 * More options for processing the QR code
 
@@ -175,3 +178,21 @@ Note: The Auto Start (as) element is special in that it will only keep track of 
 
 ## License
 Distributed under the GNU GPL v3.0 License. See `LICENSE` for more information.
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+<div id="2023-changes"></div>
+
+## 2023 Updates
+
+Scouting PASS continues to evolve.   Here are the changes for the 2023 Season:
+
+* New Timer component - Start/Stop and Clear Buttons
+* JSON simplification - The JSON structure has been simplified to make it a little easier to maintain.  The previous years configuration files have been updated to use the new structure.
+* Add "Flip Image" button to the Field Image component
+* Add "tooltip" option for components - Tooltips will appear when hovering over the name of the component
+* Bug Fix: Two field image elements on the same page will now render correctly
+* Google Sheets data export <BETA> (See the [Google Sheets](GoogleSheets.md) page for more details)
+* Configurable checkbox values in configuration file.  Defaults to Y/N.  Can set to T/F or 1/0.  See line 5 of 2022/RR_config.js for an example
+    * "YN" - for Y/N output
+    * "TF" - for T/F output
+    * "10" - for 1/0 output

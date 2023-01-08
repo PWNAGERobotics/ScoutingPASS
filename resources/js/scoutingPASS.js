@@ -10,6 +10,8 @@ document.addEventListener("touchend", moveTouch, false);
 var initialX = null;
 var xThreshold = 0.3;
 var slide = 0;
+var enableGoogleSheets = false;
+var checkboxAs = 'YN';
 
 // Options
 var options = {
@@ -23,6 +25,78 @@ var options = {
 //var requiredFields = ["e", "m", "l", "t", "r", "s", "as"];
 var requiredFields = ["e", "m", "l", "r", "s", "as"];
 
+function addTimer(table, idx, name, data){
+  var row = table.insertRow(idx);
+  var cell1 = row.insertCell(0);
+  cell1.classList.add("title");
+  if (!data.hasOwnProperty('code')) {
+    cell1.innerHTML = `Error: No code specified for ${name}`;
+    return idx+1;
+  }
+  var cell2 = row.insertCell(1);
+  cell1.innerHTML = name+'&nbsp;';
+  if (data.hasOwnProperty('tooltip')) {
+    cell1.setAttribute("title", data.tooltip);
+  }
+  cell2.classList.add("field");
+
+  var button1 = document.createElement("button");
+  button1.setAttribute("id", "start_"+data.code);
+  button1.setAttribute("type", "checkbox");
+  button1.setAttribute("onclick", "timer(this.parentElement)");
+  button1.innerHTML += "Start"
+  cell2.appendChild(button1);
+
+  var inp = document.createElement("input");
+  inp.classList.add("timer");
+  inp.setAttribute("id", "input_"+data.code);
+  inp.setAttribute("type", "text");
+  if (enableGoogleSheets) {
+    inp.setAttribute("name", data.gsCol);
+  } else {
+    inp.setAttribute("name", data.code);
+  }
+  inp.setAttribute("style", "background-color: black; color: white;border: none; text-align: center;");
+  inp.setAttribute("disabled", "");
+  inp.setAttribute("value", 0);
+  inp.setAttribute("size", 5);
+  inp.setAttribute("maxLength", 5);
+  cell2.appendChild(inp);
+
+  var button2 = document.createElement("button");
+  button2.setAttribute("id", "clear_"+data.code);
+  button2.setAttribute("type", "checkbox");
+  button2.setAttribute("onclick", "resetTimer(this.parentElement)");
+  button2.innerHTML += "Reset"
+  cell2.appendChild(button2);
+
+  idx += 1
+  row = table.insertRow(idx);
+  row.setAttribute("style", "display:none");
+  cell = row.insertCell(0);
+  cell.setAttribute("colspan", 2);
+  var inp = document.createElement('input');
+  inp.setAttribute("type", "hidden");
+  inp.setAttribute("id", "status_"+data.code);
+  inp.setAttribute("value", "stopped");
+  cell.appendChild(inp);
+  inp = document.createElement('input');
+  inp.setAttribute("hidden", "");
+  inp.setAttribute("id", "intervalId_"+data.code);
+  inp.setAttribute("value", "");
+  cell.appendChild(inp);
+
+  if (data.hasOwnProperty('defaultValue')) {
+    var def = document.createElement("input");
+    def.setAttribute("id", "default_"+data.code)
+    def.setAttribute("type", "hidden");
+    def.setAttribute("value", data.defaultValue);
+    cell2.appendChild(def);
+  }
+
+  return idx+1;
+}
+
 function addCounter(table, idx, name, data){
   var row = table.insertRow(idx);
   var cell1 = row.insertCell(0);
@@ -33,19 +107,26 @@ function addCounter(table, idx, name, data){
   }
   var cell2 = row.insertCell(1);
   cell1.innerHTML = name+'&nbsp;';
+  if (data.hasOwnProperty('tooltip')) {
+    cell1.setAttribute("title", data.tooltip);
+  }
   cell2.classList.add("field");
 
-  var button1 = document.createElement("button");
-  button1.setAttribute("type", "checkbox");
+  var button1 = document.createElement("input");
+  button1.setAttribute("type", "button");
   button1.setAttribute("onclick", "counter(this.parentElement, -1)");
-  button1.innerHTML += "-"
+  button1.setAttribute("value", "-");
   cell2.appendChild(button1);
 
   var inp = document.createElement("input");
   inp.classList.add("counter");
   inp.setAttribute("id", "input_"+data.code);
   inp.setAttribute("type", "text");
-  inp.setAttribute("name", data.code);
+  if (enableGoogleSheets) {
+    inp.setAttribute("name", data.gsCol);
+  } else {
+    inp.setAttribute("name", data.code);
+  }
   inp.setAttribute("style", "background-color: black; color: white;border: none; text-align: center;");
   inp.setAttribute("disabled", "");
   inp.setAttribute("value", 0);
@@ -53,10 +134,10 @@ function addCounter(table, idx, name, data){
   inp.setAttribute("maxLength", 2);
   cell2.appendChild(inp);
 
-  var button2 = document.createElement("button");
-  button2.setAttribute("type", "checkbox");
+  var button2 = document.createElement("input");
+  button2.setAttribute("type", "button");
   button2.setAttribute("onclick", "counter(this.parentElement, 1)");
-  button2.innerHTML += "+";
+  button2.setAttribute("value", "+");
   cell2.appendChild(button2);
 
   if (data.hasOwnProperty('defaultValue')) {
@@ -72,27 +153,39 @@ function addCounter(table, idx, name, data){
 
 function addFieldImage(table, idx, name, data) {
   var row = table.insertRow(idx);
-  idx += 1
   var cell = row.insertCell(0);
   cell.setAttribute("colspan", 2);
   cell.setAttribute("style", "text-align: center;");
   cell.innerHTML = name;
+  if (data.hasOwnProperty('tooltip')) {
+    cell.setAttribute("title", data.tooltip);
+  }
 	
+  idx += 1
   row = table.insertRow(idx); 
-  idx += 1;
   cell = row.insertCell(0);
   cell.setAttribute("colspan", 2);
   cell.setAttribute("style", "text-align: center;");
-  var undoButton = document.createElement("button");
-  undoButton.setAttribute("type", "checkbox");
+  // Undo button
+  var undoButton = document.createElement("input");
+  undoButton.setAttribute("type", "button");
   undoButton.setAttribute("onclick", "undo(this.parentElement)");
-  undoButton.innerHTML += "Undo";
+  undoButton.setAttribute("value", "Undo");
   undoButton.setAttribute("id", "undo_"+data.code);
   undoButton.setAttribute("class", "undoButton");
   cell.appendChild(undoButton);
+  // Flip button
+  var flipButton = document.createElement("input");
+  flipButton.setAttribute("type", "button");
+  flipButton.setAttribute("onclick", "flip(this.parentElement)");
+  flipButton.setAttribute("value", "Flip Image");
+  flipButton.setAttribute("id", "flip_"+data.code);
+  flipButton.setAttribute("class", "flipButton");
+  flipButton.setAttribute("margin-left", '8px');
+  cell.appendChild(flipButton);
 
-  row = table.insertRow(idx);
   idx += 1;
+  row = table.insertRow(idx);
   cell = row.insertCell(0);
   cell.setAttribute("colspan", 2);
   cell.setAttribute("style", "text-align: center;");
@@ -104,8 +197,8 @@ function addFieldImage(table, idx, name, data) {
   canvas.innerHTML = "No canvas support";
   cell.appendChild(canvas);
 
+  idx += 1;
   row = table.insertRow(idx);
-  idx += 1
   row.setAttribute("style", "display:none");
   cell = row.insertCell(0);
   cell.setAttribute("colspan", 2);
@@ -116,13 +209,16 @@ function addFieldImage(table, idx, name, data) {
   cell.appendChild(inp);
   inp = document.createElement('input');
   inp.setAttribute("hidden", "");
+  if (enableGoogleSheets) {
+    inp.setAttribute("name", data.gsCol);
+  }
   inp.setAttribute("id", "input_"+data.code);
   inp.setAttribute("value", "");
   cell.appendChild(inp);
 
+  idx += 1
   row = table.insertRow(idx);
   row.setAttribute("style", "display:none");
-  idx += 1
   //row.setAttribute("style", "display:none");
   cell = row.insertCell(0);
   cell.setAttribute("colspan", 2);
@@ -134,6 +230,8 @@ function addFieldImage(table, idx, name, data) {
   //img.setAttribute("onclick", "onFieldClick(event)");
   img.setAttribute("hidden", "");
   cell.appendChild(img);
+  
+  return idx + 1
 }
 
 function addText(table, idx, name, data) {
@@ -146,11 +244,18 @@ function addText(table, idx, name, data) {
   }
   var cell2 = row.insertCell(1);
   cell1.innerHTML = name+'&nbsp;';
+  if (data.hasOwnProperty('tooltip')) {
+    cell1.setAttribute("title", data.tooltip);
+  }
   cell2.classList.add("field");
   var inp = document.createElement("input");
   inp.setAttribute("id", "input_"+data.code);
   inp.setAttribute("type", "text");
-  inp.setAttribute("name", data.code);
+  if (enableGoogleSheets) {
+    inp.setAttribute("name", data.gsCol);
+  } else {
+    inp.setAttribute("name", data.code);
+  }
   if (data.hasOwnProperty('size')) {
     inp.setAttribute("size", data.size);
   }
@@ -189,16 +294,23 @@ function addNumber(table, idx, name, data) {
   }
   var cell2 = row.insertCell(1);
   cell1.innerHTML = name+'&nbsp;';
+  if (data.hasOwnProperty('tooltip')) {
+    cell1.setAttribute("title", data.tooltip);
+  }
   cell2.classList.add("field");
   var inp = document.createElement("input");
   inp.setAttribute("id", "input_"+data.code);
   inp.setAttribute("type", "number");
-  inp.setAttribute("name", data.code);
-	if ((data.type == 'team') ||
-	 	  (data.type == 'match'))
-	{
-		inp.setAttribute("onchange", "updateMatchStart(event)");
-	}
+  if (enableGoogleSheets) {
+    inp.setAttribute("name", data.gsCol);
+  } else {
+    inp.setAttribute("name", data.code);
+  }
+  if ((data.type == 'team') ||
+    (data.type == 'match'))
+  {
+    inp.setAttribute("onchange", "updateMatchStart(event)");
+  }
   if (data.hasOwnProperty('min')) {
     inp.setAttribute("min", data.min);
   }
@@ -225,12 +337,12 @@ function addNumber(table, idx, name, data) {
   }
 
   if (data.type == 'team') {
-    row = table.insertRow(idx+1);
+  	idx += 1
+    row = table.insertRow(idx);
     cell1 = row.insertCell(0);
     cell1.setAttribute("id", "teamname-label");
     cell1.setAttribute("colspan", 2);
     cell1.setAttribute("style", "text-align: center;");
-    return idx+2;
   }
 
   return idx+1;
@@ -246,6 +358,9 @@ function addRadio(table, idx, name, data) {
   }
   var cell2 = row.insertCell(1);
   cell1.innerHTML = name+'&nbsp;';
+  if (data.hasOwnProperty('tooltip')) {
+    cell1.setAttribute("title", data.tooltip);
+  }
   cell2.classList.add("field");
 	if ((data.type == 'level') ||
 			(data.type == 'robot')
@@ -263,8 +378,12 @@ function addRadio(table, idx, name, data) {
       var inp = document.createElement("input");
       inp.setAttribute("id", "input_"+data.code+"_"+c);
       inp.setAttribute("type", "radio");
-      inp.setAttribute("name", data.code);
-			inp.setAttribute("value", c);
+      if (enableGoogleSheets) {
+        inp.setAttribute("name", data.gsCol);
+      } else {
+        inp.setAttribute("name", data.code);
+      }
+      inp.setAttribute("value", c);
       if (checked == c) {
         inp.setAttribute("checked", "");
       }
@@ -299,11 +418,18 @@ function addCheckbox(table, idx, name, data){
   }
   var cell2 = row.insertCell(1);
   cell1.innerHTML = name+'&nbsp;';
+  if (data.hasOwnProperty('tooltip')) {
+    cell1.setAttribute("title", data.tooltip);
+  }
   cell2.classList.add("field");
   var inp = document.createElement("input");
   inp.setAttribute("id", "input_"+data.code);
   inp.setAttribute("type", "checkbox");
-  inp.setAttribute("name", data.code);
+  if (enableGoogleSheets) {
+    inp.setAttribute("name", data.gsCol);
+  } else {
+    inp.setAttribute("name", data.code);
+  }
   cell2.appendChild(inp);
 
   if (data.type == 'bool') {
@@ -321,13 +447,19 @@ function addCheckbox(table, idx, name, data){
   return idx+1;
 }
 
-function addElement(table, idx, name, data){
+function addElement(table, idx, data){
   var type = null;
+  var name = 'Default Name';
+  if (data.hasOwnProperty('name')){
+    name = data.name
+  }
   if (data.hasOwnProperty('type')){
     type = data.type
   } else {
     console.log("No type specified");
-    err = (("defaultValue", "No type specified"));
+    console.log("Data: ")
+    console.log(data);
+    err = {code: "err", defaultValue: "No type specified: "+data};
     idx = addText(table, idx, name, err);
     return
   }
@@ -363,6 +495,9 @@ function addElement(table, idx, name, data){
   } else if (data.type == 'counter')
   {
     idx = addCounter(table, idx, name, data);
+  } else if (data.type == 'timer')
+  {
+  	idx = addTimer(table, idx, name, data);
   } else
   {
     console.log(`Unrecognized type: ${data.type}`);
@@ -376,10 +511,11 @@ function configure(){
   } catch(err) {
     console.log(`Error parsing configuration file`)
     console.log(err.message)
+    console.log('Use a tool like http://jsonlint.com/ to help you debug your config file')
     var table = document.getElementById("prematch_table")
     var row = table.insertRow(0);
     var cell1 = row.insertCell(0);
-    cell1.innerHTML = `Error parsing configuration file: ${err.message}`
+    cell1.innerHTML = `Error parsing configuration file: ${err.message}<br><br>Use a tool like <a href="http://jsonlint.com/">http://jsonlint.com/</a> to help you debug your config file`
     return -1
   }
 
@@ -394,51 +530,74 @@ function configure(){
     }
   }
 
+  if (mydata.hasOwnProperty('enable_google_sheets')) {
+    if ((mydata.enable_google_sheets == 'true') || 
+      	(mydata.enable_google_sheets == 'True') ||
+	      (mydata.enable_google_sheets == 'TRUE')) {
+      enableGoogleSheets = true;
+    }
+  }
+
+  if (mydata.hasOwnProperty('checkboxAs')) {
+    // Supported modes
+    // YN - Y or N
+    // TF - T or F
+    // 10 - 1 or 0
+    if ((mydata.checkboxAs == 'YN') ||
+	(mydata.checkboxAs == 'TF') ||
+	(mydata.checkboxAs == '10')) {
+      console.log("Setting checkboxAs to "+mydata.checkboxAs);
+      checkboxAs = mydata.checkboxAs;
+    } else {
+      console.log("unrecognized checkboxAs setting.  Defaulting to YN.")
+      checkboxAs = 'YN';
+    }
+  }
+
   // Configure prematch screen
-  var pmc = mydata.elements.prematch;
+  var pmc = mydata.prematch;
   var pmt = document.getElementById("prematch_table");
   var idx = 0;
-  Object.entries(pmc).forEach((el) => {
-    const [key, value] = el;
-    idx = addElement(pmt, idx, key, value);
+  pmc.forEach(element => {
+    idx = addElement(pmt, idx, element);
   });
 
   // Configure auton screen
-  var ac = mydata.elements.auton;
+  var ac = mydata.auton;
   var at = document.getElementById("auton_table");
   idx = 0;
-  Object.entries(ac).forEach((el) => {
-    const [key, value] = el;
-    idx = addElement(at, idx, key, value);
+  ac.forEach(element => {
+    idx = addElement(at, idx, element);
   });
 
   // Configure teleop screen
-  var tc = mydata.elements.teleop;
+  var tc = mydata.teleop;
   var tt = document.getElementById("teleop_table");
   idx = 0;
-  Object.entries(tc).forEach((el) => {
-    const [key, value] = el;
-    idx = addElement(tt, idx, key, value);
+  tc.forEach(element => {
+    idx = addElement(tt, idx, element);
   });
 
   // Configure endgame screen
-  var egc = mydata.elements.endgame;
+  var egc = mydata.endgame;
   var egt = document.getElementById("endgame_table");
   idx = 0;
-  Object.entries(egc).forEach((el) => {
-    const [key, value] = el;
-    idx = addElement(egt, idx, key, value);
+  egc.forEach(element => {
+    idx = addElement(egt, idx, element);
   });
 
   // Configure postmatch screen
-  pmc = mydata.elements.postmatch;
+  pmc = mydata.postmatch;
   pmt = document.getElementById("postmatch_table");
   var idx = 0;
-  Object.entries(pmc).forEach((el) => {
-    const [key, value] = el;
-    idx = addElement(pmt, idx, key, value);
+  pmc.forEach(element => {
+    idx = addElement(pmt, idx, element);
   });
-	
+
+  if (!enableGoogleSheets) {
+    document.getElementById("submit").style.display = "none";
+  }
+
   return 0
 }
 
@@ -553,13 +712,24 @@ function validateData() {
 	return ret
 }
 
-function getData() {
+function getData(useStr) {
 	var str = ''
+	var fd = new FormData()
 	var rep = ''
 	var start = true
+	var checkedChar = 'Y'
+	var uncheckedChar = 'N'
+	if (checkboxAs == 'TF') {
+	  checkedChar = 'T';
+	  uncheckedChar = 'F';
+	} else if (checkboxAs == '10') {
+	  checkedChar = '1';
+	  uncheckedChar = '0';
+	}
 	inputs = document.querySelectorAll("[id*='input_']");
 	for (e of inputs) {
 		code = e.id.substring(6)
+		name = e.name
 		radio = code.indexOf("_")
 		if (radio > -1) {
 			if (e.checked) {
@@ -570,7 +740,11 @@ function getData() {
 				}
 				// str=str+code.substr(0,radio)+'='+code.substr(radio+1)
 				// document.getElementById("display_"+code.substr(0, radio)).value = code.substr(radio+1)
-				str=str+code.substr(0,radio)+'='+e.value
+				if (useStr) {
+					str=str+code.substr(0,radio)+'='+e.value
+				} else {
+					fd.append(name, ''+e.value)
+				}
 				document.getElementById("display_"+code.substr(0, radio)).value = e.value
 			}
 		} else {
@@ -581,16 +755,32 @@ function getData() {
 			}
 			if (e.value == "on") {
 				if (e.checked) {
-					str=str+code+'=Y'
+					if (useStr) {
+						str=str+code+'='+checkedChar
+					} else {
+						fd.append(name, checkedChar)
+					}
 				} else {
-					str=str+code+'=N'
+					if (useStr) {
+						str=str+code+'='+uncheckedChar
+					} else {
+						fd.append(name, uncheckedChar)
+					}
 				}
 			} else {
-				str=str+code+'='+e.value.split(';').join('-')
+				if (useStr) {
+					str=str+code+'='+e.value.split(';').join('-')
+				} else {
+					fd.append(name, e.value.split(';').join('-'))
+				}
 			}
 		}
 	}
-	return str
+	if (useStr) {
+		return str
+	} else {
+		return fd
+	}
 }
 
 function updateQRHeader() {
@@ -614,7 +804,7 @@ function qr_regenerate() {
 	}
 
 	// Get data
-	data = getData()
+	data = getData(true)
 
   // Regenerate QR Code
 	qr.makeCode(data)
@@ -841,13 +1031,14 @@ function getCurrentMatch(){
 function updateMatchStart(event){
 	if((getCurrentMatch() == "") ||
 		 (!teams)) {
+		console.log("No match or team data.");
 		return;
 	}
-	if(event.target.name == "r"){
+	if(event.target.id.startsWith("input_r")) {
 		document.getElementById("input_t").value = getCurrentTeamNumberFromRobot().replace("frc", "");
 		onTeamnameChange();
 	}
-	if(event.target.name == "m"){
+	if(event.target.id == "input_m") {
 		if(getRobot() != "" && typeof getRobot()){
 			document.getElementById("input_t").value = getCurrentTeamNumberFromRobot().replace("frc", "");
 			onTeamnameChange();
@@ -887,6 +1078,45 @@ function counter(element, step)
   }
 }
 
+function resetTimer(event)
+{
+  let timerID = event.firstChild;
+  let inp = document.getElementById("input" + getIdBase(timerID.id))
+  inp.value = 0
+}
+
+function timer(event)
+{
+  let timerID = event.firstChild;
+  let tId = getIdBase(timerID.id)
+  timerStatus = document.getElementById("status" + tId);
+  startButton = document.getElementById("start" + tId);
+  intervalIdField = document.getElementById("intervalId" + tId);
+  var statusValue = timerStatus.value;
+  var intervalId = intervalIdField.value;
+  if (statusValue == 'stopped') {
+  	timerStatus.value = 'started';
+  	startButton.innerHTML = "Stop";
+  	
+  	var intId = setInterval(() => {
+      if (document.getElementById("status" + tId).value == 'started') {
+        inp = document.getElementById("input" + tId);
+        var t = parseFloat(inp.value);
+        t += 0.1;
+        tTrunc = t.toFixed(1)
+        inp.value = tTrunc;
+      }
+    }, 100);
+	intervalIdField.value = intId;
+  } else {
+  	timerStatus.value = 'stopped';
+  	startButton.innerHTML = "Start";
+  	
+  	clearInterval(intervalId);
+  }
+  drawFields();
+}
+
 function undo(event)
 {
    let undoID = event.firstChild;
@@ -903,6 +1133,18 @@ function undo(event)
    drawFields();
 }		
 
+function flip(event)
+{
+  let flipID = event.firstChild;
+  var flipImg = document.getElementById("canvas" + getIdBase(flipID.id));
+  if (flipImg.style.transform == "") {
+    flipImg.style.transform = 'rotate(180deg)';
+  } else {
+    flipImg.style.transform = '';
+  }
+  drawFields();
+}
+
 window.onload = function(){
   var ret = configure();
   if (ret != -1) {
@@ -910,5 +1152,9 @@ window.onload = function(){
     getTeams(ec);
     getSchedule(ec);
     this.drawFields();
+    if (enableGoogleSheets) {
+      console.log("Enabling Google Sheets.");
+      setUpGoogleSheets();
+    }
   }
 };

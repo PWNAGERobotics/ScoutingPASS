@@ -5,8 +5,9 @@
 		<title>Scouting PASS</title>
 		<script src="resources/js/easy.qrcode.min.js"></script>
 		<script src="resources/js/TBAInterface.js"></script>
+		<script src="resources/js/googleSheets.js"></script>
 		<script src="resources/js/scoutingPASS.js"></script>
-		<script src="2022/RR_config.js"></script>
+		<script src="2023/CU_config.js"></script>
 		<link rel="stylesheet" href="resources/css/scoutingPASS.css">
 	</head>
 
@@ -77,6 +78,9 @@
 					</div>
 				</td><td width="5%">&nbsp;</td></tr></table>
 					<p></p>
+					<div id="submitButton">
+						<button id="submit" type="submit" class="submitForm">Send to Google Sheets</button>
+					</div>
 					<div id="clearButton">
 						<button type="button" class="clearForm" onclick="clearForm()">Clear Form</button>
 					</div>
