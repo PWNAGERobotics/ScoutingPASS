@@ -58,7 +58,7 @@ Scouting PASS is a web page displayed in a browser.  It consists of 5 "swipeable
 Configuration is as easy as creating a JSON file with the fields that your scouting team wants to track.  Some fields are common to all teams and years.  The basic fields are:
 * Scouter - who is scouting this robot
 * Event - the event that is being scouted
-* Level - The level of competition (Qualifications, Semi-Finals, Finals, etc)
+* Level - The level of competition (Qualifications, Double Elimination, Finals, etc)
 * Match - the match number that is being scouted
 * Robot - Which robot is being scouted (Red-1, Blue-1, etc.)
 * Team # - What team is being scouted
