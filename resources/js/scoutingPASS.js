@@ -670,9 +670,7 @@ function getLevel(){
 
 function validateLevel() {
 	if (document.getElementById("input_l_qm").checked ||
-		document.getElementById("input_l_ef").checked ||
-		document.getElementById("input_l_qf").checked ||
-		document.getElementById("input_l_sf").checked ||
+		document.getElementById("input_l_de").checked ||
 		document.getElementById("input_l_f").checked
 	) {
 		return true
@@ -866,7 +864,8 @@ function clearForm() {
 			}
 		} else {
 			if (e.type=="number" || e.type=="text" || e.type=="hidden") {
-				if (e.className == "counter") {
+				if ((e.className == "counter") ||
+				    (e.className == "timer") {
 					e.value = 0
 				} else {
 					e.value = ""
