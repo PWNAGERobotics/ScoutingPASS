@@ -23,10 +23,8 @@ var config_data = `
       "type": "level",
       "choices": {
         "qm": "Quals<br>",
-        "ef": "Eighth-Final<br>",
-        "qf": "Quarter-Final<br>",
-        "sf": "Semi-Final<br>",
-        "f": "Final"
+        "de": "Double Elimination<br>",
+        "f": "Finals"
       },
       "defaultValue": "qm",
       "required": "true"
