@@ -126,6 +126,10 @@ var config_data = `
       "code": "tol",
       "type": "counter"
     },
+    { "name": "Feeder Count",
+      "code": "tfc",
+      "type": "counter"
+    },
     { "name": "Was Defended",
       "code": "wd",
       "type": "bool"
