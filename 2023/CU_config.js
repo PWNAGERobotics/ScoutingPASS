@@ -102,6 +102,10 @@ var config_data = `
     }
   ],
   "teleop": [
+    { "name": "Cycle Timer",
+      "code": "tct",
+      "type": "cycle"
+    },
     { "name": "High Cube Scored",
       "code": "tuh",
       "type": "counter"
