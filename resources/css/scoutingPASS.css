@@ -148,7 +148,7 @@ h2{
     display: flex;
 }
 
-#nextButton1, #nextButton2, #nextButton9, #nextButton10, .clearForm{
+#nextButton1, #nextButton2, #nextButton9, #nextButton10, .clearForm, .submitForm {
     font-family: Alexis; 
     padding: 10px;
     background-color: rgb(151, 199, 240);
@@ -156,11 +156,19 @@ h2{
     display: inline-block;
 }
 
-#nextButton3, #nextButton4, #nextButton5, #nextButton6, #nextButton7, #nextButton8, .undoButton{
+#nextButton3, #nextButton4, #nextButton5, #nextButton6, #nextButton7, #nextButton8 {
     font-family: Alexis;
     background-color: black; 
     padding: 10px;
     color: white;
+}
+
+.undoButton, .flipButton {
+    font-family: Alexis;
+    background-color: black; 
+    padding: 10px;
+    color: white;
+    margin-left: 20px;
 }
 
 #prevButton7, #prevButton8, #prevButton9{
