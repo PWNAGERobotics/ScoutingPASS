@@ -1108,7 +1108,6 @@ function newCycle(event)
   cycleInput.value = JSON.stringify(tempValue);
   let d = document.getElementById("display" + base);
   console.log(cycleInput.value);
-  console.log(d.value);
   var str = cycleInput.value
   console.log('a '+str);
   str = str.replace(/\"/g, '');
