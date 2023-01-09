@@ -83,6 +83,7 @@ function addTimer(table, idx, name, data){
     ct.setAttribute("value", "");
     cell2.appendChild(ct);
   }
+
   idx += 1
   row = table.insertRow(idx);
   row.setAttribute("style", "display:none");
