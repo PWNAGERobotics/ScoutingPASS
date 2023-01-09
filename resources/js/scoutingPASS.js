@@ -773,7 +773,7 @@ function getData(useStr) {
       } else {
 	console.log(e.class);
 	console.log(e.id);
-	if (e.class == "cycle") {
+	if (e.className == "cycle") {
 	  e = document.getElementById("cycletime_" + code);
 	  console.log(e.value);
 	}
@@ -880,7 +880,8 @@ function clearForm() {
     } else {
       if (e.type == "number" || e.type == "text" || e.type == "hidden") {
         if ((e.className == "counter") ||
-          (e.className == "timer")) {
+          (e.className == "timer") ||
+	  (e.className == "cycle")) {
           e.value = 0
         } else {
           e.value = ""
@@ -1094,14 +1095,8 @@ function newCycle(event)
   let cycleTime = inp.value
   inp.value = 0
 
-  console.log(cycleTime);
-
   let cycleInput = document.getElementById("cycletime" + getIdBase(timerID.id));
 
-  console.log(cycleInput.value);
-  console.log(cycleInput.id);
-  console.log(cycleInput.class);
-  console.log("***"+cycleInput.value+"***");
   var tempValue = Array.from(JSON.parse(cycleInput.value));
   tempValue.push(cycleTime);
   cycleInput.value = JSON.stringify(tempValue);
