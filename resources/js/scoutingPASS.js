@@ -1095,9 +1095,7 @@ function newCycle(event)
   let cycleTime = inp.value
   inp.value = 0
 
-  let target = event.target;
-
-  cycleInput = document.getElementById("cycletime" + getIdBase(target.id));
+  cycleInput = document.getElementById("cycletime" + getIdBase(timerID.id));
 
   var tempValue = Array.from(JSON.parse(cycleInput.value));
   tempValue.push(cycleTime);
