@@ -1109,6 +1109,14 @@ function newCycle(event)
   let d = document.getElementById("display" + base);
   console.log(cycleInput.value);
   console.log(d.value);
+  var str = cycleInput.value
+  console.log('a '+str);
+  str = str.replace(/\"/g,'');
+  console.log('b '+str);
+  str = str.replace(/[/g, '');
+  console.log('c '+str);
+  str = str.replace(/]/g, '');
+  console.log('d '+str);
   d.value = cycleInput.value.replace(/\"/g,'').replace(/[/g, '').replace(/]/g, '')
   console.log(d.value);
 
