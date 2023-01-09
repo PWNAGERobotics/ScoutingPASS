@@ -778,11 +778,6 @@ function getData(useStr) {
       } else {
 	if (e.className == "cycle") {
 	  e = document.getElementById("cycletime_" + code);
-	  let d = document.getElementById("display_" + code);
-	  console.log(e.value);
-	  console.log(d.value);
-	  d.value = e.value.replace(/\"/g,'').replace(/[/g, '').replace(/]/g, '')
-	  console.log(d.value);
 	}
         if (useStr) {
           str = str + code + '=' + e.value.split(';').join('-')
@@ -1101,15 +1096,22 @@ function counter(element, step) {
 function newCycle(event)
 {
   let timerID = event.firstChild;
-  let inp = document.getElementById("input" + getIdBase(timerID.id))
+  let base = getIdBase(timerID.id);
+  let inp = document.getElementById("input" + base)
   let cycleTime = inp.value
   inp.value = 0
 
-  let cycleInput = document.getElementById("cycletime" + getIdBase(timerID.id));
+  let cycleInput = document.getElementById("cycletime" + base);
 
   var tempValue = Array.from(JSON.parse(cycleInput.value));
   tempValue.push(cycleTime);
   cycleInput.value = JSON.stringify(tempValue);
+  let d = document.getElementById("display" + base);
+  console.log(cycleInput.value);
+  console.log(d.value);
+  d.value = cycleInput.value.replace(/\"/g,'').replace(/[/g, '').replace(/]/g, '')
+  console.log(d.value);
+
 }
 
 function resetTimer(event) {
