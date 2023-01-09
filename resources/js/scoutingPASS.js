@@ -81,12 +81,12 @@ function addTimer(table, idx, name, data) {
     button2.innerHTML += "New Cycle"
     cell2.appendChild(button2);
     var ct = document.createElement('input');
-    ct.setAttribute("type", "hidden"); // Change back to hidden?
+    ct.setAttribute("type", "hidden");
     ct.setAttribute("id", "cycletime_" + data.code);
     ct.setAttribute("value", "[]");
     cell2.appendChild(ct);
     ct = document.createElement('input');
-    ct.setAttribute("type", "text"); // Change back to hidden?
+    ct.setAttribute("type", "text");
     ct.setAttribute("id", "display_" + data.code);
     ct.setAttribute("value", "");
     ct.setAttribute("disabled", "");
@@ -779,7 +779,10 @@ function getData(useStr) {
 	if (e.className == "cycle") {
 	  e = document.getElementById("cycletime_" + code);
 	  let d = document.getElementById("display_" + code);
+	  console.log(e.value);
+	  console.log(d.value);
 	  d.value = e.value.replace(/\"/g,'').replace(/[/g, '').replace(/]/g, '')
+	  console.log(d.value);
 	}
         if (useStr) {
           str = str + code + '=' + e.value.split(';').join('-')
@@ -886,6 +889,10 @@ function clearForm() {
           (e.className == "timer") ||
 	  (e.className == "cycle")) {
           e.value = 0
+	  if (e.className == "cycle") {
+	    document.getElementById("cycletime_" + code).value = "[]"
+	    document.getElementById("display_" + code).value = ""
+	  }
         } else {
           e.value = ""
         }
