@@ -85,7 +85,7 @@ function addTimer(table, idx, name, data) {
     ct.setAttribute("type", "hidden"); // Change back to hidden?
     ct.setAttribute("id", "cycletime_" + data.code);
     ct.setAttribute("value", "[]");
-    cell2.appendChild(ct);'
+    cell2.appendChild(ct);
     ct = document.createElement('input');
     ct.setAttribute("type", "text"); // Change back to hidden?
     ct.setAttribute("id", "display_" + data.code);
