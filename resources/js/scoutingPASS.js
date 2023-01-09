@@ -90,7 +90,7 @@ function addTimer(table, idx, name, data) {
     ct.setAttribute("id", "display_" + data.code);
     ct.setAttribute("value", "");
     ct.setAttribute("disabled", "");
-    cell2.appendChild(ct);'
+    cell2.appendChild(ct);
   }
 
   idx += 1
