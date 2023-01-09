@@ -879,7 +879,7 @@ function clearForm() {
 		} else {
 			if (e.type=="number" || e.type=="text" || e.type=="hidden") {
 				if ((e.className == "counter") ||
-				    (e.className == "timer" {
+				    (e.className == "timer")) {
 					e.value = 0
 				} else {
 					e.value = ""
