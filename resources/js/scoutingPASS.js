@@ -771,8 +771,11 @@ function getData(useStr) {
           }
         }
       } else {
+	console.log(e.class);
+	console.log(e.id);
 	if (e.class == "cycle") {
 	  e = document.getElementById("cycletime_" + code);
+	  console.log(e.value);
 	}
         if (useStr) {
           str = str + code + '=' + e.value.split(';').join('-')
