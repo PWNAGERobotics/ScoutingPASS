@@ -1099,7 +1099,7 @@ function newCycle(event)
 
   let cycleInput = document.getElementById("cycletime" + getIdBase(timerID.id));
 
-  console.log(cycleInput.value);
+  console.log("***"+cycleInput.value+"***");
   var tempValue = Array.from(JSON.parse(cycleInput.value));
   tempValue.push(cycleTime);
   cycleInput.value = JSON.stringify(tempValue);
