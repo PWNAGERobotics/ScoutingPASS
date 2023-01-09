@@ -98,7 +98,8 @@ var config_data = `
         "e": "Engaged<br>",
         "a": "Attempted but failed<br>",
         "x": "Not attempted"
-      }
+      },
+      "defaultValue": "x"
     }
   ],
   "teleop": [
