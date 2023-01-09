@@ -48,7 +48,11 @@ function addTimer(table, idx, name, data) {
   cell2.appendChild(button1);
 
   var inp = document.createElement("input");
-  inp.classList.add("timer");
+  if (data.type == 'timer') {
+    inp.classList.add("timer");
+  } else {
+    inp.classList.add("cycle");
+  }
   inp.setAttribute("id", "input_" + data.code);
   inp.setAttribute("type", "text");
   if (enableGoogleSheets) {
@@ -767,6 +771,9 @@ function getData(useStr) {
           }
         }
       } else {
+	if (e.class == "cycle") {
+	  e = document.getElementById("cycletime_" + code);
+	}
         if (useStr) {
           str = str + code + '=' + e.value.split(';').join('-')
         } else {
