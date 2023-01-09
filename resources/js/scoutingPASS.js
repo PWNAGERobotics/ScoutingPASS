@@ -876,7 +876,6 @@ function clearForm() {
       var defaultValue = document.getElementById("default_" + baseCode).value
       if (defaultValue != "") {
         if (defaultValue == e.value) {
-          console.log("they match!")
           e.checked = true
           document.getElementById("display_" + baseCode).value = defaultValue
         }
