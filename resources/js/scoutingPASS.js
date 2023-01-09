@@ -1111,13 +1111,13 @@ function newCycle(event)
   console.log(d.value);
   var str = cycleInput.value
   console.log('a '+str);
-  str = str.replace(/\"/g,'');
+  str = str.replace(/\"/g, '');
   console.log('b '+str);
-  str = str.replace(/[/g, '');
+  str = str.replace(/\[/g, '');
   console.log('c '+str);
-  str = str.replace(/]/g, '');
+  str = str.replace(/\]/g, '');
   console.log('d '+str);
-  d.value = cycleInput.value.replace(/\"/g,'').replace(/[/g, '').replace(/]/g, '')
+  d.value = cycleInput.value.replace(/\"/g,'').replace(/\[/g, '').replace(/\]/g, '')
   console.log(d.value);
 
 }
