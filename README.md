@@ -70,6 +70,7 @@ User defined fields can be of several different types:
 * Radio Buttons - A single choice between several options (Ball pick up: ()Ground ()Loading Bay ()Both ()None)
 * Checkbox - A single on/off or yes/no check box (Exit Start Line?  []Yes if checked)
 * Timer - A time counter to count the number of seconds it takes to do something (How long did it take to climb?)
+* Cycle Timer - Start the timer and with 1 click track cycle times of robots.  
 * Field Image - Using an image of the field, select positions on the field. (Use to record starting point, or shooting locations)
 
 These should cover most of your scouting team's data collection needs.  PWNAGE's 2020 Infinite Recharge configuration file is included as an example.  The import of the configuration file is in index.html and would need to be updated to import a different configuration file. Only import one configuration file.
@@ -187,6 +188,7 @@ Distributed under the GNU GPL v3.0 License. See `LICENSE` for more information.
 Scouting PASS continues to evolve.   Here are the changes for the 2023 Season:
 
 * New Timer component - Start/Stop and Clear Buttons
+* New Cycle component - Keep track of cycle times
 * JSON simplification - The JSON structure has been simplified to make it a little easier to maintain.  The previous years configuration files have been updated to use the new structure.
 * Add "Flip Image" button to the Field Image component
 * Add "tooltip" option for components - Tooltips will appear when hovering over the name of the component

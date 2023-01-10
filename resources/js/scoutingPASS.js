@@ -15,7 +15,6 @@ var checkboxAs = 'YN';
 
 // Options
 var options = {
-  text: "t=9998;m=99;l=q;r=b1;s=rjs;d=0;to=0;ds=5;if=0;f=15;cf=0;in=1;alp=5;aop=5;aip=5;apu=5;atr=1;atro=0;lp=20;op=10;ip=10;rc=0;pc=0;ss=[(111,111),(111,111),(111,111),(111,111),(111,111),(111,111),(111,111)];c=1;hbc=0;ac=1;hc=0;cb=0;cs=3;nh=0;p=0;b=0;tr=1;ct=3;dr=3;comm='good shooter; shot from all over the field'",
   correctLevel: QRCode.CorrectLevel.L,
   quietZone: 15,
   quietZoneColor: '#FFFFFF'
@@ -48,7 +47,11 @@ function addTimer(table, idx, name, data) {
   cell2.appendChild(button1);
 
   var inp = document.createElement("input");
-  inp.classList.add("timer");
+  if (data.type == 'timer') {
+    inp.classList.add("timer");
+  } else {
+    inp.classList.add("cycle");
+  }
   inp.setAttribute("id", "input_" + data.code);
   inp.setAttribute("type", "text");
   if (enableGoogleSheets) {
@@ -78,9 +81,15 @@ function addTimer(table, idx, name, data) {
     button2.innerHTML += "New Cycle"
     cell2.appendChild(button2);
     var ct = document.createElement('input');
-    ct.setAttribute("type", "text"); // Change back to hidden?
+    ct.setAttribute("type", "hidden");
     ct.setAttribute("id", "cycletime_" + data.code);
     ct.setAttribute("value", "[]");
+    cell2.appendChild(ct);
+    ct = document.createElement('input');
+    ct.setAttribute("type", "text");
+    ct.setAttribute("id", "display_" + data.code);
+    ct.setAttribute("value", "");
+    ct.setAttribute("disabled", "");
     cell2.appendChild(ct);
   }
 
@@ -767,6 +776,9 @@ function getData(useStr) {
           }
         }
       } else {
+	if (e.className == "cycle") {
+	  e = document.getElementById("cycletime_" + code);
+	}
         if (useStr) {
           str = str + code + '=' + e.value.split(';').join('-')
         } else {
@@ -862,7 +874,6 @@ function clearForm() {
       var defaultValue = document.getElementById("default_" + baseCode).value
       if (defaultValue != "") {
         if (defaultValue == e.value) {
-          console.log("they match!")
           e.checked = true
           document.getElementById("display_" + baseCode).value = defaultValue
         }
@@ -870,8 +881,13 @@ function clearForm() {
     } else {
       if (e.type == "number" || e.type == "text" || e.type == "hidden") {
         if ((e.className == "counter") ||
-          (e.className == "timer")) {
+          (e.className == "timer") ||
+	  (e.className == "cycle")) {
           e.value = 0
+	  if (e.className == "cycle") {
+	    document.getElementById("cycletime_" + code).value = "[]"
+	    document.getElementById("display_" + code).value = ""
+	  }
         } else {
           e.value = ""
         }
@@ -1080,21 +1096,18 @@ function counter(element, step) {
 function newCycle(event)
 {
   let timerID = event.firstChild;
-  let inp = document.getElementById("input" + getIdBase(timerID.id))
+  let base = getIdBase(timerID.id);
+  let inp = document.getElementById("input" + base)
   let cycleTime = inp.value
   inp.value = 0
 
-  console.log(cycleTime);
+  let cycleInput = document.getElementById("cycletime" + base);
 
-  let cycleInput = document.getElementById("cycletime" + getIdBase(timerID.id));
-
-  console.log(cycleInput.value);
-  console.log(cycleInput.id);
-  console.log(cycleInput.class);
-  console.log("***"+cycleInput.value+"***");
   var tempValue = Array.from(JSON.parse(cycleInput.value));
   tempValue.push(cycleTime);
   cycleInput.value = JSON.stringify(tempValue);
+  let d = document.getElementById("display" + base);
+  d.value = cycleInput.value.replace(/\"/g,'').replace(/\[/g, '').replace(/\]/g, '').replace(/,/g, ', ');
 }
 
 function resetTimer(event) {
