@@ -76,8 +76,15 @@
 								qr = new QRCode(document.getElementById("qrcode"), options)
 					</script>
 					</div>
-				</td><td width="5%">&nbsp;</td></tr></table>
+				</td><td width="5%">&nbsp;</td></tr>
+				<tr><td width="5%">&nbsp;</td><td width="90%">
+					<div>
+						<p id="data"></p>
+					</div>
+				</td><td width="5%">&nbsp;</td></tr>
+			</table>
 					<p></p>
+					<p class="match-label"><input type="button" value="Display Data" id="displayButton" onclick="displayData()"><input type="button" value="Copy Data" id="copyButton" onclick="copyData()"></p>
 					<div id="submitButton">
 						<button id="submit" type="submit" class="submitForm">Send to Google Sheets</button>
 					</div>

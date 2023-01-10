@@ -1186,3 +1186,12 @@ window.onload = function () {
     }
   }
 };
+
+function displayData(){
+  document.getElementById('data').innerHTML = getData(true);
+}
+
+function copyData(){
+  navigator.clipboard.writeText(getData(true));
+  document.getElementById('copyButton').setAttribute('value','Copied');
+}
