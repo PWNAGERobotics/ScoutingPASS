@@ -926,14 +926,16 @@ function moveTouch(e) {
   initialX = null;
 };
 
-function swipePage(incriment) {
+function swipePage(increment) {
   if (qr_regenerate() == true) {
     slides = document.getElementById("main-panel-holder").children
-    if (slide + incriment < slides.length && slide + incriment >= 0) {
+    if (slide + increment < slides.length && slide + increment >= 0) {
       slides[slide].style.display = "none";
-      slide += incriment;
+      slide += increment;
       window.scrollTo(0, 0);
       slides[slide].style.display = "table";
+      document.getElementById('data').innerHTML = "";
+      document.getElementById('copyButton').setAttribute('value','Copy Data');
     }
   }
 }
