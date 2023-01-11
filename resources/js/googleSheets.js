@@ -10,15 +10,15 @@ function setUpGoogleSheets() {
       btn.innerHTML = "Sending..."
 
       let fd = getData(false)
-      for (const [key, value] of fd) {
-        console.log(`${key}: ${value}\n`);
-      }
+      // for (const [key, value] of fd) {
+      //   console.log(`${key}: ${value}\n`);
+      // }
 
       fetch(scriptURL, { method: 'POST', mode: 'no-cors', body: fd })
         .then(response => { 
-              alert('Success!', response) })
+              console.log(fd, response); })
         .catch(error => {
-              alert('Error!', error.message)})
+              alert('Error!'); console.log(error);})
 
       btn.disabled = false
       btn.innerHTML = "Send to Google Sheets"
