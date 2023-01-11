@@ -198,3 +198,6 @@ Scouting PASS continues to evolve.   Here are the changes for the 2023 Season:
     * "YN" - for Y/N output
     * "TF" - for T/F output
     * "10" - for 1/0 output
+* Bug fix: Google Sheets fix by using buttons instead of checkboxes for the buttons which caused a "submit" to Google Sheets (Thanks [jckwik](https://github.com/jckwik)!!)
+* Don't allow the cycle timer to add a Zero time. (Thanks [jckwik](https://github.com/jckwik)!!)
+* Added Display Data and Copy Data buttons on QR screen (Thanks [tails618](https://github.com/tails618)!!)
