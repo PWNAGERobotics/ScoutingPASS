@@ -41,7 +41,7 @@ function addTimer(table, idx, name, data) {
 
   var button1 = document.createElement("button");
   button1.setAttribute("id", "start_" + data.code);
-  button1.setAttribute("type", "checkbox");
+  button1.setAttribute("type", "button");
   button1.setAttribute("onclick", "timer(this.parentElement)");
   button1.innerHTML += "Start"
   cell2.appendChild(button1);
@@ -67,18 +67,18 @@ function addTimer(table, idx, name, data) {
   cell2.appendChild(inp);
 
   if (data.type == 'timer') {
-    var button2 = document.createElement("button");
+    var button2 = document.createElement("input");
     button2.setAttribute("id", "clear_" + data.code);
-    button2.setAttribute("type", "checkbox");
+    button2.setAttribute("type", "button");
     button2.setAttribute("onclick", "resetTimer(this.parentElement)");
-    button2.innerHTML += "Reset"
+    button2.setAttribute("value", "Reset");
     cell2.appendChild(button2);
   } else if (data.type == 'cycle') {
-    var button2 = document.createElement("button");
+    var button2 = document.createElement("input");
     button2.setAttribute("id", "cycle_" + data.code);
-    button2.setAttribute("type", "checkbox");
+    button2.setAttribute("type", "button");
     button2.setAttribute("onclick", "newCycle(this.parentElement)");
-    button2.innerHTML += "New Cycle"
+    button2.setAttribute("value", "New Cycle");
     cell2.appendChild(button2);
     var ct = document.createElement('input');
     ct.setAttribute("type", "hidden");
@@ -1101,13 +1101,14 @@ function newCycle(event)
   let cycleTime = inp.value
   inp.value = 0
 
-  let cycleInput = document.getElementById("cycletime" + base);
-
-  var tempValue = Array.from(JSON.parse(cycleInput.value));
-  tempValue.push(cycleTime);
-  cycleInput.value = JSON.stringify(tempValue);
-  let d = document.getElementById("display" + base);
-  d.value = cycleInput.value.replace(/\"/g,'').replace(/\[/g, '').replace(/\]/g, '').replace(/,/g, ', ');
+  if (cycleTime > 0) {
+    let cycleInput = document.getElementById("cycletime" + base);
+    var tempValue = Array.from(JSON.parse(cycleInput.value));
+    tempValue.push(cycleTime);
+    cycleInput.value = JSON.stringify(tempValue);
+    let d = document.getElementById("display" + base);
+    d.value = cycleInput.value.replace(/\"/g,'').replace(/\[/g, '').replace(/\]/g, '').replace(/,/g, ', ');
+  }
 }
 
 function resetTimer(event) {
