@@ -1115,8 +1115,21 @@ function newCycle(event)
 
 function resetTimer(event) {
   let timerID = event.firstChild;
-  let inp = document.getElementById("input" + getIdBase(timerID.id))
+  let tId = getIdBase(timerID.id);
+  let inp = document.getElementById("input" + tId)
   inp.value = 0
+
+  // stop timer
+  timerStatus = document.getElementById("status" + tId);
+  startButton = document.getElementById("start" + tId);
+  intervalIdField = document.getElementById("intervalId" + tId);
+  var intervalId = intervalIdField.value;
+  timerStatus.value = 'stopped';
+  startButton.innerHTML = "Start";
+  if (intervalId != '') {
+    clearInterval(intervalId);
+  }
+  intervalIdField.value = '';
 }
 
 function timer(event) {
@@ -1146,6 +1159,7 @@ function timer(event) {
     startButton.innerHTML = "Start";
 
     clearInterval(intervalId);
+    intervalIdField.value = '';
   }
   drawFields();
 }
