@@ -989,7 +989,7 @@ function onFieldClick(event) {
     var origx = Math.round(target.width / 2);
     var origy = Math.round(target.height / 2) * -1;
     x = ((x - origx) * -1) + origx
-    y = ((y - origy) * -1) + origy
+    y = (((y - origy) * -1) + origy) * -1
   }
 
   let box = ((Math.ceil(y / target.height * resH) - 1) * resL) + Math.ceil(x / target.width * resL);
