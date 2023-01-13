@@ -983,15 +983,18 @@ function onFieldClick(event) {
   let target = event.target;
   var img = document.getElementById("canvas" + getIdBase(target.id));
   //Turns coordinates into a numeric box
+  console.log("offsetX = "+str(event.offsetX)+"; offsetY = "+str(event.offsetY));
   let x = event.offsetX
   let y = event.offsetY
   if (img.style.transform != "") {
     y = y * -1
     var origx = Math.round(target.width / 2);
     var origy = Math.round(target.height / 2) * -1;
+    console.log("origX = "+str(origx)+"; origY = "+str(origy));
     x = ((x - origx) * -1) + origx
     y = (((y - origy) * -1) + origy) * -1
   }
+  console.log("x = "+str(x)+"; y = "+str(y));
 
   let box = ((Math.ceil(y / target.height * resH) - 1) * resL) + Math.ceil(x / target.width * resL);
   let coords = event.offsetX + "," + event.offsetY;
