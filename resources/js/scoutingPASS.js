@@ -39,6 +39,21 @@ function addTimer(table, idx, name, data) {
   }
   cell2.classList.add("field");
 
+  if (data.type == 'cycle') {
+    var ct = document.createElement('input');
+    ct.setAttribute("type", "hidden");
+    ct.setAttribute("id", "cycletime_" + data.code);
+    ct.setAttribute("value", "[]");
+    cell2.appendChild(ct);
+    ct = document.createElement('input');
+    ct.setAttribute("type", "text");
+    ct.setAttribute("id", "display_" + data.code);
+    ct.setAttribute("value", "");
+    ct.setAttribute("disabled", "");
+    cell2.appendChild(ct);
+    var lineBreak = document.createElement("br");
+    cell2.appendChild(lineBreak);
+  }
   var button1 = document.createElement("button");
   button1.setAttribute("id", "start_" + data.code);
   button1.setAttribute("type", "button");
@@ -62,9 +77,18 @@ function addTimer(table, idx, name, data) {
   inp.setAttribute("style", "background-color: black; color: white;border: none; text-align: center;");
   inp.setAttribute("disabled", "");
   inp.setAttribute("value", 0);
-  inp.setAttribute("size", 5);
-  inp.setAttribute("maxLength", 5);
+  inp.setAttribute("size", 7);
+  inp.setAttribute("maxLength", 7);
   cell2.appendChild(inp);
+
+  var button2 = document.createElement("input");
+  button2.setAttribute("id", "clear_" + data.code);
+  button2.setAttribute("type", "button");
+  button2.setAttribute("onclick", "resetTimer(this.parentElement)");
+  button2.setAttribute("value", "Reset");
+  cell2.appendChild(button2);
+  var lineBreak = document.createElement("br");
+  cell2.appendChild(lineBreak);
 
   if (data.type == 'cycle') {
     var button3 = document.createElement("input");
@@ -72,28 +96,8 @@ function addTimer(table, idx, name, data) {
     button3.setAttribute("type", "button");
     button3.setAttribute("onclick", "newCycle(this.parentElement)");
     button3.setAttribute("value", "New Cycle");
+    button3.setAttribute('style', "margin-left: 20px;");
     cell2.appendChild(button3);
-    var lineBreak = document.createElement("br");
-    cell2.appendChild(lineBreak);
-  }
-  var button2 = document.createElement("input");
-  button2.setAttribute("id", "clear_" + data.code);
-  button2.setAttribute("type", "button");
-  button2.setAttribute("onclick", "resetTimer(this.parentElement)");
-  button2.setAttribute("value", "Reset");
-  cell2.appendChild(button2);
-  if (data.type == 'cycle') {
-    var ct = document.createElement('input');
-    ct.setAttribute("type", "hidden");
-    ct.setAttribute("id", "cycletime_" + data.code);
-    ct.setAttribute("value", "[]");
-    cell2.appendChild(ct);
-    ct = document.createElement('input');
-    ct.setAttribute("type", "text");
-    ct.setAttribute("id", "display_" + data.code);
-    ct.setAttribute("value", "");
-    ct.setAttribute("disabled", "");
-    cell2.appendChild(ct);
     var button4 = document.createElement("input");
     button4.setAttribute("id", "undo_" + data.code);
     button4.setAttribute("type", "button");
