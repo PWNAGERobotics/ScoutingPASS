@@ -982,6 +982,7 @@ function onFieldClick(event) {
 
   let target = event.target;
 
+  //Turns coordinates into a numeric box
   let box = ((Math.ceil(event.offsetY / target.height * resH) - 1) * resL) + Math.ceil(event.offsetX / target.width * resL);
   let coords = event.offsetX + "," + event.offsetY;
 
