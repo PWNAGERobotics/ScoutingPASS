@@ -981,9 +981,18 @@ function onFieldClick(event) {
   var resH = 6;
 
   let target = event.target;
-
+  var img = document.getElementById("canvas" + getIdBase(target.id));
   //Turns coordinates into a numeric box
-  let box = ((Math.ceil(event.offsetY / target.height * resH) - 1) * resL) + Math.ceil(event.offsetX / target.width * resL)
+  let x = event.offsetX
+  let y = event.offsetY
+  if (img.style.transform != "") {
+    var origx = Math.round(target.width / 2);
+    var origy = Math.round(target.height / 2) * -1;
+    x = ((x - origx) * -1) + origx
+    y = ((y - origy) * -1) + origy
+  }
+
+  let box = ((Math.ceil(y / target.height * resH) - 1) * resL) + Math.ceil(x / target.width * resL);
   let coords = event.offsetX + "," + event.offsetY;
 
   //Cumulating values
