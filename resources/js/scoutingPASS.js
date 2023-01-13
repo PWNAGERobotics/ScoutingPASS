@@ -73,6 +73,8 @@ function addTimer(table, idx, name, data) {
     button3.setAttribute("onclick", "newCycle(this.parentElement)");
     button3.setAttribute("value", "New Cycle");
     cell2.appendChild(button3);
+    var lineBreak = document.createElement("br");
+    cell2.appendChild(lineBreak);
   }
   var button2 = document.createElement("input");
   button2.setAttribute("id", "clear_" + data.code);
