@@ -96,13 +96,14 @@ function addTimer(table, idx, name, data) {
     button3.setAttribute("type", "button");
     button3.setAttribute("onclick", "newCycle(this.parentElement)");
     button3.setAttribute("value", "New Cycle");
-    button3.setAttribute('style', "margin-left: 20px;");
+    button3.setAttribute('style', "margin-left: 20px; text-align: left;");
     cell2.appendChild(button3);
     var button4 = document.createElement("input");
     button4.setAttribute("id", "undo_" + data.code);
     button4.setAttribute("type", "button");
     button4.setAttribute("onclick", "undoCycle(this.parentElement)");
     button4.setAttribute("value", "Undo");
+    button4.setAttribute('style', "text-align: right;");
     cell2.appendChild(button4);
   }
 
