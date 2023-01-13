@@ -986,6 +986,7 @@ function onFieldClick(event) {
   let x = event.offsetX
   let y = event.offsetY
   if (img.style.transform != "") {
+    y = y * -1
     var origx = Math.round(target.width / 2);
     var origy = Math.round(target.height / 2) * -1;
     x = ((x - origx) * -1) + origx
