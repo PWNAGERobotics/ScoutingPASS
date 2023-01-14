@@ -899,7 +899,16 @@ function clearForm() {
           e.value = 0
 	  if (e.className == "timer" || e.className == "cycle") {
 	    // Stop interval
-	    resetTimer(e);
+	    timerStatus = document.getElementById("status" + code);
+            startButton = document.getElementById("start" + code);
+            intervalIdField = document.getElementById("intervalId" + code);
+            var intervalId = intervalIdField.value;
+            timerStatus.value = 'stopped';
+            startButton.innerHTML = "Start";
+            if (intervalId != '') {
+              clearInterval(intervalId);
+            }
+            intervalIdField.value = '';
 	    if (e.className == "cycle") {
 	      document.getElementById("cycletime_" + code).value = "[]"
 	      document.getElementById("display_" + code).value = ""
