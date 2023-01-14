@@ -54,7 +54,7 @@ function addTimer(table, idx, name, data) {
     var lineBreak = document.createElement("br");
     cell2.appendChild(lineBreak);
   }
-  var button1 = document.createElement("button");
+  var button1 = document.createElement("input");
   button1.setAttribute("id", "start_" + data.code);
   button1.setAttribute("type", "button");
   button1.setAttribute("onclick", "timer(this.parentElement)");
