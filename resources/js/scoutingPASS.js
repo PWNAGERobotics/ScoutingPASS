@@ -914,7 +914,7 @@ function clearForm() {
 	      document.getElementById("display_" + code).value = ""
 	    }
 	  }
-        } else {
+	} else {
           e.value = ""
         }
       } else if (e.type == "checkbox") {
@@ -1163,7 +1163,7 @@ function resetTimer(event) {
   intervalIdField = document.getElementById("intervalId" + tId);
   var intervalId = intervalIdField.value;
   timerStatus.value = 'stopped';
-  startButton.innerHTML = "Start";
+  startButton.setAttribute("value", "Start");
   if (intervalId != '') {
     clearInterval(intervalId);
   }
