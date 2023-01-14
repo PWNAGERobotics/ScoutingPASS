@@ -912,7 +912,9 @@ function clearForm() {
 	    if (e.className == "cycle") {
 	      document.getElementById("cycletime_" + code).value = "[]"
 	      document.getElementById("display_" + code).value = ""
-	    }        } else {
+	    }
+	  }
+	} else {
           e.value = ""
         }
       } else if (e.type == "checkbox") {
