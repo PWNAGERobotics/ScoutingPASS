@@ -11,24 +11,6 @@ var config_data = `
       "maxSize": 5,
       "required": "true"
     },
-    { "name": "Event",
-      "code": "e",
-      "type": "event",
-      "defaultValue": "2023ilch",
-      "required": "true",
-      "disabled": "true"
-    },
-    { "name": "Match Level",
-      "code": "l",
-      "type": "level",
-      "choices": {
-        "qm": "Quals<br>",
-        "de": "Double Elimination<br>",
-        "f": "Finals"
-      },
-      "defaultValue": "qm",
-      "required": "true"
-    },
     { "name": "Match #",
       "code": "m",
       "type": "match",
@@ -54,11 +36,6 @@ var config_data = `
       "type": "team",
       "min": 1,
       "max": 99999
-    },
-    { "name": "Auto Start Position",
-      "code": "as",
-      "type": "field_image",
-      "filename": "2023/field_image.png"
     }
   ],
   "auton": [
@@ -90,6 +67,10 @@ var config_data = `
       "code": "aol",
       "type": "counter"
     },
+    { "name": "Grabbed Second Element",
+      "code": "gse",
+      "type": "bool"
+    },
     { "name": "Docked",
       "code": "ad",
       "type":"radio",
@@ -103,10 +84,6 @@ var config_data = `
     }
   ],
   "teleop": [
-    { "name": "Cycle Timer",
-      "code": "tct",
-      "type": "cycle"
-    },
     { "name": "High Cube Scored",
       "code": "tuh",
       "type": "counter"
@@ -130,36 +107,9 @@ var config_data = `
     { "name": "Low Cone Scored",
       "code": "tol",
       "type": "counter"
-    },
-    { "name": "Feeder Count",
-      "code": "tfc",
-      "type": "counter"
-    },
-    { "name": "Was Defended",
-      "code": "wd",
-      "type": "bool"
-    },
-    { "name": "Smart Placement (creates Links)",
-      "code": "lnk",
-      "type": "bool"
-    },
-    { "name": "Cargo Intake From",
-      "code": "cif",
-      "type": "radio",
-      "choices": {
-        "t": "Substation<br>",
-        "g": "Ground<br>",
-        "b": "Both<br>",
-        "x": "Not Attempted"
-      },
-      "defaultValue": "x"
     }
   ],
   "endgame": [
-    { "name": "Docking Timer",
-      "code": "dt",
-      "type": "timer"
-    },
     { "name": "Final Status",
       "code": "fs",
       "type":"radio",
@@ -172,13 +122,13 @@ var config_data = `
       },
       "defaultValue": "x"
     },
-    { "name": "# of alliance bots docked/engaged",
-      "code": "cn",
-      "type": "counter"
+    { "name": "Helping to Balance",
+      "code": "htb",
+      "type": "bool"
     }
   ],
   "postmatch": [
-    { "name": "Driver Skill",
+    { "name": "Contribution",
       "code": "ds",
       "type": "radio",
       "choices": {
@@ -188,26 +138,6 @@ var config_data = `
         "x": "Not Observed"
       },
       "defaultValue": "x"
-    },
-    { "name": "Links Scored",
-      "code": "ls",
-      "type": "counter"
-    },
-    { "name": "Defense Rating",
-      "code": "dr",
-      "type": "radio",
-      "choices": {
-        "b": "Below Average<br>",
-        "a": "Average<br>",
-        "g": "Good<br>",
-        "e": "Excellent<br>",
-        "x": "Did not play defense"
-      },
-      "defaultValue": "x"
-    },
-    { "name": "Swerve drive?",
-      "code": "sd",
-      "type": "bool"
     },
     { "name": "Speed Rating",
       "code": "sr",
@@ -225,30 +155,11 @@ var config_data = `
       "code": "d",
       "type": "bool"
     },
-    { "name": "Avoided coopertition",
-      "code": "coo",
-      "type": "bool"
-    },
-    { "name": "Make good alliance partner?",
-      "tooltip": "Would you want this robot on your alliance in eliminations?",
-      "code": "all",
-      "type": "bool"
-    },
     { "name": "Comments",
       "code": "co",
       "type": "text",
       "size": 15,
       "maxSize": 50
-    },
-    { "name": "Confidence Rating",
-      "code": "cnf",
-      "type": "radio",
-      "choices": {
-        "v": "Very Confident<br>",
-        "a": "Average<br>",
-        "n": "Not Confident"
-        },
-      "defaultValue": "a"
     }
   ]
 }`;

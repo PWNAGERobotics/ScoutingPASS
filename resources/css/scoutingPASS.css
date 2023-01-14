@@ -148,7 +148,7 @@ h2{
     display: flex;
 }
 
-#nextButton1, #nextButton2, #nextButton9, #nextButton10, .clearForm, .submitForm, #displayButton, #copyButton {
+#nextButton1, #nextButton2, #nextButton9, .clearForm, .submitForm, #displayButton, #copyButton, #doneButton1 {
     font-family: Alexis; 
     padding: 10px;
     background-color: rgb(151, 199, 240);

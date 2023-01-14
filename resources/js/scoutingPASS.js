@@ -174,88 +174,88 @@ function addCounter(table, idx, name, data) {
   return idx + 1;
 }
 
-function addFieldImage(table, idx, name, data) {
-  var row = table.insertRow(idx);
-  var cell = row.insertCell(0);
-  cell.setAttribute("colspan", 2);
-  cell.setAttribute("style", "text-align: center;");
-  cell.innerHTML = name;
-  if (data.hasOwnProperty('tooltip')) {
-    cell.setAttribute("title", data.tooltip);
-  }
+// function addFieldImage(table, idx, name, data) {
+//   var row = table.insertRow(idx);
+//   var cell = row.insertCell(0);
+//   cell.setAttribute("colspan", 2);
+//   cell.setAttribute("style", "text-align: center;");
+//   cell.innerHTML = name;
+//   if (data.hasOwnProperty('tooltip')) {
+//     cell.setAttribute("title", data.tooltip);
+//   }
 
-  idx += 1
-  row = table.insertRow(idx);
-  cell = row.insertCell(0);
-  cell.setAttribute("colspan", 2);
-  cell.setAttribute("style", "text-align: center;");
-  // Undo button
-  var undoButton = document.createElement("input");
-  undoButton.setAttribute("type", "button");
-  undoButton.setAttribute("onclick", "undo(this.parentElement)");
-  undoButton.setAttribute("value", "Undo");
-  undoButton.setAttribute("id", "undo_" + data.code);
-  undoButton.setAttribute("class", "undoButton");
-  cell.appendChild(undoButton);
-  // Flip button
-  var flipButton = document.createElement("input");
-  flipButton.setAttribute("type", "button");
-  flipButton.setAttribute("onclick", "flip(this.parentElement)");
-  flipButton.setAttribute("value", "Flip Image");
-  flipButton.setAttribute("id", "flip_" + data.code);
-  flipButton.setAttribute("class", "flipButton");
-  flipButton.setAttribute("margin-left", '8px');
-  cell.appendChild(flipButton);
+//   idx += 1
+//   row = table.insertRow(idx);
+//   cell = row.insertCell(0);
+//   cell.setAttribute("colspan", 2);
+//   cell.setAttribute("style", "text-align: center;");
+//   // Undo button
+//   var undoButton = document.createElement("input");
+//   undoButton.setAttribute("type", "button");
+//   undoButton.setAttribute("onclick", "undo(this.parentElement)");
+//   undoButton.setAttribute("value", "Undo");
+//   undoButton.setAttribute("id", "undo_" + data.code);
+//   undoButton.setAttribute("class", "undoButton");
+//   cell.appendChild(undoButton);
+//   // Flip button
+//   var flipButton = document.createElement("input");
+//   flipButton.setAttribute("type", "button");
+//   flipButton.setAttribute("onclick", "flip(this.parentElement)");
+//   flipButton.setAttribute("value", "Flip Image");
+//   flipButton.setAttribute("id", "flip_" + data.code);
+//   flipButton.setAttribute("class", "flipButton");
+//   flipButton.setAttribute("margin-left", '8px');
+//   cell.appendChild(flipButton);
 
-  idx += 1;
-  row = table.insertRow(idx);
-  cell = row.insertCell(0);
-  cell.setAttribute("colspan", 2);
-  cell.setAttribute("style", "text-align: center;");
-  var canvas = document.createElement('canvas');
-  //canvas.onclick = onFieldClick;
-  canvas.setAttribute("onclick", "onFieldClick(event)");
-  canvas.setAttribute("class", "field-image-src");
-  canvas.setAttribute("id", "canvas_" + data.code);
-  canvas.innerHTML = "No canvas support";
-  cell.appendChild(canvas);
+//   idx += 1;
+//   row = table.insertRow(idx);
+//   cell = row.insertCell(0);
+//   cell.setAttribute("colspan", 2);
+//   cell.setAttribute("style", "text-align: center;");
+//   var canvas = document.createElement('canvas');
+//   //canvas.onclick = onFieldClick;
+//   canvas.setAttribute("onclick", "onFieldClick(event)");
+//   canvas.setAttribute("class", "field-image-src");
+//   canvas.setAttribute("id", "canvas_" + data.code);
+//   canvas.innerHTML = "No canvas support";
+//   cell.appendChild(canvas);
 
-  idx += 1;
-  row = table.insertRow(idx);
-  row.setAttribute("style", "display:none");
-  cell = row.insertCell(0);
-  cell.setAttribute("colspan", 2);
-  var inp = document.createElement('input');
-  inp.setAttribute("type", "hidden");
-  inp.setAttribute("id", "XY_" + data.code);
-  inp.setAttribute("value", "");
-  cell.appendChild(inp);
-  inp = document.createElement('input');
-  inp.setAttribute("hidden", "");
-  if (enableGoogleSheets) {
-    inp.setAttribute("name", data.gsCol);
-  }
-  inp.setAttribute("id", "input_" + data.code);
-  inp.setAttribute("value", "");
-  cell.appendChild(inp);
+//   idx += 1;
+//   row = table.insertRow(idx);
+//   row.setAttribute("style", "display:none");
+//   cell = row.insertCell(0);
+//   cell.setAttribute("colspan", 2);
+//   var inp = document.createElement('input');
+//   inp.setAttribute("type", "hidden");
+//   inp.setAttribute("id", "XY_" + data.code);
+//   inp.setAttribute("value", "");
+//   cell.appendChild(inp);
+//   inp = document.createElement('input');
+//   inp.setAttribute("hidden", "");
+//   if (enableGoogleSheets) {
+//     inp.setAttribute("name", data.gsCol);
+//   }
+//   inp.setAttribute("id", "input_" + data.code);
+//   inp.setAttribute("value", "");
+//   cell.appendChild(inp);
 
-  idx += 1
-  row = table.insertRow(idx);
-  row.setAttribute("style", "display:none");
-  //row.setAttribute("style", "display:none");
-  cell = row.insertCell(0);
-  cell.setAttribute("colspan", 2);
-  var img = document.createElement('img');
-  img.src = data.filename;
-  img.setAttribute("id", "img_" + data.code);
-  img.setAttribute("class", "field-image-src");
-  img.setAttribute("onload", "drawFields()");
-  //img.setAttribute("onclick", "onFieldClick(event)");
-  img.setAttribute("hidden", "");
-  cell.appendChild(img);
+//   idx += 1
+//   row = table.insertRow(idx);
+//   row.setAttribute("style", "display:none");
+//   //row.setAttribute("style", "display:none");
+//   cell = row.insertCell(0);
+//   cell.setAttribute("colspan", 2);
+//   var img = document.createElement('img');
+//   img.src = data.filename;
+//   img.setAttribute("id", "img_" + data.code);
+//   img.setAttribute("class", "field-image-src");
+//   img.setAttribute("onload", "drawFields()");
+//   //img.setAttribute("onclick", "onFieldClick(event)");
+//   img.setAttribute("hidden", "");
+//   cell.appendChild(img);
 
-  return idx + 1
-}
+//   return idx + 1
+// }
 
 function addText(table, idx, name, data) {
   var row = table.insertRow(idx);
@@ -329,10 +329,10 @@ function addNumber(table, idx, name, data) {
   } else {
     inp.setAttribute("name", data.code);
   }
-  if ((data.type == 'team') ||
-    (data.type == 'match')) {
-    inp.setAttribute("onchange", "updateMatchStart(event)");
-  }
+  // if ((data.type == 'team') ||
+  //   (data.type == 'match')) {
+  //   inp.setAttribute("onchange", "updateMatchStart(event)");
+  // }
   if (data.hasOwnProperty('min')) {
     inp.setAttribute("min", data.min);
   }
@@ -383,12 +383,12 @@ function addRadio(table, idx, name, data) {
   if (data.hasOwnProperty('tooltip')) {
     cell1.setAttribute("title", data.tooltip);
   }
-  cell2.classList.add("field");
-  if ((data.type == 'level') ||
-    (data.type == 'robot')
-  ) {
-    cell2.setAttribute("onchange", "updateMatchStart(event)");
-  }
+  // cell2.classList.add("field");
+  // if ((data.type == 'level') ||
+  //   (data.type == 'robot')
+  // ) {
+  //   cell2.setAttribute("onchange", "updateMatchStart(event)");
+  // }
   var checked = null
   if (data.hasOwnProperty('defaultValue')) {
     checked = data.defaultValue;
@@ -693,32 +693,32 @@ function validateLevel() {
   }
 }
 
-function validateData() {
-  var ret = true
-  var errStr = "Bad fields: ";
-  for (rf of requiredFields) {
-    // Robot requires special (radio) validation
-    if (rf == "r") {
-      if (!validateRobot()) {
-        errStr += rf + " "
-        ret = false
-      }
-    } else if (rf == "l") {
-      if (!validateLevel()) {
-        errStr += rf + " "
-        ret = false
-      }
-      // Normal validation (length <> 0)
-    } else if (document.getElementById("input_" + rf).value.length == 0) {
-      errStr += rf + " "
-      ret = false
-    }
-  }
-  if (ret == false) {
-    alert("Enter all required values\n" + errStr);
-  }
-  return ret
-}
+// function validateData() {
+//   var ret = true
+//   var errStr = "Bad fields: ";
+//   for (rf of requiredFields) {
+//     // Robot requires special (radio) validation
+//     if (rf == "r") {
+//       if (!validateRobot()) {
+//         errStr += rf + " "
+//         ret = false
+//       }
+//     } else if (rf == "l") {
+//       if (!validateLevel()) {
+//         errStr += rf + " "
+//         ret = false
+//       }
+//       // Normal validation (length <> 0)
+//     // } else if (document.getElementById("input_" + rf).value.length == 0) {
+//     //   errStr += rf + " "
+//     //   ret = false
+//     // }
+//   }
+//   if (ret == false) {
+//     alert("Enter all required values\n" + errStr);
+//   }
+//   return ret
+// }
 
 function getData(useStr) {
   var str = ''
@@ -809,9 +809,9 @@ function updateQRHeader() {
 
 function qr_regenerate() {
   // Validate required pre-match date (event, match, level, robot, scouter)
-  if (validateData() == false) {
+  if (false == false) {
     // Don't allow a swipe until all required data is filled in
-    return false
+    return true
   }
 
   // Get data
@@ -926,6 +926,10 @@ function moveTouch(e) {
   initialX = null;
 };
 
+function saveData(){
+  
+}
+
 function swipePage(increment) {
   if (qr_regenerate() == true) {
     slides = document.getElementById("main-panel-holder").children
@@ -1038,31 +1042,31 @@ function getCurrentTeamNumberFromRobot() {
   }
 }
 
-function getCurrentMatchKey() {
-  return document.getElementById("input_e").value + "_" + getLevel() + document.getElementById("input_m").value;
-}
+// function getCurrentMatchKey() {
+//   return document.getElementById("input_e").value + "_" + getLevel() + document.getElementById("input_m").value;
+// }
 
-function getCurrentMatch() {
-  return getMatch(getCurrentMatchKey());
-}
+// function getCurrentMatch() {
+//   return getMatch(getCurrentMatchKey());
+// }
 
-function updateMatchStart(event) {
-  if ((getCurrentMatch() == "") ||
-    (!teams)) {
-    console.log("No match or team data.");
-    return;
-  }
-  if (event.target.id.startsWith("input_r")) {
-    document.getElementById("input_t").value = getCurrentTeamNumberFromRobot().replace("frc", "");
-    onTeamnameChange();
-  }
-  if (event.target.id == "input_m") {
-    if (getRobot() != "" && typeof getRobot()) {
-      document.getElementById("input_t").value = getCurrentTeamNumberFromRobot().replace("frc", "");
-      onTeamnameChange();
-    }
-  }
-}
+// function updateMatchStart(event) {
+//   if ((getCurrentMatch() == "") ||
+//     (!teams)) {
+//     console.log("No match or team data.");
+//     return;
+//   }
+//   if (event.target.id.startsWith("input_r")) {
+//     document.getElementById("input_t").value = getCurrentTeamNumberFromRobot().replace("frc", "");
+//     onTeamnameChange();
+//   }
+//   if (event.target.id == "input_m") {
+//     if (getRobot() != "" && typeof getRobot()) {
+//       document.getElementById("input_t").value = getCurrentTeamNumberFromRobot().replace("frc", "");
+//       onTeamnameChange();
+//     }
+//   }
+// }
 
 function onTeamnameChange(event) {
   var newNumber = document.getElementById("input_t").value;
@@ -1165,29 +1169,29 @@ function undo(event) {
   drawFields();
 }
 
-function flip(event) {
-  let flipID = event.firstChild;
-  var flipImg = document.getElementById("canvas" + getIdBase(flipID.id));
-  if (flipImg.style.transform == "") {
-    flipImg.style.transform = 'rotate(180deg)';
-  } else {
-    flipImg.style.transform = '';
-  }
-  drawFields();
-}
+// function flip(event) {
+//   let flipID = event.firstChild;
+//   var flipImg = document.getElementById("canvas" + getIdBase(flipID.id));
+//   if (flipImg.style.transform == "") {
+//     flipImg.style.transform = 'rotate(180deg)';
+//   } else {
+//     flipImg.style.transform = '';
+//   }
+//   drawFields();
+// }
 
 window.onload = function () {
   var ret = configure();
-  if (ret != -1) {
-    var ec = document.getElementById("input_e").value;
-    getTeams(ec);
-    getSchedule(ec);
-    this.drawFields();
+  // if (ret != -1) {
+  //   var ec = document.getElementById("input_e").value;
+  //   getTeams(ec);
+  //   getSchedule(ec);
+  //   this.drawFields();
     if (enableGoogleSheets) {
       console.log("Enabling Google Sheets.");
       setUpGoogleSheets();
     }
-  }
+  // }
 };
 
 function displayData(){
