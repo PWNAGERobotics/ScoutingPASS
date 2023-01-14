@@ -899,9 +899,9 @@ function clearForm() {
           e.value = 0
 	  if (e.className == "timer" || e.className == "cycle") {
 	    // Stop interval
-	    timerStatus = document.getElementById("status" + code);
-            startButton = document.getElementById("start" + code);
-            intervalIdField = document.getElementById("intervalId" + code);
+	    timerStatus = document.getElementById("status_" + code);
+            startButton = document.getElementById("start_" + code);
+            intervalIdField = document.getElementById("intervalId_" + code);
             var intervalId = intervalIdField.value;
             timerStatus.value = 'stopped';
             startButton.innerHTML = "Start";
