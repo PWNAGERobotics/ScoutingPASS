@@ -897,9 +897,13 @@ function clearForm() {
           (e.className == "timer") ||
 	  (e.className == "cycle")) {
           e.value = 0
-	  if (e.className == "cycle") {
-	    document.getElementById("cycletime_" + code).value = "[]"
-	    document.getElementById("display_" + code).value = ""
+	  if (e.className == "timer" || e.className == "cycle") {
+	    // Stop interval
+	    resetTimer(e);
+	    if (e.className == "cycle") {
+	      document.getElementById("cycletime_" + code).value = "[]"
+	      document.getElementById("display_" + code).value = ""
+	    }
 	  }
         } else {
           e.value = ""
