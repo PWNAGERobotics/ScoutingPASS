@@ -1167,7 +1167,7 @@ function timer(event) {
   var intervalId = intervalIdField.value;
   if (statusValue == 'stopped') {
     timerStatus.value = 'started';
-    startButton.innerHTML = "Stop";
+    startButton.setAttribute("value", "Stop");
 
     var intId = setInterval(() => {
       if (document.getElementById("status" + tId).value == 'started') {
@@ -1181,7 +1181,7 @@ function timer(event) {
     intervalIdField.value = intId;
   } else {
     timerStatus.value = 'stopped';
-    startButton.innerHTML = "Start";
+    startButton.setAttribute("value", "Start");
 
     clearInterval(intervalId);
     intervalIdField.value = '';
