@@ -39,11 +39,26 @@ function addTimer(table, idx, name, data) {
   }
   cell2.classList.add("field");
 
-  var button1 = document.createElement("button");
+  if (data.type == 'cycle') {
+    var ct = document.createElement('input');
+    ct.setAttribute("type", "hidden");
+    ct.setAttribute("id", "cycletime_" + data.code);
+    ct.setAttribute("value", "[]");
+    cell2.appendChild(ct);
+    ct = document.createElement('input');
+    ct.setAttribute("type", "text");
+    ct.setAttribute("id", "display_" + data.code);
+    ct.setAttribute("value", "");
+    ct.setAttribute("disabled", "");
+    cell2.appendChild(ct);
+    var lineBreak = document.createElement("br");
+    cell2.appendChild(lineBreak);
+  }
+  var button1 = document.createElement("input");
   button1.setAttribute("id", "start_" + data.code);
   button1.setAttribute("type", "button");
   button1.setAttribute("onclick", "timer(this.parentElement)");
-  button1.innerHTML += "Start"
+  button1.setAttribute("value", "Start");
   cell2.appendChild(button1);
 
   var inp = document.createElement("input");
@@ -62,35 +77,33 @@ function addTimer(table, idx, name, data) {
   inp.setAttribute("style", "background-color: black; color: white;border: none; text-align: center;");
   inp.setAttribute("disabled", "");
   inp.setAttribute("value", 0);
-  inp.setAttribute("size", 5);
-  inp.setAttribute("maxLength", 5);
+  inp.setAttribute("size", 7);
+  inp.setAttribute("maxLength", 7);
   cell2.appendChild(inp);
 
-  if (data.type == 'timer') {
-    var button2 = document.createElement("input");
-    button2.setAttribute("id", "clear_" + data.code);
-    button2.setAttribute("type", "button");
-    button2.setAttribute("onclick", "resetTimer(this.parentElement)");
-    button2.setAttribute("value", "Reset");
-    cell2.appendChild(button2);
-  } else if (data.type == 'cycle') {
-    var button2 = document.createElement("input");
-    button2.setAttribute("id", "cycle_" + data.code);
-    button2.setAttribute("type", "button");
-    button2.setAttribute("onclick", "newCycle(this.parentElement)");
-    button2.setAttribute("value", "New Cycle");
-    cell2.appendChild(button2);
-    var ct = document.createElement('input');
-    ct.setAttribute("type", "hidden");
-    ct.setAttribute("id", "cycletime_" + data.code);
-    ct.setAttribute("value", "[]");
-    cell2.appendChild(ct);
-    ct = document.createElement('input');
-    ct.setAttribute("type", "text");
-    ct.setAttribute("id", "display_" + data.code);
-    ct.setAttribute("value", "");
-    ct.setAttribute("disabled", "");
-    cell2.appendChild(ct);
+  var button2 = document.createElement("input");
+  button2.setAttribute("id", "clear_" + data.code);
+  button2.setAttribute("type", "button");
+  button2.setAttribute("onclick", "resetTimer(this.parentElement)");
+  button2.setAttribute("value", "Reset");
+  cell2.appendChild(button2);
+  var lineBreak = document.createElement("br");
+  cell2.appendChild(lineBreak);
+
+  if (data.type == 'cycle') {
+    var button3 = document.createElement("input");
+    button3.setAttribute("id", "cycle_" + data.code);
+    button3.setAttribute("type", "button");
+    button3.setAttribute("onclick", "newCycle(this.parentElement)");
+    button3.setAttribute("value", "New Cycle");
+    cell2.appendChild(button3);
+    var button4 = document.createElement("input");
+    button4.setAttribute("id", "undo_" + data.code);
+    button4.setAttribute("type", "button");
+    button4.setAttribute("onclick", "undoCycle(this.parentElement)");
+    button4.setAttribute("value", "Undo");
+    button4.setAttribute('style', "margin-left: 20px;");
+    cell2.appendChild(button4);
   }
 
   idx += 1
@@ -976,7 +989,7 @@ function onFieldClick(event) {
   let target = event.target;
 
   //Turns coordinates into a numeric box
-  let box = ((Math.ceil(event.offsetY / target.height * resH) - 1) * resL) + Math.ceil(event.offsetX / target.width * resL)
+  let box = ((Math.ceil(event.offsetY / target.height * resH) - 1) * resL) + Math.ceil(event.offsetX / target.width * resL);
   let coords = event.offsetX + "," + event.offsetY;
 
   //Cumulating values
@@ -1113,10 +1126,35 @@ function newCycle(event)
   }
 }
 
+function undoCycle(event) {
+  let undoID = event.firstChild;
+  let uId = getIdBase(undoID.id);
+  //Getting rid of last value
+  let cycleInput = document.getElementById("cycletime" + uId);
+  var tempValue = Array.from(JSON.parse(cycleInput.value));
+  tempValue.pop();
+  cycleInput.value = JSON.stringify(tempValue);
+  let d = document.getElementById("display" + uId);
+  d.value = cycleInput.value.replace(/\"/g,'').replace(/\[/g, '').replace(/\]/g, '').replace(/,/g, ', ');
+}
+
 function resetTimer(event) {
   let timerID = event.firstChild;
-  let inp = document.getElementById("input" + getIdBase(timerID.id))
+  let tId = getIdBase(timerID.id);
+  let inp = document.getElementById("input" + tId)
   inp.value = 0
+
+  // stop timer
+  timerStatus = document.getElementById("status" + tId);
+  startButton = document.getElementById("start" + tId);
+  intervalIdField = document.getElementById("intervalId" + tId);
+  var intervalId = intervalIdField.value;
+  timerStatus.value = 'stopped';
+  startButton.innerHTML = "Start";
+  if (intervalId != '') {
+    clearInterval(intervalId);
+  }
+  intervalIdField.value = '';
 }
 
 function timer(event) {
@@ -1129,7 +1167,7 @@ function timer(event) {
   var intervalId = intervalIdField.value;
   if (statusValue == 'stopped') {
     timerStatus.value = 'started';
-    startButton.innerHTML = "Stop";
+    startButton.setAttribute("value", "Stop");
 
     var intId = setInterval(() => {
       if (document.getElementById("status" + tId).value == 'started') {
@@ -1143,9 +1181,10 @@ function timer(event) {
     intervalIdField.value = intId;
   } else {
     timerStatus.value = 'stopped';
-    startButton.innerHTML = "Start";
+    startButton.setAttribute("value", "Start");
 
     clearInterval(intervalId);
+    intervalIdField.value = '';
   }
   drawFields();
 }
@@ -1176,6 +1215,15 @@ function flip(event) {
   drawFields();
 }
 
+function displayData(){
+  document.getElementById('data').innerHTML = getData(true);
+}
+
+function copyData(){
+  navigator.clipboard.writeText(getData(true));
+  document.getElementById('copyButton').setAttribute('value','Copied');
+}
+
 window.onload = function () {
   var ret = configure();
   if (ret != -1) {
@@ -1189,12 +1237,3 @@ window.onload = function () {
     }
   }
 };
-
-function displayData(){
-  document.getElementById('data').innerHTML = getData(true);
-}
-
-function copyData(){
-  navigator.clipboard.writeText(getData(true));
-  document.getElementById('copyButton').setAttribute('value','Copied');
-}
