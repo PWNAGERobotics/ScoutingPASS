@@ -37,6 +37,10 @@ html, body{
     border-color: black;
 }
 
+.button {
+    font-family: Alexis; 
+    font-size: 16px;
+}
 
 #autonHeader, #endgameHeader, #teleopHeader1, #teleopHeader2{
     color: black;
