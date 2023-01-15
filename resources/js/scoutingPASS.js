@@ -187,7 +187,7 @@ function addCounter(table, idx, name, data) {
   return idx + 1;
 }
 
-function addFieldImage(table, idx, name, data) {
+function addClickableImage(table, idx, name, data) {
   var row = table.insertRow(idx);
   var cell = row.insertCell(0);
   cell.setAttribute("colspan", 2);
@@ -514,8 +514,9 @@ function addElement(table, idx, data) {
     (data.type == 'number')
   ) {
     idx = addNumber(table, idx, name, data);
-  } else if (data.type == 'field_image') {
-    idx = addFieldImage(table, idx, name, data);
+  } else if ((data.type == 'field_image') ||
+  			 (data.type == 'clickable_image')) {
+    idx = addClickableImage(table, idx, name, data);
   } else if ((data.type == 'bool') ||
     (data.type == 'checkbox') ||
     (data.type == 'pass_fail')

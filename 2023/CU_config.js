@@ -66,6 +66,14 @@ var config_data = `
       "code": "am",
       "type": "bool"
     },
+    { "name": "Auto Scoring",
+      "code": "asc",
+      "type": "clickable_image",
+      "filename": "2023/grid_image.png",
+      "x-boxes": 9,
+      "y-boxes": 4,
+      "multi-click": "false"
+    },
     { "name": "High Cube Scored",
       "code": "auh",
       "type": "counter"
