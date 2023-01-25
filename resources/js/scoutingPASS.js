@@ -819,6 +819,9 @@ function validateData() {
         ret = false
       }
       // Normal validation (length <> 0)
+    } else if (document.getElementById("input_" + rf).value == "[]") {
+        errStr += rf + " ";
+        ret = false;
     } else if (document.getElementById("input_" + rf).value.length == 0) {
       errStr += rf + " "
       ret = false
@@ -959,7 +962,7 @@ function clearForm() {
   inputs = document.querySelectorAll("[id*='XY_']");
   for (e of inputs) {
     code = e.id.substring(3)
-    e.value = ""
+    e.value = "[]"
   }
 
   inputs = document.querySelectorAll("[id*='input_']");
@@ -973,6 +976,10 @@ function clearForm() {
     if (code == "e") continue
     if (code == "s") continue
 
+    if (code == "as") {
+        e.value = "[]";
+        continue;
+      }
 
     radio = code.indexOf("_")
     if (radio > -1) {
