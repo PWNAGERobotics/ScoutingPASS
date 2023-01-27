@@ -288,6 +288,8 @@ function addClickableImage(table, idx, name, data) {
   }
   inp.setAttribute("id", "input_" + data.code);
   inp.setAttribute("value", "[]");
+  inp.setAttribute("class", "clickableImage");
+ 
   cell.appendChild(inp);
 
   // TODO: Make these more efficient/elegant
@@ -976,10 +978,10 @@ function clearForm() {
     if (code == "e") continue
     if (code == "s") continue
 
-    if (code == "as") {
-        e.value = "[]";
-        continue;
-      }
+    if (e.className == "clickableImage") {
+      e.value = "[]";
+      continue;
+    }
 
     radio = code.indexOf("_")
     if (radio > -1) {
