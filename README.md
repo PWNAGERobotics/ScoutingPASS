@@ -191,7 +191,8 @@ Scouting PASS continues to evolve.   Here are the changes for the 2023 Season:
 * New Timer component - Start/Stop and Clear Buttons
 * New Cycle component - Keep track of cycle times
 * Improved Clickable Field component - Now you can configure the number of boxes and tie it to a Cycle Timer
-* Shared [code](Excel/VBA_FUNCTIONS_2023.bas) to parse cycle time and clickable image output
+* [Excel VBA functions](Excel/VBA_FUNCTIONS_2023.bas) and [examples](Excel/2023_grid_and_cycle_time_example.xlsm) to parse and calculate the Grid field clickable image output
+* [Excel VBA function](Excel/VBA_FUNCTIONS_2023.bas) and [examples](Excel/2023_grid_and_cycle_time_example.xlsm) to parse and calculate the average cycle time
 * JSON simplification - The JSON structure has been simplified to make it a little easier to maintain.  The previous years configuration files have been updated to use the new structure.
 * Add "Flip Image" button to the Field Image component
 * Add "tooltip" option for components - Tooltips will appear when hovering over the name of the component
@@ -201,7 +202,6 @@ Scouting PASS continues to evolve.   Here are the changes for the 2023 Season:
     * "YN" - for Y/N output
     * "TF" - for T/F output
     * "10" - for 1/0 output
-* Added Excel, code and example documentation
 * Bug fix: Google Sheets fix by using buttons instead of checkboxes for the buttons which caused a "submit" to Google Sheets (Thanks [jckwik](https://github.com/jckwik)!!)
 * Don't allow the cycle timer to add a Zero time. (Thanks [jckwik](https://github.com/jckwik)!!)
 * Added Display Data and Copy Data buttons on QR screen (Thanks [tails618](https://github.com/tails618)!!)
