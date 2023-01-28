@@ -120,6 +120,10 @@ var config_data = `
       "code": "tfc",
       "type": "counter"
     },
+    { "name": "Was Fed<br>Game Pieces",
+      "code": "wf",
+      "type": "bool"
+    },
     { "name": "Was Defended",
       "code": "wd",
       "type": "bool"
