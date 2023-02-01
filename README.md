@@ -94,12 +94,12 @@ It's really simple to get started:
 * Load page via GitHub pages (https://<your_username>.github.io/ScoutingPASS)
 <p>
 To enable The Blue Alliance API:
-  
+
 * Put your API token in the authKey variable in resources/js/TBAInterface.js.  (line 4)
 * Reload your page.
-  
+
 Note: In order for this to work, the schedule has to be posted to The Blue Alliance.  That usually doesn't happen until just before the event. (a few days to a few hours)  To test this you can point it to a past event.   Set the event to 2020ilch.   Reload the page to load the schedule for that event. Select Match 6 and Blue-2.  You should see it populate the Team # to 2451, and the next line will show the team name, PWNAGE.
-  
+
 <p align="right">(<a href="#top">back to top</a>)</p>
 <div id="how-we-scout"></div>
 
@@ -155,15 +155,15 @@ The Field Image element allows tracking of the location of a robot.  It does thi
 <br />
 <br />
 Field Location Key:
-  
+
 ![Field Location Key](resources/images/field_location_key.png)
-  
+
 When a scouter clicks on the image the coordinates of the click location are translated into a box and that number is stored into an array.   The array is passed as the data for the field element.  
-  
+
 The scouter can click as many times as they want and duplicate clicks (boxes) are recorded.  
-  
+
 This could be used (as in our demo) to collect shooting information and create heat maps for each robot.
-  
+
 Note: The Auto Start (as) element is special in that it will only keep track of one location.  There can only be one starting location.  Therefore if you click more than once it will only record the last location.
 </details>
 
@@ -187,8 +187,12 @@ Distributed under the GNU GPL v3.0 License. See `LICENSE` for more information.
 
 Scouting PASS continues to evolve.   Here are the changes for the 2023 Season:
 
+* Added [configuration documentation](docs/Configuration.md)
 * New Timer component - Start/Stop and Clear Buttons
 * New Cycle component - Keep track of cycle times
+* Improved Clickable Field component - Now you can configure the number of boxes and tie it to a Cycle Timer
+* [Excel VBA functions](Excel/VBA_FUNCTIONS_2023.bas) and [examples](Excel/2023_grid_and_cycle_time_example.xlsm) to parse and calculate the Grid field clickable image output
+* [Excel VBA function](Excel/VBA_FUNCTIONS_2023.bas) and [examples](Excel/2023_grid_and_cycle_time_example.xlsm) to parse and calculate the average cycle time
 * JSON simplification - The JSON structure has been simplified to make it a little easier to maintain.  The previous years configuration files have been updated to use the new structure.
 * Add "Flip Image" button to the Field Image component
 * Add "tooltip" option for components - Tooltips will appear when hovering over the name of the component
@@ -198,3 +202,7 @@ Scouting PASS continues to evolve.   Here are the changes for the 2023 Season:
     * "YN" - for Y/N output
     * "TF" - for T/F output
     * "10" - for 1/0 output
+* Bug fix: Google Sheets fix by using buttons instead of checkboxes for the buttons which caused a "submit" to Google Sheets (Thanks [jckwik](https://github.com/jckwik)!!)
+* Don't allow the cycle timer to add a Zero time. (Thanks [jckwik](https://github.com/jckwik)!!)
+* Added Display Data and Copy Data buttons on QR screen (Thanks [tails618](https://github.com/tails618)!!)
+* Bug fixes to clickable images (Thanks [jacob6838](https://github.com/jacob6838)!!)

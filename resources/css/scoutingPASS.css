@@ -37,6 +37,10 @@ html, body{
     border-color: black;
 }
 
+.button {
+    font-family: Alexis; 
+    font-size: 16px;
+}
 
 #autonHeader, #endgameHeader, #teleopHeader1, #teleopHeader2{
     color: black;
@@ -148,7 +152,7 @@ h2{
     display: flex;
 }
 
-#nextButton1, #nextButton2, #nextButton9, #nextButton10, .clearForm, .submitForm {
+#nextButton1, #nextButton2, #nextButton9, #nextButton10, .clearForm, .submitForm, #displayButton, #copyButton {
     font-family: Alexis; 
     padding: 10px;
     background-color: rgb(151, 199, 240);
@@ -231,4 +235,9 @@ input {
     text-align: center;
     color: black;
     background-color: white;
+}
+
+#data {
+    font-family:'Lucida Console', 'monospace';
+    text-align: justify;
 }
