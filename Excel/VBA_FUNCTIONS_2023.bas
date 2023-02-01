@@ -152,8 +152,7 @@ Private Function getAvgCycleTime(ByRef myCell As Range) As Double
         Dim numStr As String
         Dim num As Double
 
-        numStr = Mid(item, 2, Len(item) - 2)
-        num = WorksheetFunction.Sum(0 & numStr)
+        num = WorksheetFunction.Sum(0 & item)
         total = total + num
         count = count + 1
     Next item
