@@ -140,10 +140,10 @@ h2{
     display: flex;
 }
 
-#nextButton1, #nextButton2, #nextButton9, #nextButton10, .clearForm, .submitForm, #displayButton, #copyButton {
+#nextButton1, #nextButton2, #nextButton9, #nextButton10, .clearForm, .submitForm, .displayButton, #copyButton {
     font-family: Alexis; 
     padding: 10px;
-    background-color: rgb(151, 199, 240);
+    background-color: yellow;
     text-decoration: none;
     display: inline-block;
 }
@@ -165,7 +165,7 @@ h2{
 
 #prevButton7, #prevButton8, #prevButton9{
     font-family: Alexis;
-    background-color: rgb(151, 199, 240); 
+    background-color: yellow; 
     padding: 10px;
 }
 
@@ -176,6 +176,15 @@ h2{
     color: white;
     
 }
+
+.floatLeft {
+    float: left;
+}
+
+.page_title {
+    text-align: center;
+}
+
 
 #prematch_table{
     font: Alexis;
