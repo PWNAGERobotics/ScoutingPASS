@@ -76,7 +76,7 @@ html, body{
     display: none;
     height: 100%;
     min-height: 100%;
-    width: 100vw;
+    width: 100%;
     position: absolute;
     left: 0;
     top: 0;
@@ -88,18 +88,6 @@ html, body{
 
 #prematch{
     display: table;
-}
-
-#auton{
-}
-
-#teleop{
-}
-
-#endgame{
-}
-
-#postmatch{
 }
 
 #qr-code{

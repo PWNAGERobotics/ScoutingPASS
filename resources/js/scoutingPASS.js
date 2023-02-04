@@ -659,7 +659,6 @@ function addDivider(table, idx, name, data) {
 function configure() {
   try {
     var mydata = config_data;
-    console.log(mydata);
   } catch (err) {
     console.log(`Error parsing configuration file`);
     console.log(err.message);
@@ -704,7 +703,6 @@ function configure() {
       mydata.checkboxAs == "TF" ||
       mydata.checkboxAs == "10"
     ) {
-      console.log("Setting checkboxAs to " + mydata.checkboxAs);
       checkboxAs = mydata.checkboxAs;
     } else {
       console.log("unrecognized checkboxAs setting.  Defaulting to YN.");
@@ -714,7 +712,6 @@ function configure() {
 
   // Configure prematch screen
   var pmc = mydata.prematch;
-  console.log(pmc);
   var pmt = document.getElementById("prematch_table");
   var idx = 0;
   Object.entries(pmc).forEach((element) => {
