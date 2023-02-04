@@ -222,12 +222,12 @@ input {
 }
 
 .title {
-    width: "50%";
+    width: 50%;
     text-align: right;
 }
 
 .field {
-    width: "50%";
+    width: 50%;
     text-align: left;
 }
 
@@ -240,4 +240,18 @@ input {
 #data {
     font-family:'Lucida Console', 'monospace';
     text-align: justify;
+}
+
+.divider-header{
+    font-family: Audiowide;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 250;
+    text-decoration: underline;
+    padding-bottom: 0px;
+}
+
+.divider-info{
+    font-style: italic;
+    padding-top: 5px;
 }
