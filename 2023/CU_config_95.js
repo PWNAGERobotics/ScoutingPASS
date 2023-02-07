@@ -273,8 +273,7 @@ var config_data = {
       code: "co",
       title: "Comments",
       type: "text",
-      size: 15,
-      maxSize: 100,
+      maxSize: 255,
     },
   },
 };
