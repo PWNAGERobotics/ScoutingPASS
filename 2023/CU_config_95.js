@@ -81,7 +81,7 @@ var config_data = {
       type: "bool",
     },
     "Auton Objects Scored": {
-      code: "as",
+      code: "aos",
       title: "Objects Scored",
       type: "counter",
     },
@@ -209,7 +209,7 @@ var config_data = {
     },
     Speed: {
       code: "ps",
-      title: "Driver Skill",
+      title: "Speed",
       type: "radio",
       choices: {
         Slow: "Slow<br>",
