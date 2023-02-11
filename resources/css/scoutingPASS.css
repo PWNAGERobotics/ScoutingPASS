@@ -228,6 +228,10 @@ input {
     text-align: left;
 }
 
+#qr-info {
+    color: black;
+}
+
 #qr-table {
     text-align: center;
     color: black;

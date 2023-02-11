@@ -22,7 +22,7 @@ var options = {
 
 // Must be filled in: e=event, m=match#, l=level(q,qf,sf,f), t=team#, r=robot(r1,r2,b1..), s=scouter
 //var requiredFields = ["e", "m", "l", "t", "r", "s", "as"];
-var requiredFields = ["e", "m", "l", "r", "s", "as"];
+//var requiredFields = ["e", "m", "l", "r", "s", "as"];
 
 function addTimer(table, idx, name, data) {
   var row = table.insertRow(idx);
@@ -448,7 +448,7 @@ function addNumber(table, idx, name, data) {
   } else {
     inp.setAttribute("name", data.code);
   }
-  if (data.type == "team" || data.type == "match") {
+  if ((data.type == "team" || data.type == "match") && !pitScouting) {
     inp.setAttribute("onchange", "updateMatchStart(event)");
   }
   if (data.hasOwnProperty("min")) {
@@ -502,7 +502,7 @@ function addRadio(table, idx, name, data) {
     cell1.setAttribute("title", data.tooltip);
   }
   cell2.classList.add("field");
-  if (data.type == "level" || data.type == "robot") {
+  if ((data.type == "level" || data.type == "robot") && !pitScouting) {
     cell2.setAttribute("onchange", "updateMatchStart(event)");
   }
   var checked = null;
@@ -943,14 +943,23 @@ function getData(useStr) {
 }
 
 function updateQRHeader() {
-  var str = "Event: !EVENT! Match: !MATCH! Robot: !ROBOT! Team: !TEAM!";
 
-  str = str
-    .replace("!EVENT!", document.getElementById("input_e").value)
-    .replace("!MATCH!", document.getElementById("input_m").value)
-    .replace("!ROBOT!", document.getElementById("display_r").value)
-    .replace("!TEAM!", document.getElementById("input_t").value);
+  var str = "";
+  var strings = [];
+  if (document.getElementById("input_e")) {
+    strings.push(`Event: ${document.getElementById("input_e").value}`);
+  }
+  if (document.getElementById("input_m")) {
+    strings.push(`Match: ${document.getElementById("input_m").value}`);
+  }
+  if (document.getElementById("display_r")) {
+    strings.push(`Robot: ${document.getElementById("display_r").value}`);
+  }
+  if (document.getElementById("input_t")) {
+    strings.push(`Team: ${document.getElementById("input_t").value}`);
+  }
 
+  str = str.concat(strings);
   document.getElementById("display_qr-info").textContent = str;
 }
 

@@ -1,3 +1,5 @@
+const pitScouting = false;
+var requiredFields = ["e", "m", "l", "r", "s", "as"];
 var config_data = {
   title: "ScoutingPASS 3173",
   page_title: "ScoutingPASS 3173",
