@@ -964,7 +964,7 @@ function updateQRHeader() {
 }
 
 function qr_regenerate() {
-  // Validate required pre-match date (event, match, level, robot, scouter)
+  // Validate required pre-match data (set in the configuration file)
   if (validateData() == false) {
     // Don't allow a swipe until all required data is filled in
     return false;
@@ -988,7 +988,7 @@ function clearForm() {
   var match = 0;
   var e = 0;
 
-  swipePage(-5);
+  swipePage(-1);
 
   // Increment match
   match = parseInt(document.getElementById("input_m").value);

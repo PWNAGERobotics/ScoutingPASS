@@ -1,5 +1,5 @@
 const pitScouting = true;
-var requiredFields = ["e", "s", "t"];
+var requiredFields = ["e", "s", "t", "db"];
 var config_data = {
   title: "ScoutingPASS 3173",
   page_title: "ScoutingPASS 3173 - PIT SCOUTING",
@@ -54,10 +54,10 @@ var config_data = {
       choices: {
         Cone: "Cone<br>",
         Cube: "Cube<br>",
-        Both: "Both<br>",
-        Neither: "Neither<br>",
+        B: "Both<br>",
+        N: "Neither<br>",
       },
-      defaultValue: "Neither",
+      defaultValue: "N",
     },
     "Picks Up From Chute": {
       code: "tpc",
@@ -66,10 +66,10 @@ var config_data = {
       choices: {
         Cone: "Cone<br>",
         Cube: "Cube<br>",
-        Both: "Both<br>",
-        Neither: "Neither<br>",
+        B: "Both<br>",
+        N: "Neither<br>",
       },
-      defaultValue: "Neither",
+      defaultValue: "N",
     },
     "Picks Up From Shelf": {
       code: "tps",
@@ -78,10 +78,10 @@ var config_data = {
       choices: {
         Cone: "Cone<br>",
         Cube: "Cube<br>",
-        Both: "Both<br>",
-        Neither: "Neither<br>",
+        B: "Both<br>",
+        N: "Neither<br>",
       },
-      defaultValue: "Neither",
+      defaultValue: "N",
     },
     "Auto Charging Pad Level": {
       code: "ac",
