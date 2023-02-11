@@ -1,0 +1,24 @@
+{
+  "name": "scoutingpass",
+  "version": "1.0.0",
+  "description": "<div id=\"top\"></div>",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/McQuaidRobotics/ScoutingPASS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/McQuaidRobotics/ScoutingPASS/issues"
+  },
+  "homepage": "https://github.com/McQuaidRobotics/ScoutingPASS#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.30.0"
+  }
+}
