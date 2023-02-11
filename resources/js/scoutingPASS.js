@@ -448,7 +448,7 @@ function addNumber(table, idx, name, data) {
   } else {
     inp.setAttribute("name", data.code);
   }
-  if ((data.type == "team" || data.type == "match") && !pitScouting) {
+  if ((data.type == "team" || data.type == "match")) {
     inp.setAttribute("onchange", "updateMatchStart(event)");
   }
   if (data.hasOwnProperty("min")) {
@@ -1310,7 +1310,7 @@ function getCurrentMatch() {
 }
 
 function updateMatchStart(event) {
-  if (getCurrentMatch() == "" || !teams) {
+  if ((!pitScouting && getCurrentMatch() == "") || !teams) {
     console.log("No match or team data.");
     return;
   }
@@ -1325,6 +1325,9 @@ function updateMatchStart(event) {
         getCurrentTeamNumberFromRobot().replace("frc", "");
       onTeamnameChange();
     }
+  }
+  if (event.target.id == "input_t" && pitScouting) {
+    onTeamnameChange();
   }
 }
 
