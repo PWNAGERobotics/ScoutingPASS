@@ -83,10 +83,6 @@ var config_data = `
       "code": "acs",
       "type": "bool"
     },
-    { "name": "Mobility?",
-      "code": "am",
-      "type": "bool"
-    },
     { "name": "Docked",
       "code": "ad",
       "type":"radio",
