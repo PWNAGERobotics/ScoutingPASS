@@ -110,7 +110,6 @@ var config_data = `
       "showFlip": "false",
       "showUndo": "false",
       "shape": "circle 12 black red true",
-      "cycleTimer": "tct"
     },
     { "name": "Feeder Count<br>(Fed another bot)",
       "code": "tfc",
