@@ -4,11 +4,11 @@ var config_data = `
   "page_title": "Charged Up",
   "checkboxAs": "10",
   "prematch": [
-    { "name": "Scouter Initials",
+    { "name": "Scouter Name",
       "code": "s",
       "type": "scouter",
       "size": 5,
-      "maxSize": 5,
+      "maxSize": 10,
       "required": "true"
     },
     { "name": "Event",
@@ -36,7 +36,7 @@ var config_data = `
       "max": 100,
       "required": "true"
     },
-    { "name": "Robot",
+    { "name": "Alliance Station",
       "code": "r",
       "type": "robot",
       "choices": {
@@ -55,7 +55,7 @@ var config_data = `
       "min": 1,
       "max": 99999
     },
-    { "name": "Auto Start Position",
+    { "name": "Auton Start Position",
       "code": "as",
       "type": "clickable_image",
       "filename": "2023/field_image.png",
