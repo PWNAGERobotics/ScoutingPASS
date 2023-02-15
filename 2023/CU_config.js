@@ -64,7 +64,7 @@ var config_data = `
     }
   ],
   "auton": [
-    { "name": "Auto Scoring",
+    { "name": "Auton Scoring",
       "code": "asg",
       "type": "clickable_image",
       "filename": "2023/grid_image.png",
@@ -81,10 +81,6 @@ var config_data = `
     },
     { "name": "Crossed Charging Station",
       "code": "acs",
-      "type": "bool"
-    },
-    { "name": "Mobility?",
-      "code": "am",
       "type": "bool"
     },
     { "name": "Docked",
