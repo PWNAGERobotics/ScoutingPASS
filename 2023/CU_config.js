@@ -149,7 +149,7 @@ var config_data = `
     }
   ],
   "endgame": [
-    { "name": "Final Status",
+    { "name": "Final Position",
       "code": "fs",
       "type":"radio",
       "choices": {
