@@ -75,10 +75,6 @@ var config_data = `
       "showUndo": "false",
       "shape": "circle 12 black red true"
     },
-    { "name": "Crossed Cable",
-      "code": "acc",
-      "type": "bool"
-    },
     { "name": "Crossed Charging Station",
       "code": "acs",
       "type": "bool"
