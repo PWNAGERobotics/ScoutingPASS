@@ -892,12 +892,13 @@ function getData(useStr) {
         }
       } else {
 	if (e.className == "cycle") {
-	  e = document.getElementById("cycletime_" + code);
+	  e = document.getElementById("cycletime_" + code)
 	}
+	let val = e.value.split(';').join('-').replace(/"/g,'')
         if (useStr) {
-          str = str + code + '=' + e.value.split(';').join('-')
+          str = str + code + '=' + val
         } else {
-          fd.append(name, e.value.split(';').join('-'))
+          fd.append(name, val)
         }
       }
     }
