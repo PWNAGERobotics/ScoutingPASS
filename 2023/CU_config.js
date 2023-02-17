@@ -171,10 +171,6 @@ var config_data = `
     }
   ],
   "postmatch": [
-    { "name": "Links Scored",
-      "code": "ls",
-      "type": "counter"
-    },
     { "name": "Defense Rating",
       "code": "dr",
       "type": "radio",
