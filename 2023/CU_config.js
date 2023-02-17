@@ -136,7 +136,6 @@ var config_data = `
       "code": "fs",
       "type":"radio",
       "choices": {
-        "p": "Parked<br>",
         "d": "Docked (Not Engaged)<br>",
         "e": "Engaged<br>",
         "a": "Attempted but failed<br>",
