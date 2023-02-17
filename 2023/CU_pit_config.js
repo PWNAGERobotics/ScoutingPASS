@@ -1,5 +1,5 @@
 const pitScouting = true;
-var requiredFields = ["e", "s", "t", "db"];
+var requiredFields = ["e", "s", "t"];
 var config_data = {
   title: "ScoutingPASS 3173",
   page_title: "ScoutingPASS 3173 - PIT SCOUTING",
@@ -43,7 +43,7 @@ var config_data = {
       choices: {
         Swerve: "Swerve<br>",
         Tank: "Tank<br>",
-        Mechanum: "Mechanum<br>",
+        Mechanum: "Mecanum<br>",
         Other: "Other<br>",
       },
     },

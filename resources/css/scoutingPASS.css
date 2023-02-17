@@ -137,7 +137,7 @@ h2 {
   width: 48%;
   margin: 1vw;
   height: 100%;
-  font: roboto;
+  font-family: roboto;
 }
 
 .half-button-r {
@@ -145,7 +145,7 @@ h2 {
   height: 100%;
   width: 48%;
   margin: 1vw;
-  font: roboto;
+  font-family: roboto;
 }
 
 .half-button-container {
@@ -165,6 +165,9 @@ h2 {
   background-color: yellow;
   text-decoration: none;
   display: inline-block;
+  color: buttontext;
+  -webkit-text-fill-color: currentColor;
+  background-clip: border-box;
 }
 
 #nextButton3,
@@ -177,6 +180,9 @@ h2 {
   background-color: black;
   padding: 10px;
   color: white;
+  color: buttontext;
+  -webkit-text-fill-color: currentColor;
+  background-clip: border-box;
 }
 
 .undoButton,
@@ -186,6 +192,9 @@ h2 {
   padding: 10px;
   color: white;
   margin-left: 20px;
+  color: buttontext;
+  -webkit-text-fill-color: currentColor;
+  background-clip: border-box;
 }
 
 #prevButton7,
@@ -194,6 +203,9 @@ h2 {
   font-family: Alexis;
   background-color: yellow;
   padding: 10px;
+  color: buttontext;
+  -webkit-text-fill-color: currentColor;
+  background-clip: border-box;
 }
 
 #prevButton1,
@@ -206,6 +218,9 @@ h2 {
   background-color: black;
   padding: 10px;
   color: white;
+  color: buttontext;
+  -webkit-text-fill-color: currentColor;
+  background-clip: border-box;
 }
 
 .floatLeft {
@@ -246,11 +261,17 @@ input,
 select {
   font-size: 16px;
   font-family: roboto;
-  color: #fff !important;
-  -webkit-text-fill-color: #fff !important;
-  -webkit-background-clip: text !important;
-  background-clip: text !important;
+  color: #fff;
+  -webkit-text-fill-color: #fff;
+  -webkit-background-clip: text;
 }
+
+.incrementButton .decrementButton {
+    border-color: white;
+    color: buttontext;
+    -webkit-text-fill-color: currentColor;
+    background-clip: border-box;
+  }
 
 .title {
   width: 50%;

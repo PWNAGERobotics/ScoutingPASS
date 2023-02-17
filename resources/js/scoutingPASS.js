@@ -162,6 +162,7 @@ function addCounter(table, idx, name, data) {
   button1.setAttribute("type", "button");
   button1.setAttribute("onclick", "counter(this.parentElement, -1)");
   button1.setAttribute("value", "-");
+  button1.setAttribute("class", "decrementButton");
   cell2.appendChild(button1);
 
   var inp = document.createElement("input");
@@ -187,6 +188,7 @@ function addCounter(table, idx, name, data) {
   button2.setAttribute("type", "button");
   button2.setAttribute("onclick", "counter(this.parentElement, 1)");
   button2.setAttribute("value", "+");
+  button2.setAttribute("class", "incrementButton");
   cell2.appendChild(button2);
 
   if (data.hasOwnProperty("defaultValue")) {
@@ -448,7 +450,7 @@ function addNumber(table, idx, name, data) {
   } else {
     inp.setAttribute("name", data.code);
   }
-  if ((data.type == "team" || data.type == "match")) {
+  if (data.type == "team" || data.type == "match") {
     inp.setAttribute("onchange", "updateMatchStart(event)");
   }
   if (data.hasOwnProperty("min")) {
@@ -841,23 +843,27 @@ function validateData() {
   var errStr = "Bad fields: ";
   for (rf of requiredFields) {
     // Robot requires special (radio) validation
-    if (rf == "r") {
-      if (!validateRobot()) {
+    try {
+      if (rf == "r") {
+        if (!validateRobot()) {
+          errStr += rf + " ";
+          ret = false;
+        }
+      } else if (rf == "l") {
+        if (!validateLevel()) {
+          errStr += rf + " ";
+          ret = false;
+        }
+        // Normal validation (length <> 0)
+      } else if (document.getElementById("input_" + rf).value == "[]") {
+        errStr += rf + " ";
+        ret = false;
+      } else if (document.getElementById("input_" + rf).value.length == 0) {
         errStr += rf + " ";
         ret = false;
       }
-    } else if (rf == "l") {
-      if (!validateLevel()) {
-        errStr += rf + " ";
-        ret = false;
-      }
-      // Normal validation (length <> 0)
-    } else if (document.getElementById("input_" + rf).value == "[]") {
-      errStr += rf + " ";
-      ret = false;
-    } else if (document.getElementById("input_" + rf).value.length == 0) {
-      errStr += rf + " ";
-      ret = false;
+    } catch (e) {
+      console.log(e, rf);
     }
   }
   if (ret == false) {
@@ -943,7 +949,6 @@ function getData(useStr) {
 }
 
 function updateQRHeader() {
-
   var str = "";
   var strings = [];
   if (document.getElementById("input_e")) {
