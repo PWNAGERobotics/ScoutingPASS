@@ -119,10 +119,6 @@ var config_data = `
       "code": "who",
       "type": "text"
     },
-    { "name": "Smart Placement<br>(creates Links)",
-      "code": "lnk",
-      "type": "bool"
-    },
     { "name": "Floor Pickup",
       "code": "fpu",
       "type": "radio",
