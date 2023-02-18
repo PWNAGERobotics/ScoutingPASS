@@ -127,8 +127,8 @@ var config_data = `
       "code": "who",
       "type": "text"
     },
-    { "name": "Smart Placement<br>(creates Links)",
-      "code": "lnk",
+    { "name": "Can pick up cones from any orientation",
+      "code": "gpo",
       "type": "bool"
     },
     { "name": "Floor Pickup",
