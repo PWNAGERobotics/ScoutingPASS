@@ -61,7 +61,7 @@ var config_data = `
       "choices": {
         "y": "Yes<br>",
         "n": "No<br>"
-      },
+      }
     }
   ],
   "auton": [
