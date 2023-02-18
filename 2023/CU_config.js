@@ -131,8 +131,8 @@ var config_data = `
       "code": "gpo",
       "type": "bool"
 	},
-	{ "name": "Picks up from double substation table"
-	  "code": "ds"
+	{ "name": "Picks up from double substation table",
+	  "code": "ds",
 	  "type": "bool"
 	},
     { "name": "Floor Pickup",
