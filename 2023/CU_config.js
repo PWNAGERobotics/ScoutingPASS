@@ -127,7 +127,7 @@ var config_data = `
       "code": "who",
       "type": "text"
     },
-    { "name": "Can pick up cones from any orientation",
+    { "name": "Can pick up cones<br>from any orientation",
       "code": "gpo",
       "type": "bool"
 	},
