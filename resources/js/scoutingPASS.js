@@ -11,6 +11,7 @@ var initialX = null;
 var xThreshold = 0.3;
 var slide = 0;
 var enableGoogleSheets = false;
+var pitScouting = false;
 var checkboxAs = 'YN';
 
 // Options
@@ -669,10 +670,14 @@ function configure() {
   }
 
   if (mydata.hasOwnProperty('enable_google_sheets')) {
-    if ((mydata.enable_google_sheets == 'true') ||
-      (mydata.enable_google_sheets == 'True') ||
-      (mydata.enable_google_sheets == 'TRUE')) {
+    if (mydata.enable_google_sheets.toUpperCase() == 'TRUE') {
       enableGoogleSheets = true;
+    }
+  }
+
+  if (mydata.hasOwnProperty('pitConfig')) {
+    if (mydata.pitConfig.toUpperCase() == 'TRUE') {
+      pitScouting = true;
     }
   }
 
@@ -923,13 +928,18 @@ function getData(useStr) {
 }
 
 function updateQRHeader() {
-  var str = 'Event: !EVENT! Match: !MATCH! Robot: !ROBOT! Team: !TEAM!';
+  let str = 'Event: !EVENT! Match: !MATCH! Robot: !ROBOT! Team: !TEAM!';
 
-  str = str
-    .replace('!EVENT!', document.getElementById("input_e").value)
-    .replace('!MATCH!', document.getElementById("input_m").value)
-    .replace('!ROBOT!', document.getElementById("display_r").value)
-    .replace('!TEAM!', document.getElementById("input_t").value);
+  if (!pitScouting) {
+    str = str
+      .replace('!EVENT!', document.getElementById("input_e").value)
+      .replace('!MATCH!', document.getElementById("input_m").value)
+      .replace('!ROBOT!', document.getElementById("display_r").value)
+      .replace('!TEAM!', document.getElementById("input_t").value);
+  } else {
+    str = 'Pit Scouting - Team !TEAM!'
+      .replace('!TEAM!', document.getElementById("input_t").value);
+  }
 
   document.getElementById("display_qr-info").textContent = str;
 }
@@ -937,9 +947,11 @@ function updateQRHeader() {
 
 function qr_regenerate() {
   // Validate required pre-match date (event, match, level, robot, scouter)
-  if (validateData() == false) {
-    // Don't allow a swipe until all required data is filled in
-    return false
+  if (!pitScouting) {  
+    if (validateData() == false) {
+      // Don't allow a swipe until all required data is filled in
+      return false
+    }
   }
 
   // Get data
@@ -960,18 +972,22 @@ function clearForm() {
   var match = 0;
   var e = 0;
 
-  swipePage(-5)
-
-  // Increment match
-  match = parseInt(document.getElementById("input_m").value)
-  if (match == NaN) {
-    document.getElementById("input_m").value = ""
+  if (pitScouting) {
+    swipePage(-1);
   } else {
-    document.getElementById("input_m").value = match + 1
-  }
+    swipePage(-5);
 
-  // Robot
-  resetRobot()
+    // Increment match
+    match = parseInt(document.getElementById("input_m").value)
+    if (match == NaN) {
+      document.getElementById("input_m").value = ""
+    } else {
+      document.getElementById("input_m").value = match + 1
+    }
+
+    // Robot
+    resetRobot()
+  }
 
   // Clear XY coordinates
   inputs = document.querySelectorAll("[id*='XY_']");
@@ -1433,11 +1449,17 @@ function copyData(){
 }
 
 window.onload = function () {
-  var ret = configure();
+  let ret = configure();
   if (ret != -1) {
-    var ec = document.getElementById("input_e").value;
-    getTeams(ec);
-    getSchedule(ec);
+    let ece = document.getElementById("input_e");
+    let ec = null;
+    if (ece != null) {
+      ec = ece.value;
+    }
+    if (ec != null) {
+      getTeams(ec);
+      getSchedule(ec);
+    }
     this.drawFields();
     if (enableGoogleSheets) {
       console.log("Enabling Google Sheets.");
