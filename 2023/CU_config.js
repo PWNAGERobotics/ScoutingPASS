@@ -119,6 +119,14 @@ var config_data = `
       "code": "who",
       "type": "text"
     },
+    { "name": "Can pick up cones<br>from any orientation",
+      "code": "gpo",
+      "type": "bool"
+	},
+	{ "name": "Picks up from<br>double substation table",
+	  "code": "ds",
+	  "type": "bool"
+	},
     { "name": "Floor Pickup",
       "code": "fpu",
       "type": "radio",
