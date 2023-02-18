@@ -4,7 +4,7 @@ var config_data = `
   "page_title": "Charged Up",
   "checkboxAs": "10",
   "prematch": [
-    { "name": "Scouter Initials",
+    { "name": "Scouter Initial",
       "code": "s",
       "type": "scouter",
       "size": 5,
@@ -75,8 +75,8 @@ var config_data = `
       "showUndo": "false",
       "shape": "circle 12 black red true"
     },
-    { "name": "Crossed Cable",
-      "code": "acc",
+    { "name": "Dropped Game Pieces",
+      "code": "adp",
       "type": "bool"
     },
     { "name": "Crossed Charging Station",
