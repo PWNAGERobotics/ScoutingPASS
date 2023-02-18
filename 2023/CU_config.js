@@ -59,8 +59,8 @@ var config_data = `
       "code": "as",
       "type": "radio",
       "choices": {
-        "y": "Yes<br>",
-        "n": "No<br>"
+        "y": "Cones<br>",
+        "n": "Cubes<br>"
       },
       "defaultValue": "y"
     }
