@@ -130,7 +130,7 @@ var config_data = `
     { "name": "Can pick up cones from any orientation",
       "code": "gpo",
       "type": "bool"
-	}
+	},
 	{ "name": "Human Player station used",
       "code": "fs",
       "type":"radio",
@@ -141,7 +141,6 @@ var config_data = `
         "x": "Did not pick up anything"
       },
       "defaultValue": "x"
-    },
     },
     { "name": "Floor Pickup",
       "code": "fpu",
