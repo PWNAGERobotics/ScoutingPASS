@@ -157,6 +157,7 @@ function addCounter(table, idx, name, data) {
 
   var button1 = document.createElement("input");
   button1.setAttribute("type", "button");
+  button1.setAttribute("id", "minus_" + data.code);
   button1.setAttribute("onclick", "counter(this.parentElement, -1)");
   button1.setAttribute("value", "-");
   cell2.appendChild(button1);
@@ -179,9 +180,20 @@ function addCounter(table, idx, name, data) {
 
   var button2 = document.createElement("input");
   button2.setAttribute("type", "button");
+  button2.setAttribute("id", "plus_" + data.code);
   button2.setAttribute("onclick", "counter(this.parentElement, 1)");
   button2.setAttribute("value", "+");
   cell2.appendChild(button2);
+
+  if (data.hasOwnProperty('cycleTimer')) {
+    if (data.cycleTimer != "") {
+      inp = document.createElement('input');
+      inp.setAttribute("hidden", "");
+      inp.setAttribute("id", "cycleTimer_" + data.code);
+      inp.setAttribute("value", data.cycleTimer);
+      cell.appendChild(inp);
+    }
+  }
 
   if (data.hasOwnProperty('defaultValue')) {
     var def = document.createElement("input");
@@ -289,7 +301,7 @@ function addClickableImage(table, idx, name, data) {
   inp.setAttribute("id", "input_" + data.code);
   inp.setAttribute("value", "[]");
   inp.setAttribute("class", "clickableImage");
- 
+
   cell.appendChild(inp);
 
   // TODO: Make these more efficient/elegant
@@ -1118,10 +1130,10 @@ function drawFields(name) {
 }
 
 function onFieldClick(event) {
-  //Resolution height and width (e.g. 52x26)
   let target = event.target;
   let base = getIdBase(target.id);
 
+  //Resolution height and width (e.g. 52x26)
   let resX = 12;
   let resY = 6;
 
@@ -1281,7 +1293,11 @@ function onTeamnameChange(event) {
  * @param {number} step the amount to add to the value tag.
  */
 function counter(element, step) {
+  let target = event.target;
+  let base = getIdBase(target.id);
+
   var ctr = element.getElementsByClassName("counter")[0];
+  let cycleTimer = document.getElementById("cycleTimer" + base);
   var result = parseInt(ctr.value) + step;
 
   if (isNaN(result)) {
@@ -1292,6 +1308,11 @@ function counter(element, step) {
     ctr.value = result;
   } else {
     ctr.value = 0;
+  }
+
+  // If associated with cycleTimer - send New Cycle EVENT
+  if (step >= 0 && cycleTimer != null) {
+    document.getElementById("cycle_" + cycleTimer.value).click();
   }
 }
 
