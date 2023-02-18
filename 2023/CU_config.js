@@ -55,14 +55,9 @@ var config_data = `
       "min": 1,
       "max": 99999
     },
-	{ "name": "Did the show up?",
+    { "name": "Did they show up?",
       "code": "as",
-      "type": "radio",
-      "choices": {
-        "y": "Cones<br>",
-        "n": "Cubes<br>"
-      },
-      "defaultValue": "y"
+      "type": "bool"
     }
   ],
   "auton": [
