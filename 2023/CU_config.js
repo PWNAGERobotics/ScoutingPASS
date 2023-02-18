@@ -77,7 +77,7 @@ var config_data = `
     },
     { "name": "Dropped Game Pieces",
       "code": "adp",
-      "type": "bool"
+      "type": "counter"
     },
     { "name": "Crossed Charging Station",
       "code": "acs",
