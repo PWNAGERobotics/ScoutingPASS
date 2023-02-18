@@ -131,17 +131,10 @@ var config_data = `
       "code": "gpo",
       "type": "bool"
 	},
-	{ "name": "Human Player station used",
-      "code": "fs",
-      "type":"radio",
-      "choices": {
-        "s": "Single station only<br>",
-        "d": "Double station only<br>",
-        "b": "Both stations<br>",
-        "x": "Did not pick up anything"
-      },
-      "defaultValue": "x"
-    },
+	{ "name": "Picks up from double substation table"
+	  "code": "ds"
+	  "type": "bool"
+	},
     { "name": "Floor Pickup",
       "code": "fpu",
       "type": "radio",
