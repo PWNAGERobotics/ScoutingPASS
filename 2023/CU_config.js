@@ -54,10 +54,6 @@ var config_data = `
       "type": "team",
       "min": 1,
       "max": 99999
-    },
-    { "name": "Auton Start Position",
-      "code": "as",
-      "type": "bool"
     }
   ],
   "auton": [
