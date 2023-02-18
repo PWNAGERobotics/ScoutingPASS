@@ -55,7 +55,7 @@ var config_data = `
       "min": 1,
       "max": 99999
     },
-    { "name": "Auton Start Position",
+    { "name": "Did they show up?",
       "code": "as",
       "type": "bool"
     }
