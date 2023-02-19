@@ -83,7 +83,7 @@ var config_data = `
       "code": "acs",
       "type": "bool"
     },    
-	{ "name": "Crossed the<br>community line",
+	{ "name": "Crossed the<br>Community Line",
       "code": "am",
       "type": "bool"
     },
