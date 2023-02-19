@@ -82,6 +82,10 @@ var config_data = `
     { "name": "Crossed Charging Station",
       "code": "acs",
       "type": "bool"
+    },    
+	{ "name": "Crossed the<br>community line",
+      "code": "am",
+      "type": "bool"
     },
     { "name": "Docked",
       "code": "ad",
