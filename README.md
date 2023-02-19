@@ -4,7 +4,7 @@
 
 #### A scouting system for FIRST FRC competitions developed by [PWNAGE - Team #2451](https://pwnagerobotics.org).
 
-<a href="https://PWNAGERobotics.github.io/ScoutingPASS">Live Demo</a> . <a href="#getting-started">Getting Started</a> . <a href="#faq">FAQ</a>
+<a href="https://PWNAGERobotics.github.io/ScoutingPASS">Live Demo</a> . <a href="https://PWNAGERobotics.github.io/ScoutingPASS/pit.html">Pit Scouting</a> . <a href="#getting-started">Getting Started</a> . <a href="#faq">FAQ</a>
 
 ![Stars](https://img.shields.io/github/stars/PWNAGERobotics/ScoutingPASS?style=plastic) ![Forks](https://img.shields.io/github/forks/PWNAGERobotics/ScoutingPASS?style=plastic) ![watchers](https://img.shields.io/github/watchers/PWNAGERobotics/ScoutingPASS?style=plastic)
 <h1></h1>
@@ -18,6 +18,7 @@
     <li><a href="#live-demo">Live Demo</a></li>
     <li><a href="#description">Description</a></li>
     <li><a href="#getting-started">Getting Started</a></li>
+    <li><a href="#pit-scouting">Pit Scouting</a></li>
     <li><a href="#how-we-scout">How We Scout</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#faq">FAQ</a></li>
@@ -99,6 +100,21 @@ To enable The Blue Alliance API:
 * Reload your page.
 
 Note: In order for this to work, the schedule has to be posted to The Blue Alliance.  That usually doesn't happen until just before the event. (a few days to a few hours)  To test this you can point it to a past event.   Set the event to 2020ilch.   Reload the page to load the schedule for that event. Select Match 6 and Blue-2.  You should see it populate the Team # to 2451, and the next line will show the team name, PWNAGE.
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+<div id="pit-scouting"></div>
+
+## Pit Scouting:
+
+ScountingPASS now supports Pit Scouting
+
+To access the pit scouting page, add '/pit.html' to the end of your URL.  (i.e. http://pwnagerobotics.github.io/ScoutingPASS/pit.html)
+
+It works almost exactly like the main scouting pages, except there is only one page of input.   Once your scouters have filled out the information, swipe left to display the QR code.   That QR code can be scanned to push the data to Excel.
+
+The default configuration file is 2023/CU_Pit_config.js.   You can modify that configuration to meet your needs.
+
+We realize that you may not want to lug your computer around the pits to scan each QR code.  Our recommendation is to have your scouters take screenshot of the QR codes.   Then when they are back to the scouting computer, just go through the photos to scan each QR code.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 <div id="how-we-scout"></div>
@@ -206,3 +222,5 @@ Scouting PASS continues to evolve.   Here are the changes for the 2023 Season:
 * Don't allow the cycle timer to add a Zero time. (Thanks [jckwik](https://github.com/jckwik)!!)
 * Added Display Data and Copy Data buttons on QR screen (Thanks [tails618](https://github.com/tails618)!!)
 * Bug fixes to clickable images (Thanks [jacob6838](https://github.com/jacob6838)!!)
+* Allow ability link Cycle Timer with Counter (Thanks DaBushinator!!)
+* Add pit scouting functionality
