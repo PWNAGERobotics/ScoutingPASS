@@ -753,9 +753,6 @@ function getRobot(){
   return document.forms.scoutingForm.r.value;
 }
 
-function validateRobot() {
-  return (document.forms.scoutingForm.r.value != "")
-}
 
 function resetRobot() {
 for ( rb of document.getElementsByName('r')) { rb.checked = false };
@@ -766,32 +763,21 @@ function getLevel(){
 return document.forms.scoutingForm.l.value
 }
 
-function validateLevel() {
-return (document.forms.scoutingForm.l.value != "")
-}
 
 function validateData() {
-  var ret = true
-  var errStr = "Bad fields: ";
+  var ret = true;
+  var errStr = "";
   for (rf of requiredFields) {
-    // Robot requires special (radio) validation
-    if (rf == "r") {
-      if (!validateRobot()) {
-        errStr += rf + " "
-        ret = false
+    var thisRF = document.forms.scoutingForm[rf];
+    if (thisRF.value == "[]" || thisRF.value.length == 0) {
+      if (rf == "as") {
+        rftitle = "Auto Start Position"
+      } else {
+        thisInputEl = thisRF instanceof RadioNodeList ? thisRF[0] : thisRF;
+        rftitle = thisInputEl.parentElement.parentElement.children[0].innerHTML.replace("&nbsp;","");
       }
-    } else if (rf == "l") {
-      if (!validateLevel()) {
-        errStr += rf + " "
-        ret = false
-      }
-      // Normal validation (length <> 0)
-    } else if (document.forms.scoutingForm[rf].value == "[]") {
-      errStr += rf + " ";
+      errStr += rf + ": " + rftitle + "\n";
       ret = false;
-    } else if (document.forms.scoutingForm[rf].value.length == 0) {
-      errStr += rf + " "
-      ret = false
     }
   }
   if (ret == false) {
