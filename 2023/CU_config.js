@@ -76,7 +76,7 @@ var config_data = `
       "shape": "circle 12 black red true"
     },
     { "name": "Dropped Game Pieces",
-      "code": "adp",
+      "code": "acc",
       "type": "counter"
     },
     { "name": "Crossed Charging Station",
