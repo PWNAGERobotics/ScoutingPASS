@@ -123,7 +123,7 @@ var config_data = `
 	  "code": "wd",
 	  "type": "bool"
 	},
-    { "name": "Who Defended this bot<br>(if not defended, leave blank)",
+    { "name": "If defended, who defended this bot<br>(if not defended, leave blank)",
       "code": "who",
       "type": "text"
     },
