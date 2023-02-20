@@ -2,6 +2,11 @@
 
 # Scouting P.A.S.S.
 
+## FRC 126 events
+
+* https://www.thebluealliance.com/event/2023mabri
+* https://www.thebluealliance.com/event/2023mawor 
+
 #### A scouting system for FIRST FRC competitions developed by [PWNAGE - Team #2451](https://pwnagerobotics.org).
 
 <a href="https://PWNAGERobotics.github.io/ScoutingPASS">Live Demo</a> . <a href="https://PWNAGERobotics.github.io/ScoutingPASS/pit.html">Pit Scouting</a> . <a href="#getting-started">Getting Started</a> . <a href="#faq">FAQ</a>
