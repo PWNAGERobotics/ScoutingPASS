@@ -17,7 +17,7 @@ var config_data = `
       "code": "e",
       "gsCol": "event",
       "type": "event",
-      "defaultValue": "GAALB",
+      "defaultValue": "TEST",
       "required": "true",
       "disabled": "true"
     },
