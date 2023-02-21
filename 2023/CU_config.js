@@ -1,10 +1,12 @@
 var config_data = `
 {
+"enable_google_sheets": "true",
   "title": "Scouting PASS 2023",
   "page_title": "CSP #4188 Charged Up",
   "checkboxAs": "10",
   "prematch": [
     { "name": "Scouter Initials",
+      "gsCol": "scouter",
       "code": "s",
       "type": "scouter",
       "size": 5,
@@ -12,6 +14,7 @@ var config_data = `
       "required": "true"
     },
     { "name": "Event",
+      "gsCol": "eventCode",
       "code": "e",
       "type": "event",
       "defaultValue": "GAALB",
@@ -20,6 +23,7 @@ var config_data = `
     },
     { "name": "Match Level",
       "code": "l",
+      "gsCol": "matchlevel",
       "type": "level",
       "choices": {
         "qm": "Quals<br>",
@@ -30,6 +34,7 @@ var config_data = `
       "required": "true"
     },
     { "name": "Match #",
+    "gsCol": "matchNumber",
       "code": "m",
       "type": "match",
       "min": 1,
@@ -37,6 +42,7 @@ var config_data = `
       "required": "true"
     },
     { "name": "Robot",
+    "gsCol": "robot",
       "code": "r",
       "type": "robot",
       "choices": {
@@ -50,12 +56,14 @@ var config_data = `
       "required":"true"
     },
     { "name": "Team #",
+    "gsCol": "teamNumber",
       "code": "t",
       "type": "team",
       "min": 1,
       "max": 99999
     },
     { "name": "Auto Start Position",
+    "gsCol": "autoStartingLocation",
       "code": "as",
       "type": "clickable_image",
       "filename": "2023/field_image.png",
@@ -65,6 +73,7 @@ var config_data = `
   ],
   "auton": [
     { "name": "Auto Scoring",
+    "gsCol": "autoScoredGrid",
       "code": "asg",
       "type": "clickable_image",
       "filename": "2023/grid_image.png",
@@ -76,18 +85,22 @@ var config_data = `
       "shape": "circle 12 black red true"
     },
     { "name": "Crossed Cable",
+    "gsCol": "autoCrossedCable",
       "code": "acc",
       "type": "bool"
     },
     { "name": "Crossed Charging Station",
+    "gsCol": "autoCrossedChargingStation",
       "code": "acs",
       "type": "bool"
     },
     { "name": "Mobility?",
+    "gsCol": "autoMobility",
       "code": "am",
       "type": "bool"
     },
     { "name": "Docked",
+    "gsCol": "autoDocked",
       "code": "ad",
       "type":"radio",
       "choices": {
