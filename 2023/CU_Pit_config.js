@@ -59,9 +59,16 @@ var config_data = `
       },
       "defaultValue":"x"
     },
-    { "name": "Floor pickup Cones",
+    { "name": "Game pieve pick up",
       "code": "fco",
-      "type": "bool"
+      "type":"radio",
+      "choices": {
+        "d": "Double Substation only<br>",
+        "e": "Single Substation/Floor pick-up only<br>",
+        "a": "Both substation<br>",
+        "x": "Can not manipulate game pieces"
+      },
+      "defaultValue": "x"
     },
     { "name": "Floor pickup Cubes",
       "code": "fcu",
@@ -76,6 +83,40 @@ var config_data = `
       "type": "text",
       "size": 20,
       "maxSize": 250
+    }
+	{ "name": "Auton Start Position",
+      "code": "as",
+      "type": "clickable_image",
+      "filename": "2023/field_image.png",
+      "shape": "circle 5 black red true"
+    },
+	{ "name": "Auton Scoring",
+      "code": "asg",
+      "type": "clickable_image",
+      "filename": "2023/grid_image.png",
+      "dimensions": "9 4",
+      "clickRestriction": "onePerBox",
+      "toggleClick": "true",
+      "showFlip": "false",
+      "showUndo": "false",
+      "shape": "circle 12 black red true"
+    },
+	{ "name": "Teleop Scoring",
+      "code": "asg",
+      "type": "clickable_image",
+      "filename": "2023/grid_image.png",
+      "dimensions": "9 4",
+      "clickRestriction": "onePerBox",
+      "toggleClick": "true",
+      "showFlip": "false",
+      "showUndo": "false",
+      "shape": "circle 12 black red true"
+    },
+	{ "name": "Comments",
+      "code": "co",
+      "type": "text",
+      "size": 20,
+      "maxSize": 100
     }
   ],
   "auton": [
