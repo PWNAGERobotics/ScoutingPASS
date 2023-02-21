@@ -6,24 +6,24 @@ var config_data = `
   "enable_google_sheets": "true",
   "prematch": [
     { "name": "Scouter Initials",
-      "code": "s",
       "gsCol": "scouter",
+      "code": "s",
       "type": "scouter",
       "size": 5,
       "maxSize": 5,
       "required": "true"
     },
     { "name": "Event",
-      "code": "e",
       "gsCol": "event",
+      "code": "e",
       "type": "event",
       "defaultValue": "TEST",
       "required": "true",
       "disabled": "true"
     },
     { "name": "Match Level",
-      "code": "l",
       "gsCol": "level",
+      "code": "l",
       "type": "level",
       "choices": {
         "qm": "Quals<br>",
