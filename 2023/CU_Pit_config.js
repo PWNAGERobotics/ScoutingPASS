@@ -102,7 +102,7 @@ var config_data = `
       "showUndo": "false",
       "shape": "circle 12 black red true"
     },
-	{ "name": "Where can they score in teleop?<br>(bottom, middle, top, or all rows)",
+	{ "name": "Teleop scoring ability<br>(bottom, middle, top, or all rows)",
       "code": "ts",
       "type": "text",
       "size": 20,
