@@ -59,30 +59,31 @@ var config_data = `
       },
       "defaultValue":"x"
     },
-    { "name": "Game pieve pick up",
+    { "name": "Game piece pick up",
       "code": "fco",
       "type":"radio",
       "choices": {
         "d": "Double Substation only<br>",
-        "e": "Single Substation/Floor pick-up only<br>",
-        "a": "Both substation<br>",
+        "s": "Single Substation/Floor pick-up only<br>",
+        "b": "Both substation<br>",
         "x": "Can not manipulate game pieces"
       },
       "defaultValue": "x"
     },
-    { "name": "Floor pickup Cubes",
+	{ "name": "Floor pick up",
       "code": "fcu",
-      "type": "bool"
+      "type":"radio",
+      "choices": {
+        "u": "Cubes only<br>",
+        "o": "Cones only<br>",
+        "b": "Both<br>",
+        "x": "Can not manipulate game pieces"
+      },
+      "defaultValue": "x"
     },
     { "name": "Cross Charging Station",
       "code": "ccs",
       "type": "bool"
-    },
-    { "name": "Autos",
-      "code": "aut",
-      "type": "text",
-      "size": 20,
-      "maxSize": 250
     },
 	{ "name": "Auton Start Position",
       "code": "as",
@@ -116,7 +117,7 @@ var config_data = `
       "code": "co",
       "type": "text",
       "size": 20,
-      "maxSize": 100
+      "maxSize": 250
     }
   ],
   "auton": [
