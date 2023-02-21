@@ -17,7 +17,7 @@ var config_data = `
       "code": "e",
       "gsCol": "event",
       "type": "event",
-      "defaultValue": "2022carv",
+      "defaultValue": "GAALB",
       "required": "true",
       "disabled": "true"
     },
