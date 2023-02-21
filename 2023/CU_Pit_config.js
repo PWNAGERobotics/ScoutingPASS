@@ -83,7 +83,7 @@ var config_data = `
       "type": "text",
       "size": 20,
       "maxSize": 250
-    }
+    },
 	{ "name": "Auton Start Position",
       "code": "as",
       "type": "clickable_image",
