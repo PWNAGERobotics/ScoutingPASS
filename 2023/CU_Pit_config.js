@@ -59,20 +59,62 @@ var config_data = `
       },
       "defaultValue":"x"
     },
-    { "name": "Floor pickup Cones",
+    { "name": "Game piece pick up",
       "code": "fco",
-      "type": "bool"
+      "type":"radio",
+      "choices": {
+        "d": "Double Substation only<br>",
+        "s": "Single Substation/Floor pick-up only<br>",
+        "b": "Both substation<br>",
+        "x": "Can not manipulate game pieces"
+      },
+      "defaultValue": "x"
     },
-    { "name": "Floor pickup Cubes",
+	{ "name": "Floor pick up",
       "code": "fcu",
-      "type": "bool"
+      "type":"radio",
+      "choices": {
+        "u": "Cubes only<br>",
+        "o": "Cones only<br>",
+        "b": "Both<br>",
+        "x": "Can not manipulate game pieces"
+      },
+      "defaultValue": "x"
     },
     { "name": "Cross Charging Station",
       "code": "ccs",
       "type": "bool"
     },
-    { "name": "Autos",
-      "code": "aut",
+	{ "name": "Auton Start Position",
+      "code": "as",
+      "type": "clickable_image",
+      "filename": "2023/field_image.png",
+      "shape": "circle 5 black red true"
+    },
+	{ "name": "Auton Scoring",
+      "code": "asg",
+      "type": "clickable_image",
+      "filename": "2023/grid_image.png",
+      "dimensions": "9 4",
+      "clickRestriction": "onePerBox",
+      "toggleClick": "true",
+      "showFlip": "false",
+      "showUndo": "false",
+      "shape": "circle 12 black red true"
+    },
+	{ "name": "Teleop Scoring",
+      "code": "asg",
+      "type": "clickable_image",
+      "filename": "2023/grid_image.png",
+      "dimensions": "9 4",
+      "clickRestriction": "onePerBox",
+      "toggleClick": "true",
+      "showFlip": "false",
+      "showUndo": "false",
+      "shape": "circle 12 black red true"
+    },
+	{ "name": "Comments",
+      "code": "co",
       "type": "text",
       "size": 20,
       "maxSize": 250
