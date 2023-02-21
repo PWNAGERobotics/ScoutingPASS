@@ -113,8 +113,7 @@ var config_data = `
     },
     { "name": "Feeder Count<br>(Fed another bot)",
       "code": "tfc",
-      "type": "counter",
-      "cycleTimer": "tct"
+      "type": "counter"
     },
     { "name": "Was Fed<br>Game Pieces",
       "code": "wf",
