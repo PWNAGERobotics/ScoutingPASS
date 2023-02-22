@@ -17,7 +17,7 @@ var config_data = `
       "gsCol": "event",
       "code": "e",
       "type": "event",
-      "defaultValue": "TEST",
+      "defaultValue": "WED TEST",
       "required": "true",
       "disabled": "true"
     },
