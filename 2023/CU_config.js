@@ -17,7 +17,7 @@ var config_data = `
       "gsCol": "e",
       "code": "e",
       "type": "event",
-      "defaultValue": "Wednesday test",
+      "defaultValue": "Wednesday test2",
       "required": "true",
       "disabled": "true"
     },
