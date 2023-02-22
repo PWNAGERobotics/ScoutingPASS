@@ -14,16 +14,16 @@ var config_data = `
       "required": "true"
     },
     { "name": "Event",
-      "gsCol": "eventCode",
+      "gsCol": "event",
       "code": "e",
       "type": "event",
-      "defaultValue": "GAALB",
+      "defaultValue": "Wednesday test",
       "required": "true",
       "disabled": "true"
     },
     { "name": "Match Level",
       "code": "l",
-      "gsCol": "matchlevel",
+      "gsCol": "level",
       "type": "level",
       "choices": {
         "qm": "Quals<br>",
@@ -34,7 +34,7 @@ var config_data = `
       "required": "true"
     },
     { "name": "Match #",
-    "gsCol": "matchNumber",
+    "gsCol": "number",
       "code": "m",
       "type": "match",
       "min": 1,
