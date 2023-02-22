@@ -119,16 +119,16 @@ var config_data = `
       "code": "wf",
       "type": "bool"
     },
-	{ "name": "Picks up from<br>double substation table",
-	  "code": "wd",
-	  "type": "bool"
-	},
     { "name": "If defended, who defended this bot<br>(if not defended, leave blank)",
       "code": "who",
       "type": "text"
     },
+	{ "name": "Picks up from<br>double substation table",
+	  "code": "dss",
+	  "type": "bool"
+	},
     { "name": "Can pick up cones<br>from any orientation",
-      "code": "lnk",
+      "code": "cao",
       "type": "bool"
 	},
     { "name": "Floor Pickup",
