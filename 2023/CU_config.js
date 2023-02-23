@@ -79,10 +79,6 @@ var config_data = `
       "code": "adp",
       "type": "counter"
     },
-    { "name": "Crossed Charging Station",
-      "code": "acs",
-      "type": "bool"
-    },    
 	{ "name": "Crossed the<br>Community Line",
       "code": "am",
       "type": "bool"
