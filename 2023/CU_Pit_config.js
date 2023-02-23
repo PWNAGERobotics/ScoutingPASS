@@ -80,6 +80,17 @@ var config_data = `
      },
       "defaultValue": "x"
     },
+    { "name": "Cone orientation from floor",
+      "code": "coo",
+      "type": "radio",
+      "choices": {
+        "u": "Upright only<br>",
+        "s": "On side only<br>",
+        "a": "All orientation<br>",
+        "x": "Cannot pick up<br>cones off the floor"
+      },
+      "defaultValue":"x"
+    },
     { "name": "Cross Charging Station",
       "code": "ccs",
       "type": "bool"
