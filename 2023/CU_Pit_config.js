@@ -96,7 +96,7 @@ var config_data = `
       "filename": "2023/field_image.png",
       "shape": "circle 5 black red true"
     },
-	{ "name": "Auton Scoring",
+	{ "name": "Auton Scoring<br>(highest scoring option)",
       "code": "as",
       "type": "clickable_image",
       "filename": "2023/grid_image.png",
