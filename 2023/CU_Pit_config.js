@@ -125,6 +125,7 @@ var config_data = `
         "c": "3<br>",
         "d": "4<br>",
 		"e": "5 (highly tested, repeatable)"
+	  }
     },
 	{ "name": "Teleop scoring ability<br>(bottom, middle, top, or all rows)",
       "code": "ts",
@@ -132,7 +133,7 @@ var config_data = `
       "size": 20,
       "maxSize": 250
 	},
-	{ "name": "# of cycles on teleop,
+	{ "name": "# of cycles on teleop",
       "code": "tc",
       "type": "counter"
     },
