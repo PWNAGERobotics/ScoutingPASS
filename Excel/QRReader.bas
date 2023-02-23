@@ -29,15 +29,6 @@ End Sub
 Public Function getInput()
     getInput = InputBox("Scan QR Code", "2023 Match Scouting Input")
 End Function
-'Public Function Scaner()
-'    Dim addIn As COMAddIn
-'    Dim automationObject As Object
-'    Set addIn = Application.COMAddIns("QRReader")
-'    Set automationObject = addIn.Object
-'    Dim out As String
-'    out = automationObject.Scaner
-'    Scaner = out
-'End Function
 
 Sub test()
     saveData ("s=fudd;e=2022carv;l=qm;m=2;r=r2;t=2451;as=[35];asg=[3,4];acc=1;acs=1;am=1;ad=e;tct=[8.3,7.3,6.7,7.1,5.5,5.8,5.4];tsg=[5,6,7,8,9,1,2];tfc=0;wf=0;wd=0;who=;lnk=1;fpu=b;dt=9.9;fs=e;dn=2;ds=v;ls=5;dr=x;sd=1;sr=5;die=0;tip=0;dc=0;all=1;co=PWNAGE")
@@ -180,6 +171,7 @@ Sub saveData(inp As String)
         Next
     End If
 End Sub
+
 Sub savePitData(inp As String)
     Dim fields
     Dim par
@@ -203,6 +195,7 @@ Sub savePitData(inp As String)
     mapper.add "odt", "otherDrivetrain"
     mapper.add "sr", "swerveRatio"
     mapper.add "mot", "drivetrainMotor"
+    mapper.add "nob", "numberOfBatteries"
     mapper.add "fco", "floorPickUpCones"
     mapper.add "fcu", "floorPickUpCubes"
     mapper.add "ccs", "crossCS"
