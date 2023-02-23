@@ -160,6 +160,10 @@ var config_data = `
       "code": "dn",
       "type": "counter"
     }
+    { "name": "Did they knock their alliance<br>partners off the charge station?",
+      "code": "kop",
+      "type": "bool"
+    }
   ],
   "postmatch": [
     { "name": "Defense Rating",
