@@ -159,7 +159,7 @@ var config_data = `
     { "name": "Total # of alliance<br>robots docked/engaged",
       "code": "dn",
       "type": "counter"
-    }
+    },
     { "name": "Did they knock their alliance<br>partners off the charge station?",
       "code": "kop",
       "type": "bool"
