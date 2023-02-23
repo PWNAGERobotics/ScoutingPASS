@@ -183,6 +183,12 @@ var config_data = `
       },
       "defaultValue": "x"
     },
+	{ "name": "Who did they play defense against?",
+      "code": "wda",
+      "type": "text",
+      "size": 15,
+      "maxSize": 100
+    }
     { "name": "Swerve drive?",
       "code": "sd",
       "type": "bool"
