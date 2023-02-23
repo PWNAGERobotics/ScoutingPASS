@@ -111,14 +111,14 @@ var config_data = `
       "code": "aec",
       "type":"radio",
       "choices": {
-        "a": "1 (not tested at all, no confidence)<br>",
-        "b": "2<br>",
-        "c": "3<br>",
-        "d": "4<br>",
-		"e": "5 (highly tested, repeatable)<br>",
-		"f": "Cannot engage in auton"
+        "1": "1 (not tested at all, no confidence)<br>",
+        "2": "2<br>",
+        "3": "3<br>",
+        "4": "4<br>",
+		"5": "5 (highly tested, repeatable)<br>",
+		"x": "Cannot engage in auton"
 	  },
-	  "defaultValue": "f"
+	  "defaultValue": "x"
     },
 	{ "name": "Teleop scoring ability<br>(bottom, middle, top, or all rows)",
       "code": "ts",
