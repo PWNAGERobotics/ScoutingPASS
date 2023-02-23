@@ -80,7 +80,7 @@ var config_data = `
      },
       "defaultValue": "x"
     },
-    { "name": "Cone orientation from floor",
+    { "name": "Cone pick up orientation<br>from floor",
       "code": "coo",
       "type": "radio",
       "choices": {
