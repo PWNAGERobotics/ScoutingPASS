@@ -63,7 +63,7 @@ var config_data = `
       "choices": {
         "d": "Double Substation only<br>",
         "s": "Single Substation/Floor pick-up only<br>",
-        "b": "Both substation<br>",
+        "b": "Both substations<br>",
         "x": "Can not manipulate game pieces"
       },
       "defaultValue": "x"
