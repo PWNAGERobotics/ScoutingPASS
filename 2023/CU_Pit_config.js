@@ -90,7 +90,7 @@ var config_data = `
       },
       "defaultValue":"x"
     },
-	{ "name": "Auton Start Position",
+	{ "name": "Auton Start Positions<br>(include all options)",
       "code": "asp",
       "type": "clickable_image",
       "filename": "2023/field_image.png",
