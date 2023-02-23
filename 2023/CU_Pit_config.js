@@ -90,10 +90,6 @@ var config_data = `
       },
       "defaultValue":"x"
     },
-    { "name": "Cross Charging Station",
-      "code": "ccs",
-      "type": "bool"
-    },
 	{ "name": "Auton Start Position",
       "code": "asp",
       "type": "clickable_image",
