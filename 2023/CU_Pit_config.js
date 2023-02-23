@@ -111,10 +111,6 @@ var config_data = `
       "showUndo": "false",
       "shape": "circle 12 black red true"
     },
-    { "name": "Engage in Auton?",
-      "code": "ae",
-      "type": "bool"
-    },
 	{ "name": "Confidence engaging in auton",
       "code": "aec",
       "type":"radio",
@@ -123,8 +119,10 @@ var config_data = `
         "b": "2<br>",
         "c": "3<br>",
         "d": "4<br>",
-		"e": "5 (highly tested, repeatable)"
-	  }
+		"e": "5 (highly tested, repeatable)<br>",
+		"f": "Cannot engage in auton"
+	  },
+	  "defaultValue": "f"
     },
 	{ "name": "Teleop scoring ability<br>(bottom, middle, top, or all rows)",
       "code": "ts",
