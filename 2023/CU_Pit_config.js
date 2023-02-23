@@ -8,7 +8,7 @@ var config_data = `
       "code": "t",
       "type": "number"
     },
-    { "name": "Width",
+    { "name": "Width (bumpers included)",
       "code": "wid",
       "type": "number",
       "defaultValue": "0"
@@ -24,7 +24,6 @@ var config_data = `
       "choices": {
         "s": "Swerve<br>",
         "w": "West Coast/Tank<br>",
-        "b": "Butterfly/Grashopper<br>",
         "m": "Mechanum<br>",
         "o": "Other"
       },
@@ -36,7 +35,7 @@ var config_data = `
       "size": 20,
       "maxSize": 50
     },
-    { "name": "Swerve Ratio",
+    { "name": "Swerve Ratio (speed)",
       "code": "sr",
       "type": "radio",
       "choices": {
@@ -59,8 +58,8 @@ var config_data = `
       },
       "defaultValue":"x"
     },
-    { "name": "Game piece pick up",
-      "code": "fco",
+    { "name": "Game piece pick up location",
+      "code": "pul",
       "type":"radio",
       "choices": {
         "d": "Double Substation only<br>",
@@ -71,14 +70,14 @@ var config_data = `
       "defaultValue": "x"
     },
 	{ "name": "Floor pick up",
-      "code": "fcu",
+      "code": "fpu",
       "type":"radio",
       "choices": {
         "u": "Cubes only<br>",
         "o": "Cones only<br>",
         "b": "Both<br>",
         "x": "Can not manipulate game pieces"
-      },
+     },
       "defaultValue": "x"
     },
     { "name": "Cross Charging Station",
@@ -102,12 +101,30 @@ var config_data = `
       "showUndo": "false",
       "shape": "circle 12 black red true"
     },
+    { "name": "Engage in Auton?",
+      "code": "ae",
+      "type": "bool"
+    },
+	{ "name": "Confidence engaging in auton",
+      "code": "aec",
+      "type":"radio",
+      "choices": {
+        "a": "1 (not tested at all, no confidence)<br>",
+        "b": "2<br>",
+        "c": "3<br>",
+        "d": "4<br>",
+		"e": "5 (highly tested, repeatable)"
+    },
 	{ "name": "Teleop scoring ability<br>(bottom, middle, top, or all rows)",
       "code": "ts",
       "type": "text",
       "size": 20,
       "maxSize": 250
 	},
+	{ "name": "# of cycles on teleop,
+      "code": "tc",
+      "type": "counter"
+    },
 	{ "name": "Comments",
       "code": "co",
       "type": "text",
