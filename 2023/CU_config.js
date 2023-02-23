@@ -178,7 +178,7 @@ var config_data = `
       },
       "defaultValue": "x"
     },
-	{ "name": "Who did they play defense against?",
+	{ "name": "Who did they play<br>defense against?",
       "code": "wda",
       "type": "text",
       "size": 15,
