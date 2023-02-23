@@ -54,6 +54,13 @@ var config_data = `
       "type": "team",
       "min": 1,
       "max": 99999
+    },
+    { "name": "Auton Start Position",
+      "code": "as",
+      "type": "clickable_image",
+      "filename": "2023/field_image.png",
+      "clickRestriction": "one",
+      "shape": "circle 5 black red true"
     }
   ],
   "auton": [
