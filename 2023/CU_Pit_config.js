@@ -39,10 +39,9 @@ var config_data = `
       "code": "sr",
       "type": "radio",
       "choices": {
-        "1": "L1<br>",
-        "2": "L2<br>",
-        "3": "L3<br>",
-        "4": "L4<br>",
+        "1": "L1 (8.14:1 or 12-13 ft/sec)<br>",
+        "2": "L2 (6.75:1 or 14-16 ft/sec)<br>",
+        "3": "L3 (6.12:1 or 16-18 ft/sec)<br>",
         "x": "Not Swerve"
       },
       "defaultValue":"x"
@@ -112,10 +111,6 @@ var config_data = `
       "showUndo": "false",
       "shape": "circle 12 black red true"
     },
-    { "name": "Engage in Auton?",
-      "code": "ae",
-      "type": "bool"
-    },
 	{ "name": "Confidence engaging in auton",
       "code": "aec",
       "type":"radio",
@@ -124,8 +119,10 @@ var config_data = `
         "b": "2<br>",
         "c": "3<br>",
         "d": "4<br>",
-		"e": "5 (highly tested, repeatable)"
-	  }
+		"e": "5 (highly tested, repeatable)<br>",
+		"f": "Cannot engage in auton"
+	  },
+	  "defaultValue": "f"
     },
 	{ "name": "Teleop scoring ability<br>(bottom, middle, top, or all rows)",
       "code": "ts",
