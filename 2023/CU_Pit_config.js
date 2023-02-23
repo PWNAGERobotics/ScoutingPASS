@@ -39,10 +39,9 @@ var config_data = `
       "code": "sr",
       "type": "radio",
       "choices": {
-        "1": "L1<br>",
-        "2": "L2<br>",
-        "3": "L3<br>",
-        "4": "L4<br>",
+        "1": "L1 (8.14:1 or 12-13 ft/sec)<br>",
+        "2": "L2 (6.75:1 or 14-16 ft/sec)<br>",
+        "3": "L3 (6.12:1 or 16-18 ft/sec)<br>",
         "x": "Not Swerve"
       },
       "defaultValue":"x"
