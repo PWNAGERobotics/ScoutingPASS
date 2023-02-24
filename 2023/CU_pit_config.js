@@ -88,6 +88,12 @@ var config_data = {
       title: "Engage Charging Pad in Auto?",
       type: "bool",
     },
+    "Auto Routines": {
+      code: "ar",
+      title: "Autonomous Routines",
+      type: "text",
+      size: 30,
+    },
     Team: {
       code: "t-div",
       title: "Team Questions",
