@@ -1,7 +1,7 @@
 var config_data = `
 {
   "title": "Scouting PASS 2022",
-  "page_title": "Rapid React",
+  "page_title": "Charged Up",
   "checkboxAs": "10",
   "prematch": [
     { "name": "Scouter Initials",
@@ -11,7 +11,7 @@ var config_data = `
       "maxSize": 5,
       "required": "true"
     },
-    { "name": "Event",
+    { "name": "Iowa Competition",
       "code": "e",
       "type": "event",
       "defaultValue": "2022ilpe",
@@ -20,7 +20,7 @@ var config_data = `
     },
     { "name": "Match Level",
       "code": "l",
-      "type": "level",
+      "type": "Quals<br>",
       "choices": {
         "qm": "Quals<br>",
         "ef": "Eighth-Final<br>",
@@ -31,7 +31,7 @@ var config_data = `
       "defaultValue": "qm",
       "required": "true"
     },
-    { "name": "Match #",
+    { "name": "Match #2",
       "code": "m",
       "type": "match",
       "min": 1,
@@ -64,41 +64,45 @@ var config_data = `
     }
   ],
   "auton": [
-    { "name": "Taxied?",
+    { "name": "On Powerstation?",
       "code": "at",
       "type": "bool"
     },
-    { "name": "Upper Cargo Scored",
+    { "name": "Pieces?",
       "code": "au",
       "type": "counter"
     },
-    { "name": "Lower Cargo Scored",
+    { "name": "Position?",
       "code": "al",
       "type": "counter"
     },
-    { "name": "Picked up more cargo?",
+    { "name": "Score?",
       "code": "ac",
       "type": "bool"
     }
   ],
   "teleop": [
-    { "name": "Upper Cargo Scored",
+    { "name": "Power Station Scored",
       "code": "tu",
       "type": "counter"
     },
-    { "name": "Lower Cargo Scored",
+    { "name": "Average Time",
       "code": "tl",
       "type": "counter"
     },
-    { "name": "Was Defended",
+    { "name": "Position",
       "code": "wd",
       "type": "bool"
     },
-    { "name": "Wallbot?",
+    { "name": "Balance?",
       "code": "wbt",
       "type": "bool"
     },
-    { "name": "Cargo Intake From",
+     { "name": "What game peices can it pick up?",
+      "code": "wbt",
+      "type": "bool"
+    },
+    { "name": "Game Piece Intake From",
       "code": "cif",
       "type": "radio",
       "choices": {
@@ -109,14 +113,14 @@ var config_data = `
       },
       "defaultValue": "x"
     },
-    { "name": "Shooting Spot",
+    { "name": "Heighest Tier it cane place",
       "code": "ss",
       "type": "field_image",
       "filename": "2022/field_image.png"
     }
   ],
   "endgame": [
-    { "name": "Climb",
+    { "name": "Power Station",
       "code": "c",
       "type":"radio",
       "choices": {
@@ -129,11 +133,11 @@ var config_data = `
       },
       "defaultValue": "x"
     },
-    { "name": "Started Climb before Endgame",
+    { "name": "Started Power Station before Endgame",
       "code": "be",
       "type": "bool"
     },
-    { "name": "# of alliance bots climbed",
+    { "name": "# of alliance bots are on the Power Station",
       "code": "cn",
       "type": "counter"
     }
@@ -161,11 +165,6 @@ var config_data = `
         "x": "Did not play defense"
       },
       "defaultValue": "x"
-    },
-    { "name": "Enemy Balls",
-      "tooltip": "Strategically held enemy cargo during the match",
-      "code": "hc",
-      "type": "bool"
     },
     { "name": "Swerve drive?",
       "code": "sd",
