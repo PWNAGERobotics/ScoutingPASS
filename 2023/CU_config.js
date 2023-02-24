@@ -175,10 +175,10 @@ var config_data = `
       "code": "dr",
       "type": "radio",
       "choices": {
-        "b": "Below Average<br>",
-        "a": "Average<br>",
-        "g": "Good<br>",
-        "e": "Excellent<br>",
+        "b": "Below Average (the thought was there)<br>",
+        "a": "Average (got in the way from time to time)<br>",
+        "g": "Good (was very annoying)<br>",
+        "e": "Excellent (An absolute menace)<br>",
         "x": "Did not play defense"
       },
       "defaultValue": "x"
