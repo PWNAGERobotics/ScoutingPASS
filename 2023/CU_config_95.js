@@ -271,6 +271,21 @@ var config_data = {
       },
       defaultValue: "Not Observed",
     },
+    "Yellow Card": {
+      code: "pyc",
+      title: "Yellow Card",
+      type: "bool",
+    },
+    "Red Card": {
+      code: "prc",
+      title: "Red Card",
+      type: "bool",
+    },
+    "Died During Match (put info in comments)": {
+      code: "pdd",
+      title: "Died",
+      type: "bool",
+    },
     Comments: {
       code: "co",
       title: "Comments",
