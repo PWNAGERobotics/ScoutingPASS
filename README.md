@@ -213,7 +213,7 @@ Scouting PASS continues to evolve.   Here are the changes for the 2023 Season:
 * Add "Flip Image" button to the Field Image component
 * Add "tooltip" option for components - Tooltips will appear when hovering over the name of the component
 * Bug Fix: Two field image elements on the same page will now render correctly
-* Google Sheets data export <BETA> (See the [Google Sheets](GoogleSheets.md) page for more details)
+* Google Sheets data export <BETA> (See the [Google Sheets](docs/GoogleSheets.md) page for more details)
 * Configurable checkbox values in configuration file.  Defaults to Y/N.  Can set to T/F or 1/0.  See line 5 of 2022/RR_config.js for an example
     * "YN" - for Y/N output
     * "TF" - for T/F output
