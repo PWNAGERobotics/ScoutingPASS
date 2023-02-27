@@ -142,11 +142,11 @@ There is an extensive set-up process described in following section.  Follow the
           ...
 ```
 
-2. Edit index.html to point to the Google Sheets configuration file (2023/CU_GS_config.js).
+3. (Default configuration) Edit index.html to point to the Google Sheets configuration file (2023/CU_GS_config.js).
     * Change line 12 in index.html
     * Instead of 2023/CU_config.js point it to 2023/CU_GS_config.js
   
-Alternate 2. Add gsCol tag to you config file
+4. (Custome configuration) Add gsCol tag to you config file
     * In that same configuration file, you need to add a "gsCol" tag for each element in the configuration script.  The gsCol (AKA Google Sheets Column) will tell Google
   Sheets which column to put the data in.
     * For example, the first entry in our configuraiton is Scouter Initials, the new entry with the gsCol tag would look like this:
