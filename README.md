@@ -41,7 +41,7 @@
   * Self hosting via GitHub. (See directions below)
 ### **[The Blue Alliance Integration](https://thebluealliance.com)**
   * Pull data for the event from The Blue Alliance.  Team #s, Team Names and Schedules
-### **[Google Sheets Integration](GoogleSheets.md) <BETA>**
+### **[Google Sheets Integration](docs/GoogleSheets.md) <BETA>**
   * Send data to a Google Sheets spreadsheet
 
 <p align="right">(<a href="#top">back to top</a>)</p>
