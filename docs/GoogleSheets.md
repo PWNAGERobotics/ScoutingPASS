@@ -90,6 +90,14 @@ There is an extensive set-up process described in following section.  Follow the
           }
         }
 ```
+## NOTE: This code has changed on Feb 27, 2023.  If you pulled this code before that date Google Sheets probably isn't working for you.  
+> The new version has this change:
+  
+>    OLD LINE:  return header === 'Date' ? new Date() : e.parameter[header].join(",")
+  
+>    NEW LINE:  return header === 'Date' ? new Date() : e.parameter[header]
+  
+  
    * Save the project (Ctrl-S or click the floppy icon)
 5. Execute initialization
     * Next to the Debug menu item select "initialSetup" and click Run.
