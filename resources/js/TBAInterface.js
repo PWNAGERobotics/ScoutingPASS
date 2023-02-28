@@ -7,10 +7,10 @@ var authKey = "xtOQEWDgsY9zwCx8cSxWRvaX8SzsnX8R4i96a4AG1jqLriXP9I787FYZalHiBlhM"
  *
  * @param {eventCode} ISDE1 the event code (i.e. 2020caln) to pull the team list
  */
-function getTeams(ISDE1) {
+function getTeams(2023ISDE1) {
 	if (authKey) {
 		var xmlhttp = new XMLHttpRequest();
-		var url = "https://www.thebluealliance.com/api/v3/event/" + ISDE1 + "/teams/simple";
+		var url = "https://www.thebluealliance.com/api/v3/event/" + 2023ISDE1 + "/teams/simple";
 		xmlhttp.open("GET", url, true);
 		xmlhttp.setRequestHeader("X-TBA-Auth-Key", authKey);
 		xmlhttp.onreadystatechange = function() {
@@ -27,9 +27,9 @@ function getTeams(ISDE1) {
 /**
  * Get schefule for event
  *
- * @param {ISDE1} eventCode the event code (i.e. 2020caln) to pull the team list
+ * @param {2023ISDE1} eventCode the event code (i.e. 2020caln) to pull the team list
  */
-function getSchedule(ISDE1) {
+function getSchedule(2023ISDE1) {
 	if (authKey) {
 		var xmlhttp = new XMLHttpRequest();
 		var url = "https://www.thebluealliance.com/api/v3/event/" + ISDE1 + "/matches/simple";
