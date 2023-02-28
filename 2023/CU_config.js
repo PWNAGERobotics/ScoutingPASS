@@ -1,6 +1,5 @@
 var config_data = `
 {
-"enable_google_sheets": "true",
   "title": "Scouting PASS 2023",
   "page_title": "CSP #4188 Charged Up",
   "checkboxAs": "10",
