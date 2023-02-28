@@ -16,7 +16,7 @@ var config_data = `
       "gsCol": "e",
       "code": "e",
       "type": "event",
-      "defaultValue": "Becca",
+      "defaultValue": "2020ilch",
       "required": "true",
       "disabled": "true"
     },
