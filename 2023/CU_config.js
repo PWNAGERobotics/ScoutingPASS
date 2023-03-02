@@ -16,7 +16,7 @@ var config_data = `
       "gsCol": "e",
       "code": "e",
       "type": "event",
-      "defaultValue": "ISDE2",
+      "defaultValue": "FLWP",
       "required": "true",
       "disabled": "true"
     },
