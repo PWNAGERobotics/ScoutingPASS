@@ -16,7 +16,7 @@ var config_data = `
       "gsCol": "e",
       "code": "e",
       "type": "event",
-      "defaultValue": "2022carv",
+      "defaultValue": "2020caln",
       "required": "true",
       "disabled": "true"
     },
