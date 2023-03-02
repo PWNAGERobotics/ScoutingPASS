@@ -16,7 +16,7 @@ var config_data = `
       "gsCol": "e",
       "code": "e",
       "type": "event",
-      "defaultValue": "bcvi",
+      "defaultValue": "ISDE2",
       "required": "true",
       "disabled": "true"
     },
