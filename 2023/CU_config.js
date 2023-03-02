@@ -16,7 +16,7 @@ var config_data = `
       "gsCol": "e",
       "code": "e",
       "type": "event",
-      "defaultValue": "FLWP",
+      "defaultValue": "2023bcvi",
       "required": "true",
       "disabled": "true"
     },
