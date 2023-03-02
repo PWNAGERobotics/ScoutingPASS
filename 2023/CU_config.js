@@ -16,7 +16,7 @@ var config_data = `
       "gsCol": "e",
       "code": "e",
       "type": "event",
-      "defaultValue": "ISDE2",
+      "defaultValue": "2023ISDE2",
       "required": "true",
       "disabled": "true"
     },
