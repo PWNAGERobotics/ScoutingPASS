@@ -4,7 +4,7 @@ var config_data = `
   "page_title": "CSP #4188 Charged Up",
   "checkboxAs": "10",
   "prematch": [
-    { "name": "Scouter Initials",
+    { "name": "Scouter Name",
       "gsCol": "s",
       "code": "s",
       "type": "scouter",
@@ -16,7 +16,7 @@ var config_data = `
       "gsCol": "e",
       "code": "e",
       "type": "event",
-      "defaultValue": "2020ilch",
+      "defaultValue": "BCVI",
       "required": "true",
       "disabled": "true"
     },
