@@ -16,7 +16,7 @@ var config_data = `
       "gsCol": "e",
       "code": "e",
       "type": "event",
-      "defaultValue": "BCVI",
+      "defaultValue": "bcvi",
       "required": "true",
       "disabled": "true"
     },
