@@ -410,6 +410,9 @@ function addText(table, idx, name, data) {
     inp.setAttribute("maxLength", data.maxSize);
   }
   if (data.hasOwnProperty('defaultValue')) {
+    if (data.type == 'event') {
+      data.defaultValue = data.defaultValue.toLowerCase();
+    }
     inp.setAttribute("value", data.defaultValue);
   }
   if (data.hasOwnProperty('required')) {
