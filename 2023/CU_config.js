@@ -16,7 +16,7 @@ var config_data = `
       "gsCol": "e",
       "code": "e",
       "type": "event",
-      "defaultValue": "2023bcvi",
+      "defaultValue": "2023gaalb",
       "required": "true",
       "disabled": "true"
     },
