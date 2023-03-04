@@ -17,7 +17,7 @@ var config_data = `
       "code": "e",
       "gsCol": "event",
       "type": "event",
-      "defaultValue": "2023week0",
+      "defaultValue": "2023mabri",
       "required": "true",
       "disabled": "true"
     },
