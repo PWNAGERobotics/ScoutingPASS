@@ -14,7 +14,7 @@ var config_data = `
     { "name": "Event",
       "code": "e",
       "type": "event",
-      "defaultValue": "2023week0", 
+      "defaultValue": "2023mabri", 
       "required": "true",
       "disabled": "true"
     },
