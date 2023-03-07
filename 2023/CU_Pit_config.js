@@ -81,7 +81,7 @@ var config_data = `
       "size": 20,
       "maxSize": 250
     },
-    { "name": "Scouting Method / Program (ScoutingPASS?)",
+    { "name": "Scouting Method /<br>Program (ScoutingPASS?)",
       "code": "sct",
       "type": "text",
       "size": 20,
