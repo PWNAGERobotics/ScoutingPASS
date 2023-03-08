@@ -62,8 +62,9 @@ var config_data = `
       "type":"radio",
       "choices": {
         "d": "Double Substation only<br>",
-        "s": "Single Substation/Floor pick-up only<br>",
-        "b": "Both substations<br>",
+        "s": "Single Substation<br>",
+		"f": "Floor pick-up only<br>",
+        "b": "All locations<br>",
         "x": "Can not manipulate game pieces"
       },
       "defaultValue": "x"
@@ -90,7 +91,7 @@ var config_data = `
       },
       "defaultValue":"x"
     },
-	{ "name": "Auton Start Positions<br>(include all options)",
+	{ "name": "Auton Start Positions<br>(include all options)<br>(if can start from anywhere, leave blank)",
       "code": "asp",
       "type": "clickable_image",
       "filename": "2023/field_image.png",
