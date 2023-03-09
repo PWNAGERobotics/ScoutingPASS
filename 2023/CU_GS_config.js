@@ -17,7 +17,7 @@ var config_data = `
       "code": "e",
       "gsCol": "event",
       "type": "event",
-      "defaultValue": "2022mnmi",
+      "defaultValue": "2023mndu",
       "required": "true",
       "disabled": "true"
     },
