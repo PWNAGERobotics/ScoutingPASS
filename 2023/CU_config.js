@@ -14,7 +14,7 @@ var config_data = `
     { "name": "Event",
       "code": "e",
       "type": "event",
-      "defaultValue": "2023mijac",
+      "defaultValue": "2023mista",
       "required": "true",
       "disabled": "true"
     },
