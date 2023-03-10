@@ -161,7 +161,7 @@ var config_data = `
       },
       "defaultValue": "x"
     },
-    { "name": "Total # of alliance<br>robots docked/engaged",
+    { "name": "If docked/engaged, total # of alliance<br>robots docked/engaged",
       "code": "dn",
       "type": "counter"
     },
