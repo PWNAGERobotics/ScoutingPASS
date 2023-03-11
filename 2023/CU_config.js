@@ -14,7 +14,7 @@ var config_data = `
     { "name": "Event",
       "code": "e",
       "type": "event",
-      "defaultValue": "2022carv",
+      "defaultValue": "2023ilch",
       "required": "true",
       "disabled": "true"
     },
@@ -169,6 +169,10 @@ var config_data = `
     { "name": "Total # of alliance<br>robots docked/engaged",
       "code": "dn",
       "type": "counter"
+    },
+    { "name": "Links Scored",
+      "code": "ls",
+      "type": "counter"
     }
   ],
   "postmatch": [
@@ -182,10 +186,6 @@ var config_data = `
         "x": "Not Observed"
       },
       "defaultValue": "x"
-    },
-    { "name": "Links Scored",
-      "code": "ls",
-      "type": "counter"
     },
     { "name": "Defense Rating",
       "code": "dr",

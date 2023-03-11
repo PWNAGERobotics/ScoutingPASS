@@ -80,6 +80,12 @@ var config_data = `
       "type": "text",
       "size": 20,
       "maxSize": 250
+    },
+    { "name": "Scouting Method /<br>Program (ScoutingPASS?)",
+      "code": "sct",
+      "type": "text",
+      "size": 20,
+      "maxSize": 250
     }
   ],
   "auton": [

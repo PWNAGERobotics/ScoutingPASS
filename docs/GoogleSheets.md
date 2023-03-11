@@ -51,45 +51,54 @@ There is an extensive set-up process described in following section.  Follow the
     * Update the project name from "Untitled project" to something meaningful to you
     * Clear out the code there (i.e. MyFunction...) and replace it with this:
 ```javascript
-        const sheetName = 'Sheet1'
-        const scriptProp = PropertiesService.getScriptProperties()
+const sheetName = 'Sheet1'
+const scriptProp = PropertiesService.getScriptProperties()
 
-        function initialSetup () {
-          const activeSpreadsheet = SpreadsheetApp.getActiveSpreadsheet()
-          scriptProp.setProperty('key', activeSpreadsheet.getId())
-        }
+function initialSetup () {
+  const activeSpreadsheet = SpreadsheetApp.getActiveSpreadsheet()
+  scriptProp.setProperty('key', activeSpreadsheet.getId())
+}
+function doGet () {
+}
+function doPost (e) {
+  const lock = LockService.getScriptLock()
+  lock.tryLock(10000)
 
-        function doPost (e) {
-          const lock = LockService.getScriptLock()
-          lock.tryLock(10000)
+  try {
+    const doc = SpreadsheetApp.openById(scriptProp.getProperty('key'))
+    const sheet = doc.getSheetByName(sheetName)
 
-          try {
-            const doc = SpreadsheetApp.openById(scriptProp.getProperty('key'))
-            const sheet = doc.getSheetByName(sheetName)
+    const headers = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0]
+    const nextRow = sheet.getLastRow() + 1
 
-            const headers = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0]
-            const nextRow = sheet.getLastRow() + 1
+    const newRow = headers.map(function(header) {
+      return header === 'Date' ? new Date() : e.parameter[header]
+    })
 
-            const newRow = headers.map(function(header) {
-              return header === 'Date' ? new Date() : e.parameter[header].join(",")
-            })
+    sheet.getRange(nextRow, 1, 1, newRow.length).setValues([newRow])
 
-            sheet.getRange(nextRow, 1, 1, newRow.length).setValues([newRow])
-
-            return ContentService
-              .createTextOutput(JSON.stringify({ 'result': 'success', 'row': nextRow }))
-              .setMimeType(ContentService.MimeType.JSON)
-          }
-          catch (e) {
-            return ContentService
-              .createTextOutput(JSON.stringify({ 'result': 'error', 'error': e }))
-              .setMimeType(ContentService.MimeType.JSON)
-          }
-          finally {
-            lock.releaseLock()
-          }
-        }
+    return ContentService
+      .createTextOutput(JSON.stringify({ 'result': 'success', 'row': nextRow }))
+      .setMimeType(ContentService.MimeType.JSON)
+  }
+  catch (e) {
+    return ContentService
+      .createTextOutput(JSON.stringify({ 'result': 'error', 'error': e }))
+      .setMimeType(ContentService.MimeType.JSON)
+  }
+  finally {
+    lock.releaseLock()
+  }
+}
 ```
+## NOTE: This code has changed on Feb 27, 2023.  If you pulled this code before that date Google Sheets probably isn't working for you.  
+> The new version has this change:
+  
+>    OLD LINE:  return header === 'Date' ? new Date() : e.parameter[header].join(",")
+  
+>    NEW LINE:  return header === 'Date' ? new Date() : e.parameter[header]
+  
+  
    * Save the project (Ctrl-S or click the floppy icon)
 5. Execute initialization
     * Next to the Debug menu item select "initialSetup" and click Run.
@@ -134,7 +143,11 @@ There is an extensive set-up process described in following section.  Follow the
           ...
 ```
 
-2. Add gsCol tag in config file
+3. (Default configuration) Edit index.html to point to the Google Sheets configuration file (2023/CU_GS_config.js).
+    * Change line 12 in index.html
+    * Instead of 2023/CU_config.js point it to 2023/CU_GS_config.js
+  
+4. (Custom configuration) Add gsCol tag to you config file
     * In that same configuration file, you need to add a "gsCol" tag for each element in the configuration script.  The gsCol (AKA Google Sheets Column) will tell Google
   Sheets which column to put the data in.
     * For example, the first entry in our configuraiton is Scouter Initials, the new entry with the gsCol tag would look like this:
@@ -152,6 +165,6 @@ There is an extensive set-up process described in following section.  Follow the
     * Add that gsCol tag to all your elements to map that element to a header in your Google Sheets spreadsheet
     * If you mispell it or omit it, it will not populate in your spreadsheet
   
-## See 2022/RR_GS_config.js as an example of a configuration file that uses Google Sheets.
+## See 2023/CU_GS_config.js as an example of a configuration file that uses Google Sheets.
   
 <p align="right">(<a href="#top">back to top</a>)</p>
