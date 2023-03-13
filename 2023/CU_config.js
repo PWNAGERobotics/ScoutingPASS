@@ -57,11 +57,8 @@ var config_data = `
     },
     { "name": "Auton Start Position",
       "code": "as",
-      "type": "clickable_image",
-      "filename": "2023/field_image.png",
-      "clickRestriction": "one",
-      "shape": "circle 5 black red true"
-    }
+      "type": "bool"
+	}
   ],
   "auton": [
     { "name": "Auto Scoring",
