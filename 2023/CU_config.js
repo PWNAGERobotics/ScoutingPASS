@@ -55,7 +55,7 @@ var config_data = `
       "min": 1,
       "max": 99999
     },
-    { "name": "Auton Start Position",
+    { "name": "Is their robot<br>on the field?",
       "code": "as",
       "type": "bool"
 	}
