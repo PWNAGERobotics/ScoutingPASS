@@ -177,10 +177,6 @@ var config_data = `
       "size": 15,
       "maxSize": 100
     },
-    { "name": "Swerve drive?",
-      "code": "sd",
-      "type": "bool"
-    },
     { "name": "Died/Immobilized",
       "code": "die",
       "type": "bool"
