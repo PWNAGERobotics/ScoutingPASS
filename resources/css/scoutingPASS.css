@@ -273,6 +273,15 @@ select {
     background-clip: border-box;
   }
 
+.cycleTimerButton {
+  font-family: Alexis;
+  background-color: yellow;
+  padding: 6px;
+  color: buttontext;
+  -webkit-text-fill-color: currentColor;
+  background-clip: border-box;
+}
+
 .title {
   width: 50%;
   text-align: right;

@@ -100,11 +100,14 @@ function addTimer(table, idx, name, data) {
   cell.appendChild(lineBreak);
 
   if (data.type == "cycle") {
+    button1.setAttribute("class", "cycleTimerButton");
+    button2.setAttribute("class", "cycleTimerButton");
     var button3 = document.createElement("input");
     button3.setAttribute("id", "cycle_" + data.code);
     button3.setAttribute("type", "button");
     button3.setAttribute("onclick", "newCycle(this.parentElement)");
     button3.setAttribute("value", "New Cycle");
+    button3.setAttribute("class", "cycleTimerButton");
     cell.appendChild(button3);
     var button4 = document.createElement("input");
     button4.setAttribute("id", "undo_" + data.code);
@@ -112,6 +115,7 @@ function addTimer(table, idx, name, data) {
     button4.setAttribute("onclick", "undoCycle(this.parentElement)");
     button4.setAttribute("value", "Undo");
     button4.setAttribute("style", "margin-left: 20px;");
+    button4.setAttribute("class", "cycleTimerButton");
     cell.appendChild(button4);
   }
 
@@ -1396,6 +1400,7 @@ function undoCycle(event) {
   let uId = getIdBase(undoID.id);
   //Getting rid of last value
   let cycleInput = document.getElementById("cycletime" + uId);
+  var tempValue = Array.from(JSON.parse(cycleInput.value));
   tempValue.pop();
   cycleInput.value = JSON.stringify(tempValue);
   let d = document.getElementById("display" + uId);
