@@ -14,7 +14,7 @@ var config_data = `
     { "name": "Event",
       "code": "e",
       "type": "event",
-      "defaultValue": "2023mijac",
+      "defaultValue": "2023mista",
       "required": "true",
       "disabled": "true"
     },
@@ -61,7 +61,7 @@ var config_data = `
 	}
   ],
   "auton": [
-    { "name": "Auto Scoring",
+    { "name": "Auton Scoring",
       "code": "asg",
       "type": "clickable_image",
       "filename": "2023/grid_image.png",
@@ -72,15 +72,11 @@ var config_data = `
       "showUndo": "false",
       "shape": "circle 12 black red true"
     },
-    { "name": "Crossed Cable",
-      "code": "acc",
-      "type": "bool"
+    { "name": "Dropped Game Pieces",
+      "code": "adp",
+      "type": "counter"
     },
-    { "name": "Crossed Charging Station",
-      "code": "acs",
-      "type": "bool"
-    },
-    { "name": "Mobility?",
+	{ "name": "Crossed the<br>Community Line",
       "code": "am",
       "type": "bool"
     },
@@ -97,10 +93,6 @@ var config_data = `
     }
   ],
   "teleop": [
-    { "name": "Cycle Timer",
-      "code": "tct",
-      "type": "cycle"
-    },
     { "name": "Grid Scoring",
       "code": "tsg",
       "type": "clickable_image",
@@ -110,8 +102,7 @@ var config_data = `
       "toggleClick": "true",
       "showFlip": "false",
       "showUndo": "false",
-      "shape": "circle 12 black red true",
-      "cycleTimer": "tct"
+      "shape": "circle 12 black red true"
     },
     { "name": "Feeder Count<br>(Fed another bot)",
       "code": "tfc",
@@ -121,18 +112,18 @@ var config_data = `
       "code": "wf",
       "type": "bool"
     },
-    { "name": "Was Defended",
-      "code": "wd",
-      "type": "bool"
-    },
-    { "name": "Who Defended this bot",
+    { "name": "If defended, who defended this bot<br>(if not defended, leave blank)",
       "code": "who",
       "type": "text"
     },
-    { "name": "Smart Placement<br>(creates Links)",
-      "code": "lnk",
+	{ "name": "Picks up from<br>double substation table",
+	  "code": "dss",
+	  "type": "bool"
+	},
+    { "name": "Can pick up cones<br>from any orientation",
+      "code": "cao",
       "type": "bool"
-    },
+	},
     { "name": "Floor Pickup",
       "code": "fpu",
       "type": "radio",
@@ -146,11 +137,7 @@ var config_data = `
     }
   ],
   "endgame": [
-    { "name": "Docking Timer",
-      "code": "dt",
-      "type": "timer"
-    },
-    { "name": "Final Status",
+    { "name": "Final Position",
       "code": "fs",
       "type":"radio",
       "choices": {
@@ -162,54 +149,37 @@ var config_data = `
       },
       "defaultValue": "x"
     },
-    { "name": "Total # of alliance<br>robots docked/engaged",
+    { "name": "If docked/engaged, total # of alliance<br>robots docked/engaged",
       "code": "dn",
       "type": "counter"
+    },
+    { "name": "Did they knock their alliance<br>partners off the charge station?",
+      "code": "kop",
+      "type": "bool"
     }
   ],
   "postmatch": [
-    { "name": "Driver Skill",
-      "code": "ds",
-      "type": "radio",
-      "choices": {
-        "n": "Not Effective<br>",
-        "a": "Average<br>",
-        "v": "Very Effective<br>",
-        "x": "Not Observed"
-      },
-      "defaultValue": "x"
-    },
-    { "name": "Links Scored",
-      "code": "ls",
-      "type": "counter"
-    },
     { "name": "Defense Rating",
       "code": "dr",
       "type": "radio",
       "choices": {
-        "b": "Below Average<br>",
-        "a": "Average<br>",
-        "g": "Good<br>",
-        "e": "Excellent<br>",
+        "b": "Below Average (the thought was there)<br>",
+        "a": "Average (got in the way from time to time)<br>",
+        "g": "Good (was very annoying)<br>",
+        "e": "Excellent (An absolute menace)<br>",
         "x": "Did not play defense"
       },
       "defaultValue": "x"
     },
+	{ "name": "Who did they play<br>defense against?",
+      "code": "wda",
+      "type": "text",
+      "size": 15,
+      "maxSize": 100
+    },
     { "name": "Swerve drive?",
       "code": "sd",
       "type": "bool"
-    },
-    { "name": "Speed Rating",
-      "code": "sr",
-      "type": "radio",
-      "choices": {
-        "1": "1 (slow)<br>",
-        "2": "2<br>",
-        "3": "3<br>",
-        "4": "4<br>",
-        "5": "5 (fast)"
-      },
-      "defaultValue":"3"
     },
     { "name": "Died/Immobilized",
       "code": "die",
@@ -223,16 +193,11 @@ var config_data = `
       "code": "dc",
       "type": "bool"
     },
-    { "name": "Make good<br>alliance partner?",
-      "tooltip": "Would you want this robot on your alliance in eliminations?",
-      "code": "all",
-      "type": "bool"
-    },
     { "name": "Comments",
       "code": "co",
       "type": "text",
       "size": 15,
-      "maxSize": 50
+      "maxSize": 100
     }
   ]
 }`;
