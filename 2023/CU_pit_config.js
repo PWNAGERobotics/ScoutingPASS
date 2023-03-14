@@ -21,7 +21,7 @@ var config_data = {
       code: "e",
       title: "Event",
       type: "event",
-      defaultValue: "2023flwp",
+      defaultValue: "2023nyro",
       disabled: "true",
     },
     "Team Number": {
