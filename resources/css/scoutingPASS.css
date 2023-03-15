@@ -80,6 +80,7 @@ body {
 .field-image-src {
   background-position: center;
   border: 1px solid;
+  width: 70%;
 }
 
 .main-panel {

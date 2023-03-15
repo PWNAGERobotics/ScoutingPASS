@@ -1185,8 +1185,8 @@ function onFieldClick(event) {
 
   //Turns coordinates into a numeric box
   let box =
-    (Math.ceil((event.offsetY / target.height) * resY) - 1) * resX +
-    Math.ceil((event.offsetX / target.width) * resX);
+    (Math.ceil((event.offsetY / target.getBoundingClientRect().height) * resY) - 1) * resX +
+    Math.ceil((event.offsetX / target.getBoundingClientRect().width) * resX);
   let coords = event.offsetX + "," + event.offsetY;
 
   //Cumulating values

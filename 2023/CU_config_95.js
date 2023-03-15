@@ -1,5 +1,5 @@
 const pitScouting = false;
-var requiredFields = ["e", "m", "l", "r", "s", "as"];
+var requiredFields = ["e", "m", "l", "r", "s"];
 var config_data = {
   title: "ScoutingPASS 3173",
   page_title: "ScoutingPASS 3173",
@@ -63,14 +63,6 @@ var config_data = {
       type: "team",
       min: 1,
       max: 9999,
-    },
-    "Auto Start Position": {
-      gsCol: "autoStartPos",
-      code: "as",
-      type: "field_image",
-      filename: "2023/field_image.png",
-      clickRestriction: "one",
-      shape: "circle 5 black red true",
     },
     Autonomous: {
       code: "a-div",
