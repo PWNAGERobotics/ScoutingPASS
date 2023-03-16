@@ -23,7 +23,7 @@ var config_data = `
       "type": "level",
       "choices": {
         "qm": "Quals<br>",
-        "de": "Double Elimination<br>",
+        "sf": "Semifinals<br>",
         "f": "Finals"
       },
       "defaultValue": "qm",
@@ -75,13 +75,9 @@ var config_data = `
       "showUndo": "false",
       "shape": "circle 12 black red true"
     },
-    { "name": "Crossed Cable",
-      "code": "acc",
-      "type": "bool"
-    },
-    { "name": "Crossed Charging Station",
-      "code": "acs",
-      "type": "bool"
+    { "name": "Game Pieces attempted<br>(Scored and Missed)",
+      "code": "aa",
+      "type": "counter"
     },
     { "name": "Mobility?",
       "code": "am",
@@ -100,10 +96,6 @@ var config_data = `
     }
   ],
   "teleop": [
-    { "name": "Cycle Timer",
-      "code": "tct",
-      "type": "cycle"
-    },
     { "name": "Grid Scoring",
       "code": "tsg",
       "type": "clickable_image",
@@ -113,8 +105,7 @@ var config_data = `
       "toggleClick": "true",
       "showFlip": "false",
       "showUndo": "false",
-      "shape": "circle 12 black red true",
-      "cycleTimer": "tct"
+      "shape": "circle 12 black red true"
     },
     { "name": "Feeder Count<br>(Fed another bot)",
       "code": "tfc",
@@ -198,10 +189,6 @@ var config_data = `
         "x": "Did not play defense"
       },
       "defaultValue": "x"
-    },
-    { "name": "Swerve drive?",
-      "code": "sd",
-      "type": "bool"
     },
     { "name": "Speed Rating",
       "code": "sr",
