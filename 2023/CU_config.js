@@ -137,6 +137,17 @@ var config_data = `
         "x": "Not Attempted"
       },
       "defaultValue": "x"
+    },
+    { "name": "Substation Use",
+      "code": "sub",
+      "type": "radio",
+      "choices": {
+        "o": "Single<br>",
+        "u": "Double<br>",
+        "b": "Both<br>",
+        "x": "Not Attempted"
+      },
+      "defaultValue": "x"
     }
   ],
   "endgame": [
