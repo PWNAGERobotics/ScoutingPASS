@@ -233,24 +233,20 @@ var config_data = `
       "code": "tip",
       "type": "bool"
     },
-     { "name": "Comments",
+    { "name": "CSP IGNORE",
       "code": "dc",
-      "type": "text",
-      "size": 60,
-      "maxSize": 60
+      "type": "bool"
     },
-      { "name": "More Comments",
+    { "name": "CSP IGNORE",
+      "tooltip": "Would you want this robot on your alliance in eliminations?",
       "code": "all",
-      "type": "text",
-      "size": 60,
-      "maxSize": 60
+      "type": "bool"
     },
-     { "name": "Comments",
-      "code": "co1",
+    { "name": "Comments",
+      "code": "co",
       "type": "text",
-      "size": 60,
-      "maxSize": 60
+      "size": 100,
+      "maxSize": 100
     }
-     
-    ]
+  ]
 }`;
