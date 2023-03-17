@@ -234,6 +234,17 @@ var config_data = `
       "type": "text",
       "size": 60,
       "maxSize": 350
+    },
+     { "name": "More Comments",
+      "code": "co",
+      "type": "text",
+      "size": 60,
+      "maxSize": 350
+    }, { "name": "Even More Comments",
+      "code": "co",
+      "type": "text",
+      "size": 60,
+      "maxSize": 350
     }
   ]
 }`;
