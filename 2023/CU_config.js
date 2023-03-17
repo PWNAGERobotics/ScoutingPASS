@@ -232,19 +232,19 @@ var config_data = `
     { "name": "Comments",
       "code": "co",
       "type": "text",
-      "size": 2000,
-      "maxSize": 2000
+      "size": 500,
+      "maxSize": 500
     },
    { "name": "Comments Continued",
       "code": "co",
       "type": "text",
-      "size": 100,
+      "size": 500,
       "maxSize": 500
     }, 
     { "name": "Comments Continue Again",
       "code": "co",
       "type": "text",
-      "size": 100,
+      "size": 500,
       "maxSize": 500
     }
   ]
