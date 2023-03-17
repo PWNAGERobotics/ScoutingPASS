@@ -232,7 +232,8 @@ var config_data = `
     { "name": "Comments",
       "code": "co",
       "type": "text",
-      <textarea name="Comments" cols="50" rows="10"></textarea>
+      "cols":"50",
+      "rows":"10"
       }
   ]
 }`;
