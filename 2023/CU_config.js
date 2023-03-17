@@ -252,7 +252,7 @@ var config_data = `
       "type": "text",
       "size": 60,
       "maxSize": 60
-    },
+    }
      
     ]
 }`;
