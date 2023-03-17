@@ -16,7 +16,7 @@ var config_data = `
       "gsCol": "e",
       "code": "e",
       "type": "event",
-      "defaultValue": "2023gaalb",
+      "defaultValue": "2023gagwi",
       "required": "true",
       "disabled": "true"
     },
@@ -232,8 +232,8 @@ var config_data = `
     { "name": "Comments",
       "code": "co",
       "type": "text",
-      "size": 100,
-      "maxSize": 500
+      "size": 2000,
+      "maxSize": 2000
     },
    { "name": "Comments Continued",
       "code": "co",
