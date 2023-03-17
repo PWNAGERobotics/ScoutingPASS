@@ -239,14 +239,12 @@ var config_data = `
       "size": 60,
       "maxSize": 60
     },
-        { "name": "More Comments",
+      { "name": "More Comments",
       "code": "all",
       "type": "text",
       "size": 60,
       "maxSize": 60
     },
-
-
      { "name": "Comments",
       "code": "co1",
       "type": "text",
