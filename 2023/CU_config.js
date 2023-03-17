@@ -83,11 +83,7 @@ var config_data = `
       "showUndo": "false",
       "shape": "circle 12 black red true"
     },
-    { "name": "Crossed Cable",
-    "gsCol": "acc",
-      "code": "acc",
-      "type": "bool"
-    },
+  
     { "name": "Crossed Charging Station",
     "gsCol": "acs",
       "code": "acs",
@@ -103,9 +99,9 @@ var config_data = `
       "code": "ad",
       "type":"radio",
       "choices": {
-        "d": "Docked (not Engaged)<br>",
-        "e": "Engaged<br>",
-        "a": "Attempted but failed<br>",
+       "e": "Engaged<br>",
+       "d": "Docked (not Engaged)<br>",
+       "a": "Attempted but failed<br>",
         "x": "Not attempted"
       },
       "defaultValue": "x"
@@ -171,8 +167,8 @@ var config_data = `
       "type":"radio",
       "choices": {
         "p": "Parked<br>",
-        "d": "Docked (Not Engaged)<br>",
         "e": "Engaged<br>",
+        "d": "Docked (Not Engaged)<br>",
         "a": "Attempted but failed<br>",
         "x": "Not attempted"
       },
@@ -195,10 +191,7 @@ var config_data = `
       },
       "defaultValue": "x"
     },
-    { "name": "Links Scored",
-      "code": "ls",
-      "type": "counter"
-    },
+   
     { "name": "Defense Rating",
       "code": "dr",
       "type": "radio",
@@ -235,20 +228,12 @@ var config_data = `
       "code": "tip",
       "type": "bool"
     },
-    { "name": "Dropped Cones (>2)",
-      "code": "dc",
-      "type": "bool"
-    },
-    { "name": "Make good<br>alliance partner?",
-      "tooltip": "Would you want this robot on your alliance in eliminations?",
-      "code": "all",
-      "type": "bool"
-    },
+     
     { "name": "Comments",
       "code": "co",
       "type": "text",
       "size": 15,
-      "maxSize": 50
+      "maxSize": 250
     }
   ]
 }`;
