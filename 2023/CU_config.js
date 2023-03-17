@@ -233,18 +233,18 @@ var config_data = `
       "code": "co",
       "type": "text",
       "size": 60,
-      "maxSize": 350
+      "maxSize": 60
     },
      { "name": "More Comments",
       "code": "co",
       "type": "text",
       "size": 60,
-      "maxSize": 350
+      "maxSize": 60
     }, { "name": "Even More Comments",
       "code": "co",
       "type": "text",
       "size": 60,
-      "maxSize": 350
+      "maxSize": 60
     }
   ]
 }`;
