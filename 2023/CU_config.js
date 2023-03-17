@@ -182,7 +182,8 @@ var config_data = `
     { "name": "Total # of alliance<br>robots docked/engaged",
       "code": "dn",
       "type": "counter"
-    }
+       }
+
   ],
   "postmatch": [
     { "name": "Driver Skill",
@@ -196,7 +197,11 @@ var config_data = `
       },
       "defaultValue": "x"
     },
-   
+     
+     { "name": "Links Scored",
+      "code": "ls",
+      "type": "counter"
+   },
     { "name": "CSP IGNORE",
       "code": "dr",
       "type": "radio",
