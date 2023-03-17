@@ -17,7 +17,7 @@ var config_data = `
       "code": "e",
       "gsCol": "event",
       "type": "event",
-      "defaultValue": "2023humb",
+      "defaultValue": "2023carv",
       "required": "true",
       "disabled": "true"
     },
