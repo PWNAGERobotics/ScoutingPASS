@@ -234,6 +234,18 @@ var config_data = `
       "type": "text",
       "size": 100,
       "maxSize": 500
+    },
+   { "name": "Comments Continued",
+      "code": "co",
+      "type": "text",
+      "size": 100,
+      "maxSize": 500
+    }, 
+    { "name": "Comments Continue Again",
+      "code": "co",
+      "type": "text",
+      "size": 100,
+      "maxSize": 500
     }
   ]
 }`;
