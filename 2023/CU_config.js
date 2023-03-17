@@ -229,11 +229,11 @@ var config_data = `
       "type": "bool"
     },
      
-    { "name": "Comments",
+     { "name": "Comments",
       "code": "co",
       "type": "text",
-      "cols":"50",
-      "rows":"10"
-      }
+      "size": 60,
+      "maxSize": 150
+    }
   ]
 }`;
