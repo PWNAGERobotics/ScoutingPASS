@@ -240,7 +240,8 @@ var config_data = `
       "type": "text",
       "size": 60,
       "maxSize": 60
-    }, { "name": "Even More Comments",
+    }, 
+    { "name": "Even More Comments",
       "code": "co3",
       "type": "text",
       "size": 60,
