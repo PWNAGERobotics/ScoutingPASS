@@ -83,7 +83,12 @@ var config_data = `
       "showUndo": "false",
       "shape": "circle 12 black red true"
     },
-  
+      { "name": "CSP IGNORE",
+    "gsCol": "acc",
+      "code": "acc",
+      "type": "bool"
+    },
+
     { "name": "Crossed Charging Station",
     "gsCol": "acs",
       "code": "acs",
@@ -192,7 +197,7 @@ var config_data = `
       "defaultValue": "x"
     },
    
-    { "name": "Defense Rating",
+    { "name": "CSP IGNORE",
       "code": "dr",
       "type": "radio",
       "choices": {
@@ -228,24 +233,26 @@ var config_data = `
       "code": "tip",
       "type": "bool"
     },
-     
+     { "name": "Comments",
+      "code": "dc",
+      "type": "text",
+      "size": 60,
+      "maxSize": 60
+    },
+        { "name": "More Comments",
+      "code": "all",
+      "type": "text",
+      "size": 60,
+      "maxSize": 60
+    },
+
+
      { "name": "Comments",
       "code": "co1",
       "type": "text",
       "size": 60,
       "maxSize": 60
     },
-     { "name": "More Comments",
-      "code": "co2",
-      "type": "text",
-      "size": 60,
-      "maxSize": 60
-    }, 
-    { "name": "Even More Comments",
-      "code": "co3",
-      "type": "text",
-      "size": 60,
-      "maxSize": 60
-    }
-  ]
+     
+    ]
 }`;
