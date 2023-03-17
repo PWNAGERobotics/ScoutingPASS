@@ -232,20 +232,7 @@ var config_data = `
     { "name": "Comments",
       "code": "co",
       "type": "text",
-      "size": 500,
-      "maxSize": 500
-    },
-   { "name": "Comments Continued",
-      "code": "co",
-      "type": "text",
-      "size": 500,
-      "maxSize": 500
-    }, 
-    { "name": "Comments Continue Again",
-      "code": "co",
-      "type": "text",
-      "size": 500,
-      "maxSize": 500
-    }
+      <textarea name="Comments" cols="50" rows="10"></textarea>
+      }
   ]
 }`;
