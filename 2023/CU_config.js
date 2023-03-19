@@ -142,8 +142,8 @@ var config_data = `
       "code": "sub",
       "type": "radio",
       "choices": {
-        "o": "Single<br>",
-        "u": "Double<br>",
+        "1": "Single<br>",
+        "2": "Double<br>",
         "b": "Both<br>",
         "x": "Not Attempted"
       },
