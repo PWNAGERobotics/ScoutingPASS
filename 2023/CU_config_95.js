@@ -222,6 +222,11 @@ var config_data = {
       title: "Red Card",
       type: "bool",
     },
+    "Egregiously Bad Event Occurred (put info in comments)": {
+      code: "peb",
+      title: "Egregiously Bad",
+      type: "bool",
+    },
     "Died During Match (put info in comments)": {
       code: "pdd",
       title: "Died",
