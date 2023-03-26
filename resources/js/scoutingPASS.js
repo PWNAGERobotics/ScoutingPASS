@@ -673,9 +673,8 @@ function configure() {
   }
 
   if (mydata.hasOwnProperty('page_title')) {
-    var elements = document.getElementsByClassName("page_title");
-    for (var i = 0; i < elements.length; i++) {
-      elements[i].innerHTML = mydata.page_title;
+    for (pgtitle of document.getElementsByClassName("page_title")) {
+      pgtitle.innerHTML = mydata.page_title;
     }
   }
 
