@@ -83,11 +83,7 @@ var config_data = `
       "showFlip": "false",
       "showUndo": "false",
       "shape": "circle 12 black red true"
-    },
-    { "name": "Crossed Cable",
-      "code": "acc",
-      "gsCol": "autoCrossedCable",
-      "type": "bool"
+   
     },
     { "name": "Crossed Charging Station",
       "code": "acs",
@@ -189,20 +185,7 @@ var config_data = `
       "type": "counter"
     }
   ],
-  "postmatch": [
-    { "name": "Driver Skill",
-      "code": "ds",
-      "gsCol": "driverSkill",
-      "type": "radio",
-      "choices": {
-        "n": "Not Effective<br>",
-        "a": "Average<br>",
-        "v": "Very Effective<br>",
-        "x": "Not Observed"
-      },
-      "defaultValue": "x"
-    },
-    { "name": "Links Scored",
+     { "name": "Links Scored",
       "code": "ls",
       "gsCol": "linksScored",
       "type": "counter"
@@ -225,19 +208,7 @@ var config_data = `
       "gsCol": "swerveDrive",
       "type": "bool"
     },
-    { "name": "Speed Rating",
-      "code": "sr",
-      "gsCol": "speedRating",
-      "type": "radio",
-      "choices": {
-        "1": "1 (slow)<br>",
-        "2": "2<br>",
-        "3": "3<br>",
-        "4": "4<br>",
-        "5": "5 (fast)"
-      },
-      "defaultValue":"3"
-    },
+   
     { "name": "Died/Immobilized",
       "code": "die",
       "gsCol": "diedOrImmobilized",
