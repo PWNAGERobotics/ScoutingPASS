@@ -14,7 +14,7 @@ var config_data = `
     { "name": "Event",
       "code": "e",
       "type": "event",
-      "defaultValue": "2023mista",
+      "defaultValue": "2023micmp1",
       "required": "true",
       "disabled": "true"
     },
