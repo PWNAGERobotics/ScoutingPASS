@@ -205,7 +205,7 @@ var config_data = `
       "code": "co",
       "type": "text",
       "size": 15,
-      "maxSize": 100
+      "maxSize": 10000
     }
   ]
 }`;
