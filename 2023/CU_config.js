@@ -14,7 +14,7 @@ var config_data = `
     { "name": "Event",
       "code": "e",
       "type": "event",
-      "defaultValue": "2023ARC",
+      "defaultValue": "2023MNST",
       "required": "true",
       "disabled": "true"
     },
