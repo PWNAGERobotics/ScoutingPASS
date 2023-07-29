@@ -1,5 +1,6 @@
 var config_data = `
 {
+  "dataFormat": "kvs",
   "title": "Scouting PASS 2023",
   "page_title": "Charged Up",
   "checkboxAs": "10",

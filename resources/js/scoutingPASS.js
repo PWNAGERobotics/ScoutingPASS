@@ -668,6 +668,10 @@ function configure() {
     return -1
   }
 
+  if(mydata.hasOwnProperty('dataFormat')) {
+    dataFormat = mydata.dataFormat;
+  }
+  
   if (mydata.hasOwnProperty('title')) {
     document.title = mydata.title;
   }
@@ -788,7 +792,7 @@ function validateData() {
   return ret
 }
 
-function getData(useStr) {
+function getData(dataFormat) {
   var Form = document.forms.scoutingForm;
   var UniqueFieldNames = [];
   var fd = new FormData();
@@ -826,13 +830,18 @@ function getData(useStr) {
     fd.append(fieldname, thisFieldValue)
   })
 
-  if (useStr) {
+  if (dataFormat == "kvs") {
     Array.from(fd.keys()).forEach(thisKey => {
       str.push(thisKey + "=" + fd.get(thisKey))
     });
     return str.join(";")
+  } else if (dataFormat == "tsv") {
+    Array.from(fd.keys()).forEach(thisKey => {
+      str.push(fd.get(thisKey))
+    });
+    return str.join("\t")
   } else {
-    return fd
+    return "unsupported dataFormat"
   }
 }
 
@@ -864,7 +873,7 @@ function qr_regenerate() {
   }
 
   // Get data
-  data = getData(true)
+  data = getData(dataFormat)
 
   // Regenerate QR Code
   qr.makeCode(data)
@@ -1349,11 +1358,11 @@ function flip(event) {
 }
 
 function displayData(){
-  document.getElementById('data').innerHTML = getData(true);
+  document.getElementById('data').innerHTML = getData(dataFormat);
 }
 
 function copyData(){
-  navigator.clipboard.writeText(getData(true));
+  navigator.clipboard.writeText(getData(dataFormat));
   document.getElementById('copyButton').setAttribute('value','Copied');
 }
 
