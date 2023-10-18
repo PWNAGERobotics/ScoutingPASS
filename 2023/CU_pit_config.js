@@ -21,7 +21,7 @@ var config_data = {
       code: "e",
       title: "Event",
       type: "event",
-      defaultValue: "2023ohcl",
+      defaultValue: "2023nyrr",
       disabled: "true",
     },
     "Team Number": {
