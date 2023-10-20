@@ -265,6 +265,7 @@ select {
   color: #fff;
   -webkit-text-fill-color: #fff;
   -webkit-background-clip: text;
+  background: black;
 }
 
 .incrementButton, .decrementButton {
