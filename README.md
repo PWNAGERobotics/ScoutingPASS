@@ -196,6 +196,7 @@ Note: The Auto Start (as) element is special in that it will only keep track of 
 * Create videos to illustrate how to setup, configure, and use the application
 * Better error messages
 * Pre-parse JSON for validity to avoid cryptic errors when parsing
+* Incorporate [Statbotics.io](http://statbotics.io/) data
 * See [issues](https://github.com/PWNAGERobotics/ScoutingPASS/issues) for more
 
 <p align="right">(<a href="#top">back to top</a>)</p>
