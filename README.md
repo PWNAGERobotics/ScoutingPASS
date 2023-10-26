@@ -187,8 +187,16 @@ Note: The Auto Start (as) element is special in that it will only keep track of 
 <div id="things-to-add"></div>
 
 ## Things we might want to add someday:
-* Pit Scouting
+* Pit Scouting (including capturing images of robots)
 * More options for processing the QR code
+* Mac version of Excel spreadsheet
+* Drag and Drop configuration editing (Avoid JSON editing)
+* Better Google Sheets integration / instructions
+* Improve look and feel
+* Create videos to illustrate how to setup, configure, and use the application
+* Better error messages
+* Pre-parse JSON for validity to avoid cryptic errors when parsing
+* See [issues](https://github.com/PWNAGERobotics/ScoutingPASS/issues) for more
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 <div id="license"></div>
