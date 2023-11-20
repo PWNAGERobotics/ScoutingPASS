@@ -24,6 +24,7 @@
     <li><a href="#faq">FAQ</a></li>
     <li><a href="#things-to-add">Things To Add Someday</a></li>
     <li><a href="#license">License</a></li>
+    <li><a href="#2024-changes">2024 Changes</a></li>
     <li><a href="#2023-changes">2023 Changes</a></li>
   </ol>
 </details>
@@ -187,8 +188,17 @@ Note: The Auto Start (as) element is special in that it will only keep track of 
 <div id="things-to-add"></div>
 
 ## Things we might want to add someday:
-* Pit Scouting
+* Add images to Pit Scouting
 * More options for processing the QR code
+* Mac version of Excel spreadsheet
+* Drag and Drop configuration editing (Avoid JSON editing)
+* Better Google Sheets integration / instructions
+* Improve look and feel
+* Create videos to illustrate how to setup, configure, and use the application
+* Better error messages
+* Pre-parse JSON for validity to avoid cryptic errors when parsing
+* Incorporate [Statbotics.io](http://statbotics.io/) data
+* See [issues](https://github.com/PWNAGERobotics/ScoutingPASS/issues) for more
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 <div id="license"></div>
@@ -196,31 +206,50 @@ Note: The Auto Start (as) element is special in that it will only keep track of 
 ## License
 Distributed under the GNU GPL v3.0 License. See `LICENSE` for more information.
 
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+<div id="2024-changes"></div>
+
+## 2024 Season Updates
+
+<details open>
+  <summary>2024 Season Updates</summary>
+  <ul>
+    <li>Check back later - Updates coming soon</li>
+  </ul>
+</details>
+
 <p align="right">(<a href="#top">back to top</a>)</p>
 <div id="2023-changes"></div>
 
-## 2023 Updates
+## 2023 Season Updates
 
-Scouting PASS continues to evolve.   Here are the changes for the 2023 Season:
-
-* Added [configuration documentation](docs/Configuration.md)
-* New Timer component - Start/Stop and Clear Buttons
-* New Cycle component - Keep track of cycle times
-* Improved Clickable Field component - Now you can configure the number of boxes and tie it to a Cycle Timer
-* [Excel VBA functions](Excel/VBA_FUNCTIONS_2023.bas) and [examples](Excel/2023_grid_and_cycle_time_example.xlsm) to parse and calculate the Grid field clickable image output
-* [Excel VBA function](Excel/VBA_FUNCTIONS_2023.bas) and [examples](Excel/2023_grid_and_cycle_time_example.xlsm) to parse and calculate the average cycle time
-* JSON simplification - The JSON structure has been simplified to make it a little easier to maintain.  The previous years configuration files have been updated to use the new structure.
-* Add "Flip Image" button to the Field Image component
-* Add "tooltip" option for components - Tooltips will appear when hovering over the name of the component
-* Bug Fix: Two field image elements on the same page will now render correctly
-* Google Sheets data export <BETA> (See the [Google Sheets](docs/GoogleSheets.md) page for more details)
-* Configurable checkbox values in configuration file.  Defaults to Y/N.  Can set to T/F or 1/0.  See line 5 of 2022/RR_config.js for an example
-    * "YN" - for Y/N output
-    * "TF" - for T/F output
-    * "10" - for 1/0 output
-* Bug fix: Google Sheets fix by using buttons instead of checkboxes for the buttons which caused a "submit" to Google Sheets (Thanks [jckwik](https://github.com/jckwik)!!)
-* Don't allow the cycle timer to add a Zero time. (Thanks [jckwik](https://github.com/jckwik)!!)
-* Added Display Data and Copy Data buttons on QR screen (Thanks [tails618](https://github.com/tails618)!!)
-* Bug fixes to clickable images (Thanks [jacob6838](https://github.com/jacob6838)!!)
-* Allow ability link Cycle Timer with Counter (Thanks DaBushinator!!)
-* Add pit scouting functionality
+<details>
+  <summary>2023 Season Updates</summary>
+  <ul>
+    <li>Added [configuration documentation](docs/Configuration.md)</li>
+    <li>New Timer component - Start/Stop and Clear Buttons</li>
+    <li>New Cycle component - Keep track of cycle times</li>
+    <li>Improved Clickable Field component - Now you can configure the number of boxes and tie it to a Cycle Timer</li>
+    <li>[Excel VBA functions](Excel/VBA_FUNCTIONS_2023.bas) and [examples](Excel/2023_grid_and_cycle_time_example.xlsm) to parse and calculate the Grid field clickable image output</li>
+    <li>[Excel VBA function](Excel/VBA_FUNCTIONS_2023.bas) and [examples](Excel/2023_grid_and_cycle_time_example.xlsm) to parse and calculate the average cycle time</li>
+    <li>JSON simplification - The JSON structure has been simplified to make it a little easier to maintain.  The previous years configuration files have been updated to use the new structure.</li>
+    <li>Add "Flip Image" button to the Field Image component</li>
+    <li>Add "tooltip" option for components - Tooltips will appear when hovering over the name of the component</li>
+    <li>Bug Fix: Two field image elements on the same page will now render correctly</li>
+    <li>Google Sheets data export <BETA> (See the [Google Sheets](docs/GoogleSheets.md) page for more details)</li>
+    <li>Configurable checkbox values in configuration file.  Defaults to Y/N.  Can set to T/F or 1/0.  See line 5 of 2022/RR_config.js for an example
+      <ul>
+        <li>"YN" - for Y/N output</li>
+        <li>"TF" - for T/F output</li>
+        <li>"10" - for 1/0 output</li>
+      </ul>
+    </li>
+    <li>Bug fix: Google Sheets fix by using buttons instead of checkboxes for the buttons which caused a "submit" to Google Sheets (Thanks [jckwik](https://github.com/jckwik)!!)</li>
+    <li>Don't allow the cycle timer to add a Zero time. (Thanks [jckwik](https://github.com/jckwik)!!)</li>
+    <li>Added Display Data and Copy Data buttons on QR screen (Thanks [tails618](https://github.com/tails618)!!)</li>
+    <li>Bug fixes to clickable images (Thanks [jacob6838](https://github.com/jacob6838)!!)</li>
+    <li>Allow ability link Cycle Timer with Counter (Thanks DaBushinator!!)</li>
+    <li>Add pit scouting functionality</li>
+  </ul>
+</details>

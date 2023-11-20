@@ -220,6 +220,8 @@ td {
 input {
     font-size: 16px;
     font: roboto;
+    color: black;
+    background-color: white;
 }
 
 .title {

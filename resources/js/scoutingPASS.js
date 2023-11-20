@@ -50,6 +50,11 @@ function addTimer(table, idx, name, data) {
     var ct = document.createElement('input');
     ct.setAttribute("type", "hidden");
     ct.setAttribute("id", "cycletime_" + data.code);
+    if (enableGoogleSheets && data.hasOwnProperty('gsCol')) {
+      ct.setAttribute("name", data.gsCol);
+    } else {
+      ct.setAttribute("name", data.code);
+    }
     ct.setAttribute("value", "[]");
     cell.appendChild(ct);
     ct = document.createElement('input');
@@ -76,10 +81,12 @@ function addTimer(table, idx, name, data) {
   }
   inp.setAttribute("id", "input_" + data.code);
   inp.setAttribute("type", "text");
-  if (enableGoogleSheets && data.hasOwnProperty('gsCol')) {
-    inp.setAttribute("name", data.gsCol);
-  } else {
-    inp.setAttribute("name", data.code);
+  if (data.type != 'cycle') {
+    if (enableGoogleSheets && data.hasOwnProperty('gsCol')) {
+      inp.setAttribute("name", data.gsCol);
+    } else {
+      inp.setAttribute("name", data.code);
+    }
   }
   inp.setAttribute("style", "background-color: black; color: white;border: none; text-align: center;");
   inp.setAttribute("disabled", "");
@@ -312,8 +319,8 @@ function addClickableImage(table, idx, name, data) {
   inp.setAttribute("value", "none");
   if (data.hasOwnProperty('clickRestriction')) {
     if ((data.clickRestriction == "one") ||
-        (data.clickRestriction == "onePerBox")) {
-          inp.setAttribute("value", data.clickRestriction);
+      (data.clickRestriction == "onePerBox")) {
+      inp.setAttribute("value", data.clickRestriction);
     }
   }
   cell.appendChild(inp);
@@ -629,7 +636,7 @@ function addElement(table, idx, data) {
   ) {
     idx = addNumber(table, idx, name, data);
   } else if ((data.type == 'field_image') ||
-  			 (data.type == 'clickable_image')) {
+    (data.type == 'clickable_image')) {
     idx = addClickableImage(table, idx, name, data);
   } else if ((data.type == 'bool') ||
     (data.type == 'checkbox') ||
@@ -639,7 +646,7 @@ function addElement(table, idx, data) {
   } else if (data.type == 'counter') {
     idx = addCounter(table, idx, name, data);
   } else if ((data.type == 'timer') ||
-	     (data.type == 'cycle')) {
+    (data.type == 'cycle')) {
     idx = addTimer(table, idx, name, data);
   } else {
     console.log(`Unrecognized type: ${data.type}`);
@@ -661,14 +668,17 @@ function configure() {
     return -1
   }
 
+  if(mydata.hasOwnProperty('dataFormat')) {
+    dataFormat = mydata.dataFormat;
+  }
+  
   if (mydata.hasOwnProperty('title')) {
     document.title = mydata.title;
   }
 
   if (mydata.hasOwnProperty('page_title')) {
-    var elements = document.getElementsByClassName("page_title");
-    for (var i = 0; i < elements.length; i++) {
-      elements[i].innerHTML = mydata.page_title;
+    for (pgtitle of document.getElementsByClassName("page_title")) {
+      pgtitle.innerHTML = mydata.page_title;
     }
   }
 
@@ -689,9 +699,7 @@ function configure() {
     // YN - Y or N
     // TF - T or F
     // 10 - 1 or 0
-    if ((mydata.checkboxAs == 'YN') ||
-      (mydata.checkboxAs == 'TF') ||
-      (mydata.checkboxAs == '10')) {
+    if (['YN','TF','10'].includes(mydata.checkboxAs)) {
       console.log("Setting checkboxAs to " + mydata.checkboxAs);
       checkboxAs = mydata.checkboxAs;
     } else {
@@ -747,106 +755,35 @@ function configure() {
   return 0
 }
 
-function getRobot() {
-  if (document.getElementById("input_r_r1").checked) {
-    return "r1";
-  } else if (document.getElementById("input_r_r2").checked) {
-    return "r2";
-  } else if (document.getElementById("input_r_r3").checked) {
-    return "r3";
-  } else if (document.getElementById("input_r_b1").checked) {
-    return "b1";
-  } else if (document.getElementById("input_r_b2").checked) {
-    return "b2";
-  } else if (document.getElementById("input_r_b3").checked) {
-    return "b3";
-  } else {
-    return "";
-  }
+function getRobot(){
+  return document.forms.scoutingForm.r.value;
 }
 
-function validateRobot() {
-  if (document.getElementById("input_r_r1").checked ||
-    document.getElementById("input_r_r2").checked ||
-    document.getElementById("input_r_r3").checked ||
-    document.getElementById("input_r_b1").checked ||
-    document.getElementById("input_r_b2").checked ||
-    document.getElementById("input_r_b3").checked
-  ) {
-    return true
-  } else {
-
-    return false
-  }
-}
 
 function resetRobot() {
-  if (document.getElementById("input_r_r1").checked) {
-    document.getElementById("input_r_r1").checked = false
-  }
-  if (document.getElementById("input_r_r2").checked) {
-    document.getElementById("input_r_r2").checked = false
-  }
-  if (document.getElementById("input_r_r3").checked) {
-    document.getElementById("input_r_r3").checked = false
-  }
-  if (document.getElementById("input_r_b1").checked) {
-    document.getElementById("input_r_b1").checked = false
-  }
-  if (document.getElementById("input_r_b2").checked) {
-    document.getElementById("input_r_b2").checked = false
-  }
-  if (document.getElementById("input_r_b3").checked) {
-    document.getElementById("input_r_b3").checked = false
-  }
+for ( rb of document.getElementsByName('r')) { rb.checked = false };
 }
 
 
-function getLevel() {
-  if (document.getElementById("input_l_qm").checked) {
-    return "qm";
-  } else if (document.getElementById("input_l_de").checked) {
-    return "de";
-  } else if (document.getElementById("input_l_f").checked) {
-    return "f";
-  } else {
-    return "";
-  }
+function getLevel(){
+return document.forms.scoutingForm.l.value
 }
 
-function validateLevel() {
-  if (document.getElementById("input_l_qm").checked ||
-    document.getElementById("input_l_de").checked ||
-    document.getElementById("input_l_f").checked
-  ) {
-    return true
-  } else {
-    return false
-  }
-}
 
 function validateData() {
-  var ret = true
-  var errStr = "Bad fields: ";
+  var ret = true;
+  var errStr = "";
   for (rf of requiredFields) {
-    // Robot requires special (radio) validation
-    if (rf == "r") {
-      if (!validateRobot()) {
-        errStr += rf + " "
-        ret = false
+    var thisRF = document.forms.scoutingForm[rf];
+    if (thisRF.value == "[]" || thisRF.value.length == 0) {
+      if (rf == "as") {
+        rftitle = "Auto Start Position"
+      } else {
+        thisInputEl = thisRF instanceof RadioNodeList ? thisRF[0] : thisRF;
+        rftitle = thisInputEl.parentElement.parentElement.children[0].innerHTML.replace("&nbsp;","");
       }
-    } else if (rf == "l") {
-      if (!validateLevel()) {
-        errStr += rf + " "
-        ret = false
-      }
-      // Normal validation (length <> 0)
-    } else if (document.getElementById("input_" + rf).value == "[]") {
-        errStr += rf + " ";
-        ret = false;
-    } else if (document.getElementById("input_" + rf).value.length == 0) {
-      errStr += rf + " "
-      ret = false
+      errStr += rf + ": " + rftitle + "\n";
+      ret = false;
     }
   }
   if (ret == false) {
@@ -855,78 +792,56 @@ function validateData() {
   return ret
 }
 
-function getData(useStr) {
-  var str = ''
-  var fd = new FormData()
-  var rep = ''
-  var start = true
-  var checkedChar = 'Y'
-  var uncheckedChar = 'N'
-  if (checkboxAs == 'TF') {
-    checkedChar = 'T';
-    uncheckedChar = 'F';
-  } else if (checkboxAs == '10') {
-    checkedChar = '1';
-    uncheckedChar = '0';
+function getData(dataFormat) {
+  var Form = document.forms.scoutingForm;
+  var UniqueFieldNames = [];
+  var fd = new FormData();
+  var str = [];
+
+  switch(checkboxAs) {
+    case 'TF':
+      checkedChar = 'T';
+      uncheckedChar = 'F';
+      break;
+    case '10':
+      checkedChar = '1';
+      uncheckedChar = '0';
+      break;
+    default:
+      var checkedChar = 'Y';
+      var uncheckedChar = 'N';
   }
-  inputs = document.querySelectorAll("[id*='input_']");
-  for (e of inputs) {
-    code = e.id.substring(6)
-    name = e.name
-    radio = code.indexOf("_")
-    if (radio > -1) {
-      if (e.checked) {
-        if (start == false) {
-          str = str + ';'
-        } else {
-          start = false
-        }
-        // str=str+code.substr(0,radio)+'='+code.substr(radio+1)
-        // document.getElementById("display_"+code.substr(0, radio)).value = code.substr(radio+1)
-        if (useStr) {
-          str = str + code.substr(0, radio) + '=' + e.value
-        } else {
-          fd.append(name, '' + e.value)
-        }
-        document.getElementById("display_" + code.substr(0, radio)).value = e.value
-      }
+
+  // collect the names of all the elements in the form
+  var fieldnames = Array.from(Form.elements, formElmt => formElmt.name);
+
+  // make sure to add the name attribute only to elements from which you want to collect values.  Radio button groups all share the same name
+  // so those element names need to be de-duplicated here as well.
+  fieldnames.forEach((fieldname) => { if (fieldname != "" && !UniqueFieldNames.includes(fieldname)) { UniqueFieldNames.push(fieldname) } });
+
+  UniqueFieldNames.forEach((fieldname) => {
+    var thisField = Form[fieldname];
+
+    if (thisField.type == 'checkbox') {
+      var thisFieldValue = thisField.checked ? checkedChar : uncheckedChar;
     } else {
-      if (start == false) {
-        str = str + ';'
-      } else {
-        start = false
-      }
-      if (e.value == "on") {
-        if (e.checked) {
-          if (useStr) {
-            str = str + code + '=' + checkedChar
-          } else {
-            fd.append(name, checkedChar)
-          }
-        } else {
-          if (useStr) {
-            str = str + code + '=' + uncheckedChar
-          } else {
-            fd.append(name, uncheckedChar)
-          }
-        }
-      } else {
-	if (e.className == "cycle") {
-	  e = document.getElementById("cycletime_" + code)
-	}
-	let val = e.value.split(';').join('-').replace(/"/g,'')
-        if (useStr) {
-          str = str + code + '=' + val
-        } else {
-          fd.append(name, val)
-        }
-      }
+      var thisFieldValue = thisField.value ? thisField.value.replace(/"/g, '').replace(/;/g,"-") : "";
     }
-  }
-  if (useStr) {
-    return str
+    fd.append(fieldname, thisFieldValue)
+  })
+
+  if (dataFormat == "kvs") {
+    Array.from(fd.keys()).forEach(thisKey => {
+      str.push(thisKey + "=" + fd.get(thisKey))
+    });
+    return str.join(";")
+  } else if (dataFormat == "tsv") {
+    Array.from(fd.keys()).forEach(thisKey => {
+      str.push(fd.get(thisKey))
+    });
+    return str.join("\t")
   } else {
-    return fd
+    return "unsupported dataFormat"
   }
 }
 
@@ -958,7 +873,7 @@ function qr_regenerate() {
   }
 
   // Get data
-  data = getData(true)
+  data = getData(dataFormat)
 
   // Regenerate QR Code
   qr.makeCode(data)
@@ -1033,11 +948,11 @@ function clearForm() {
       if (e.type == "number" || e.type == "text" || e.type == "hidden") {
         if ((e.className == "counter") ||
           (e.className == "timer") ||
-	  (e.className == "cycle")) {
+          (e.className == "cycle")) {
           e.value = 0
-	  if (e.className == "timer" || e.className == "cycle") {
-	    // Stop interval
-	    timerStatus = document.getElementById("status_" + code);
+          if (e.className == "timer" || e.className == "cycle") {
+            // Stop interval
+            timerStatus = document.getElementById("status_" + code);
             startButton = document.getElementById("start_" + code);
             intervalIdField = document.getElementById("intervalId_" + code);
             var intervalId = intervalIdField.value;
@@ -1047,12 +962,12 @@ function clearForm() {
               clearInterval(intervalId);
             }
             intervalIdField.value = '';
-	    if (e.className == "cycle") {
-	      document.getElementById("cycletime_" + code).value = "[]"
-	      document.getElementById("display_" + code).value = ""
-	    }
-	  }
-	} else {
+            if (e.className == "cycle") {
+              document.getElementById("cycletime_" + code).value = "[]"
+              document.getElementById("display_" + code).value = ""
+            }
+          }
+        } else {
           e.value = ""
         }
       } else if (e.type == "checkbox") {
@@ -1178,7 +1093,7 @@ function onFieldClick(event) {
   let xyArr = Array.from(JSON.parse(changingXY.value));
 
   if ((toggleClick.toLowerCase() == 'true') &&
-      (boxArr.includes(box))) {
+    (boxArr.includes(box))) {
     // Remove it
     let idx = boxArr.indexOf(box);
     boxArr.splice(idx, 1);
@@ -1443,11 +1358,11 @@ function flip(event) {
 }
 
 function displayData(){
-  document.getElementById('data').innerHTML = getData(true);
+  document.getElementById('data').innerHTML = getData(dataFormat);
 }
 
 function copyData(){
-  navigator.clipboard.writeText(getData(true));
+  navigator.clipboard.writeText(getData(dataFormat));
   document.getElementById('copyButton').setAttribute('value','Copied');
 }
 

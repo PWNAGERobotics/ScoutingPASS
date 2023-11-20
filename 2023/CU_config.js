@@ -1,7 +1,10 @@
 var config_data = `
 {
-  "title": "Scouting PASS MinneTrials 2023",
-  "page_title": "Corn Conundrum",
+=======
+  "dataFormat": "kvs",
+  "title": "Scouting PASS 2023",
+  "page_title": "Charged Up",
+main
   "checkboxAs": "10",
   "prematch": [
     { "name": "Scouter Initials",
