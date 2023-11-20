@@ -1,7 +1,7 @@
 var config_data = `
 {
-  "title": "Scouting PASS 2023",
-  "page_title": "Charged Up",
+  "title": "Scouting PASS MinneTrials 2023",
+  "page_title": "Corn Conundrum",
   "checkboxAs": "10",
   "prematch": [
     { "name": "Scouter Initials",
@@ -14,7 +14,7 @@ var config_data = `
     { "name": "Event",
       "code": "e",
       "type": "event",
-      "defaultValue": "2023MNST",
+      "defaultValue": "MT23",
       "required": "true",
       "disabled": "true"
     },
@@ -44,8 +44,6 @@ var config_data = `
         "b1": "Blue-1<br>",
         "r2": "Red-2",
         "b2": "Blue-2<br>",
-        "r3": "Red-3",
-        "b3": "Blue-3"
       },
       "required":"true"
     },
@@ -64,49 +62,18 @@ var config_data = `
     }
   ],
   "auton": [
-    { "name": "Auto Scoring",
-      "code": "asg",
-      "type": "clickable_image",
-      "filename": "2023/grid_image.png",
-      "dimensions": "9 4",
-      "clickRestriction": "onePerBox",
-      "toggleClick": "true",
-      "showFlip": "true",
-      "showUndo": "false",
-      "shape": "circle 12 black red true"
-    },
     { "name": "Game Pieces attempted<br>(Scored and Missed)",
       "code": "aa",
       "type": "counter"
     },
-    { "name": "Mobility?",
+    { "name": "Exited BARN ZONE?",
       "code": "am",
       "type": "bool"
     },
-    { "name": "Docked",
-      "code": "ad",
-      "type":"radio",
-      "choices": {
-        "d": "Docked (not Engaged)<br>",
-        "e": "Engaged<br>",
-        "a": "Attempted but failed<br>",
-        "x": "Not attempted"
-      },
       "defaultValue": "x"
     }
   ],
   "teleop": [
-    { "name": "Grid Scoring",
-      "code": "tsg",
-      "type": "clickable_image",
-      "filename": "2023/grid_image.png",
-      "dimensions": "9 4",
-      "clickRestriction": "onePerBox",
-      "toggleClick": "true",
-      "showFlip": "false",
-      "showUndo": "false",
-      "shape": "circle 12 black red true"
-    },
     { "name": "Feeder Count<br>(Fed another bot)",
       "code": "tfc",
       "type": "counter"
@@ -129,29 +96,19 @@ var config_data = `
     },
     { "name": "Floor Pickup",
       "code": "fpu",
-      "type": "radio",
-      "choices": {
-        "o": "Cones<br>",
-        "u": "Cubes<br>",
-        "b": "Both<br>",
-        "x": "Not Attempted"
+      "type": "bool",
       },
       "defaultValue": "x"
     },
-    { "name": "Substation Use",
+    { "name": "GRAIN ELEVATOR Used?",
       "code": "sub",
-      "type": "radio",
-      "choices": {
-        "1": "Single<br>",
-        "2": "Double<br>",
-        "b": "Both<br>",
-        "x": "Not Attempted"
+      "type": "bool",
       },
       "defaultValue": "x"
     }
   ],
   "endgame": [
-    { "name": "Docking Timer",
+    { "name": "Movement towards BARN ZONE Timer",
       "code": "dt",
       "type": "timer"
     },
@@ -160,9 +117,8 @@ var config_data = `
       "type":"radio",
       "choices": {
         "p": "Parked<br>",
-        "d": "Docked (Not Engaged)<br>",
-        "e": "Engaged<br>",
-        "a": "Attempted but failed<br>",
+        "s": "Parked and brought SPOILED COB<br>",
+        "a": "Attempted<br>",
         "x": "Not attempted"
       },
       "defaultValue": "x"
@@ -171,10 +127,6 @@ var config_data = `
       "code": "dn",
       "type": "counter"
     },
-    { "name": "Links Scored<br>(by alliance)",
-      "code": "ls",
-      "type": "counter"
-    }
   ],
   "postmatch": [
     { "name": "Driver Skill",
@@ -220,7 +172,7 @@ var config_data = `
       "code": "tip",
       "type": "bool"
     },
-    { "name": "Dropped Cones (>2)",
+    { "name": "Dropped CORN COBS (>2)",
       "code": "dc",
       "type": "bool"
     },
