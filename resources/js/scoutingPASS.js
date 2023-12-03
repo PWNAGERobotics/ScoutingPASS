@@ -327,6 +327,17 @@ function addClickableImage(table, idx, name, data) {
 
   inp = document.createElement('input');
   inp.setAttribute("hidden", "");
+  inp.setAttribute("id", "allowableResponses_" + data.code);
+  inp.setAttribute("value", "none");
+  if (data.hasOwnProperty('allowableResponses')) {
+    let responses = data.allowableResponses.split(' ').map(Number)
+    console.log(responses)
+      inp.setAttribute("value", responses);
+  }
+  cell.appendChild(inp);
+
+  inp = document.createElement('input');
+  inp.setAttribute("hidden", "");
   inp.setAttribute("id", "dimensions_" + data.code);
   inp.setAttribute("value", "12 6");
   if (data.hasOwnProperty('dimensions')) {
@@ -1081,6 +1092,14 @@ function onFieldClick(event) {
   //Turns coordinates into a numeric box
   let box = ((Math.ceil(event.offsetY / target.height * resY) - 1) * resX) + Math.ceil(event.offsetX / target.width * resX);
   let coords = event.offsetX + "," + event.offsetY;
+
+  let allowableResponses = document.getElementById("allowableResponses" + base).value.split(',').map(Number);
+  
+  if(allowableResponses != "none"){
+    if (allowableResponses.indexOf(box)==-1){
+      return;
+    }
+  }
 
 
   //Cumulating values
