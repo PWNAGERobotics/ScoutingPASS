@@ -19,7 +19,7 @@
 <div id="disclaimer"></div>
 
 ## Disclaimer
-This feature was implemented due to many requests.  This feature is not used currently by PWNAGE due to the "Low/No Bandwith" goal of our scouting system.
+This feature was implemented due to many requests.  This feature is not used currently by PWNAGE due to the "Low/No Bandwidth" goal of our scouting system.
 Support for this feature will be secondary to our main features and possibly delayed due to not having a working environment for testing and debugging.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -91,7 +91,7 @@ function doPost (e) {
   }
 }
 ```
-## NOTE: This code has changed on Feb 27, 2023.  If you pulled this code before that date Google Sheets probably isn't working for you.  
+## NOTE: This code has changed on Feb 27, 2023.  If you pulled this code before that date Google Sheets probably isn't working for you.
 > The new version has this change:
   
 >    OLD LINE:  return header === 'Date' ? new Date() : e.parameter[header].join(",")
@@ -112,7 +112,7 @@ function doPost (e) {
         * Deployment: Head
         * Event Source:  From Spreadsheet
         * Event Type:  On Form Submit
-    * Click Save  
+    * Click Save
 8. Deploy
     * Click on Deploy at the Top
     * Click "New Deployment"
@@ -121,7 +121,7 @@ function doPost (e) {
     * Set "Execute as" to Me
     * Set "Who has access" to Anyone
     * Click Deploy
-10. Copy URL 
+10. Copy URL
     * After deploying, on the next screen, copy the Web App URL and save it.  You'll need it later.
 
 # Scouting P.A.S.S Set Up
