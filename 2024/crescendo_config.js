@@ -75,7 +75,7 @@ var config_data = `
     { "name": "Speaker Scores",
       "code": "ass",
       "type": "counter"
-    },
+    }
   ],
   "teleop": [
     { "name": "Amp Scores",
@@ -100,7 +100,7 @@ var config_data = `
         "x": "Not Attempted"
       },
       "defaultValue": "x"
-    },
+    }
   ],
   "endgame": [
     { "name": "Stage Timer",
@@ -123,7 +123,7 @@ var config_data = `
     { "name": "Note in Trap",
       "code": "nit",
       "type": "bool"
-    },
+    }
   ],
   "postmatch": [
     { "name": "Driver Skill",
