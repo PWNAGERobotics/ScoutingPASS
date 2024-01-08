@@ -1096,7 +1096,7 @@ function onFieldClick(event) {
   let allowableResponses = document.getElementById("allowableResponses" + base).value;
 
   if(allowableResponses != "none"){
-    allowableResponsesList = allowableRepsonses.split(',').map(Number);
+    allowableResponsesList = allowableResponses.split(',').map(Number);
     if (allowableResponsesList.indexOf(box)==-1){
       return;
     }
