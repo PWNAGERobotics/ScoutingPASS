@@ -56,7 +56,7 @@ var config_data = `
       "max": 99999
     },
     { "name": "Auto Start Position",
-      "code": "asp",
+      "code": "as",
       "type": "clickable_image",
       "filename": "2024/field_image.png",
       "clickRestriction": "one",
