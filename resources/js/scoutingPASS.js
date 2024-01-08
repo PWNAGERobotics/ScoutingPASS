@@ -1093,14 +1093,14 @@ function onFieldClick(event) {
   let box = ((Math.ceil(event.offsetY / target.height * resY) - 1) * resX) + Math.ceil(event.offsetX / target.width * resX);
   let coords = event.offsetX + "," + event.offsetY;
 
-  let allowableResponses = document.getElementById("allowableResponses" + base).value.split(',').map(Number);
-  
+  let allowableResponses = document.getElementById("allowableResponses" + base).value;
+
   if(allowableResponses != "none"){
-    if (allowableResponses.indexOf(box)==-1){
+    allowableResponsesList = allowableResponses.split(',').map(Number);
+    if (allowableResponsesList.indexOf(box)==-1){
       return;
     }
   }
-
 
   //Cumulating values
   let changingXY = document.getElementById("XY" + base);
