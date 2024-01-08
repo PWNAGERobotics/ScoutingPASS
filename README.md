@@ -215,7 +215,8 @@ Distributed under the GNU GPL v3.0 License. See `LICENSE` for more information.
 <details open>
   <summary>2024 Season Updates</summary>
   <ul>
-    <li>Check back later - Updates coming soon</li>
+    <li>New configurations added for match and pit scouting as well as the new field image</li>
+    <li>Warning: Default dataFormat has been switched from semicolon delimited (ksv) to tab delimited (tsv)<br>This allows for easier Excel input.  No macro needed.  Just put the cursor in the Column A and scan the QR code.  To switch back change the dataFormat configuration from tsv to ksv.</li>
   </ul>
 </details>
 
