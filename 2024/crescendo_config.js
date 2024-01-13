@@ -1,8 +1,8 @@
 var config_data = `
 {
-  "dataFormat": "kvs",
-  "title": "Scouting PASS 2023",
-  "page_title": "Charged Up",
+  "dataFormat": "tsv",
+  "title": "Scouting PASS 2024",
+  "page_title": "Crescendo",
   "checkboxAs": "10",
   "prematch": [
     { "name": "Scouter Initials",
@@ -15,9 +15,8 @@ var config_data = `
     { "name": "Event",
       "code": "e",
       "type": "event",
-      "defaultValue": "2023flwp",
-      "required": "true",
-      "disabled": "true"
+      "defaultValue": "2023tnkn",
+      "required": "true"
     },
     { "name": "Match Level",
       "code": "l",
@@ -34,7 +33,7 @@ var config_data = `
       "code": "m",
       "type": "match",
       "min": 1,
-      "max": 100,
+      "max": 150,
       "required": "true"
     },
     { "name": "Robot",
@@ -59,93 +58,45 @@ var config_data = `
     { "name": "Auto Start Position",
       "code": "as",
       "type": "clickable_image",
-      "filename": "2023/field_image.png",
+      "filename": "2024/field_image.png",
       "clickRestriction": "one",
-      "allowableResponses": "2 3 4 9 10 11 14 15 16 21 22 23 26 27 28 33 34 35 38 39 46 47",
+      "allowableResponses": "1 12 13 24 25 36 37 48 49 60 61 72",
       "shape": "circle 5 black red true"
     }
   ],
   "auton": [
-    { "name": "Auto Scoring",
-      "code": "asg",
-      "type": "clickable_image",
-      "filename": "2023/grid_image.png",
-      "dimensions": "9 4",
-      "clickRestriction": "onePerBox",
-      "toggleClick": "true",
-      "showFlip": "true",
-      "showUndo": "false",
-      "shape": "circle 12 black red true"
-    },
-    { "name": "Game Pieces attempted<br>(Scored and Missed)",
-      "code": "aa",
-      "type": "counter"
-    },
-    { "name": "Mobility?",
-      "code": "am",
+    { "name": "Leave Starting Zone",
+      "code": "al",
       "type": "bool"
     },
-    { "name": "Docked",
-      "code": "ad",
-      "type":"radio",
-      "choices": {
-        "d": "Docked (not Engaged)<br>",
-        "e": "Engaged<br>",
-        "a": "Attempted but failed<br>",
-        "x": "Not attempted"
-      },
-      "defaultValue": "x"
+    { "name": "Amp Scores",
+      "code": "aas",
+      "type": "counter"
+    },
+    { "name": "Speaker Scores",
+      "code": "ass",
+      "type": "counter"
     }
   ],
   "teleop": [
-    { "name": "Grid Scoring",
-      "code": "tsg",
-      "type": "clickable_image",
-      "filename": "2023/grid_image.png",
-      "dimensions": "9 4",
-      "clickRestriction": "onePerBox",
-      "toggleClick": "true",
-      "showFlip": "false",
-      "showUndo": "false",
-      "shape": "circle 12 black red true"
-    },
-    { "name": "Feeder Count<br>(Fed another bot)",
-      "code": "tfc",
+    { "name": "Amp Scores",
+      "code": "tas",
       "type": "counter"
     },
-    { "name": "Was Fed<br>Game Pieces",
-      "code": "wf",
-      "type": "bool"
+    { "name": "Speaker Scores",
+      "code": "tss",
+      "type": "counter"
     },
-    { "name": "Was Defended",
-      "code": "wd",
-      "type": "bool"
+    { "name": "Times Amplified",
+      "code": "tta",
+      "type": "counter"
     },
-    { "name": "Who Defended this bot",
-      "code": "who",
-      "type": "text"
-    },
-    { "name": "Smart Placement<br>(creates Links)",
-      "code": "lnk",
-      "type": "bool"
-    },
-    { "name": "Floor Pickup",
-      "code": "fpu",
+    { "name": "Pickup From",
+      "code": "tpu",
       "type": "radio",
       "choices": {
-        "o": "Cones<br>",
-        "u": "Cubes<br>",
-        "b": "Both<br>",
-        "x": "Not Attempted"
-      },
-      "defaultValue": "x"
-    },
-    { "name": "Substation Use",
-      "code": "sub",
-      "type": "radio",
-      "choices": {
-        "1": "Single<br>",
-        "2": "Double<br>",
+        "s": "Source<br>",
+        "f": "Floor<br>",
         "b": "Both<br>",
         "x": "Not Attempted"
       },
@@ -153,7 +104,7 @@ var config_data = `
     }
   ],
   "endgame": [
-    { "name": "Docking Timer",
+    { "name": "Stage Timer",
       "code": "dt",
       "type": "timer"
     },
@@ -162,20 +113,17 @@ var config_data = `
       "type":"radio",
       "choices": {
         "p": "Parked<br>",
-        "d": "Docked (Not Engaged)<br>",
-        "e": "Engaged<br>",
+        "o": "Onstage<br>",
+        "s": "Onstage (Spotlit)<br>",
+        "h": "Harmony<br>",
         "a": "Attempted but failed<br>",
         "x": "Not attempted"
       },
       "defaultValue": "x"
     },
-    { "name": "Total # of alliance<br>robots docked/engaged",
-      "code": "dn",
-      "type": "counter"
-    },
-    { "name": "Links Scored<br>(by alliance)",
-      "code": "ls",
-      "type": "counter"
+    { "name": "Note in Trap",
+      "code": "nit",
+      "type": "bool"
     }
   ],
   "postmatch": [
@@ -222,8 +170,8 @@ var config_data = `
       "code": "tip",
       "type": "bool"
     },
-    { "name": "Dropped Cones (>2)",
-      "code": "dc",
+    { "name": "Dropped Notes (>2)",
+      "code": "dn",
       "type": "bool"
     },
     { "name": "Make good<br>alliance partner?",

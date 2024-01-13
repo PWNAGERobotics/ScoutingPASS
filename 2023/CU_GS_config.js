@@ -91,7 +91,7 @@ var config_data = `
     },
     { "name": "Crossed Charging Station",
       "code": "acs",
-      "gsCol": "autoCrossedCharginStation",
+      "gsCol": "autoCrossedChargingStation",
       "type": "bool"
     },
     { "name": "Mobility?",
