@@ -619,8 +619,12 @@ function addCheckbox(table, idx, name, data) {
   return idx + 1;
 }
 
-function addElement(table, idx, name, data) {
+function addElement(table, idx, data) {
   var type = null;
+  var name = 'Default Name';
+  if (data.hasOwnProperty('name')) {
+    name = data.name
+  }
   if (data.hasOwnProperty("type")) {
     type = data.type;
   } else {
@@ -752,9 +756,8 @@ function configure() {
   var pmc = mydata.prematch;
   var pmt = document.getElementById("prematch_table");
   var idx = 0;
-  Object.entries(pmc).forEach((element) => {
-    const [key, value] = element;
-    idx = addElement(pmt, idx, key, value);
+  pmc.forEach((element) => {
+    idx = addElement(pmt, idx, element);
   });
 
   // // Configure auton screen

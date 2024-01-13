@@ -160,7 +160,7 @@ h2 {
 #nextButton10,
 .clearForm,
 .submitForm,
-.displayButton,
+#displayButton,
 #copyButton {
   font-family: Alexis;
   padding: 10px;
@@ -168,7 +168,7 @@ h2 {
   text-decoration: none;
   display: inline-block;
   color: buttontext;
-  -webkit-text-fill-color: currentColor;
+  -webkit-text-fill-color: black;
   background-clip: border-box;
 }
 
@@ -183,7 +183,7 @@ h2 {
   padding: 10px;
   color: white;
   color: buttontext;
-  -webkit-text-fill-color: currentColor;
+  -webkit-text-fill-color: white;
   background-clip: border-box;
 }
 
@@ -195,7 +195,7 @@ h2 {
   color: white;
   margin-left: 20px;
   color: buttontext;
-  -webkit-text-fill-color: currentColor;
+  -webkit-text-fill-color: black;
   background-clip: border-box;
 }
 
@@ -206,7 +206,7 @@ h2 {
   background-color: yellow;
   padding: 10px;
   color: buttontext;
-  -webkit-text-fill-color: currentColor;
+  -webkit-text-fill-color: black;
   background-clip: border-box;
 }
 
@@ -221,7 +221,7 @@ h2 {
   padding: 10px;
   color: white;
   color: buttontext;
-  -webkit-text-fill-color: currentColor;
+  -webkit-text-fill-color: white;
   background-clip: border-box;
 }
 
@@ -271,8 +271,8 @@ select {
 
 .incrementButton, .decrementButton {
     border-color: white;
-    color: buttontext;
-    -webkit-text-fill-color: currentColor;
+    color: black;
+    -webkit-text-fill-color: white;
     background-clip: border-box;
   }
 
@@ -281,7 +281,7 @@ select {
   background-color: yellow;
   padding: 6px;
   color: buttontext;
-  -webkit-text-fill-color: currentColor;
+  -webkit-text-fill-color: black;
   background-clip: border-box;
 }
 
