@@ -1,0 +1,12 @@
+{
+  "name": "3173 ScoutingPASS",
+  "icons": [
+    {
+      "src": "resources/images/igknighters_logo.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "./index.html",
+  "display": "minimal-ui"
+}
