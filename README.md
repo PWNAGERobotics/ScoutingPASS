@@ -89,9 +89,8 @@ The QR code can be read by a web camera or hand scanner to import the data into 
 ## Getting Started:
 It's really simple to get started:
 * Fork GitHub project (as public if you want to host on GitHub Pages)
-* Change configuration file (examples in [2020](2020) or [2022](2022) directories)
-  * Update your the competition your attending
-  * Change the data elements to capture (if desired)
+* Change configuration file (examples in [2023](2023) or [2024](2024) directories)
+  * Change the data elements to capture (OPTIONAL: only if desired)
 * Enable GitHub Pages in your repository settings ([GitHub Pages Instructions](https://pages.github.com/))
 * Load page via GitHub pages (https://<your_username>.github.io/ScoutingPASS)
 <p>
@@ -100,7 +99,7 @@ To enable The Blue Alliance API:
 * Put your API token in the authKey variable in resources/js/TBAInterface.js.  (line 4)
 * Reload your page.
 
-Note: In order for this to work, the schedule has to be posted to The Blue Alliance.  That usually doesn't happen until just before the event. (a few days to a few hours)  To test this you can point it to a past event.   Set the event to 2020ilch.   Reload the page to load the schedule for that event. Select Match 6 and Blue-2.  You should see it populate the Team # to 2451, and the next line will show the team name, PWNAGE.
+Note: For this to work, the schedule has to be posted to The Blue Alliance.  That usually doesn't happen until just before the event. (a few days to a few hours)  To test this you can point it to a past event.   Set the event to 2020ilch.   Reload the page to load the schedule for that event. Select Match 6 and Blue-2.  You should see it populate the Team # to 2451, and the next line will show the team name, PWNAGE.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 <div id="pit-scouting"></div>
@@ -113,7 +112,7 @@ To access the pit scouting page, add '/pit.html' to the end of your URL.  (i.e. 
 
 It works almost exactly like the main scouting pages, except there is only one page of input.   Once your scouters have filled out the information, swipe left to display the QR code.   That QR code can be scanned to push the data to Excel.
 
-The default configuration file is 2023/CU_Pit_config.js.   You can modify that configuration to meet your needs.
+The default configuration file is 2024/crescendo_pit_config.js.   You can modify that configuration to meet your needs.
 
 We realize that you may not want to lug your computer around the pits to scan each QR code.  Our recommendation is to have your scouters take screenshot of the QR codes.   Then when they are back to the scouting computer, just go through the photos to scan each QR code.
 
@@ -153,7 +152,9 @@ Don't forget to give the project a star!
 
 <details><summary>Why hardcode and disable the event field?</summary>
 <br />
-The biggest reason is so it doesn't get changed during the event.  If it's changed and your using the TBA features they will not work correctly.  There is no reason to change it during the event and easy to change for your next event.  One more way to reduce mistakes during the event.
+<strike>The biggest reason is so it doesn't get changed during the event.  If it's changed and you're using the TBA features they will not work correctly.  There is no reason to change it during the event and easy to change for your next event.  One more way to reduce mistakes during the event.</strike>
+
+In past years the event has been protected and can only be changed with a GitHub commit.  As the popularity of ScoutingPASS grows more teams want to use the default ScoutingPASS site.  We've unprotected the event field so that teams can use it for any event.
 </details>
 
 <details><summary>Why doesn't my configuration file load?</summary>
