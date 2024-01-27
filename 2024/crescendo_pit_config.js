@@ -1,9 +1,9 @@
-var config_data = `
+var config_data = 
 {
-  "title": "Scouting PASS 2024",
-  "page_title": "Crescendo",
-  "pitConfig": "true",
-  "prematch": [
+  title: "Scouting PASS 2024",
+  page_title: "Crescendo",
+  pitConfig: "true",
+  prematch: [
     { "name": "Team Number",
       "code": "t",
       "type": "number"
@@ -24,7 +24,6 @@ var config_data = `
       "choices": {
         "s": "Swerve<br>",
         "w": "West Coast/Tank<br>",
-        "b": "Butterfly/Grashopper<br>",
         "m": "Mechanum<br>",
         "o": "Other"
       },
@@ -86,13 +85,5 @@ var config_data = `
       "size": 20,
       "maxSize": 250
     }
-  ],
-  "auton": [
-  ],
-  "teleop": [
-  ],
-  "endgame": [
-  ],
-  "postmatch": [
   ]
-}`;
+};

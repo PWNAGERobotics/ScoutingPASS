@@ -113,6 +113,9 @@ function addTimer(table, idx, name, data) {
     button3.setAttribute("onclick", "newCycle(this.parentElement)");
     button3.setAttribute("value", "New Cycle");
     button3.setAttribute("class", "cycleTimerButton");
+    if (data.showCycle === "false") {
+      button3.setAttribute("style", "display:none");
+    }
     cell.appendChild(button3);
     var button4 = document.createElement("input");
     button4.setAttribute("id", "undo_" + data.code);
@@ -121,6 +124,9 @@ function addTimer(table, idx, name, data) {
     button4.setAttribute("value", "Undo");
     button4.setAttribute("style", "margin-left: 20px;");
     button4.setAttribute("class", "cycleTimerButton");
+    if (data.showUndo === "false") {
+      button4.setAttribute("style", "margin-left: 20px;display:none");
+    }
     cell.appendChild(button4);
   }
 
@@ -210,6 +216,19 @@ function addCounter(table, idx, name, data) {
       inp.setAttribute("value", data.cycleTimer);
       cell.appendChild(inp);
     }
+  }
+
+  if (data.hasOwnProperty('valueInput') && data.hasOwnProperty('valueAttribute')) {
+    inp = document.createElement('input');
+    inp.setAttribute("hidden", "");
+    inp.setAttribute("id", "counterValueAttribute_" + data.code);
+    inp.setAttribute("value", data.valueAttribute);
+    cell.appendChild(inp);
+    inp = document.createElement('input');
+    inp.setAttribute("hidden", "");
+    inp.setAttribute("id", "counterValueInput_" + data.code);
+    inp.setAttribute("value", data.valueInput);
+    cell.appendChild(inp);
   }
 
   if (data.hasOwnProperty('defaultValue')) {
@@ -1071,6 +1090,10 @@ function drawFields(name) {
     var shape = document.getElementById("shape_" + code);
     let shapeArr = shape.value.split(" ");
     var ctx = f.getContext("2d");
+    const dimensions = document.getElementById("dimensions_" + code).value.split(" ");
+    const heightDimensionRatio = dimensions[0]/dimensions[1];
+    ctx.canvas.width = ctx.canvas.clientWidth;
+    ctx.canvas.height = ctx.canvas.clientWidth/heightDimensionRatio;
     ctx.clearRect(0, 0, f.width, f.height);
     ctx.drawImage(img, 0, 0, f.width, f.height);
 
@@ -1126,7 +1149,6 @@ function onFieldClick(event) {
     (Math.ceil((event.offsetY / target.getBoundingClientRect().height) * resY) - 1) * resX +
     Math.ceil((event.offsetX / target.getBoundingClientRect().width) * resX);
   let coords = event.offsetX + "," + event.offsetY;
-
   let allowableResponses = document.getElementById("allowableResponses" + base).value;
 
   if(allowableResponses != "none"){
@@ -1313,6 +1335,8 @@ function counter(element, step) {
 
   var ctr = element.getElementsByClassName("counter")[0];
   let cycleTimer = document.getElementById("cycleTimer" + base);
+  let changingInput = document.getElementById("counterValueAttribute" + base);
+  let changingValue = document.getElementById("counterValueInput" + base);
   var result = parseInt(ctr.value) + step;
 
   if (isNaN(result)) {
@@ -1328,6 +1352,12 @@ function counter(element, step) {
   // If associated with cycleTimer - send New Cycle EVENT
   if (step >= 0 && cycleTimer != null) {
     document.getElementById("cycle_" + cycleTimer.value).click();
+    if (changingInput !== null && changingValue !== null) {
+      var currentInput = document.getElementById("input_" + changingInput.value);
+      let boxArr = Array.from(JSON.parse(currentInput.value));
+      boxArr.push(changingValue.value);
+      currentInput.value = JSON.stringify(boxArr);
+    }
   }
 }
 
@@ -1337,6 +1367,11 @@ function newCycle(event) {
   let inp = document.getElementById("input" + base);
   let cycleTime = inp.value;
   inp.value = 0;
+  if (document.getElementById("status" + base).value === "stopped") { 
+    document.getElementById("start" + base).click();
+    if (cycleTime === 0)
+      cycleTime = 0.1; //store the value to keep number of cycles in line with field image
+  }
 
   if (cycleTime > 0) {
     let cycleInput = document.getElementById("cycletime" + base);
@@ -1350,15 +1385,19 @@ function newCycle(event) {
       .replace(/\]/g, "")
       .replace(/,/g, ", ");
   }
+  
 }
 
 function undoCycle(event) {
   let undoID = event.firstChild;
   let uId = getIdBase(undoID.id);
+  let inp = document.getElementById("input" + uId);
   //Getting rid of last value
   let cycleInput = document.getElementById("cycletime" + uId);
   var tempValue = Array.from(JSON.parse(cycleInput.value));
-  tempValue.pop();
+  if (tempValue.length === 0) return;
+  const removedValue = tempValue.pop();
+  inp.value = parseFloat(inp.value) + parseFloat(removedValue);
   cycleInput.value = JSON.stringify(tempValue);
   let d = document.getElementById("display" + uId);
   d.value = cycleInput.value
@@ -1424,6 +1463,7 @@ function undo(event) {
   //Getting rid of last value
   changingXY = document.getElementById("XY" + getIdBase(undoID.id));
   changingInput = document.getElementById("input" + getIdBase(undoID.id));
+  let cycleTimer = document.getElementById("cycleTimer" + getIdBase(undoID.id));
   var tempValue = Array.from(JSON.parse(changingXY.value));
   tempValue.pop();
   changingXY.value = JSON.stringify(tempValue);
@@ -1432,6 +1472,9 @@ function undo(event) {
   tempValue.pop();
   changingInput.value = JSON.stringify(tempValue);
   drawFields();
+  if (cycleTimer != null) {
+    document.getElementById("undo_" + cycleTimer.value).click();
+  }
 }
 
 function flip(event) {
