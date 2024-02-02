@@ -1516,9 +1516,3 @@ window.onload = function () {
     }
   }
 };
-
-// PWA Support.
-
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register("/pwaserviceworker.js");
-}
