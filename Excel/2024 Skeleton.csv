@@ -1,2 +1,2 @@
 Scouter Name,Event,Match Level,Match #,Robot,Team #,Auto Start Location,Leave Starting Zone,Amp Scores,Auto Scoring Locations,Auto Miss Locations,Cycle Timer,Teleop Scoring Locations,Teleop Missing Locations,Amp Scores,Times Amplified,Pickup From Floor,Pickup From Source,Stage Timer,Final Status,Note in Trap,Played Defense,Died,Tippy,Dropped Notes,Yellow Card,Red Card,Egregiously Bad Event,Comments
-JK,2023tnkn,qm,1,r1,2383,[1],1,1,"[13,38]","[14,38]","[1.3,3.6]","[13,a]","[14,38]",1,1,1,1,2.7,s,1,0,0,0,0,1,0,0,comment
+JK,2023tnkn,qm,1,r1,2383,1,0,0,"13,25","25,37","0.2,0.2,0.5,0.7,0.5","26,38,50,14,39,14","26,50,26,25,37,50,27,15,16,17",0,0,0,0,0,x,0,0,0,0,0,0,0,0,comment
