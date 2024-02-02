@@ -1,17 +1,17 @@
 const cacheName = "";
 const precachedResources = [
-  "/",
-  "/resources/css/scoutingPASS.css",
-  "/resources/fonts/alex.woff",
-  "/resources/fonts/alexisv3.ttf",
-  "/resources/images/field_location_key.png",
-  "/resources/images/igknighters_logo.png",
-  "/resources/js/easy.qrcode.min.js",
-  "/resources/js/scoutingPASS.js",
-  "/resources/js/TBAInterface.js",
-  "/resources/js/googleSheets.js",
-  "/pit.html",
-  "/pitscouting.html"
+  "/ScoutingPASS/",
+  "/ScoutingPASS/resources/css/scoutingPASS.css",
+  "/ScoutingPASS/resources/fonts/alex.woff",
+  "/ScoutingPASS/resources/fonts/alexisv3.ttf",
+  "/ScoutingPASS/resources/images/field_location_key.png",
+  "/ScoutingPASS/resources/images/igknighters_logo.png",
+  "/ScoutingPASS/resources/js/easy.qrcode.min.js",
+  "/ScoutingPASS/resources/js/scoutingPASS.js",
+  "/ScoutingPASS/resources/js/TBAInterface.js",
+  "/ScoutingPASS/resources/js/googleSheets.js",
+  "/ScoutingPASS/pit.html",
+  "/ScoutingPASS/pitscouting.html"
 ];
 
 async function precache() {
