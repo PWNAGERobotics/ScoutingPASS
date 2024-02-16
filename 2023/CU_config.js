@@ -8,13 +8,13 @@ var config_data = `
       "code": "s",
       "type": "scouter",
       "size": 5,
-      "maxSize": 10,
+      "maxSize": 15,
       "required": "true"
     },
     { "name": "Event",
       "code": "e",
       "type": "event",
-      "defaultValue": "2023mirr",
+      "defaultValue": "2024miber",
       "required": "true",
       "disabled": "true"
     },
