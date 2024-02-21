@@ -2,29 +2,23 @@ var config_data = `
 {
   "dataFormat": "tsv",
   "title": "Scouting PASS 2024",
-  "page_title": "Crescendo",
+  "page_title": "3739 Oakbotics",
   "checkboxAs": "10",
   "prematch": [
-    { "name": "Scouter Initials",
+    { "name": "Scouter Name",
       "code": "s",
       "type": "scouter",
-      "size": 5,
-      "maxSize": 5,
-      "required": "true"
-    },
-    { "name": "Event",
-      "code": "e",
-      "type": "event",
-      "defaultValue": "2023tnkn",
+      "size": 10,
+      "maxSize": 15,
       "required": "true"
     },
     { "name": "Match Level",
       "code": "l",
       "type": "level",
       "choices": {
-        "qm": "Quals<br>",
-        "sf": "Semifinals<br>",
-        "f": "Finals"
+        "Quals": "Quals<br>",
+        "SemiFinals": "Semifinals<br>",
+        "Finals": "Finals"
       },
       "defaultValue": "qm",
       "required": "true"
@@ -54,6 +48,13 @@ var config_data = `
       "type": "team",
       "min": 1,
       "max": 99999
+    },
+     { "name": "Team Name",
+      "code": "tm",
+      "type": "name",
+      "size": 20,
+      "maxSize": 30,
+      "required": "true"
     },
     { "name": "Auto Start Position",
       "code": "as",
@@ -126,7 +127,7 @@ var config_data = `
       "type": "bool"
     }
   ],
-  "postmatch": [
+  "posatch": [
     { "name": "Driver Skill",
       "code": "ds",
       "type": "radio",
