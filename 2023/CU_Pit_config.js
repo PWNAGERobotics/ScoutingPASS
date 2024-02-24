@@ -1,18 +1,22 @@
 var config_data = `
 {
-  "title": "Scouting PASS 2023",
-  "page_title": "Charged Up",
+  "title": "Crescendo 2024",
+  "page_title": "Crescendo",
   "pitConfig": "true",
   "prematch": [
     { "name": "Team Number",
       "code": "t",
       "type": "number"
     },
-    { "name": "Width (bumpers included)",
-      "code": "wid",
+    { "name": "Dimensions",
+      "code": "dim",
       "type": "number",
       "defaultValue": "0"
     },
+	{ "name": "Is this with bumpers?",
+	  "code": "bump",
+	  "type": "bool"
+	},
     { "name": "Weight",
       "code": "wei",
       "type": "number",
@@ -42,6 +46,7 @@ var config_data = `
         "1": "L1 (8.14:1 or 12-13 ft/sec)<br>",
         "2": "L2 (6.75:1 or 14-16 ft/sec)<br>",
         "3": "L3 (6.12:1 or 16-18 ft/sec)<br>",
+		"d": "Doesn't Know",
         "x": "Not Swerve"
       },
       "defaultValue":"x"
@@ -61,76 +66,70 @@ var config_data = `
       "code": "pul",
       "type":"radio",
       "choices": {
-        "d": "Double Substation only<br>",
-        "s": "Single Substation<br>",
+        "d": "Source/H.P. station only<br>",
 		"f": "Floor pick-up only<br>",
         "b": "All locations<br>",
         "x": "Can not manipulate game pieces"
       },
       "defaultValue": "x"
     },
-	{ "name": "Floor pick up",
-      "code": "fpu",
-      "type":"radio",
-      "choices": {
-        "u": "Cubes only<br>",
-        "o": "Cones only<br>",
-        "b": "Both<br>",
-        "x": "Can not manipulate game pieces"
-     },
-      "defaultValue": "x"
-    },
-    { "name": "Cone pick up orientation<br>from floor",
-      "code": "coo",
-      "type": "radio",
-      "choices": {
-        "u": "Upright only<br>",
-        "s": "On side only<br>",
-        "a": "All orientation<br>",
-        "x": "Cannot pick up<br>cones off the floor"
-      },
-      "defaultValue":"x"
-    },
-	{ "name": "Auton Start Positions<br>(include all options)<br>(if can start from anywhere, leave blank)",
+	{ "name": "Auton Start Position Preference<br>(Based on RED side)",
       "code": "asp",
-      "type": "clickable_image",
-      "filename": "2023/field_image.png",
-      "shape": "circle 5 black red true"
+      "type": "radio",
+	  "choices": {
+	    "r": "Right",
+		"c": "Center",
+		"l": "Left",
+		"o": "Off Speaker",
+		"v": "Varies/doesn't matter"
+	  },
+	  "defaultValue": "v"
     },
-	{ "name": "Auton Scoring<br>(highest scoring option)",
+	{ "name": "Auton Scoring",
       "code": "as",
-      "type": "clickable_image",
-      "filename": "2023/grid_image.png",
-      "dimensions": "9 4",
-      "clickRestriction": "onePerBox",
-      "toggleClick": "true",
-      "showFlip": "false",
-      "showUndo": "false",
-      "shape": "circle 12 black red true"
-    },
-	{ "name": "Confidence engaging in auton",
-      "code": "aec",
-      "type":"radio",
-      "choices": {
-        "1": "1 (not tested at all, no confidence)<br>",
-        "2": "2<br>",
-        "3": "3<br>",
-        "4": "4<br>",
-		"5": "5 (highly tested, repeatable)<br>",
-		"x": "Cannot engage in auton"
+      "type": "radio",
+	  "choices": {
+		  "s": "Speaker only",
+		  "a": "Amp only",
+		  "b": "Both/varies",
+		  "x": "no scoring"
 	  },
 	  "defaultValue": "x"
     },
-	{ "name": "Teleop scoring ability<br>(bottom, middle, top, or all rows)",
-      "code": "ts",
-      "type": "text",
-      "size": 20,
-      "maxSize": 250
+	{ "name": "How many in auto?",
+	  "code": "ac", 
+	  "type": "counter",
+	  "defaultValue": 0
 	},
-	{ "name": "# of cycles on teleop",
-      "code": "tc",
-      "type": "counter"
+	{ "name": "Teleop scoring",
+      "code": "ts",
+      "type": "radio",
+	  "choices": {
+		  "s": "Speaker only",
+		  "a": "Amp only",
+		  "b": "Both",
+		  "x": "no scoring"
+	  },
+	  "defaultValue": "x"
     },
+	{ "name": "How many in teleop?",
+	  "code": "ac", 
+	  "type": "counter",
+	  "defaultValue": 0
+	},
+	{ "name": "Able to do trap?",
+	  "code": "trap",
+	  "type": "bool"
+	},
+	{ "name": "Able to climb?"
+	  "code": "clm",
+	  "type": "bool"
+	},
+	{ "name": "Have they practiced before?"
+	  "code": "pra",
+	  "type": "bool",
+	  "tooltip": "comments are to explain more"
+	},
 	{ "name": "Comments",
       "code": "co",
       "type": "text",

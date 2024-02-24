@@ -1,20 +1,20 @@
 var config_data = `
 {
   "title": "Scouting PASS 2023",
-  "page_title": "Charged Up",
+  "page_title": "Crescendo",
   "checkboxAs": "10",
   "prematch": [
     { "name": "Scouter Name",
       "code": "s",
       "type": "scouter",
       "size": 5,
-      "maxSize": 10,
+      "maxSize": 15,
       "required": "true"
     },
     { "name": "Event",
       "code": "e",
       "type": "event",
-      "defaultValue": "2023mijac",
+      "defaultValue": "2023miber",
       "required": "true",
       "disabled": "true"
     },
@@ -36,7 +36,7 @@ var config_data = `
       "max": 100,
       "required": "true"
     },
-    { "name": "Alliance Station",
+    { "name": "Robot",
       "code": "r",
       "type": "robot",
       "choices": {
@@ -55,88 +55,60 @@ var config_data = `
       "min": 1,
       "max": 99999
     },
-    { "name": "Auton Start Position",
+    { "name": "Did they show up?",
       "code": "as",
-      "type": "clickable_image",
-      "filename": "2023/field_image.png",
-      "clickRestriction": "one",
-      "shape": "circle 5 black red true"
+      "type": "bool"
     }
   ],
   "auton": [
-    { "name": "Auton Scoring",
-      "code": "asg",
-      "type": "clickable_image",
-      "filename": "2023/grid_image.png",
-      "dimensions": "9 4",
-      "clickRestriction": "onePerBox",
-      "toggleClick": "true",
-      "showFlip": "false",
-      "showUndo": "false",
-      "shape": "circle 12 black red true"
-    },
-    { "name": "Dropped Game Pieces",
-      "code": "acc",
-      "type": "bool"
-    },
-    { "name": "Crossed Charging Station",
-      "code": "acs",
-      "type": "bool"
-    },    
-	{ "name": "Crossed the<br>Community Line",
-      "code": "am",
-      "type": "bool"
-    },
-    { "name": "Docked",
-      "code": "ad",
-      "type":"radio",
-      "choices": {
-        "d": "Docked (not Engaged)<br>",
-        "e": "Engaged<br>",
-        "a": "Attempted but failed<br>",
-        "x": "Not attempted"
-      },
-      "defaultValue": "x"
-    }
-  ],
-  "teleop": [
-    { "name": "Grid Scoring",
-      "code": "tsg",
-      "type": "clickable_image",
-      "filename": "2023/grid_image.png",
-      "dimensions": "9 4",
-      "clickRestriction": "onePerBox",
-      "toggleClick": "true",
-      "showFlip": "false",
-      "showUndo": "false",
-      "shape": "circle 12 black red true"
-    },
-    { "name": "Feeder Count<br>(Fed another bot)",
-      "code": "tfc",
-      "type": "counter"
-    },
-    { "name": "Was Fed<br>Game Pieces",
-      "code": "wf",
-      "type": "bool"
-    },
-	{ "name": "Picks up from<br>double substation table",
-	  "code": "wd",
+    { "name": "Leave Starting Zone",
+	  "code": "al",
 	  "type": "bool"
 	},
-    { "name": "If defended, who defended this bot<br>(if not defended, leave blank)",
-      "code": "who",
-      "type": "text"
+    { "name": "Scored in Amp",
+      "code": "asa",
+      "type": "counter"
     },
-    { "name": "Can pick up cones<br>from any orientation",
-      "code": "lnk",
-      "type": "bool"
+    { "name": "Attempted in Amp",
+      "code": "aaa",
+      "type": "counter"
+    },
+    { "name": "Scored in Speaker",
+      "code": "ass",
+      "type": "counter"
+    },
+	{ "name": "Attempted on Speaker",
+	  "code": "aas",
+	  "type": "counter"
+	}
+  ],
+  "teleop": [
+    { "name": "Scored in Amp",
+      "code": "tsa",
+      "type": "counter"
+    },
+    { "name": "Attempted in Amp",
+      "code": "taa",
+	  "type": "counter"
 	},
-    { "name": "Floor Pickup",
-      "code": "fpu",
+	{ "name": "Scored in Speaker",
+      "code": "tss",
+      "type": "counter"
+    },
+	{ "name": "Attempted in Speaker",
+	  "code": "tas",
+	  "type": "counter"
+	},
+	{ "name": "Who defended them?<br>(if not defended, ignore)",
+	  "code": "wdt",
+	  "type": "text"
+	},
+    { "name": "Pickup From:",
+      "code": "tpu",
       "type": "radio",
       "choices": {
-        "o": "Cones<br>",
-        "u": "Cubes<br>",
+        "s": "Source<br>",
+        "f": "Floor<br>",
         "b": "Both<br>",
         "x": "Not Attempted"
       },
@@ -144,20 +116,28 @@ var config_data = `
     }
   ],
   "endgame": [
-    { "name": "Final Position",
+    { "name": "Stage Timer",
+      "code": "dt",
+      "type": "timer"
+    },
+    { "name": "Final Status",
       "code": "fs",
       "type":"radio",
       "choices": {
         "p": "Parked<br>",
-        "d": "Docked (Not Engaged)<br>",
-        "e": "Engaged<br>",
+		"o": "Onstage<br>",
+		"h": "Harmony<br>",
         "a": "Attempted but failed<br>",
         "x": "Not attempted"
       },
       "defaultValue": "x"
     },
-    { "name": "Total # of alliance<br>robots docked/engaged",
-      "code": "dn",
+	{ "name": "Scored in Trap",
+      "code": "sit",
+      "type": "counter"
+    },
+	{ "name": "Attempted in Trap",
+      "code": "ait",
       "type": "counter"
     }
   ],
@@ -174,20 +154,16 @@ var config_data = `
       },
       "defaultValue": "x"
     },
-    { "name": "Swerve drive?",
-      "code": "sd",
-      "type": "bool"
-    },
+	{ "name": "Who did they defend?",
+	  "code": "who",
+	  "type": "text"
+	},
     { "name": "Died/Immobilized",
       "code": "die",
       "type": "bool"
     },
     { "name": "Tippy<br>(almost tipped over)",
       "code": "tip",
-      "type": "bool"
-    },
-    { "name": "Dropped Cones (>2)",
-      "code": "dc",
       "type": "bool"
     },
     { "name": "Comments",
