@@ -52,7 +52,7 @@ var config_data = `
         "1": "L1 (8.14:1 or 12-13 ft/sec)<br>",
         "2": "L2 (6.75:1 or 14-16 ft/sec)<br>",
         "3": "L3 (6.12:1 or 16-18 ft/sec)<br>",
-		"d": "Doesn't Know",
+		"d": "Doesn't Know<br>",
         "x": "Not Swerve"
       },
       "defaultValue":"x"
@@ -72,10 +72,10 @@ var config_data = `
       "code": "asp",
       "type": "radio",
 	  "choices": {
-	    "r": "Right",
-		"c": "Center",
-		"l": "Left",
-		"o": "Off Speaker",
+	    "r": "Right<br>",
+		"c": "Center<br>",
+		"l": "Left<br>",
+		"o": "Off Speaker<br>",
 		"v": "Varies/doesn't matter"
 	  },
 	  "defaultValue": "v"
@@ -84,10 +84,10 @@ var config_data = `
       "code": "as",
       "type": "radio",
 	  "choices": {
-		  "s": "Speaker only",
-		  "a": "Amp only",
-		  "b": "Both/varies",
-		  "x": "no scoring"
+		  "s": "Speaker only<br>",
+		  "a": "Amp only<br>",
+		  "b": "Both/varies<br>",
+		  "x": "no scoring<br>"
 	  },
 	  "defaultValue": "x"
     },
@@ -100,9 +100,9 @@ var config_data = `
       "code": "ts",
       "type": "radio",
 	  "choices": {
-		  "s": "Speaker only",
-		  "a": "Amp only",
-		  "b": "Both",
+		  "s": "Speaker only<br>",
+		  "a": "Amp only<br>",
+		  "b": "Both<br>",
 		  "x": "no scoring"
 	  },
 	  "defaultValue": "x"
