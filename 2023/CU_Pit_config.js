@@ -1,18 +1,30 @@
 var config_data = `
 {
-  "title": "Scouting PASS 2023",
-  "page_title": "Charged Up",
+  "title": "Crescendo 2024",
+  "page_title": "Crescendo",
   "pitConfig": "true",
+  "checkboxAs": "10",
   "prematch": [
+    { "name": "Scouter Name",
+	  "code": "s", 
+	  "type": "text",
+	  "size": 10,
+	  "maxsize": 15
+	},
     { "name": "Team Number",
       "code": "t",
       "type": "number"
     },
-    { "name": "Width (bumpers included)",
-      "code": "wid",
-      "type": "number",
-      "defaultValue": "0"
+    { "name": "Dimensions",
+      "code": "dm",
+      "type": "text",
+      "size": 10,
+      "maxSize": 15
     },
+	{ "name": "Is this with bumpers?",
+	  "code": "wbp",
+	  "type": "bool"
+	},
     { "name": "Weight",
       "code": "wei",
       "type": "number",
@@ -42,18 +54,8 @@ var config_data = `
         "1": "L1 (8.14:1 or 12-13 ft/sec)<br>",
         "2": "L2 (6.75:1 or 14-16 ft/sec)<br>",
         "3": "L3 (6.12:1 or 16-18 ft/sec)<br>",
+		"d": "Doesn't Know<br>",
         "x": "Not Swerve"
-      },
-      "defaultValue":"x"
-    },
-    { "name": "Drivetrain Motor",
-      "code": "mot",
-      "type": "radio",
-      "choices": {
-        "n": "Neo<br>",
-        "f": "Falcon<br>",
-        "c": "CIM<br>",
-        "x": "Other<br>"
       },
       "defaultValue":"x"
     },
@@ -61,76 +63,74 @@ var config_data = `
       "code": "pul",
       "type":"radio",
       "choices": {
-        "d": "Double Substation only<br>",
-        "s": "Single Substation<br>",
+        "d": "Source/H.P. station only<br>",
 		"f": "Floor pick-up only<br>",
         "b": "All locations<br>",
         "x": "Can not manipulate game pieces"
       },
       "defaultValue": "x"
     },
-	{ "name": "Floor pick up",
-      "code": "fpu",
-      "type":"radio",
-      "choices": {
-        "u": "Cubes only<br>",
-        "o": "Cones only<br>",
-        "b": "Both<br>",
-        "x": "Can not manipulate game pieces"
-     },
-      "defaultValue": "x"
-    },
-    { "name": "Cone pick up orientation<br>from floor",
-      "code": "coo",
+	{ "name": "Auton Start Position Preference<br>(Based on RED side)",
+      "code": "sp",
       "type": "radio",
-      "choices": {
-        "u": "Upright only<br>",
-        "s": "On side only<br>",
-        "a": "All orientation<br>",
-        "x": "Cannot pick up<br>cones off the floor"
-      },
-      "defaultValue":"x"
+	  "choices": {
+	    "r": "Right<br>",
+		"c": "Center<br>",
+		"l": "Left<br>",
+		"o": "Off Speaker<br>",
+		"v": "Varies/doesn't matter"
+	  },
+	  "defaultValue": "v"
     },
-	{ "name": "Auton Start Positions<br>(include all options)<br>(if can start from anywhere, leave blank)",
-      "code": "asp",
-      "type": "clickable_image",
-      "filename": "2023/field_image.png",
-      "shape": "circle 5 black red true"
-    },
-	{ "name": "Auton Scoring<br>(highest scoring option)",
-      "code": "as",
-      "type": "clickable_image",
-      "filename": "2023/grid_image.png",
-      "dimensions": "9 4",
-      "clickRestriction": "onePerBox",
-      "toggleClick": "true",
-      "showFlip": "false",
-      "showUndo": "false",
-      "shape": "circle 12 black red true"
-    },
-	{ "name": "Confidence engaging in auton",
-      "code": "aec",
-      "type":"radio",
-      "choices": {
-        "1": "1 (not tested at all, no confidence)<br>",
-        "2": "2<br>",
-        "3": "3<br>",
-        "4": "4<br>",
-		"5": "5 (highly tested, repeatable)<br>",
-		"x": "Cannot engage in auton"
+	{ "name": "Auton Scoring",
+      "code": "asc",
+      "type": "radio",
+	  "choices": {
+		  "s": "Speaker only<br>",
+		  "a": "Amp only<br>",
+		  "b": "Both/varies<br>",
+		  "x": "no scoring<br>"
 	  },
 	  "defaultValue": "x"
     },
-	{ "name": "Teleop scoring ability<br>(bottom, middle, top, or all rows)",
-      "code": "ts",
-      "type": "text",
-      "size": 20,
-      "maxSize": 250
+	{ "name": "How many in auto?",
+	  "code": "ac", 
+	  "type": "counter",
+	  "defaultValue": 0
 	},
-	{ "name": "# of cycles on teleop",
-      "code": "tc",
-      "type": "counter"
+	{ "name": "Teleop scoring",
+      "code": "ts",
+      "type": "radio",
+	  "choices": {
+		  "s": "Speaker only<br>",
+		  "a": "Amp only<br>",
+		  "b": "Both<br>",
+		  "x": "no scoring"
+	  },
+	  "defaultValue": "x"
     },
+	{ "name": "How many in teleop?",
+	  "code": "tc", 
+	  "type": "counter",
+	  "defaultValue": 0
+	},
+	{ "name": "Able to do trap?",
+	  "code": "tra",
+	  "type": "bool"
+	},
+	{ "name": "Able to climb?",
+	  "code": "clm",
+	  "type": "bool"
+	},
+	{ "name": "Have they practiced before?",
+	  "code": "pra",
+	  "type": "bool",
+	  "tooltip": "comments are to explain more"
+	},
+	{ "name": "Do they want to use<br>their human player?",
+	  "code": "hp",
+	  "type": "bool"
+	},
 	{ "name": "Comments",
       "code": "co",
       "type": "text",

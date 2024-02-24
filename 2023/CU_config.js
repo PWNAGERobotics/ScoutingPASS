@@ -1,7 +1,7 @@
 var config_data = `
 {
   "title": "Scouting PASS 2023",
-  "page_title": "Charged Up",
+  "page_title": "Crescendo",
   "checkboxAs": "10",
   "prematch": [
     { "name": "Scouter Name",
@@ -36,7 +36,7 @@ var config_data = `
       "max": 100,
       "required": "true"
     },
-    { "name": "Alliance Station",
+    { "name": "Robot",
       "code": "r",
       "type": "robot",
       "choices": {
@@ -61,75 +61,55 @@ var config_data = `
 	}
   ],
   "auton": [
-    { "name": "Auton Scoring",
-      "code": "asg",
-      "type": "clickable_image",
-      "filename": "2023/grid_image.png",
-      "dimensions": "9 4",
-      "clickRestriction": "onePerBox",
-      "toggleClick": "true",
-      "showFlip": "false",
-      "showUndo": "false",
-      "shape": "circle 12 black red true"
-    },
-    { "name": "Dropped Game Pieces",
-      "code": "adp",
-      "type": "counter"
-    },
-	{ "name": "Crossed the<br>Community Line",
-      "code": "am",
-      "type": "bool"
-    },
-    { "name": "Docked",
-      "code": "ad",
-      "type":"radio",
-      "choices": {
-        "d": "Docked (not Engaged)<br>",
-        "e": "Engaged<br>",
-        "a": "Attempted but failed<br>",
-        "x": "Not attempted"
-      },
-      "defaultValue": "x"
-    }
-  ],
-  "teleop": [
-    { "name": "Grid Scoring",
-      "code": "tsg",
-      "type": "clickable_image",
-      "filename": "2023/grid_image.png",
-      "dimensions": "9 4",
-      "clickRestriction": "onePerBox",
-      "toggleClick": "true",
-      "showFlip": "false",
-      "showUndo": "false",
-      "shape": "circle 12 black red true"
-    },
-    { "name": "Feeder Count<br>(Fed another bot)",
-      "code": "tfc",
-      "type": "counter"
-    },
-    { "name": "Was Fed<br>Game Pieces",
-      "code": "wf",
-      "type": "bool"
-    },
-    { "name": "If defended, who defended this bot<br>(if not defended, leave blank)",
-      "code": "who",
-      "type": "text"
-    },
-	{ "name": "Picks up from<br>double substation table",
-	  "code": "dss",
+    { "name": "Leave Starting Zone",
+	  "code": "al",
 	  "type": "bool"
 	},
-    { "name": "Can pick up cones<br>from any orientation",
-      "code": "cao",
-      "type": "bool"
+    { "name": "Scored in Amp",
+      "code": "asa",
+      "type": "counter"
+    },
+    { "name": "Attempted in Amp",
+      "code": "aaa",
+      "type": "counter"
+    },
+    { "name": "Scored in Speaker",
+      "code": "ass",
+      "type": "counter"
+    },
+	{ "name": "Attempted on Speaker",
+	  "code": "aas",
+	  "type": "counter"
+	}
+  ],
+  "teleop": [
+    { "name": "Scored in Amp",
+      "code": "tsa",
+      "type": "counter"
+    },
+    { "name": "Attempted in Amp",
+      "code": "taa",
+	  "type": "counter"
 	},
-    { "name": "Floor Pickup",
-      "code": "fpu",
+	{ "name": "Scored in Speaker",
+      "code": "tss",
+      "type": "counter"
+    },
+	{ "name": "Attempted in Speaker",
+	  "code": "tas",
+	  "type": "counter"
+
+	},
+	{ "name": "Who defended them?<br>(if not defended, ignore)",
+	  "code": "wdt",
+	  "type": "text"
+	},
+    { "name": "Pickup From:",
+      "code": "tpu",
       "type": "radio",
       "choices": {
-        "o": "Cones<br>",
-        "u": "Cubes<br>",
+        "s": "Source<br>",
+        "f": "Floor<br>",
         "b": "Both<br>",
         "x": "Not Attempted"
       },
@@ -137,20 +117,29 @@ var config_data = `
     }
   ],
   "endgame": [
-    { "name": "Final Position",
+    { "name": "Stage Timer",
+      "code": "dt",
+      "type": "timer"
+    },
+    { "name": "Final Status",
       "code": "fs",
       "type":"radio",
       "choices": {
         "p": "Parked<br>",
-        "d": "Docked (Not Engaged)<br>",
-        "e": "Engaged<br>",
+		    "o": "Onstage<br>",
+		    "h": "Harmony<br>",
         "a": "Attempted but failed<br>",
         "x": "Not attempted"
       },
       "defaultValue": "x"
     },
-    { "name": "If docked/engaged, total # of alliance<br>robots docked/engaged",
-      "code": "dn",
+
+	{ "name": "Scored in Trap",
+      "code": "sit",
+      "type": "counter"
+    },
+	{ "name": "Attempted in Trap",
+      "code": "ait",
       "type": "counter"
     },
     { "name": "Did they knock their alliance<br>partners off the charge station?",
@@ -171,22 +160,16 @@ var config_data = `
       },
       "defaultValue": "x"
     },
-	{ "name": "Who did they play<br>defense against?",
-      "code": "wda",
-      "type": "text",
-      "size": 15,
-      "maxSize": 100
-    },
+	{ "name": "Who did they defend?",
+	  "code": "who",
+	  "type": "text"
+	},
     { "name": "Died/Immobilized",
       "code": "die",
       "type": "bool"
     },
     { "name": "Tippy<br>(almost tipped over)",
       "code": "tip",
-      "type": "bool"
-    },
-    { "name": "Dropped Cones (>2)",
-      "code": "dc",
       "type": "bool"
     },
     { "name": "Comments",
