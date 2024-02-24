@@ -16,8 +16,9 @@ var config_data = `
     },
     { "name": "Dimensions",
       "code": "dim",
-      "type": "number",
-      "defaultValue": "0"
+      "type": "text",
+      "size": 10,
+      "maxSize": 10
     },
 	{ "name": "Is this with bumpers?",
 	  "code": "bump",
