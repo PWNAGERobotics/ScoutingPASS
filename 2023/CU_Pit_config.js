@@ -5,6 +5,12 @@ var config_data = `
   "pitConfig": "true",
   "checkboxAs": "10",
   "prematch": [
+    { "name": "Scouter Name",
+	  "code": "s", 
+	  "type": "text",
+	  "size": 10,
+	  "maxsize": 15
+	},
     { "name": "Team Number",
       "code": "t",
       "type": "number"
