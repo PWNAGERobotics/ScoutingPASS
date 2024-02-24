@@ -18,7 +18,7 @@ var config_data = `
       "code": "dim",
       "type": "text",
       "size": 10,
-      "maxSize": 10
+      "maxSize": 15
     },
 	{ "name": "Is this with bumpers?",
 	  "code": "bump",
