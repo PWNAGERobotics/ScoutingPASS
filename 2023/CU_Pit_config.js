@@ -4,12 +4,6 @@ var config_data = `
   "page_title": "Crescendo",
   "pitConfig": "true",
   "prematch": [
-    { "name": "Scouter Name",
-      "code": "s",
-      "type": "scouter",
-      "size": 5,
-      "maxSize": 15
-	  },
     { "name": "Team Number",
       "code": "t",
       "type": "number"
