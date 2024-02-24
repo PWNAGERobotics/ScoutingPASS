@@ -116,11 +116,11 @@ var config_data = `
 	  "code": "trap",
 	  "type": "bool"
 	},
-	{ "name": "Able to climb?"
+	{ "name": "Able to climb?",
 	  "code": "clm",
 	  "type": "bool"
 	},
-	{ "name": "Have they practiced before?"
+	{ "name": "Have they practiced before?",
 	  "code": "pra",
 	  "type": "bool",
 	  "tooltip": "comments are to explain more"
