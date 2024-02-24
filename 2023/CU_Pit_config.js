@@ -125,7 +125,7 @@ var config_data = `
 	  "type": "bool",
 	  "tooltip": "comments are to explain more"
 	},
-	{ "name": "Do they want to use<br>their human player?"
+	{ "name": "Do they want to use<br>their human player?",
 	  "code": "hp",
 	  "type": "bool"
 	},
