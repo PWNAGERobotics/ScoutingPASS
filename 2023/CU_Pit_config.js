@@ -16,7 +16,7 @@ var config_data = `
       "maxSize": 15
     },
 	{ "name": "Is this with bumpers?",
-	  "code": "bump",
+	  "code": "wbp",
 	  "type": "bool"
 	},
     { "name": "Weight",
