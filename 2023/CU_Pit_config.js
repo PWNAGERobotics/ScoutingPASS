@@ -76,7 +76,7 @@ var config_data = `
 	  "defaultValue": "v"
     },
 	{ "name": "Auton Scoring",
-      "code": "as",
+      "code": "asc",
       "type": "radio",
 	  "choices": {
 		  "s": "Speaker only<br>",
@@ -108,7 +108,7 @@ var config_data = `
 	  "defaultValue": 0
 	},
 	{ "name": "Able to do trap?",
-	  "code": "trap",
+	  "code": "tra",
 	  "type": "bool"
 	},
 	{ "name": "Able to climb?",
