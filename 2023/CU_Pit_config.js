@@ -3,6 +3,7 @@ var config_data = `
   "title": "Crescendo 2024",
   "page_title": "Crescendo",
   "pitConfig": "true",
+  "checkboxAs": "10",
   "prematch": [
     { "name": "Team Number",
       "code": "t",
