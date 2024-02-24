@@ -70,7 +70,7 @@ var config_data = `
       "defaultValue": "x"
     },
 	{ "name": "Auton Start Position Preference<br>(Based on RED side)",
-      "code": "asp",
+      "code": "sp",
       "type": "radio",
 	  "choices": {
 	    "r": "Right<br>",
