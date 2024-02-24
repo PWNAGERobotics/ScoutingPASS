@@ -14,7 +14,7 @@ var config_data = `
     { "name": "Event",
       "code": "e",
       "type": "event",
-      "defaultValue": "2023miber",
+      "defaultValue": "2024miber",
       "required": "true",
       "disabled": "true"
     },
@@ -55,10 +55,10 @@ var config_data = `
       "min": 1,
       "max": 99999
     },
-    { "name": "Did they show up?",
+    { "name": "Is their robot<br>on the field?",
       "code": "as",
       "type": "bool"
-    }
+	}
   ],
   "auton": [
     { "name": "Leave Starting Zone",
@@ -98,6 +98,7 @@ var config_data = `
 	{ "name": "Attempted in Speaker",
 	  "code": "tas",
 	  "type": "counter"
+
 	},
 	{ "name": "Who defended them?<br>(if not defended, ignore)",
 	  "code": "wdt",
@@ -125,13 +126,14 @@ var config_data = `
       "type":"radio",
       "choices": {
         "p": "Parked<br>",
-		"o": "Onstage<br>",
-		"h": "Harmony<br>",
+		    "o": "Onstage<br>",
+		    "h": "Harmony<br>",
         "a": "Attempted but failed<br>",
         "x": "Not attempted"
       },
       "defaultValue": "x"
     },
+
 	{ "name": "Scored in Trap",
       "code": "sit",
       "type": "counter"
@@ -139,6 +141,10 @@ var config_data = `
 	{ "name": "Attempted in Trap",
       "code": "ait",
       "type": "counter"
+    },
+    { "name": "Did they knock their alliance<br>partners off the charge station?",
+      "code": "kop",
+      "type": "bool"
     }
   ],
   "postmatch": [
@@ -146,10 +152,10 @@ var config_data = `
       "code": "dr",
       "type": "radio",
       "choices": {
-        "b": "Below Average<br>",
-        "a": "Average<br>",
-        "g": "Good<br>",
-        "e": "Excellent<br>",
+        "b": "Below Average (the thought was there)<br>",
+        "a": "Average (got in the way from time to time)<br>",
+        "g": "Good (was very annoying)<br>",
+        "e": "Excellent (An absolute menace)<br>",
         "x": "Did not play defense"
       },
       "defaultValue": "x"
@@ -170,7 +176,7 @@ var config_data = `
       "code": "co",
       "type": "text",
       "size": 15,
-      "maxSize": 100
+      "maxSize": 10000
     }
   ]
 }`;
