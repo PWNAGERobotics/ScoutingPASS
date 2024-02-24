@@ -9,7 +9,7 @@ var config_data = `
       "type": "number"
     },
     { "name": "Dimensions",
-      "code": "dim",
+      "code": "dm",
       "type": "text",
       "size": 10,
       "maxSize": 15
@@ -103,7 +103,7 @@ var config_data = `
 	  "defaultValue": "x"
     },
 	{ "name": "How many in teleop?",
-	  "code": "ac", 
+	  "code": "tc", 
 	  "type": "counter",
 	  "defaultValue": 0
 	},
