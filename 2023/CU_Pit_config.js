@@ -51,17 +51,6 @@ var config_data = `
       },
       "defaultValue":"x"
     },
-    { "name": "Drivetrain Motor",
-      "code": "mot",
-      "type": "radio",
-      "choices": {
-        "n": "Neo<br>",
-        "f": "Falcon<br>",
-        "c": "CIM<br>",
-        "x": "Other<br>"
-      },
-      "defaultValue":"x"
-    },
     { "name": "Game piece pick up location",
       "code": "pul",
       "type":"radio",
@@ -129,6 +118,10 @@ var config_data = `
 	  "code": "pra",
 	  "type": "bool",
 	  "tooltip": "comments are to explain more"
+	},
+	{ "name": "Do they want to use<br>their human player?"
+	  "code": "hp",
+	  "type": "bool"
 	},
 	{ "name": "Comments",
       "code": "co",
