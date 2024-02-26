@@ -15,7 +15,7 @@ var config_data = `
     { "name": "Event",
       "code": "e",
       "type": "event",
-      "defaultValue": "2023tnkn",
+      "defaultValue": "2024tnkn",
       "required": "true"
     },
     { "name": "Match Level",
@@ -77,7 +77,7 @@ var config_data = `
       "code": "ass",
       "type": "counter"
     },
-    { "name": "Auto Position Reached(Click each time to place a circle to map the path)",
+    { "name": "Auto Position Reached",
       "code": "at",
       "type": "clickable_image",
       "filename": "2024/field_image.png",
