@@ -11,7 +11,7 @@ html, body{
     width: 100%;
     margin: 0;
     padding: 0;
-    color: white;
+    color: rgb(255, 215, 0);
     background-color: black;
 }
 
@@ -19,7 +19,7 @@ html, body{
 
     font-family : -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
     text-align: center;
-    color: white;
+    color: rgb(255, 215, 0);
     font-size: 13px;
     font-style: bold;
     letter-spacing: 1px;
@@ -29,7 +29,7 @@ html, body{
 
 #auton_table, #endgame_table, #teleop_table {
     font-family : -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
-    color: black;
+    color: rgb(255, 215, 0);
     font-size: 13px;
     font-style: bold;
     letter-spacing: 1px;
@@ -43,7 +43,7 @@ html, body{
 }
 
 #autonHeader, #endgameHeader, #teleopHeader1, #teleopHeader2{
-    color: black;
+    color: rgb(255, 215, 0);
     border-color: black;
     border-width: 4px;
 }
@@ -54,13 +54,13 @@ html, body{
 }
 
 #prematchHeader1, #prematchHeader2{
-    color: white;
+    color: rgb(255, 215, 0);
     border-color: white;
     border-width: 4px;
 }
 
 #qrHeader1, #qrHeader2 {
-    color: black;
+    color: rgb(255, 215, 0);
 }
 
 .field-image {
@@ -80,7 +80,7 @@ html, body{
     position: absolute;
     left: 0;
     top: 0;
-    color: white;
+    color: rgb(255, 215, 0);
     background-color: black;
     font-family : -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
     text-align: justify;
@@ -104,7 +104,7 @@ html, body{
 
 #qr-code{
   text-align: center;
-  color: black;
+  color: rgb(255, 215, 0);
 }
 
 h1{
@@ -119,7 +119,7 @@ h1{
 }
 
 #page2, #page4 {
-    color: black;
+    color: rgb(255, 215, 0);
 }
 
 h2{
@@ -156,7 +156,8 @@ h2{
 #nextButton1, #nextButton2, #nextButton9, #nextButton10, .clearForm, .submitForm, #displayButton, #copyButton {
     font-family: Alexis;
     padding: 10px;
-    background-color: rgb(151, 199, 240);
+    background-color: rgb(7, 7, 7);
+    color: rgb(255, 215, 0);
     text-decoration: none;
     display: inline-block;
 }
@@ -172,21 +173,21 @@ h2{
     font-family: Alexis;
     background-color: black;
     padding: 10px;
-    color: white;
+    color: rgb(255, 215, 0);
     margin-left: 20px;
 }
 
 #prevButton7, #prevButton8, #prevButton9{
     font-family: Alexis;
-    background-color: rgb(151, 199, 240);
+    background-color: rgb(6, 6, 6);
     padding: 10px;
 }
 
 #prevButton1, #prevButton2, #prevButton3, #prevButton4, #prevButton5, #prevButton6{
     font-family: Alexis;
-    background-color: black;
+    background-color: rgb(255, 215, 0);
     padding: 10px;
-    color: white;
+    color: rgb(3, 3, 3);
 
 }
 
@@ -220,8 +221,8 @@ td {
 input {
     font-size: 16px;
     font: roboto;
-    color: black;
-    background-color: white;
+    color: rgb(255, 215, 0);
+    background-color: rgb(5, 5, 5);
 }
 
 .title {
@@ -236,11 +237,12 @@ input {
 
 #qr-table {
     text-align: center;
-    color: black;
-    background-color: white;
+    color: rgb(255, 215, 0);
+    background-color: rgb(5, 5, 5);
 }
 
 #data {
     font-family:'Lucida Console', 'monospace';
+    color: rgb(255, 215, 0);
     text-align: justify;
 }
