@@ -77,7 +77,7 @@ var config_data = `
       "code": "ass",
       "type": "counter"
     },
-	{ "name": "Attempted on Speaker",
+	{ "name": "Attempted in Speaker",
 	  "code": "aas",
 	  "type": "counter"
 	}
@@ -133,7 +133,6 @@ var config_data = `
       },
       "defaultValue": "x"
     },
-
 	{ "name": "Scored in Trap",
       "code": "sit",
       "type": "counter"
@@ -141,10 +140,6 @@ var config_data = `
 	{ "name": "Attempted in Trap",
       "code": "ait",
       "type": "counter"
-    },
-    { "name": "Did they knock their alliance<br>partners off the charge station?",
-      "code": "kop",
-      "type": "bool"
     }
   ],
   "postmatch": [
