@@ -77,7 +77,7 @@ var config_data = `
       "code": "ass",
       "type": "counter"
     },
-    { "name": "Auto Position Reached",
+    { "name": "Auto Position Reached(Click each time to place a circle to map the path)",
       "code": "at",
       "type": "clickable_image",
       "filename": "2024/field_image.png",
