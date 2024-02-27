@@ -44,8 +44,8 @@ There is an extensive set-up process described in following section.  Follow the
 1. Create spreadheet
     * Create a new Google Spreadsheet on your Google Drive.
     * The "Sheet" needs to be named "Sheet1"
-    * The first column header shoud be labeled "Date"
-    * Create headers for all of youlr data elements (avoid spaces; not tested with spaces)
+    * The first column header should be labeled "Date"
+    * Create headers for all of your data elements (avoid spaces; not tested with spaces)
 3. Add script
     * While still in the spreadsheet click Extensions -> Apps Script
     * Update the project name from "Untitled project" to something meaningful to you
