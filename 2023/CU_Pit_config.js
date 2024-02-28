@@ -127,9 +127,16 @@ var config_data = `
 	  "type": "bool",
 	  "tooltip": "comments are to explain more"
 	},
-	{ "name": "Do they want to use<br>their human player?",
+	{ "name": "What do they want to use<br>their human player for?",
 	  "code": "hp",
-	  "type": "bool"
+	  "type": "radio",
+	  "choices": {
+		  "s": "source<br>",
+		  "a": "amp<br>",
+		  "d": "either<br>",
+		  "n": "no human player"
+	  },
+	  "defaultValue": "n"
 	},
 	{ "name": "Comments",
       "code": "co",
