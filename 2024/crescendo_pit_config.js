@@ -9,19 +9,12 @@ var config_data = `
       "code": "t",
       "type": "number"
     },
-    { "name": "Width",
-      "code": "wid",
-      "type": "number",
-      "defaultValue": "0"
-    },
     { "name": "Drivetrain",
       "code": "drv",
       "type": "radio",
       "choices": {
         "s": "Swerve<br>",
-        "w": "West Coast/Tank<br>",
-        "b": "Butterfly/Grashopper<br>",
-        "m": "Mechanum<br>",
+        "w": "Tank<br>",
         "o": "Other"
       },
       "defaultValue": "o"
@@ -32,34 +25,77 @@ var config_data = `
       "size": 20,
       "maxSize": 50
     },
-    { "name": "Floor pickup Notes",
+    { "name": "Acquire Notes",
+      "type": "radio",
       "code": "fpu",
+      "choices": {
+        "f": "Floor<br>",
+        "s": "Source<br>",
+        "b": "Both"
+      },
+      "defaultValue": "b"
+    },
+    { "name": "Score Speaker in Tele",
+      "code": "spk",
       "type": "bool"
     },
     { "name": "Score Amp in Tele",
       "code": "amp",
       "type": "bool"
     },
-    { "name": "Score Trap",
+    { "name": "Estimated Cycles/Match",
+      "code": "cyc",
+      "type": "number"
+    },
+    { "name": "Auto Start Position",
+      "code": "asp",
+      "type": "radio",
+      "choices": {
+        "c": "Center Speaker<br>",
+        "l": "Left Speaker<br>",
+        "r": "Right Speaker<br>",
+        "a": "Any Speaker<br>",
+        "f": "Away from Speaker<br>",
+      },
+      "defaultValue": "f"
+    },
+    { "name": "Auto Movement",
+      "code": "move",
       "code": "trp",
       "type": "bool"
     },
-    { "name": "Autos",
+    { "name": "Auto Speaker Notes (reliable)",
+      "code": "asn",
+      "type": "number"
+    },
+    { "name": "Auto Comments",
       "code": "aut",
       "type": "text",
       "size": 20,
       "maxSize": 250
     },
-    { "name": "Scouting Method /<br>Program (ScoutingPASS?)",
-      "code": "sct",
-      "type": "text",
-      "size": 20,
-      "maxSize": 250
+    { "name": "Climb",
+      "code": "clb",
+      "type": "radio",
+      "choices": {
+        "s": "Solo<br>",
+        "h": "Harmony<br>",
+        "n": "N/A"
+      },
+      "defaultValue": "n"
     },
-    { "name": "Comments",
+    { "name": "Score Trap",
+      "code": "trp",
+      "type": "bool"
+    },
+    { "name": "High Note Percentage",
+      "code": "hnp",
+      "type": "number"
+    },
+    { "name": "General Comments",
       "code": "co",
       "type": "text",
-      "size": 20,
+      "size": 40,
       "maxSize": 250
     }
   ],
