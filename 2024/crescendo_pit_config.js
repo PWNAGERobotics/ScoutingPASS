@@ -55,7 +55,7 @@ var config_data = `
         "l": "Left Speaker<br>",
         "r": "Right Speaker<br>",
         "a": "Any Speaker<br>",
-        "f": "Away from Speaker<br>",
+        "f": "Away from Speaker<br>"
       },
       "defaultValue": "f"
     },
