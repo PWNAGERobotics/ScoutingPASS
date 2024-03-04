@@ -1,26 +1,54 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, maximum-scale=1.0">
-		<title>Scouting PASS</title>
-		<link rel="shortcut icon" href="favicon.ico">
-		<link rel="icon" sizes="16x16 32x32 64x64" href="favicon.ico">
-		<script src="resources/js/easy.qrcode.min.js"></script>
-		<script src="resources/js/TBAInterface.js"></script>
-		<script src="resources/js/googleSheets.js"></script>
-		<script src="resources/js/scoutingPASS.js"></script>
-		<script src="2024/crescendo_config.js"></script>
-		
+		<meta charset="utf-8"/>
+		<title>538 Scout Dashboard</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<style>
+			body {
+				font-family: sans-serif;
+				margin: auto;
+				height: 100vh;
+				display: flex;
+				align-items: center;
+			}
+			main {
+				margin: auto;
+				margin-top: 10%;
+				margin-bottom: 10%;
+				width: 400px;
+				height: 400px;
+				background-color: lightblue;
+			}
+			h1 {
+				width: 100%;
+				text-align: center;
+			}
+			.link-box {
+				display: inline-block;
+				background-color: lightgreen;
+				height: 40px;
+				border: solid;
+				border-radius: 15px;
+			}
+			.link-img {
+				background-image: url("https://arsrobotics.org/favicon.ico");
+				display: inline-block;
+				height: 35px;
+				width: 35px;
+			}
+		</style>
 	</head>
-
 	<body>
-		<div class="navbar">
-      			<a href="https://dragonruler1000.github.io/ScoutingPASS.html">Match scouting</a>
-			<!--<a herf="https://dragonruler1000.github.io/pit.html">Pit scouting</a>-->
-			<a href="https://dragonruler1000.github.io/pit.html">Pit scouting</a>
-    </div>
-
-		<p>this is the scouting site for FRC team 538 Renisance robotics</p>
-<p>to use for scouting hit the link at the top of the page for the type of scouting you are doing<p>
+		<main>
+			<h1>Scouting Options</h1>
+			<a href="/ScoutingPASS.html" class="link-box">
+				<span class="link-text">Match Scouting</span>
+			</a>
+			<a href="/pit.html" class="link-box">
+				<span class="link-text">Pit Scouting</span>
+			</a>
+		</main>
 	</body>
 </html>
+
