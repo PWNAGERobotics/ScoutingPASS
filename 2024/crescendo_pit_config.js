@@ -1,7 +1,7 @@
 var config_data = `
 {
   "dataFormat": "tsv",
-  "title": "Scouting PASS 2024",
+  "title": "Scouting PASS (Pit)",
   "page_title": "Crescendo - Copper Hawks",
   "pitConfig": "true",
   "prematch": [
