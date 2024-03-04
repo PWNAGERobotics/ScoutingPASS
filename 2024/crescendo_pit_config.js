@@ -60,9 +60,8 @@ var config_data = `
       },
       "defaultValue": "f"
     },
-    { "name": "Auto - Movement",
-      "code": "move",
-      "code": "trp",
+    { "name": "Auto - Leave Starting Area",
+      "code": "lsa",
       "type": "bool",
       "tooltip": "Are they capabable of reliably getting the movement bonus"
     },
