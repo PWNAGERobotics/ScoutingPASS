@@ -71,7 +71,7 @@ var config_data = `
       "type": "number",
       "tooltip": "How many notes they expect to score in teleop"
     },
-    { "name": "Auto Comments",
+    { "name": "Auto - Other Comments",
       "code": "aut",
       "type": "text",
       "size": 20,
