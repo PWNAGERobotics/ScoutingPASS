@@ -25,7 +25,7 @@ var config_data = `
       "size": 20,
       "maxSize": 50
     },
-    { "name": "Acquire Notes",
+    { "name": "Teleop - Acquire Notes",
       "type": "radio",
       "code": "fpu",
       "choices": {
@@ -35,19 +35,20 @@ var config_data = `
       },
       "defaultValue": "b"
     },
-    { "name": "Score Speaker in Tele",
+    { "name": "Teleop - Score Speaker",
       "code": "spk",
       "type": "bool"
     },
-    { "name": "Score Amp in Tele",
+    { "name": "Teleop - Score Amp",
       "code": "amp",
       "type": "bool"
     },
-    { "name": "Estimated Cycles/Match",
+    { "name": "Teleop - Estimated Cycles",
       "code": "cyc",
-      "type": "number"
+      "type": "number",
+      "tooltip": "How many notes they expect to score in teleop"
     },
-    { "name": "Auto Start Position",
+    { "name": "Auto - Start Position",
       "code": "asp",
       "type": "radio",
       "choices": {
@@ -59,14 +60,16 @@ var config_data = `
       },
       "defaultValue": "f"
     },
-    { "name": "Auto Movement",
+    { "name": "Auto - Movement",
       "code": "move",
       "code": "trp",
-      "type": "bool"
+      "type": "bool",
+      "tooltip": "Are they capabable of reliably getting the movement bonus"
     },
-    { "name": "Auto Speaker Notes (reliable)",
+    { "name": "Auto - Speaker Notes (reliable)",
       "code": "asn",
-      "type": "number"
+      "type": "number",
+      "tooltip": "How many notes they expect to score in teleop"
     },
     { "name": "Auto Comments",
       "code": "aut",
@@ -74,7 +77,7 @@ var config_data = `
       "size": 20,
       "maxSize": 250
     },
-    { "name": "Climb",
+    { "name": "Endgame - Climb",
       "code": "clb",
       "type": "radio",
       "choices": {
@@ -84,11 +87,11 @@ var config_data = `
       },
       "defaultValue": "n"
     },
-    { "name": "Score Trap",
+    { "name": "Endgame - Score Trap",
       "code": "trp",
       "type": "bool"
     },
-    { "name": "High Note Percentage",
+    { "name": "Endgame - High Note %",
       "code": "hnp",
       "type": "number"
     },
