@@ -2,7 +2,7 @@ var config_data = `
 {
   "dataFormat": "tsv",
   "title": "Scouting PASS 2024",
-  "page_title": "Crescendo",
+  "page_title": "Crescendo - Copper Hawks",
   "checkboxAs": "10",
   "prematch": [
     { "name": "Scouter Initials",
@@ -23,8 +23,6 @@ var config_data = `
       "type": "level",
       "choices": {
         "qm": "Quals<br>",
-        "sf": "Semifinals<br>",
-        "f": "Finals"
       },
       "defaultValue": "qm",
       "required": "true"
