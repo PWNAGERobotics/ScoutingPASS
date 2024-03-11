@@ -21,8 +21,8 @@ var config_data = `
       "size": 10,
       "maxSize": 15
     },
-	{ "name": "Is this with bumpers?",
-	  "code": "wbp",
+	{ "name": "Can they drive under<br>the stage?",
+	  "code": "dus",
 	  "type": "bool"
 	},
     { "name": "Weight",
