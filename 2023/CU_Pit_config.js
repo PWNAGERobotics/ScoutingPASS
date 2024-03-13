@@ -122,7 +122,7 @@ var config_data = `
 	  "code": "clm",
 	  "type": "bool"
 	},
-	{ "name": "Have they practiced before?",
+	{ "name": "Have they practiced before?<br>(including at another comp)",
 	  "code": "pra",
 	  "type": "bool",
 	  "tooltip": "comments are to explain more"
@@ -131,10 +131,10 @@ var config_data = `
 	  "code": "hp",
 	  "type": "radio",
 	  "choices": {
-		  "s": "source<br>",
-		  "a": "amp<br>",
-		  "d": "either<br>",
-		  "n": "no human player"
+		  "s": "Source<br>",
+		  "a": "Amp<br>",
+		  "d": "Either<br>",
+		  "n": "No human player"
 	  },
 	  "defaultValue": "n"
 	},

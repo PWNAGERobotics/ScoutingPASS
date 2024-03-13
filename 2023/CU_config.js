@@ -14,7 +14,7 @@ var config_data = `
     { "name": "Event",
       "code": "e",
       "type": "event",
-      "defaultValue": "2024miber",
+      "defaultValue": "2024miann",
       "required": "true",
       "disabled": "true"
     },
