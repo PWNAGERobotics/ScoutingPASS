@@ -53,8 +53,8 @@ var config_data = `
       "type": "radio",
       "choices": {
         "c": "Center Speaker<br>",
-        "l": "Left Speaker<br>",
-        "r": "Right Speaker<br>",
+        "m": "Amp-Side Speaker<br>",
+        "s": "Speaker-Side Speaker<br>",
         "a": "Any Speaker<br>",
         "f": "Away from Speaker<br>"
       },
