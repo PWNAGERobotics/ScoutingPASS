@@ -40,7 +40,7 @@ var config_data = `
       "type": "radio",
       "choices": {
         "r": "Reliable<br>",
-        "q": "Questioanable<br>",
+        "q": "Questionable<br>",
         "n": "Not Capable<br>"
       },
       "defaultValue": "n"
@@ -50,7 +50,7 @@ var config_data = `
       "type": "radio",
       "choices": {
         "r": "Reliable<br>",
-        "q": "Questioanable<br>",
+        "q": "Questionable<br>",
         "n": "Not Capable<br>"
       },
       "defaultValue": "n"
