@@ -37,11 +37,23 @@ var config_data = `
     },
     { "name": "Teleop - Score Speaker",
       "code": "spk",
-      "type": "bool"
+      "type": "radio",
+      "choices": {
+        "r": "Reliable<br>",
+        "q": "Questioanable<br>",
+        "n": "Not Capable<br>"
+      },
+      "defaultValue": "n"
     },
     { "name": "Teleop - Score Amp",
       "code": "amp",
-      "type": "bool"
+      "type": "radio",
+      "choices": {
+        "r": "Reliable<br>",
+        "q": "Questioanable<br>",
+        "n": "Not Capable<br>"
+      },
+      "defaultValue": "n"
     },
     { "name": "Teleop - Estimated Cycles",
       "code": "cyc",
