@@ -116,6 +116,7 @@ var config_data = `
         "o": "Onstage<br>",
         "s": "Onstage (Spotlit)<br>",
         "h": "Harmony<br>",
+        "hs": "Harmony (Spotlit)<br>",
         "a": "Attempted but failed<br>",
         "x": "Not attempted"
       },
