@@ -1,57 +1,107 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8"/>
-		<title>538 Scout Dashboard</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<style>
-			body {
-				font-family: sans-serif;
-				margin: auto;
-				height: 100vh;
-				display: flex;
-				align-items: center;
-			}
-			main {
-				margin: auto;
-				margin-top: 10%;
-				margin-bottom: 10%;
-				width: 400px;
-				height: 400px;
-				background-color: lightblue;
-			}
-			h1 {
-				width: 100%;
-				text-align: center;
-			}
-			.link-box {
-				display: inline-block;
-				background-color: lightgreen;
-				height: 40px;
-				border: solid;
-				border-radius: 15px;
-			}
-			.link-img {
-				background-image: url("https://arsrobotics.org/favicon.ico");
-				display: inline-block;
-				height: 35px;
-				width: 35px;
-			}
-			.link-text {
-				padding: 4px;
-			}
-		</style>
-	</head>
-	<body>
-		<main>
-			<h1>Scouting Options</h1>
-			<a href="/ScoutingPASS.html" class="link-box">
-				<span class="link-text">Match Scouting</span>
-			</a>
-			<a href="/pit.html" class="link-box">
-				<span class="link-text">Pit Scouting</span>
-			</a>
-		</main>
-	</body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FRC Scouting App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #1a1a1a;
+        }
+        header {
+            background-color: #ff21cf;
+            color: #000000;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+        }
+        .features {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 50px;
+            color:white;
+        }
+        .feature {
+            flex: 1;
+            padding: 20px;
+            text-align: center;
+        }
+        .feature img {
+            max-width: 100px;
+            margin-bottom: 20px;
+        }
+        .download {
+            background-color: #f0f0f0;
+            padding: 50px 0;
+            text-align: center;
+        }
+        .download button {
+            background-color: #FF5733;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .download button:hover {
+            background-color: #DB4423;
+        }
+        footer {
+            background-color: #ff21cf;
+            color: #000000;
+            text-align: center;
+            padding: 20px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Renaissance Robotics Scouting Tools</h1>
+            <p>Using ScoutingPASS</p>
+        </div>
+    </header>
+    <div class="container">
+        <section class="features">
+            <div class="feature">
+                <!--<img src="match-scouting-icon.png" alt="Match Scouting">-->
+                <h2>Match Scouting</h2>
+                <p>Collect valuable data during matches to strategize effectively.</p>
+                <a href="ScoutingPASS.html"><button>Start Match Scouting</button></a>
+            </div>
+            <div class="feature">
+                <!--<img src="pit-scouting-icon.png" alt="Pit Scouting">-->
+                <h2>Pit Scouting</h2>
+                <p>Evaluate robots and teams in the pit area to make informed alliance selections.</p>
+                <a href="pit.html"><button>Start Pit Scouting</button></a>
+            </div>
+        </section>
+    </div>
+    <footer>
+        <p>&copy; 2024 Renaissance Robotics. All rights reserved.</p>
+    </footer>
+</body>
 </html>
-
