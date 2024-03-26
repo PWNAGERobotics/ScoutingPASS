@@ -9,12 +9,12 @@ var config_data = `
       "code": "t",
       "type": "number"
     },
-    { "name": "Width",
+    { "name": "Width With Bumbers (in)",
       "code": "wid",
       "type": "number",
       "defaultValue": "0"
     },
-    { "name": "Weight",
+    { "name": "Weight With Bumbers (lbs)",
       "code": "wei",
       "type": "number",
       "defaultValue": "0"
