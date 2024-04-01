@@ -122,11 +122,6 @@ var config_data = `
 	  "code": "clm",
 	  "type": "bool"
 	},
-	{ "name": "Have they practiced before?<br>(including at another comp)",
-	  "code": "pra",
-	  "type": "bool",
-	  "tooltip": "comments are to explain more"
-	},
 	{ "name": "What do they want to use<br>their human player for?",
 	  "code": "hp",
 	  "type": "radio",

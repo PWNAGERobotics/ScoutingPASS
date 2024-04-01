@@ -14,7 +14,7 @@ var config_data = `
     { "name": "Event",
       "code": "e",
       "type": "event",
-      "defaultValue": "2024miann",
+      "defaultValue": "2024micmp1",
       "required": "true",
       "disabled": "true"
     },
