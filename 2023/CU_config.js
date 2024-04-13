@@ -98,7 +98,10 @@ var config_data = `
 	{ "name": "Attempted in Speaker",
 	  "code": "tas",
 	  "type": "counter"
-
+	},
+	{ "name": "Launched across field",
+	  "code": "laf",
+	  "type": "counter"
 	},
 	{ "name": "Who defended them?<br>(if not defended, ignore)",
 	  "code": "wdt",

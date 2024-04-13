@@ -21,8 +21,8 @@ var config_data = `
       "size": 10,
       "maxSize": 15
     },
-	{ "name": "Is this with bumpers?",
-	  "code": "wbp",
+	{ "name": "Can they drive under<br>the stage?",
+	  "code": "dus",
 	  "type": "bool"
 	},
     { "name": "Weight",
@@ -122,19 +122,14 @@ var config_data = `
 	  "code": "clm",
 	  "type": "bool"
 	},
-	{ "name": "Have they practiced before?",
-	  "code": "pra",
-	  "type": "bool",
-	  "tooltip": "comments are to explain more"
-	},
 	{ "name": "What do they want to use<br>their human player for?",
 	  "code": "hp",
 	  "type": "radio",
 	  "choices": {
-		  "s": "source<br>",
-		  "a": "amp<br>",
-		  "d": "either<br>",
-		  "n": "no human player"
+		  "s": "Source<br>",
+		  "a": "Amp<br>",
+		  "d": "Either<br>",
+		  "n": "No human player"
 	  },
 	  "defaultValue": "n"
 	},
