@@ -61,7 +61,7 @@ var config_data = `
       },
       "defaultValue":"x"
     },
-    { "name": "# of Batteries /<br>(That they brought to compatition)",
+    { "name": "# of Batteries /<br>(That they brought to the compatition)",
       "code": "nob",
       "type": "number"
     },
