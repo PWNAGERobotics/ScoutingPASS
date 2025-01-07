@@ -14,9 +14,9 @@ var config_data = `
     { "name": "Event",
       "code": "e",
       "type": "event",
-      "defaultValue": "2024hop",
+      "defaultValue": "Testevet2025",
       "required": "true",
-      "disabled": "true"
+      "disabled": "false"
     },
     { "name": "Match Level",
       "code": "l",
@@ -65,19 +65,23 @@ var config_data = `
 	  "code": "al",
 	  "type": "bool"
 	},
-    { "name": "Scored in Amp",
+    { "name": "Coral Scored in trough",
       "code": "asa",
       "type": "counter"
     },
-    { "name": "Attempted in Amp",
+    { "name": "Coral Scored in L1",
       "code": "aaa",
       "type": "counter"
     },
-    { "name": "Scored in Speaker",
+    { "name": "Coral Scored in L2",
       "code": "ass",
       "type": "counter"
     },
-	{ "name": "Attempted in Speaker",
+	{ "name": "Coral Scored in L3",
+	  "code": "aas",
+	  "type": "counter"
+	},
+	 { "name": "Coral Scored in L4",
 	  "code": "aas",
 	  "type": "counter"
 	}
