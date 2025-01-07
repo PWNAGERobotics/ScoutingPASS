@@ -179,6 +179,18 @@ var config_data = `
         "x": "Not attempted"
       },
       "defaultValue": "x"
+    },
+     { "name": "Time to Climb",
+      "code": "fs",
+      "type":"radio",
+      "choices": {
+        "p": "Parked<br>",
+		    "o": "First Try ~5 Sec<br>",
+		    "h": "Solid Climb ~10 Secbr>",
+      	    "o": "Struggled >12 Sec<br>",
+        "x": "Didnt Climb"
+      },
+      "defaultValue": "x"
     }
   ],
   "postmatch": [
