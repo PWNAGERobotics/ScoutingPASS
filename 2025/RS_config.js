@@ -187,7 +187,7 @@ var config_data = `
         "p": "Parked<br>",
 		    "o": "First Try ~5 Sec<br>",
 		    "h": "Solid Climb ~10 Secbr>",
-      	    "o": "Struggled >12 Sec<br>",
+      	    "o": "Struggled ~12 Sec<br>",
         "x": "Didnt Climb"
       },
       "defaultValue": "x"
