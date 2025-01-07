@@ -14,7 +14,7 @@ var config_data = `
     { "name": "Event",
       "code": "e",
       "type": "event",
-      "defaultValue": "Testevent2025",
+      "defaultValue": "TestEvent2025",
       "required": "true",
       "disabled": "false"
     },
