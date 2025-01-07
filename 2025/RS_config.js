@@ -14,7 +14,7 @@ var config_data = `
     { "name": "Event",
       "code": "e",
       "type": "event",
-      "defaultValue": "Testevet2025",
+      "defaultValue": "Testevent2025",
       "required": "true",
       "disabled": "false"
     },
@@ -84,27 +84,59 @@ var config_data = `
 	 { "name": "Coral Scored in L4",
 	  "code": "aas",
 	  "type": "counter"
+	},
+  { "name": "Coral Missed",
+	  "code": "aas",
+	  "type": "counter"
+	},
+   { "name": "Algae Scored in Processor",
+	  "code": "aas",
+	  "type": "counter"
+	},
+ { "name": "Algae Scored in Net",
+	  "code": "aas",
+	  "type": "counter"
+	}, 
+ { "name": "Algae Missed ",
+	  "code": "aas",
+	  "type": "counter"
 	}
   ],
   "teleop": [
-    { "name": "Scored in Amp",
-      "code": "tsa",
+       { "name": "Coral Scored in trough",
+      "code": "asa",
       "type": "counter"
     },
-    { "name": "Attempted in Amp",
-      "code": "taa",
-	  "type": "counter"
-	},
-	{ "name": "Scored in Speaker",
-      "code": "tss",
+    { "name": "Coral Scored in L1",
+      "code": "aaa",
       "type": "counter"
     },
-	{ "name": "Attempted in Speaker",
-	  "code": "tas",
+    { "name": "Coral Scored in L2",
+      "code": "ass",
+      "type": "counter"
+    },
+	{ "name": "Coral Scored in L3",
+	  "code": "aas",
 	  "type": "counter"
 	},
-	{ "name": "Launched across field",
-	  "code": "laf",
+	 { "name": "Coral Scored in L4",
+	  "code": "aas",
+	  "type": "counter"
+	},
+  { "name": "Coral Missed",
+	  "code": "aas",
+	  "type": "counter"
+	},
+   { "name": "Algae Scored in Processor",
+	  "code": "aas",
+	  "type": "counter"
+	},
+ { "name": "Algae Scored in Net",
+	  "code": "aas",
+	  "type": "counter"
+	}, 
+ { "name": "Algae Missed ",
+	  "code": "aas",
 	  "type": "counter"
 	},
 	{ "name": "Who defended them?<br>(if not defended, ignore)",
