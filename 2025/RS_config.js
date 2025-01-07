@@ -147,7 +147,18 @@ var config_data = `
       "code": "tpu",
       "type": "radio",
       "choices": {
-        "s": "Source<br>",
+        "s": "HP Station <br>",
+        "f": "Floor<br>",
+        "b": "Both<br>",
+        "x": "Not Attempted"
+      },
+      "defaultValue": "x"
+    },
+      { "name": "Algae Pickup:",
+      "code": "tpu",
+      "type": "radio",
+      "choices": {
+        "s": "Reef <br>",
         "f": "Floor<br>",
         "b": "Both<br>",
         "x": "Not Attempted"
@@ -156,29 +167,18 @@ var config_data = `
     }
   ],
   "endgame": [
-    { "name": "Stage Timer",
-      "code": "dt",
-      "type": "timer"
-    },
     { "name": "Final Status",
       "code": "fs",
       "type":"radio",
       "choices": {
         "p": "Parked<br>",
-		    "o": "Onstage<br>",
-		    "h": "Harmony<br>",
-        "a": "Attempted but failed<br>",
+		    "o": "Shallow Climb<br>",
+		    "h": "Deep Climb<br>",
+      	    "o": "Failed Deep Climb<br>",
+		    "h": "Failed Shallow Climb<br>",
         "x": "Not attempted"
       },
       "defaultValue": "x"
-    },
-	{ "name": "Scored in Trap",
-      "code": "sit",
-      "type": "counter"
-    },
-	{ "name": "Attempted in Trap",
-      "code": "ait",
-      "type": "counter"
     }
   ],
   "postmatch": [
