@@ -24,6 +24,7 @@
     <li><a href="#faq">FAQ</a></li>
     <li><a href="#things-to-add">Things To Add Someday</a></li>
     <li><a href="#license">License</a></li>
+    <li><a href="#2025-changes">2025 Changes</a></li>
     <li><a href="#2024-changes">2024 Changes</a></li>
     <li><a href="#2023-changes">2023 Changes</a></li>
   </ol>
@@ -207,13 +208,25 @@ Note: The Auto Start (as) element is special in that it will only keep track of 
 ## License
 Distributed under the GNU GPL v3.0 License. See `LICENSE` for more information.
 
+<p align="right">(<a href="#top">back to top</a>)</p>
+<div id="2025-changes"></div>
+
+## 2025 Season Updates
+
+<details open>
+  <summary>2025 Season Updates</summary>
+  <ul>
+    <li>New configurations added for match and pit scouting as well as the new field image</li>
+    <li>Warning: Default dataFormat continues to be tab delimited (tsv)<br>This allows for easier Excel input.  No Excel macro needed.  Just put the cursor in Column A of a blank row and scan the QR code.  To switch back change the dataFormat configuration item from tsv to ksv.</li>
+  </ul>
+</details>
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 <div id="2024-changes"></div>
 
 ## 2024 Season Updates
 
-<details open>
+<details>
   <summary>2024 Season Updates</summary>
   <ul>
     <li>New configurations added for match and pit scouting as well as the new field image</li>
