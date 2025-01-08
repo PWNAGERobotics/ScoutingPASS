@@ -1,51 +1,51 @@
 var config_data = `
 {
     "dateFormat": "tsv",
-    "title": "Scouting PASS 2025", 
+    "title": "Scouting PASS 2025",
     "page_title": "Reefscape",
     "checkboxAs": "10",
     "prematch": [
         {
-            "name": "Scouter Initials", 
+            "name": "Scouter Initials",
             "code": "s",
+            "type": "scouter",
             "size": 5,
-            "maxSize": 5, 
+            "maxSize": 5,
             "required": "true"
         },
         {
-            "name": "Event", 
+            "name": "Event",
             "code": "e",
             "type": "event",
-            "defaultValue": "",
+            "defaultValue": "2023tnkn",
             "required": "true"
         },
         {
             "name": "Match Level",
             "code": "l",
             "type": "level",
-            "choices": 
-            {
+            "choices": {
                 "qm": "Quals<br>",
                 "sf": "Semifinals<br>",
                 "f": "Finals"
-            }
-            "defaultValue": "qm"
+            },
+            "defaultValue": "qm",
             "required": "true"
         },
-        { 
+        {
             "name": "Match #",
             "code": "m",
             "type": "match",
             "min": 1,
             "max": 150,
+            "defaultValue": 1,
             "required": "true"
         },
         {
             "name": "Robot",
             "code": "r",
             "type": "robot",
-            "choices": 
-            {
+            "choices": {
                 "r1": "Red-1",
                 "b1": "Blue-1<br>",
                 "r2": "Red-2",
@@ -53,7 +53,8 @@ var config_data = `
                 "r3": "Red-3",
                 "b3": "Blue-3"
             },
-            "required":"true"
+            "defaultValue": "r1",
+            "required": "true"
         },
         {
             "name": "Team #",
@@ -72,7 +73,7 @@ var config_data = `
         {
             "name": "Leave Starting Zone",
             "code": "al",
-            "type": bool"
+            "type": "bool"
         },
         {
             "name": "Coral L1 Scores",
@@ -140,7 +141,7 @@ var config_data = `
             "name": "Pickup Coral From",
             "code": "tcu",
             "type": "radio",
-            "choices" {
+            "choices": {
                 "s": "Source<br>",
                 "f": "Floor<br>",
                 "b": "Both<br>",
@@ -158,7 +159,7 @@ var config_data = `
                 "s": "Shallow<br>",
                 "d": "Deep<br>",
                 "x": "Not Attempted"
-            }
+            },
             "defaultValue": "x"
         }
     ],
@@ -170,7 +171,7 @@ var config_data = `
             "choices": {
                 "w": "Win<br>",
                 "l": "Lose<br>",
-                "t": "Tie<br>
+                "t": "Tie<br>"
             }
         },
         {
@@ -194,8 +195,8 @@ var config_data = `
             "type": "bool"
         },
         {
-            "name": "Dropped Game Pieces"
-            "code": "dgp"
+            "name": "Dropped Game Pieces",
+            "code": "dgp",
             "type": "bool"
         },
         {
