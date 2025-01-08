@@ -136,14 +136,14 @@ var config_data = `
       "code": "ebt",
       "type": "timer"
     },
-    { "name": "Final Status",
+    { "name": "Final<br>Status",
       "code": "efs",
       "type":"radio",
       "choices": {
         "bp": "Parked<br>",
+        "ba": "Parked, failed climb<br>",
         "bs": "Shallow Cage<br>",
         "bd": "Deep Cage<br>",
-        "ba": "Attempted but failed<br>",
         "x": "Not attempted"
       },
       "defaultValue": "x"
