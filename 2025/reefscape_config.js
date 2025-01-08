@@ -149,5 +149,67 @@ var config_data = `
         }
     ],
     "endgame": [
+        {
+            "name": "Final Status",
+            "code": "fs",
+            "type": "radio",
+            "choices": {
+                "p": "Parked<br>",
+                "s": "Shallow<br>",
+                "d": "Deep<br>",
+                "x": "Not Attempted"
+            }
+            "defaultValue": "x"
+        }
+    ],
+    "postmatch": [
+        {
+            "name": "Win or Lose",
+            "code": "wl",
+            "type": "radio",
+            "choices": {
+                "w": "Win<br>",
+                "l": "Lose<br>",
+                "t": "Tie<br>
+            }
+        },
+        {
+            "name": "Auto Ranking Point",
+            "code": "arp",
+            "type": "bool"
+        },
+        {
+            "name": "Coral Ranking Point",
+            "code": "crp",
+            "type": "bool"
+        },
+        {
+            "name": "Barge Ranking Point",
+            "code": "brp",
+            "type": "bool"
+        },
+        {
+            "name": "Immobilized",
+            "code": "i",
+            "type": "bool"
+        },
+        {
+            "name": "Dropped Game Pieces"
+            "code": "dgp"
+            "type": "bool"
+        },
+        {
+            "name": "Make a good<br>alliance partner?",
+            "tooltip": "Would you want this robot on your alliance in playoffs?",
+            "code": "all",
+            "type": "bool"
+        },
+        {
+            "name": "Comments",
+            "code": "co",
+            "type": "text",
+            "size": 15,
+            "maxSize": 55
+        }
     ]
 }`;
