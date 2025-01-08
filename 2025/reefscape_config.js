@@ -101,11 +101,53 @@ var config_data = `
         },
         {
             "name": "Algae Scores Net",
-            "code": "aat",
+            "code": "aan",
             "type": "counter"
         }
     ],
     "teleop": [
-        
+        {
+            "name": "Coral L1 Scores",
+            "code": "tc1",
+            "type": "counter"
+        },
+        {
+            "name": "Coral L2 Scores",
+            "code": "tc2",
+            "type": "counter"
+        },
+        {
+            "name": "Coral L3 Scores",
+            "code": "tc3",
+            "type": "counter"
+        },
+        {
+            "name": "Coral L4 Scores",
+            "code": "tc4",
+            "type": "counter"
+        },
+        {
+            "name": "Algae Scores Processor",
+            "code": "tap",
+            "type": "counter"
+        },
+        {
+            "name": "Algae Scores Net",
+            "code": "tan",
+            "type": "counter"
+        },
+        {
+            "name": "Pickup Coral From",
+            "code": "tcu",
+            "type": "radio",
+            "choices" {
+                "s": "Source<br>",
+                "f": "Floor<br>",
+                "b": "Both<br>",
+                "x": "Not Attempted"
+            }
+        }
+    ],
+    "endgame": [
     ]
 }`;
