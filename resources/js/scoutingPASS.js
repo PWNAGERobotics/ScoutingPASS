@@ -13,6 +13,7 @@ var slide = 0;
 var enableGoogleSheets = false;
 var pitScouting = false;
 var checkboxAs = 'YN';
+var ColWidth = '200px';
 
 // Options
 var options = {
@@ -151,12 +152,14 @@ function addTimer(table, idx, name, data) {
 function addCounter(table, idx, name, data) {
   var row = table.insertRow(idx);
   var cell1 = row.insertCell(0);
+  cell1.style.width = ColWidth;
   cell1.classList.add("title");
   if (!data.hasOwnProperty('code')) {
     cell1.innerHTML = `Error: No code specified for ${name}`;
     return idx + 1;
   }
   var cell2 = row.insertCell(1);
+  cell2.style.width = ColWidth;
   cell1.innerHTML = name + '&nbsp;';
   if (data.hasOwnProperty('tooltip')) {
     cell1.setAttribute("title", data.tooltip);
@@ -402,12 +405,14 @@ function addClickableImage(table, idx, name, data) {
 function addText(table, idx, name, data) {
   var row = table.insertRow(idx);
   var cell1 = row.insertCell(0);
+  cell1.style.width = ColWidth;
   cell1.classList.add("title");
   if (!data.hasOwnProperty('code')) {
     cell1.innerHTML = `Error: No code specified for ${name}`;
     return idx + 1;
   }
   var cell2 = row.insertCell(1);
+  cell2.style.width = ColWidth;
   cell1.innerHTML = name + '&nbsp;';
   if (data.hasOwnProperty('tooltip')) {
     cell1.setAttribute("title", data.tooltip);
@@ -455,12 +460,14 @@ function addText(table, idx, name, data) {
 function addNumber(table, idx, name, data) {
   var row = table.insertRow(idx);
   var cell1 = row.insertCell(0);
+  cell1.style.width = ColWidth;
   cell1.classList.add("title");
   if (!data.hasOwnProperty('code')) {
     cell1.innerHTML = `Error: No code specified for ${name}`;
     return idx + 1;
   }
   var cell2 = row.insertCell(1);
+  cell2.style.width = ColWidth;
   cell1.innerHTML = name + '&nbsp;';
   if (data.hasOwnProperty('tooltip')) {
     cell1.setAttribute("title", data.tooltip);
@@ -518,12 +525,14 @@ function addNumber(table, idx, name, data) {
 function addRadio(table, idx, name, data) {
   var row = table.insertRow(idx);
   var cell1 = row.insertCell(0);
+  cell1.style.width = ColWidth;
   cell1.classList.add("title");
   if (!data.hasOwnProperty('code')) {
     cell1.innerHTML = `Error: No code specified for ${name}`;
     return idx + 1;
   }
   var cell2 = row.insertCell(1);
+  cell2.style.width = ColWidth;
   cell1.innerHTML = name + '&nbsp;';
   if (data.hasOwnProperty('tooltip')) {
     cell1.setAttribute("title", data.tooltip);
@@ -577,6 +586,7 @@ function addRadio(table, idx, name, data) {
 function addCheckbox(table, idx, name, data) {
   var row = table.insertRow(idx);
   var cell1 = row.insertCell(0);
+  cell1.style.width = ColWidth;
   cell1.classList.add("title");
   if (!data.hasOwnProperty('code')) {
     cell1.innerHTML = `Error: No code specified for ${name}`;
@@ -584,6 +594,7 @@ function addCheckbox(table, idx, name, data) {
   }
   var cell2 = row.insertCell(1);
   cell1.innerHTML = name + '&nbsp;';
+  cell2.style.width = ColWidth;
   if (data.hasOwnProperty('tooltip')) {
     cell1.setAttribute("title", data.tooltip);
   }
@@ -675,6 +686,7 @@ function configure() {
     var table = document.getElementById("prematch_table")
     var row = table.insertRow(0);
     var cell1 = row.insertCell(0);
+	cell1.style.width = ColWidth;
     cell1.innerHTML = `Error parsing configuration file: ${err.message}<br><br>Use a tool like <a href="http://jsonlint.com/">http://jsonlint.com/</a> to help you debug your config file`
     return -1
   }
