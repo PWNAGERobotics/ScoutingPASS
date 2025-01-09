@@ -130,7 +130,7 @@ var config_data = `
       },
       "defaultValue": "x"
     },
-    { "name": "Scored in Opponent's Processor",
+    { "name": "Scored in Opponent Processor",
       "code": "opp",
       "type": "bool"
     }
