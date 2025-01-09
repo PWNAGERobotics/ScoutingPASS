@@ -15,6 +15,11 @@ html, body{
     background-color: black;
 }
 
+table.center {
+    margin-left:auto; 
+    margin-right:auto;
+  }
+
 #prematch_table, #postmatch_table {
 
     font-family : -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;

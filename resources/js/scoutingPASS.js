@@ -786,16 +786,18 @@ function validateData() {
   var errStr = "";
   for (rf of requiredFields) {
     var thisRF = document.forms.scoutingForm[rf];
-    if (thisRF.value == "[]" || thisRF.value.length == 0) {
-      if (rf == "as") {
-        rftitle = "Auto Start Position"
-      } else {
-        thisInputEl = thisRF instanceof RadioNodeList ? thisRF[0] : thisRF;
-        rftitle = thisInputEl.parentElement.parentElement.children[0].innerHTML.replace("&nbsp;","");
-      }
-      errStr += rf + ": " + rftitle + "\n";
-      ret = false;
-    }
+	if (typeof myObj !== 'undefined') {
+		if (thisRF.value == "[]" || thisRF.value.length == 0) {
+		  if (rf == "as") {
+			rftitle = "Auto Start Position"
+		  } else {
+			thisInputEl = thisRF instanceof RadioNodeList ? thisRF[0] : thisRF;
+			rftitle = thisInputEl.parentElement.parentElement.children[0].innerHTML.replace("&nbsp;","");
+		  }
+		  errStr += rf + ": " + rftitle + "\n";
+		  ret = false;
+		}
+	}
   }
   if (ret == false) {
     alert("Enter all required values\n" + errStr);
