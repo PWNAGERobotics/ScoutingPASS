@@ -130,7 +130,7 @@ var config_data = `
       },
       "defaultValue": "x"
     },
-    { "name": "Scored in Opponent Processor",
+    { "name": "Scored in<br>Opponent<br>Processor",
       "code": "opp",
       "type": "bool"
     }
@@ -140,12 +140,12 @@ var config_data = `
       "code": "ebt",
       "type": "timer"
     },
-    { "name": "Final Status",
+    { "name": "Final Robot Status",
       "code": "efs",
       "type":"radio",
       "choices": {
         "bp": "Parked<br>",
-        "ba": "Parked, failed climb<br>",
+        "ba": "Parked/Failed Climb<br>",
         "bs": "Shallow Cage<br>",
         "bd": "Deep Cage<br>",
         "x": "Not attempted"
