@@ -130,13 +130,17 @@ var config_data = `
       },
       "defaultValue": "x"
     }
+    { "name": "Scored in Opponent's Processor",
+      "code": "opp",
+      "type": "bool"
+    },
   ],
   "endgame": [
     { "name": "Barge Timer",
       "code": "ebt",
       "type": "timer"
     },
-    { "name": "Final<br>Status",
+    { "name": "Final Status",
       "code": "efs",
       "type":"radio",
       "choices": {
@@ -150,6 +154,17 @@ var config_data = `
     }
   ],
   "postmatch": [
+    { "name": "Attained Coopertition Pt",
+      "code": "cop",
+      "type": "bool"
+    },
+    { "name": "Algae Left in Reef",
+      "code": "alr",
+      "type": "number",
+      "min": 0,
+      "max": 9,
+      "defaultValue": 0
+    },
     { "name": "Driver Skill",
       "code": "ds",
       "type": "radio",
@@ -184,10 +199,6 @@ var config_data = `
         "5": "5 (fast)"
       },
       "defaultValue":"3"
-    },
-    { "name": "Attained Coopertition Pt",
-      "code": "cop",
-      "type": "bool"
     },
     { "name": "Died/Immobilized",
       "code": "die",
