@@ -133,7 +133,7 @@ var config_data = `
     { "name": "Scored in Opponent's Processor",
       "code": "opp",
       "type": "bool"
-    },
+    }
   ],
   "endgame": [
     { "name": "Barge Timer",
