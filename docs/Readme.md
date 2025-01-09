@@ -4,4 +4,4 @@
 
 ## [How to use Google Sheets with ScoutingPASS](GoogleSheets.md)
 
-## [Excel examples and VBA code](../docs)
+## [Scouting Heatmap Example (Excel)](Scouting_Heatmap_Example.xlsm)
