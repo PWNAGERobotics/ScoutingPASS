@@ -15,7 +15,7 @@
   <summary>Table of Contents</summary>
   <ol>
     <li><a href="#features">Features</a></li>
-    <li><a href="#live-demo">Live Demo</a></li>
+    <li><a href="#live-app">Live Application</a></li>
     <li><a href="#description">Description</a></li>
     <li><a href="#getting-started">Getting Started</a></li>
     <li><a href="#pit-scouting">Pit Scouting</a></li>
@@ -47,10 +47,10 @@
   * Details on how to use ScoutingPASS with Google Sheets spreadsheet
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-<div id="live-demo"></div>
+<div id="live-app"></div>
 
-## Live Demo
-This repository is hosted on GitHub Pages.  You can view a live version of it here: https://PWNAGERobotics.github.io/ScoutingPASS.  (You can host your ScoutingPASS application on GitHub Pages as well.)
+## Live Application
+This repository is hosted on GitHub Pages.  You can view a live version of it here: https://PWNAGERobotics.github.io/ScoutingPASS.  (You can host your version of the ScoutingPASS application on GitHub Pages as well.)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 <div id="description"></div>
@@ -90,7 +90,7 @@ The QR code can be read by a web camera or hand scanner to import the data into 
 ## Getting Started:
 It's really simple to get started:
 * Fork GitHub project (as public if you want to host on GitHub Pages)
-* Change configuration file (examples in [2023](2023) or [2024](2024) directories)
+* Change configuration file (REEFSCAPE example in [2025](2025) folder)
   * Change the data elements to capture (OPTIONAL: only if desired)
 * Enable GitHub Pages in your repository settings ([GitHub Pages Instructions](https://pages.github.com/))
 * Load page via GitHub pages (https://<your_username>.github.io/ScoutingPASS)
@@ -113,7 +113,7 @@ To access the pit scouting page, add '/pit.html' to the end of your URL.  (i.e. 
 
 It works almost exactly like the main scouting pages, except there is only one page of input.   Once your scouters have filled out the information, swipe left to display the QR code.   That QR code can be scanned to push the data to Excel.
 
-The default configuration file is 2024/crescendo_pit_config.js.   You can modify that configuration to meet your needs.
+The default configuration file is 2025/reefscape_pit_config.js.   You can modify that configuration to meet your needs.
 
 We realize that you may not want to lug your computer around the pits to scan each QR code.  Our recommendation is to have your scouters take screenshots of the QR codes.   Then when they are back to the scouting computer, just go through the photos to scan each QR code.
 
