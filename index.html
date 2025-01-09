@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang = "en">
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, maximum-scale=1.0">
 		<title>Scouting PASS</title>
@@ -17,62 +17,63 @@
 		<form id="scoutingForm" onsubmit="return false" name="scoutingForm">
 			<div id="main-panel-holder">
 				<div id="prematch" class="main-panel" style="background-color: black;">
-					<h1 id="prematchHeader1" class="page_title"><span class="odd">P</span><span class="even">W</span><span class="odd">N</span><span class="even">A</span><span class="odd">G</span><span class="even">E</span><br>Scouting 2020</h1>
-					<h2 id="prematchHeader2">pre-match</h2>
-					<p class="match-label"><input type="button" value="Next" id="nextButton1" onclick="swipePage(1)"></p>
-					<table id="prematch_table" style="font: Roboto">
+					<h1 id="prematchHeader2" align="center" class="title"><span class="odd">S</span><span class="even">P</span><span class="odd">A</span><span class="even">R</span><span class="odd">X</span><br>Scouting 2025</h1>
+					<!--h2 id="prematchHeader2" align="center" class="page_title"><span class="odd">P</span><span class="even">W</span><span class="odd">N</span><span class="even">A</span><span class="odd">G</span><span class="even">E</span><br>Scouting 2020</h2-->
+					<h3 id="prematchHeader3" align="center">Pre-Match</h3>
+					<p class="match-label" align="center"><input type="button" value="Next" id="nextButton1" onclick="swipePage(1)"></p>
+					<table id="prematch_table" style="font: Roboto" align="center">
 					<!-- ###PRE-MATCH-COMPONENTS###-->
 					</table>
-					<p class="match-label"><input type="button" value="Next" id="nextButton2" onclick="swipePage(1)"></p>
+					<p class="match-label" align="center"><input type="button" value="Next" id="nextButton2" onclick="swipePage(1)"  align="center"></p>
 				</div>
 
 				<div id="auton" class="main-panel" style="background-color: rgb(123, 168, 184);">
-					<h1 id="autonHeader1" class="page_title"><span class="odd">P</span><span class="even">W</span><span class="odd">n</span><span class="even">A</span><span class="odd">G</span><span class="even">E</span><br>Scouting 2020</h1>
-					<h2 id="autonHeader2">Auton</h2>
-					<p class="match-label"><input type="button" value="Prev" id="prevButton1" onclick="swipePage(-1)"><input type="button" value="Next" id="nextButton3" onclick="swipePage(1)"></p>
-					<table id="auton_table">
+					<h1 id="autonHeader1" align="center" class="page_title"><span class="odd">P</span><span class="even">W</span><span class="odd">n</span><span class="even">A</span><span class="odd">G</span><span class="even">E</span><br>Scouting 2020</h1>
+					<h2 id="autonHeader2" align="center">Auton</h2>
+					<p class="match-label" align="center"><input type="button" value="Prev" id="prevButton1" onclick="swipePage(-1)"><input type="button" value="Next" id="nextButton3" onclick="swipePage(1)"></p>
+					<table id="auton_table" align="center">
 					<!-- ###AUTON-COMPONENTS###-->
 					</table>
-					<p class="match-label"><input type="button" value="Prev" id="prevButton2" onclick="swipePage(-1)"> <input type="button" value="Next" id="nextButton4" onclick="swipePage(1)"></p>
+					<p class="match-label" align="center"><input type="button" value="Prev" id="prevButton2" onclick="swipePage(-1)"> <input type="button" value="Next" id="nextButton4" onclick="swipePage(1)"></p>
 				</div>
 
 				<div id="teleop" class="main-panel" style="background-color: rgb(175, 207, 163);">
-					<h1 id="teleopHeader1" class="page_title"><span class="odd">P</span><span class="even">W</span><span class="odd">n</span><span class="even">A</span><span class="odd">G</span><span class="even">E</span><br>Scouting 2020</h1>
-					<h2 id="teleopHeader2" >Teleop</h2>
-					<p class="match-label"><input type="button" value="Prev" id="prevButton3" onclick="swipePage(-1)"><input type="button" value="Next" id="nextButton5" onclick="swipePage(1)"></p>
-					<table id="teleop_table">
+					<h1 id="teleopHeader1" align="center" class="page_title"><span class="odd">P</span><span class="even">W</span><span class="odd">n</span><span class="even">A</span><span class="odd">G</span><span class="even">E</span><br>Scouting 2020</h1>
+					<h2 id="teleopHeader2" align="center">Teleop</h2>
+					<p class="match-label" align="center"><input type="button" value="Prev" id="prevButton3" onclick="swipePage(-1)"><input type="button" value="Next" id="nextButton5" onclick="swipePage(1)"></p>
+					<table id="teleop_table" align="center">
 						<!-- ###TELEOP-COMPONENTS###-->
 					</table>
-					<p class="match-label"><input type="button" value="Prev" id="prevButton4" onclick="swipePage(-1)"> <input type="button" value="Next" id="nextButton6" onclick="swipePage(1)"></p>
+					<p class="match-label" align="center"><input type="button" value="Prev" id="prevButton4" onclick="swipePage(-1)"> <input type="button" value="Next" id="nextButton6" onclick="swipePage(1)"></p>
 				</div>
 
 				<div id="endgame" class="main-panel" style="background-color: rgb(198, 186, 222);">
-					<h1 id="endgameHeader1" class="page_title"><span class="odd">P</span><span class="even">W</span><span class="odd">n</span><span class="even">A</span><span class="odd">G</span><span class="even">E</span><br>Scouting 2020</h1>
-					<h2 id="endgameHeader2">Endgame</h2>
-					<p class="match-label"><input type="button" value="Prev" id="prevButton5" onclick="swipePage(-1)"><input type="button" value="Next" id="nextButton7" onclick="swipePage(1)"></p>
-					<table id="endgame_table">
+					<h1 id="endgameHeader1" align="center" class="page_title"><span class="odd">P</span><span class="even">W</span><span class="odd">n</span><span class="even">A</span><span class="odd">G</span><span class="even">E</span><br>Scouting 2020</h1>
+					<h2 id="endgameHeader2" align="center">Endgame</h2>
+					<p class="match-label" align="center"><input type="button" value="Prev" id="prevButton5" onclick="swipePage(-1)"><input type="button" value="Next" id="nextButton7" onclick="swipePage(1)"></p>
+					<table id="endgame_table" align="center">
 						<!-- ###ENDGAME-COMPONENTS###-->
 					</table>
-					<p class="match-label"><input type="button" value="Prev" id="prevButton6" onclick="swipePage(-1)"> <input type="button" value="Next" id="nextButton8" onclick="swipePage(1)"></p>
+					<p class="match-label" align="center"><input type="button" value="Prev" id="prevButton6" onclick="swipePage(-1)"> <input type="button" value="Next" id="nextButton8" onclick="swipePage(1)"></p>
 				</div>
 
 				<div id="post-match" class="main-panel" style="background-color: rgb(89, 134, 168);">
-					<h1 id="postmatchHeader" class="page_title"><span class="odd">P</span><span class="even">W</span><span class="odd">n</span><span class="even">A</span><span class="odd">G</span><span class="even">E</span><br>Scouting 2020</h1>
+					<h1 id="postmatchHeader" align="center" class="page_title"><span class="odd">P</span><span class="even">W</span><span class="odd">n</span><span class="even">A</span><span class="odd">G</span><span class="even">E</span><br>Scouting 2020</h1>
 					<h2>Miscellaneous</h2>
-					<p class="match-label"><input type="button" value="Prev" id="prevButton7" onclick="swipePage(-1)"><input type="button" value="Next" id="nextButton9" onclick="swipePage(1)"></p>
-					<table id="postmatch_table">
+					<p class="match-label" align="center"><input type="button" value="Prev" id="prevButton7" onclick="swipePage(-1)"><input type="button" value="Next" id="nextButton9" onclick="swipePage(1)"></p>
+					<table id="postmatch_table" align="center">
 						<!-- ###POST-MATCH-COMPONENTS###-->
 					</table>
-					<p class="match-label"><input type="button" value="Prev" id="prevButton8" onclick="swipePage(-1)"> <input type="button" value="Next" id="nextButton10" onclick="swipePage(1)"></p>
+					<p class="match-label" align="center"><input type="button" value="Prev" id="prevButton8" onclick="swipePage(-1)"> <input type="button" value="Next" id="nextButton10" onclick="swipePage(1)"></p>
 				</div>
 
 				<div id="qr-code" class="main-panel" style="background-color: white;">
-					<h1 id="qrHeader1" class="page_title"><span class="odd">P</span><span class="even">W</span><span class="odd">n</span><span class="even">A</span><span class="odd">G</span><span class="even">E</span><br>Scouting 2020</h1>
-					<h2 id="qrHeader2">Generate QR Code</h2>
-					<p class="match-label"><input type="button" value="Prev" id="prevButton9" onclick="swipePage(-1)"></p>
-					<p id="qr-info"><span id="display_qr-info" style="border: none; text-align: center;"></span></p>
-					<table id="qr-table"><tr><td width="5%">&nbsp;</td><td width="90%">
-						<div id="qrcode" style="text-align:center">
+					<h1 id="qrHeader1" align="center" class="page_title"><span class="odd">P</span><span class="even">W</span><span class="odd">n</span><span class="even">A</span><span class="odd">G</span><span class="even">E</span><br>Scouting 2020</h1>
+					<h2 id="qrHeader2" align="center">Generate QR Code</h2>
+					<p class="match-label" align="center"><input type="button" value="Prev" id="prevButton9" onclick="swipePage(-1)"></p>
+					<p id="qr-info" align="center"><span id="display_qr-info" style="border: none; text-align: center;"></span></p>
+					<table id="qr-table" align="center"><tr><td width="5%">&nbsp;</td><td width="90%">
+						<div id="qrcode" style="text-align:center" align="center">
 							<script>
 						// Create QRCode Object
 								qr = new QRCode(document.getElementById("qrcode"), options)
@@ -86,11 +87,11 @@
 				</td><td width="5%">&nbsp;</td></tr>
 			</table>
 					<p></p>
-					<p class="match-label"><input type="button" value="Display Data" id="displayButton" onclick="displayData()"><input type="button" value="Copy Data" id="copyButton" onclick="copyData()"></p>
-					<div id="submitButton">
+					<p class="match-label" align="center"><input type="button" value="Display Data" id="displayButton" onclick="displayData()"><input type="button" value="Copy Data" id="copyButton" onclick="copyData()"></p>
+					<div id="submitButton" align="center">
 						<button id="submit" type="submit" class="submitForm">Send to Google Sheets</button>
 					</div>
-					<div id="clearButton">
+					<div id="clearButton" align="center">
 						<button type="button" class="clearForm" onclick="clearForm()">Clear Form</button>
 					</div>
 					<br>
