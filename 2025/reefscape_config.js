@@ -129,7 +129,7 @@ var config_data = `
         "x": "Not Attempted"
       },
       "defaultValue": "x"
-    }
+    },
     { "name": "Scored in Opponent's Processor",
       "code": "opp",
       "type": "bool"
