@@ -34,7 +34,7 @@
 
 # Features:
 ### **Configurable**
-  * A JSON configuration file controls the elements of the game to track.  Create a new configuration file each year for the new game, or tweak it week to week to refine your scouting.  No additional coding is needed.
+  * A JSON configuration file controls the elements of the game to track.  Create a new configuration file each year for the new game, or tweak it week to week to refine your scouting.  No additional coding is needed.  See the [Configuration Docs](docs/Configuration.md) for details.
 ### **Universal**
   * Works on any device that has a web browser that runs JavaScript.  Apple, Android, phones, tablets, laptops, it works on them all.
 ### **Low/No Bandwidth**
@@ -217,6 +217,7 @@ Distributed under the GNU GPL v3.0 License. See `LICENSE` for more information.
   <summary>2025 Season Updates</summary>
   <ul>
     <li>New configurations added for match and pit scouting as well as the new field image</li>
+    <li>Clean up files structure which was getting cluttered with all the years in the top folder.  See old configuration files in the archive folder.</li>
     <li>Warning: Default dataFormat continues to be tab delimited (tsv)<br>This allows for easier Excel input.  No Excel macro needed.  Just put the cursor in Column A of a blank row and scan the QR code.  To switch back change the dataFormat configuration item from tsv to ksv.</li>
   </ul>
 </details>
