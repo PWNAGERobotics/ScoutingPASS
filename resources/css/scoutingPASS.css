@@ -29,7 +29,6 @@ html, body{
 
 #auton_table, #endgame_table, #teleop_table {
     font-family : -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
-	text-align: center;
     color: black;
     font-size: 13px;
     font-style: bold;
@@ -47,25 +46,21 @@ html, body{
     color: black;
     border-color: black;
     border-width: 4px;
-	text-align: center;
 }
 
 #postmatchHeader{
     border-width: 4px;
     border-color: white;
-	text-align: center;
 }
 
 #prematchHeader1, #prematchHeader2{
     color: white;
     border-color: white;
     border-width: 4px;
-	text-align: center;
 }
 
 #qrHeader1, #qrHeader2 {
     color: black;
-	text-align: center;
 }
 
 .field-image {
@@ -197,19 +192,20 @@ h2{
 
 #prematch_table{
     font: Alexis;
+    text-align: center;
 }
 
 
 h1 .odd {
     font-family: Alexis;
     text-align: center;
-    color: #0000FF;
+    color: #0AB4EC;
 }
 
 h1 .even {
     font-family: Alexis;
     text-align: center;
-    color: #FF0000;
+    color: #42B333;
 }
 
 table {
