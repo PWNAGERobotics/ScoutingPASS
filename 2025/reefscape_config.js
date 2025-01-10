@@ -1,8 +1,8 @@
 var config_data = `
 {
   "dataFormat": "tsv",
-  "title": "Scouting PASS 2024",
-  "page_title": "Crescendo",
+  "title": "Scouting PASS 2025",
+  "page_title": "REEFSCAPE",
   "checkboxAs": "10",
   "prematch": [
     { "name": "Scouter Initials",
@@ -10,12 +10,12 @@ var config_data = `
       "type": "scouter",
       "size": 5,
       "maxSize": 5,
-      "required": "false"
+      "required": "true"
     },
     { "name": "Event",
       "code": "e",
       "type": "event",
-      "defaultValue": "2024alhu",
+      "defaultValue": "2025ilpe",
       "required": "true"
     },
     { "name": "Match Level",
@@ -58,76 +58,113 @@ var config_data = `
     { "name": "Auto Start Position",
       "code": "as",
       "type": "clickable_image",
-      "filename": "2024/field_image.png",
+      "filename": "2025/field_image.png",
       "clickRestriction": "one",
-      "allowableResponses": "1 12 13 24 25 36 37 48 49 60 61 72",
+      "allowableResponses": "6 7 18 19 30 31 42 43 54 55 66 67",
       "shape": "circle 5 black red true"
     }
   ],
   "auton": [
-    { "name": "Leave Starting Zone",
+    { "name": "Leave Starting Line",
       "code": "al",
       "type": "bool"
     },
-    { "name": "Amp Scores",
-      "code": "aas",
+    { "name": "Coral L1",
+      "code": "ac1",
       "type": "counter"
     },
-    { "name": "Speaker Scores",
-      "code": "ass",
+    { "name": "Coral L2",
+      "code": "ac2",
+      "type": "counter"
+    },
+    { "name": "Coral L3",
+      "code": "ac3",
+      "type": "counter"
+    },
+    { "name": "Coral L4",
+      "code": "ac4",
+      "type": "counter"
+    },
+    { "name": "Processor Score",
+      "code": "aps",
+      "type": "counter"
+    },
+    { "name": "Net Score",
+      "code": "ans",
       "type": "counter"
     }
   ],
   "teleop": [
-    { "name": "Amp Scores",
-      "code": "tas",
+    { "name": "Coral L1",
+      "code": "tc1",
       "type": "counter"
     },
-    { "name": "Speaker Scores",
-      "code": "tss",
+    { "name": "Coral L2",
+      "code": "tc2",
       "type": "counter"
     },
-    { "name": "Times Amplified",
-      "code": "tta",
+    { "name": "Coral L3",
+      "code": "tc3",
+      "type": "counter"
+    },
+    { "name": "Coral L4",
+      "code": "tc4",
+      "type": "counter"
+    },
+    { "name": "Processor Score",
+      "code": "tps",
+      "type": "counter"
+    },
+    { "name": "Net Score",
+      "code": "tns",
       "type": "counter"
     },
     { "name": "Pickup From",
       "code": "tpu",
       "type": "radio",
       "choices": {
-        "s": "Source<br>",
+        "s": "Coral Station<br>",
         "f": "Floor<br>",
         "b": "Both<br>",
         "x": "Not Attempted"
       },
       "defaultValue": "x"
-    }
-  ],
-  "endgame": [
-    { "name": "Stage Timer",
-      "code": "dt",
-      "type": "timer"
     },
-    { "name": "Final Status",
-      "code": "fs",
-      "type":"radio",
-      "choices": {
-        "p": "Parked<br>",
-        "o": "Onstage<br>",
-        "s": "Onstage (Spotlit)<br>",
-        "h": "Harmony<br>",
-        "hs": "Harmony (Spotlit)<br>",
-        "a": "Attempted but failed<br>",
-        "x": "Not attempted"
-      },
-      "defaultValue": "x"
-    },
-    { "name": "Note in Trap",
-      "code": "nit",
+    { "name": "Scored in Opponent Processor",
+      "code": "opp",
       "type": "bool"
     }
   ],
+  "endgame": [
+    { "name": "Barge Timer",
+      "code": "ebt",
+      "type": "timer"
+    },
+    { "name": "Final Status",
+      "code": "efs",
+      "type":"radio",
+      "choices": {
+        "bp": "Parked<br>",
+        "ba": "Parked, failed climb<br>",
+        "bs": "Shallow Cage<br>",
+        "bd": "Deep Cage<br>",
+        "x": "Not attempted"
+      },
+      "defaultValue": "x"
+    }
+  ],
   "postmatch": [
+    { "name": "Attained Coopertition Pt",
+      "code": "cop",
+      "type": "bool"
+    },
+    { "name": "Algae Left in Reef",
+      "code": "alr",
+      "type": "number",
+      "min": 0,
+      "max": 9,
+      "defaultValue": 0
+    },
     { "name": "Driver Skill",
       "code": "ds",
       "type": "radio",
@@ -171,8 +208,12 @@ var config_data = `
       "code": "tip",
       "type": "bool"
     },
-    { "name": "Dropped Notes (>2)",
-      "code": "dn",
+    { "name": "Dropped Coral (>2)",
+      "code": "dc",
+      "type": "bool"
+    },
+    { "name": "Dropped Algae (>2)",
+      "code": "da",
       "type": "bool"
     },
     { "name": "Make good<br>alliance partner?",
