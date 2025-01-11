@@ -208,13 +208,16 @@ var config_data = `
       "code": "tip",
       "type": "bool"
     },
-    { "name": "Dropped Coral (>2)",
-      "code": "dc",
-      "type": "bool"
-    },
-    { "name": "Dropped Algae (>2)",
-      "code": "da",
-      "type": "bool"
+    { "name": "Dropped Game Piece (>2)/Piece",
+      "code": "dp",
+      "type": "radio",
+      "choices": {
+        "c": "Coral<br>",
+        "a": "Algae<br>",
+        "b": "Both<br>",
+        "x": "None dropped"
+      },
+      "defaultValue": "x"
     },
     { "name": "Make good<br>alliance partner?",
       "tooltip": "Would you want this robot on your alliance in eliminations?",
