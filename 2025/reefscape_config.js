@@ -10,13 +10,13 @@ var config_data = `
       "type": "scouter",
       "size": 5,
       "maxSize": 5,
-      "required": "true"
+      "required": "false"
     },
     { "name": "Event",
       "code": "e",
       "type": "event",
       "defaultValue": "2025ilpe",
-      "required": "true"
+      "required": "false"
     },
     { "name": "Match Level",
       "code": "l",
@@ -27,14 +27,14 @@ var config_data = `
         "f": "Finals"
       },
       "defaultValue": "qm",
-      "required": "true"
+      "required": "false"
     },
     { "name": "Match #",
       "code": "m",
       "type": "match",
       "min": 1,
       "max": 150,
-      "required": "true"
+      "required": "false"
     },
     { "name": "Robot",
       "code": "r",
