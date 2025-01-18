@@ -165,7 +165,7 @@ var config_data = `
       "max": 9,
       "defaultValue": 0
     },
-    { "name": "Driver Skill",
+    { "name": "Driver Rating",
       "code": "ds",
       "type": "radio",
       "choices": {
