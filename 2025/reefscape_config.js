@@ -65,7 +65,7 @@ var config_data = `
     }
   ],
   "auton": [
-    { "name": "Leave Starting Line",
+    { "name": "Leave Start",
       "code": "al",
       "type": "bool"
     },
@@ -89,8 +89,25 @@ var config_data = `
       "code": "aps",
       "type": "counter"
     },
-    { "name": "Net Score",
+    { "name": "Net Scores",
       "code": "ans",
+      "type": "counter"
+    },
+    { "name": "Net Misses",
+      "code": "anm",
+      "type": "counter"
+    },
+    { "name": "Pickup Method",
+      "code": "apu",
+      "type": "radio",
+      "choices": {
+        "f": "Floor<br>",
+        "x": "Not Attempted"
+      },
+      "defaultValue": "x" 
+    },
+    { "name": "Removed Algae",
+      "code": "AlgaeRemovedAuto",
       "type": "counter"
     }
   ],
@@ -115,11 +132,15 @@ var config_data = `
       "code": "tps",
       "type": "counter"
     },
-    { "name": "Net Score",
+    { "name": "Net Scores",
       "code": "tns",
       "type": "counter"
     },
-    { "name": "Pickup From",
+    { "name": "Net Misses",
+      "code": "tnm",
+      "type": "counter"
+    },
+    { "name": "Pickup Method",
       "code": "tpu",
       "type": "radio",
       "choices": {
@@ -127,12 +148,11 @@ var config_data = `
         "f": "Floor<br>",
         "b": "Both<br>",
         "x": "Not Attempted"
-      },
-      "defaultValue": "x"
+      }
     },
-    { "name": "Scored in<br>Opponent<br>Processor",
-      "code": "opp",
-      "type": "bool"
+    { "name": "Algae Removed",
+      "code": "AlgaeRemovedTeleop",
+      "type": "counter"
     }
   ],
   "endgame": [
@@ -154,52 +174,40 @@ var config_data = `
     }
   ],
   "postmatch": [
-    { "name": "Attained Coopertition Pt",
+    { "name": "Attained Coopertition Point",
       "code": "cop",
       "type": "bool"
     },
-    { "name": "Algae Left in Reef",
-      "code": "alr",
-      "type": "number",
-      "min": 0,
-      "max": 9,
-      "defaultValue": 0
-    },
-    { "name": "Driver Skill",
-      "code": "ds",
-      "type": "radio",
-      "choices": {
-        "n": "Not Effective<br>",
-        "a": "Average<br>",
-        "v": "Very Effective<br>",
-        "x": "Not Observed"
-      },
-      "defaultValue": "x"
+    {"name": "Spent at least half of the match playing defense",
+      "code": "RobotPlayedHeavyDefenseInMatch",
+      "type": "bool"
     },
     { "name": "Defense Rating",
-      "code": "dr",
+      "code": "DefenseRatingInMatch",
       "type": "radio",
       "choices": {
-        "b": "Below Average<br>",
-        "a": "Average<br>",
-        "g": "Good<br>",
-        "e": "Excellent<br>",
-        "x": "Did not play defense"
-      },
-      "defaultValue": "x"
-    },
-    { "name": "Speed Rating",
-      "code": "sr",
-      "type": "radio",
-      "choices": {
-        "1": "1 (slow)<br>",
-        "2": "2<br>",
-        "3": "3<br>",
+        "5": "5(Very Effective)",
         "4": "4<br>",
-        "5": "5 (fast)"
+        "3": "3(Average)<br>",
+        "2": "2<br>",
+        "1": "1(Not Effective)<br>",
+        "0": "0(Not Observed)<br>"
       },
-      "defaultValue":"3"
+      "defaultValue": "0"
     },
+    { "name": "Driver Skill",
+    "code": "DriverSkillInMatch",
+    "type": "radio",
+    "choices": {
+      "5": "5(Very Effective)",
+      "4": "4<br>",
+      "3": "3(Average)<br>",
+      "2": "2<br>",
+      "1": "1(Not Effective)<br>",
+      "0": "0(Not Observed)<br>"
+    },
+    "defaultValue": "0"
+  },
     { "name": "Died/Immobilized",
       "code": "die",
       "type": "bool"
@@ -212,10 +220,6 @@ var config_data = `
       "code": "dc",
       "type": "bool"
     },
-    { "name": "Dropped Algae (>2)",
-      "code": "da",
-      "type": "bool"
-    },
     { "name": "Make good<br>alliance partner?",
       "tooltip": "Would you want this robot on your alliance in eliminations?",
       "code": "all",
@@ -225,7 +229,7 @@ var config_data = `
       "code": "co",
       "type": "text",
       "size": 15,
-      "maxSize": 55
+      "maxSize": 220
     }
   ]
 }`;
