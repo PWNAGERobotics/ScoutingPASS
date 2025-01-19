@@ -949,8 +949,8 @@ function clearForm() {
 
     // Don't clear key fields
     if (code == "m") continue
-    if (code.substring(0, 2) == "r_") continue
-    if (code.substring(0, 2) == "l_") continue
+    if (code.substring(0, 2) == "input_r_") continue
+    if (code.substring(0, 2) == "input_l_") continue
     if (code == "e") continue
     if (code == "s") continue
 
