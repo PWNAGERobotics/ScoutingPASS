@@ -946,14 +946,14 @@ function clearForm() {
   inputs = document.querySelectorAll("[id*='input_']");
   for (e of inputs) {
     code = e.id.substring(6)
-
+    print(code)
     // Don't clear key fields
     if (code == "m") continue
-    if (code.substring(0, 2) == "input_r_") continue
-    if (code.substring(0, 2) == "input_l_") continue
+    if (code.substring(0, 2) == "r_") continue
+    if (code.substring(0, 2) == "l_") continue
     if (code == "e") continue
     if (code == "s") continue
-
+    print("not skipped")
     if (e.className == "clickableImage") {
       e.value = "[]";
       continue;
