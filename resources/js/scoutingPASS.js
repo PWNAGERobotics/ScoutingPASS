@@ -947,6 +947,7 @@ function clearForm() {
   for (e of inputs) {
     code = e.id.substring(6)
     console.log(code)
+    console.log(document.getElementById("display_r").value)
     // Don't clear key fields
     if (code == "m") continue
     if (code.substring(0, 2) == "r_") continue
