@@ -1,5 +1,5 @@
 Attribute VB_Name = "QRReader"
-
+//Not updated
 Sub Save1QR()
     saveData (getInput())
     ActiveWorkbook.Save
