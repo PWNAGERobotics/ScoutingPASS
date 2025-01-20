@@ -65,48 +65,40 @@ var config_data = `
 	  "code": "al",
 	  "type": "bool"
 	},
-    { "name": "Coral Scored in trough",
-      "code": "asa",
-      "type": "counter"
-    },
     { "name": "Coral Scored in L1",
-      "code": "aaa",
+      "code": "aon",
       "type": "counter"
     },
     { "name": "Coral Scored in L2",
-      "code": "ass",
+      "code": "atw",
       "type": "counter"
     },
 	{ "name": "Coral Scored in L3",
-	  "code": "aas",
+	  "code": "ath",
 	  "type": "counter"
 	},
 	 { "name": "Coral Scored in L4",
-	  "code": "aas",
+	  "code": "afo",
 	  "type": "counter"
 	},
   { "name": "Coral Missed",
-	  "code": "aas",
+	  "code": "acm",
 	  "type": "counter"
 	},
    { "name": "Algae Scored in Processor",
-	  "code": "aas",
+	  "code": "aap",
 	  "type": "counter"
 	},
  { "name": "Algae Scored in Net",
-	  "code": "aas",
+	  "code": "aan",
 	  "type": "counter"
 	}, 
  { "name": "Algae Missed ",
-	  "code": "aas",
+	  "code": "aaM",
 	  "type": "counter"
 	}
   ],
   "teleop": [
-       { "name": "Coral Scored in trough",
-      "code": "asa",
-      "type": "counter"
-    },
     { "name": "Coral Scored in L1",
       "code": "aaa",
       "type": "counter"
