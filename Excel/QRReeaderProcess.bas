@@ -77,11 +77,14 @@ Sub saveData(inp As String)
     ' 2023 Fields
     ' Auto
     mapper.add "as", "autoStartingLocation"
-    mapper.add "asg", "autoScoredGrid"
-    mapper.add "acc", "autoCrossedCable"
-    mapper.add "acs", "autoCrossedChargingStation"
-    mapper.add "am", "autoMobility"
-    mapper.add "ad", "autoDocked"
+    mapper.add "aon", "autoCoralLOne"
+    mapper.add "atw", "autoCoralLTwo"
+    mapper.add "ath", "autoCoralLThree"
+    mapper.add "afo", "autoCoralLFour"
+    mapper.add "acm", "autoCoralMissed"
+    mapper.add "aap", "autoAlgaeProcessor"
+    mapper.add "aan", "autoAlgaeNet"
+    mapper.add "aam", "autoAlgaeMissed"
     
     ' Teleop
     mapper.add "tct", "cycleTimes"
