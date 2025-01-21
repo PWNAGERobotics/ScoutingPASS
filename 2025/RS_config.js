@@ -166,7 +166,6 @@ var config_data = `
         "p": "Parked<br>",
 	"o": "Shallow Climb<br>",
 	"h": "Deep Climb<br>",
- // failed climb isnt working for some reason
       	"o": "Failed Deep Climb<br>",
 	"h": "Failed Shallow Climb<br>",
         "x": "Not attempted<br>"
