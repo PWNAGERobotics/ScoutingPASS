@@ -159,31 +159,27 @@ var config_data = `
     }
   ],
   "endgame": [
-    { "name": "Final Status",
-      "code": "fs",
-      "type":"radio",
+    { "name": "Final Position",
+      "code": "fp",
+      "type": "radio",
       "choices": {
-        "p": "Parked<br>",
-		    "o": "Shallow Climb<br>",
-		    "h": "Deep Climb<br>",
-      	    "o": "Failed Deep Climb<br>",
-		    "h": "Failed Shallow Climb<br>",
-        "x": "Not attempted"
+        "b": "Shallow Climb<br>",
+        "a": "Deep Climb<br>",
+        "g": "Failed Shallow Climb<br>",
+        "e": "Failed Deep Climb<br>",
+        "x": "Parked<br>",
+	 "x": "Not in Barge Zone<br>"
       },
-      "defaultValue": "x"
-    },
-     { "name": "Time to Climb",
-      "code": "fs",
-      "type":"radio",
+          { "name": "Time To Climb",
+      "code": "tc",
+      "type": "radio",
       "choices": {
-        "p": "Parked<br>",
-		    "o": "First Try ~5 Sec<br>",
-		    "h": "Solid Climb ~10 Secbr>",
-      	    "o": "Struggled ~12 Sec<br>",
-        "x": "Didnt Climb"
-      },
-      "defaultValue": "x"
-    }
+        "b": "Long<br>",
+        "a": "Avarage<br>",
+        "g": "Short<br>",
+        "e": "Didnt Climb<br>",
+        "x": "Failed Climb"
+      }
   ],
   "postmatch": [
     { "name": "Defense Rating",
