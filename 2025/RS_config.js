@@ -170,9 +170,12 @@ var config_data = `
         "x": "Parked<br>",
 	 "x": "Not in Barge Zone<br>"
       },
+"defaultValue": "x"
+       },
           { "name": "Time To Climb",
       "code": "tc",
       "type": "radio",
+       }
       "choices": {
         "b": "Long<br>",
         "a": "Avarage<br>",
