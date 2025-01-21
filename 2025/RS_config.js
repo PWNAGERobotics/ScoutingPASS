@@ -164,10 +164,10 @@ var config_data = `
       "type":"radio",
       "choices": {
         "p": "Parked<br>",
-		    "o": "Shallow Climb<br>",
-		    "h": "Deep Climb<br>",
-      	    "o": "Failed Deep Climb<br>",
-		    "h": "Failed Shallow Climb<br>",
+	"o": "Shallow Climb<br>",
+	"h": "Deep Climb<br>",
+      	"o": "Failed Deep Climb<br>",
+	"h": "Failed Shallow Climb<br>",
         "x": "Not attempted<br>"
       },
       "defaultValue": "x"
@@ -180,7 +180,7 @@ var config_data = `
 		    "o": "First Try ~5 Sec<br>",
 		    "h": "Solid Climb ~10 Secbr>",
       	    "o": "Struggled ~12 Sec<br>",
-        "x": "Didnt Climb"
+        "x": "Didnt Climb<br>"
       },
       "defaultValue": "x"
     }
