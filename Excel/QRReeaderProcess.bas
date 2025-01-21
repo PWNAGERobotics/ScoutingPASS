@@ -102,6 +102,8 @@ Sub saveData(inp As String)
    // mapper.add "dt", "dockingTime"
  //   mapper.add "fs", "finalState"
   //  mapper.add "dn", "numOfRobotsDocked"
+    mapper.add "fp", "finalPosition"
+    mapper.add "tc", "timeToClimb"
     
     'Endgame
     mapper.add "ds", "driverSkill"
