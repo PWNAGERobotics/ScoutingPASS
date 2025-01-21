@@ -392,11 +392,6 @@ function addClickableImage(table, idx, name, data) {
   cell.setAttribute("colspan", 2);
   var img = document.createElement('img');
   img.src = data.filename;
-  var imgWidth = img.clientWidth;
-  var imgHeight = img.clientHeight;
-  var ctx = canvas.getContext('2d');
-  ctx.canvas.width = window.innerWidth;
-  ctx.canvas.height = imgHeight * window.innerWidth / imgWidth;
   img.setAttribute("id", "img_" + data.code);
   img.setAttribute("class", "field-image-src");
   img.setAttribute("onload", "drawFields()");
@@ -1062,8 +1057,16 @@ function drawFields(name) {
     var shape = document.getElementById("shape_" + code);
     let shapeArr = shape.value.split(' ');
     var ctx = f.getContext("2d");
+    var imgWidth = img.clientWidth;
+    var imgHeight = img.clientHeight;
+    let scale_factor = Math.min(ctx.canvas.width / img.width, ctx.canvas.height / img.height);
+    let newWidth = img.width * scale_factor;
+    let newHeight = img.height * scale_factor;
+    let x = (ctx.canvas.width / 2) - (newWidth / 2);
+    let y = (ctx.canvas.height / 2) - (newHeight / 2);
     ctx.clearRect(0, 0, f.width, f.height);
-    ctx.drawImage(img, 0, 0, f.width, f.height);
+    #ctx.drawImage(img, 0, 0, f.width, f.height);
+    ctx.drawImage(img, x, y, newWidth, newHeight);
 
     var xyStr = document.getElementById("XY_" + code).value
     if (JSON.stringify(xyStr).length > 2) {
