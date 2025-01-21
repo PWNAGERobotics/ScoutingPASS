@@ -177,7 +177,7 @@ var config_data = `
       "type":"radio",
       "choices": {
 		    "o": "First Try ~5 Sec<br>",
-		    "h": "Solid Climb ~10 Secbr>",
+		    "h": "Solid Climb ~10 Sec<br>",
       	    "l": "Struggled ~12 Sec<br>",
         "x": "Didnt Climb<br>"
       },
