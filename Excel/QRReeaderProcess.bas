@@ -98,11 +98,10 @@ Sub saveData(inp As String)
     mapper.add "tam", "teleAlgaeMissed"
     mapper.add "who", "whoDefended"
    // mapper.add "lnk", "smartLinks"
-    mapper.add "fpu", "floorPickUp"
-// i have no idea how pickup choices work
-    mapper.add "dt", "dockingTime"
-    mapper.add "fs", "finalState"
-    mapper.add "dn", "numOfRobotsDocked"
+    mapper.add "tpu", "floorPickUp"
+   // mapper.add "dt", "dockingTime"
+ //   mapper.add "fs", "finalState"
+  //  mapper.add "dn", "numOfRobotsDocked"
     
     'Endgame
     mapper.add "ds", "driverSkill"
