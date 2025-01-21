@@ -392,6 +392,11 @@ function addClickableImage(table, idx, name, data) {
   cell.setAttribute("colspan", 2);
   var img = document.createElement('img');
   img.src = data.filename;
+  var imgWidth = img.clientWidth;
+  var imgHeight = img.clientHeight;
+  var ctx = canvas.getContext('2d');
+  ctx.canvas.width = window.innerWidth;
+  ctx.canvas.height = imgHeight * window.innerWidth / imgWidth;
   img.setAttribute("id", "img_" + data.code);
   img.setAttribute("class", "field-image-src");
   img.setAttribute("onload", "drawFields()");
