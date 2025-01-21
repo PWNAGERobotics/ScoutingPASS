@@ -1065,7 +1065,7 @@ function drawFields(name) {
     let x = (ctx.canvas.width / 2) - (newWidth / 2);
     let y = (ctx.canvas.height / 2) - (newHeight / 2);
     ctx.clearRect(0, 0, f.width, f.height);
-    #ctx.drawImage(img, 0, 0, f.width, f.height);
+    //ctx.drawImage(img, 0, 0, f.width, f.height);
     ctx.drawImage(img, x, y, newWidth, newHeight);
 
     var xyStr = document.getElementById("XY_" + code).value
