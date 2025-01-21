@@ -164,8 +164,8 @@ var config_data = `
       "type":"radio",
       "choices": {
         "p": "Parked<br>",
-	"o": "Shallow Climb<br>",
-	"h": "Deep Climb<br>",
+	"j": "Shallow Climb<br>",
+	"g": "Deep Climb<br>",
       	"o": "Failed Deep Climb<br>",
 	"h": "Failed Shallow Climb<br>",
         "x": "Not attempted<br>"
@@ -173,12 +173,12 @@ var config_data = `
       "defaultValue": "x"
     },
      { "name": "Time to Climb",
-      "code": "fs",
+      "code": "tc",
       "type":"radio",
       "choices": {
 		    "o": "First Try ~5 Sec<br>",
 		    "h": "Solid Climb ~10 Secbr>",
-      	    "o": "Struggled ~12 Sec<br>",
+      	    "l": "Struggled ~12 Sec<br>",
         "x": "Didnt Climb<br>"
       },
       "defaultValue": "x"
