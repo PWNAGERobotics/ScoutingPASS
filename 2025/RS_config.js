@@ -159,19 +159,32 @@ var config_data = `
     }
   ],
   "endgame":[
-    { "name": "How did they Climb",
-      "code": "dr",
-      "type": "radio",
+   { "name": "Final Status",
+      "code": "fs",
+      "type":"radio",
       "choices": {
-        "b": "Below Average (the thought was there)<br>",
-        "a": "Average (got in the way from time to time)<br>",
-        "g": "Good (was very annoying)<br>",
-        "e": "Excellent (An absolute menace)<br>",
-        "x": "Did not play defense"
+        "p": "Parked<br>",
+		    "o": "Shallow Climb<br>",
+		    "h": "Deep Climb<br>",
+      	    "o": "Failed Deep Climb<br>",
+		    "h": "Failed Shallow Climb<br>",
+        "x": "Not attempted<br>"
+      },
+      "defaultValue": "x"
+    },
+     { "name": "Time to Climb",
+      "code": "fs",
+      "type":"radio",
+      "choices": {
+        "p": "Parked<br>",
+		    "o": "First Try ~5 Sec<br>",
+		    "h": "Solid Climb ~10 Secbr>",
+      	    "o": "Struggled ~12 Sec<br>",
+        "x": "Didnt Climb"
       },
       "defaultValue": "x"
     }
-  ]
+  ],
   "postmatch": [
     { "name": "Defense Rating",
       "code": "dr",
