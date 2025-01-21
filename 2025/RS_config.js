@@ -158,31 +158,19 @@ var config_data = `
       "defaultValue": "x"
     }
   ],
-  "endgame": [
-    { "name": "Final Position",
-      "code": "fp",
+  "endgame":[
+    { "name": "How did they Climb",
+      "code": "dr",
       "type": "radio",
       "choices": {
-        "b": "Shallow Climb<br>",
-        "a": "Deep Climb<br>",
-        "g": "Failed Shallow Climb<br>",
-        "e": "Failed Deep Climb<br>",
-        "x": "Parked<br>",
-	 "x": "Not in Barge Zone<br>"
+        "b": "Below Average (the thought was there)<br>",
+        "a": "Average (got in the way from time to time)<br>",
+        "g": "Good (was very annoying)<br>",
+        "e": "Excellent (An absolute menace)<br>",
+        "x": "Did not play defense"
       },
-"defaultValue": "x"
-       },
-          { "name": "Time To Climb",
-      "code": "tc",
-      "type": "radio",
-       }
-      "choices": {
-        "b": "Long<br>",
-        "a": "Avarage<br>",
-        "g": "Short<br>",
-        "e": "Didnt Climb<br>",
-        "x": "Failed Climb"
-      }
+      "defaultValue": "x"
+    }
   ]
   "postmatch": [
     { "name": "Defense Rating",
