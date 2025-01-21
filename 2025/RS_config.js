@@ -100,38 +100,38 @@ var config_data = `
   ],
   "teleop": [
     { "name": "Coral Scored in L1",
-      "code": "aaa",
+      "code": "ton",
       "type": "counter"
     },
     { "name": "Coral Scored in L2",
-      "code": "ass",
+      "code": "ttw",
       "type": "counter"
     },
 	{ "name": "Coral Scored in L3",
-	  "code": "aas",
+	  "code": "tth",
 	  "type": "counter"
 	},
 	 { "name": "Coral Scored in L4",
-	  "code": "aas",
+	  "code": "tfo",
 	  "type": "counter"
 	},
   { "name": "Coral Missed",
-	  "code": "aas",
+	  "code": "tcm",
 	  "type": "counter"
 	},
    { "name": "Algae Scored in Processor",
-	  "code": "aas",
+	  "code": "tap",
 	  "type": "counter"
 	},
  { "name": "Algae Scored in Net",
-	  "code": "aas",
+	  "code": "tan",
 	  "type": "counter"
 	}, 
  { "name": "Algae Missed ",
-	  "code": "aas",
+	  "code": "tam",
 	  "type": "counter"
 	},
-	{ "name": "Who defended them?<br>(if not defended, ignore)",
+	{ "name": "Where they defended<br>",
 	  "code": "wdt",
 	  "type": "text"
 	},
