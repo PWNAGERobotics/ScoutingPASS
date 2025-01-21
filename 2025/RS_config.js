@@ -183,7 +183,7 @@ var config_data = `
         "e": "Didnt Climb<br>",
         "x": "Failed Climb"
       }
-  ],
+  ]
   "postmatch": [
     { "name": "Defense Rating",
       "code": "dr",
