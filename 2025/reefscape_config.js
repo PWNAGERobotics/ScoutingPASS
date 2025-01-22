@@ -91,7 +91,7 @@ var config_data = `
       "type": "clickable_image",
       "filename": "2025/reef.png",
       "dimensions": "6 6",
-      "allowableResponses": "1 2 3 4 5 6 7 8 11 12 13 18 19 24 25 26 29 30 31 32 33 34 35 36",
+      "allowableResponses": "1 2 3 4 5 6 7 8 9 10 11 12 13 14 17 18 19 20 23 24 25 26 27 28 29 30 31 32 33 34 35 36",
       "shape": "circle 5 black red true"
     },
     { "name": "Processor Score",
