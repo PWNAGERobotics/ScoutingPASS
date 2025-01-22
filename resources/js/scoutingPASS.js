@@ -1058,14 +1058,21 @@ function drawFields(name) {
     let shapeArr = shape.value.split(' ');
     var ctx = f.getContext("2d");
     var imgWidth = img.clientWidth;
+    console.log("imgWidth = "+imgWidth)
     var imgHeight = img.clientHeight;
+    console.log("imgHeight = "+imgHeight)
+    console.log("ctx.canvas.width = " + ctx.canvas.width)
+    console.log("ctx.canvas.height = " + ctx.canvas.height)
     let scale_factor = Math.min(ctx.canvas.width / img.width, ctx.canvas.height / img.height);
+    console.log("scale_factor = "+scale_factor)
     let newWidth = img.width * scale_factor;
+    console.log("newWidth = "+newWidth)
     let newHeight = img.height * scale_factor;
+    console.log("newHeight = "+newHeight)
     let x = (ctx.canvas.width / 2) - (newWidth / 2);
+    console.log("x = "+x)
     let y = (ctx.canvas.height / 2) - (newHeight / 2);
-    console.log(newWidth)
-    console.log(newHeight)
+    console.log("y = "+y)
     ctx.canvas.width = newWidth
     ctx.canvas.height = newHeight
     ctx.clearRect(x, y, newWidth, newHeight);
