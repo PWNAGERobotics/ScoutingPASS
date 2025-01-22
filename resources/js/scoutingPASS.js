@@ -1054,12 +1054,13 @@ function drawFields(name) {
   for (f of fields) {
     code = f.id.substring(7);
     var img = document.getElementById("img_" + code);
+    console.log("Drawing image: img_" + code)
     var shape = document.getElementById("shape_" + code);
     let shapeArr = shape.value.split(' ');
     var ctx = f.getContext("2d");
-    var imgWidth = img.clientWidth;
+    var imgWidth = img.width;
     console.log("imgWidth = "+imgWidth)
-    var imgHeight = img.clientHeight;
+    var imgHeight = img.height;
     console.log("imgHeight = "+imgHeight)
     console.log("ctx.canvas.width = " + ctx.canvas.width)
     console.log("ctx.canvas.height = " + ctx.canvas.height)
