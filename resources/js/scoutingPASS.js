@@ -1073,8 +1073,8 @@ function drawFields(name) {
     console.log("x = "+x)
     let y = (ctx.canvas.height / 2) - (newHeight / 2);
     console.log("y = "+y)
-    ctx.canvas.width = newWidth
-    ctx.canvas.height = newHeight
+    //ctx.canvas.width = newWidth
+    //ctx.canvas.height = newHeight
     ctx.clearRect(x, y, newWidth, newHeight);
     //ctx.drawImage(img, 0, 0, f.width, f.height);
     ctx.drawImage(img, x, y, newWidth, newHeight);
