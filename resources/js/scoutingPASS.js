@@ -1064,6 +1064,8 @@ function drawFields(name) {
     let newHeight = img.height * scale_factor;
     let x = (ctx.canvas.width / 2) - (newWidth / 2);
     let y = (ctx.canvas.height / 2) - (newHeight / 2);
+    console.log(newWidth)
+    console.log(newHeight)
     ctx.canvas.width = newWidth
     ctx.canvas.height = newHeight
     ctx.clearRect(x, y, newWidth, newHeight);
