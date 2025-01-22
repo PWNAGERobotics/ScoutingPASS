@@ -333,8 +333,7 @@ function addClickableImage(table, idx, name, data) {
   inp.setAttribute("value", "none");
   if (data.hasOwnProperty('allowableResponses')) {
     let responses = data.allowableResponses.split(' ').map(Number)
-    console.log(responses)
-      inp.setAttribute("value", responses);
+    inp.setAttribute("value", responses);
   }
   cell.appendChild(inp);
 
@@ -1054,26 +1053,14 @@ function drawFields(name) {
   for (f of fields) {
     code = f.id.substring(7);
     var img = document.getElementById("img_" + code);
-    console.log("Drawing image: img_" + code)
     var shape = document.getElementById("shape_" + code);
     let shapeArr = shape.value.split(' ');
     var ctx = f.getContext("2d");
     var imgWidth = img.width;
-    console.log("imgWidth = "+imgWidth)
     var imgHeight = img.height;
-    console.log("imgHeight = "+imgHeight)
-    console.log("ctx.canvas.width = " + ctx.canvas.width)
-    console.log("ctx.canvas.height = " + ctx.canvas.height)
     let scale_factor = Math.min(ctx.canvas.width / img.width, ctx.canvas.height / img.height);
-    console.log("scale_factor = "+scale_factor)
     let newWidth = img.width * scale_factor;
-    console.log("newWidth = "+newWidth)
     let newHeight = img.height * scale_factor;
-    console.log("newHeight = "+newHeight)
-    //let x = (ctx.canvas.width / 2) - (newWidth / 2);
-    //console.log("x = "+x)
-    //let y = (ctx.canvas.height / 2) - (newHeight / 2);
-    //console.log("y = "+y)
     if (newWidth > 0) {
       ctx.canvas.width = newWidth
     }
@@ -1081,9 +1068,6 @@ function drawFields(name) {
       ctx.canvas.height = newHeight
     }
     ctx.clearRect(0, 0, newWidth, newHeight);
-    //ctx.clearRect(x, y, newWidth, newHeight);
-    //ctx.drawImage(img, 0, 0, f.width, f.height);
-    //ctx.drawImage(img, x, y, newWidth, newHeight);
     ctx.drawImage(img, 0, 0, newWidth, newHeight);
 
     var xyStr = document.getElementById("XY_" + code).value
