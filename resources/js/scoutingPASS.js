@@ -333,8 +333,7 @@ function addClickableImage(table, idx, name, data) {
   inp.setAttribute("value", "none");
   if (data.hasOwnProperty('allowableResponses')) {
     let responses = data.allowableResponses.split(' ').map(Number)
-    console.log(responses)
-      inp.setAttribute("value", responses);
+    inp.setAttribute("value", responses);
   }
   cell.appendChild(inp);
 
@@ -1057,8 +1056,19 @@ function drawFields(name) {
     var shape = document.getElementById("shape_" + code);
     let shapeArr = shape.value.split(' ');
     var ctx = f.getContext("2d");
-    ctx.clearRect(0, 0, f.width, f.height);
-    ctx.drawImage(img, 0, 0, f.width, f.height);
+    var imgWidth = img.width;
+    var imgHeight = img.height;
+    let scale_factor = Math.min(ctx.canvas.width / img.width, ctx.canvas.height / img.height);
+    let newWidth = img.width * scale_factor;
+    let newHeight = img.height * scale_factor;
+    if (newWidth > 0) {
+      ctx.canvas.width = newWidth
+    }
+    if (newHeight > 0) {
+      ctx.canvas.height = newHeight
+    }
+    ctx.clearRect(0, 0, newWidth, newHeight);
+    ctx.drawImage(img, 0, 0, newWidth, newHeight);
 
     var xyStr = document.getElementById("XY_" + code).value
     if (JSON.stringify(xyStr).length > 2) {
