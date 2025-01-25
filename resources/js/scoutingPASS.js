@@ -608,9 +608,6 @@ function addCheckbox(table, idx, name, data) {
   }
   cell2.appendChild(inp);
 
-  if (data.type == 'bool') {
-    cell2.innerHTML += "(checked = Yes)";
-  }
 
   if (data.hasOwnProperty('defaultValue')) {
     var def = document.createElement("input");
