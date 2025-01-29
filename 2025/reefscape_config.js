@@ -15,7 +15,7 @@ var config_data = `
     { "name": "Event",
       "code": "e",
       "type": "event",
-      "defaultValue": "2025ilpe",
+      "defaultValue": "2025LakeCity1",
       "required": "true"
     },
     { "name": "Match Level",
@@ -55,15 +55,6 @@ var config_data = `
       "min": 1,
       "max": 99999
     },
-    { "name": "Auto Start Position",
-      "code": "as",
-      "type": "clickable_image",
-      "filename": "2025/half_field.png",
-      "clickRestriction": "one",
-      "dimensions": "6 6",
-      "allowableResponses": "1 7 13 19 25 31",
-      "shape": "circle 5 black red true"
-    }
   ],
   "auton": [
     { "name": "Leave Starting Line",
@@ -86,14 +77,6 @@ var config_data = `
       "code": "ac4",
       "type": "counter"
     },
-    { "name": "Auto Scoring Position",
-      "code": "asp",
-      "type": "clickable_image",
-      "filename": "2025/reef.png",
-      "dimensions": "6 6",
-      "allowableResponses": "1 2 3 4 5 6 7 8 9 10 11 12 13 14 17 18 19 20 23 24 25 26 27 28 29 30 31 32 33 34 35 36",
-      "shape": "circle 5 black red true"
-    },
     { "name": "Processor Score",
       "code": "aps",
       "type": "counter"
@@ -104,6 +87,16 @@ var config_data = `
     }
   ],
   "teleop": [
+    { "name": "Pickup From",
+      "code": "tpu",
+      "type": "radio",
+      "choices": {
+        "s": "Coral Station<br>",
+        "f": "Floor<br>",
+        "b": "Both<br>",
+        "x": "Not Attempted"
+    },
+      "defaultValue": "x"
     { "name": "Coral L1",
       "code": "tc1",
       "type": "counter"
@@ -128,21 +121,10 @@ var config_data = `
       "code": "tns",
       "type": "counter"
     },
-    { "name": "Pickup From",
-      "code": "tpu",
-      "type": "radio",
-      "choices": {
-        "s": "Coral Station<br>",
-        "f": "Floor<br>",
-        "b": "Both<br>",
-        "x": "Not Attempted"
-      },
-      "defaultValue": "x"
-    },
-    { "name": "Scored in<br>Opponent<br>Processor",
-      "code": "opp",
+    { "name": "Attained Coopertition Pt",
+      "code": "cop",
       "type": "bool"
-    }
+    },
   ],
   "endgame": [
     { "name": "Barge Timer",
@@ -163,71 +145,21 @@ var config_data = `
     }
   ],
   "postmatch": [
-    { "name": "Attained Coopertition Pt",
-      "code": "cop",
-      "type": "bool"
-    },
-    { "name": "Algae Left in Reef",
-      "code": "alr",
-      "type": "number",
-      "min": 0,
-      "max": 9,
-      "defaultValue": 0
-    },
-    { "name": "Driver Skill",
-      "code": "ds",
-      "type": "radio",
-      "choices": {
-        "n": "Not Effective<br>",
-        "a": "Average<br>",
-        "v": "Very Effective<br>",
-        "x": "Not Observed"
-      },
-      "defaultValue": "x"
-    },
-    { "name": "Defense Rating",
+    { "name": "Defense",
       "code": "dr",
       "type": "radio",
       "choices": {
-        "b": "Below Average<br>",
-        "a": "Average<br>",
-        "g": "Good<br>",
-        "e": "Excellent<br>",
-        "x": "Did not play defense"
+        "a": "Yes<br>",
+        "x": "No"
       },
       "defaultValue": "x"
-    },
-    { "name": "Speed Rating",
-      "code": "sr",
-      "type": "radio",
-      "choices": {
-        "1": "1 (slow)<br>",
-        "2": "2<br>",
-        "3": "3<br>",
-        "4": "4<br>",
-        "5": "5 (fast)"
-      },
-      "defaultValue":"3"
     },
     { "name": "Died/Immobilized",
       "code": "die",
       "type": "bool"
     },
-    { "name": "Tippy<br>(almost tipped over)",
+    { "name": "Tippy",
       "code": "tip",
-      "type": "bool"
-    },
-    { "name": "Dropped Coral (>2)",
-      "code": "dc",
-      "type": "bool"
-    },
-    { "name": "Dropped Algae (>2)",
-      "code": "da",
-      "type": "bool"
-    },
-    { "name": "Make good<br>alliance partner?",
-      "tooltip": "Would you want this robot on your alliance in eliminations?",
-      "code": "all",
       "type": "bool"
     },
     { "name": "Comments",
