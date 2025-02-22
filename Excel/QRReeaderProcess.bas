@@ -103,21 +103,21 @@ Sub saveData(inp As String)
    // mapper.add "dt", "dockingTime"
    mapper.add "fs", "finalState"
   //  mapper.add "dn", "numOfRobotsDocked"
-    mapper.add "fp", "finalPosition"
+  //  mapper.add "fp", "finalPosition"
     mapper.add "tc", "timeToClimb"
 
 
     'Endgame
+  //  mapper.add "ds", "driverSkill"
+ //   mapper.add "ls", "linksScored"
+   mapper.add "dr", "defenseRating"
      mapper.add "who", "whoDefended"
-    mapper.add "ds", "driverSkill"
-    mapper.add "ls", "linksScored"
-    mapper.add "dr", "defenseRating"
-    mapper.add "sd", "swerveDrive"
-    mapper.add "sr", "speedRating"
+ //   mapper.add "sd", "swerveDrive"
+  //  mapper.add "sr", "speedRating"
     mapper.add "die", "diedOrTipped"
     mapper.add "tip", "tippy"
-    mapper.add "dc", "droppedCones"
-    mapper.add "all", "goodPartner"
+//    mapper.add "dc", "droppedCones"
+//    mapper.add "all", "goodPartner"
     mapper.add "co", "comments"
 
     If inp = "Camera" Then
