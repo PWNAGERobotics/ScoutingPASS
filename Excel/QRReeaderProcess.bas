@@ -1,3 +1,4 @@
+
 Sub Save1QR()
     saveData (getInput())
     ActiveWorkbook.Save
@@ -25,17 +26,8 @@ Sub Save1PitQR()
 End Sub
 
 Public Function getInput()
-    getInput = InputBox("Scan QR Code", "2023 Match Scouting Input")
+    getInput = InputBox("Scan QR Code", "2025 Match Scouting Input")
 End Function
-'Public Function Scaner()
-'    Dim addIn As COMAddIn
-'    Dim automationObject As Object
-'    Set addIn = Application.COMAddIns("QRReader")
-'    Set automationObject = addIn.Object
-'    Dim out As String
-'    out = automationObject.Scaner
-'    Scaner = out
-'End Function
 
 Sub test()
     saveData ("s=fudd;e=2022carv;l=qm;m=2;r=r2;t=2451;as=[35];asg=[3,4];acc=1;acs=1;am=1;ad=e;tct=[8.3,7.3,6.7,7.1,5.5,5.8,5.4];tsg=[5,6,7,8,9,1,2];tfc=0;wf=0;wd=0;who=;lnk=1;fpu=b;dt=9.9;fs=e;dn=2;ds=v;ls=5;dr=x;sd=1;sr=5;die=0;tip=0;dc=0;all=1;co=PWNAGE")
@@ -67,17 +59,17 @@ Sub saveData(inp As String)
 
     ' Set up map
     ' Fields for every year
-    mapper.add "s", "scouter"
+    mapper.add "s", "scouterName"
     mapper.add "e", "eventCode"
     mapper.add "l", "matchLevel"
     mapper.add "m", "matchNumber"
-    mapper.add "r", "robot"
+    mapper.add "r", "allianceStation"
     mapper.add "t", "teamNumber"
 
-    ' 2023 Fields
+    ' 2025 Fields
     ' Auto
-    mapper.add "as", "autoStartingLocation"
-    mapper.add "al", "leaveStartingZone"
+    mapper.add "as", "autoAttendance"
+    mapper.add "al", "autoLeaveZone"
     mapper.add "aon", "autoCoralLOne"
     mapper.add "atw", "autoCoralLTwo"
     mapper.add "ath", "autoCoralLThree"
@@ -88,36 +80,27 @@ Sub saveData(inp As String)
     mapper.add "aam", "autoAlgaeMissed"
     
     ' Teleop
-   // mapper.add "tct", "cycleTimes"
     mapper.add "ton", "teleCoralOne"
     mapper.add "ttw", "teleCoralTwo"
     mapper.add "tth", "teleCoralThree"
     mapper.add "tfo", "teleCoralFour"
-    mapper.add "tcm", "teleCoralMissed"
+    mapper.add "tcm", "teleCoralmissed"
     mapper.add "tap", "teleAlgaeProcessor"
     mapper.add "tan", "teleAlgaeNet"
     mapper.add "tam", "teleAlgaeMissed"
-    mapper.add "wdt", "whereTheyDefended"
-   // mapper.add "lnk", "smartLinks"
-    mapper.add "tpu", "floorPickUp"
-   // mapper.add "dt", "dockingTime"
-   mapper.add "fs", "finalState"
-  //  mapper.add "dn", "numOfRobotsDocked"
-  //  mapper.add "fp", "finalPosition"
+    mapper.add "wdt", "wereDefended"
+    mapper.add "tpu", "teleCoralPickup"
+    mapper.add "apu", "teleAlgaePickup"
+    
+    ' Endgame
+    mapper.add "fs", "finalStatus"
     mapper.add "tc", "timeToClimb"
-
-
-    'Endgame
-  //  mapper.add "ds", "driverSkill"
- //   mapper.add "ls", "linksScored"
-   mapper.add "dr", "defenseRating"
-     mapper.add "who", "whoDefended"
- //   mapper.add "sd", "swerveDrive"
-  //  mapper.add "sr", "speedRating"
+    
+    ' Extra
+    mapper.add "dr", "defenseRating"
+    mapper.add "who", "whoDefend"
     mapper.add "die", "diedOrTipped"
     mapper.add "tip", "tippy"
-//    mapper.add "dc", "droppedCones"
-//    mapper.add "all", "goodPartner"
     mapper.add "co", "comments"
 
     If inp = "Camera" Then
@@ -140,7 +123,8 @@ Sub saveData(inp As String)
         For Each str In fields
             par = Split(str, "=")
             key = par(0)
-            value = par(1)
+            
+           value = par(1)
             If mapper.Exists(key) Then
                 key = mapper(key)
             End If
@@ -206,17 +190,25 @@ Sub savePitData(inp As String)
     tableName = "PitData"
 
     ' Set up map
+    mapper.add "s", "scouterName"
     mapper.add "t", "teamNumber"
-    mapper.add "wid", "width"
+    mapper.add "dm", "dimensions"
+    mapper.add "dus", "driveUnderStage"
     mapper.add "wei", "weight"
     mapper.add "drv", "drivetrain"
     mapper.add "odt", "otherDrivetrain"
     mapper.add "sr", "swerveRatio"
-    mapper.add "mot", "drivetrainMotor"
-    mapper.add "fco", "floorPickUpCones"
-    mapper.add "fcu", "floorPickUpCubes"
-    mapper.add "ccs", "crossCS"
-    mapper.add "aut", "autos"
+    mapper.add "pul", "gamePiecePickUp"
+    mapper.add "sp", "autonStartPreference"
+    mapper.add "asc", "autonScoring"
+    mapper.add "ac", "autonCount"
+    mapper.add "ts", "teleopScoring"
+    mapper.add "tc", "teleopCount"
+    mapper.add "tra", "trapAbility"
+    mapper.add "clm", "climbAbility"
+    mapper.add "pra", "havePracticed"
+    mapper.add "hp", "humanPlayerPreference"
+    mapper.add "co", "comments"
     
     If inp = "Camera" Then
         Exit Sub
@@ -458,4 +450,3 @@ Private Function getAvgCycleTime(ByRef myCell As Range) As Double
     End If
     
 End Function
-
