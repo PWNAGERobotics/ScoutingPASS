@@ -1,8 +1,8 @@
 
 var config_data = `
 {
-  "title": "Crescendo 2024",
-  "page_title": "Crescendo",
+  "title": "Reefscape 2025",
+  "page_title": "reefscape",
   "pitConfig": "true",
   "checkboxAs": "10",
   "prematch": [
@@ -83,14 +83,14 @@ var config_data = `
 	  },
 	  "defaultValue": "v"
     },
-	{ "name": "Auton Scoring",
+	{ "name": "Algae Scoring",
       "code": "asc",
       "type": "radio",
 	  "choices": {
-		  "s": "Speaker only<br>",
-		  "a": "Amp only<br>",
-		  "b": "Both/varies<br>",
-		  "x": "no scoring<br>"
+		  "s": "Algae off reef<br>",
+		  "a": "Algae Ground <br>",
+		  "b": "Both<br>",
+		  "x": "no Algae<br>"
 	  },
 	  "defaultValue": "x"
     },
@@ -99,40 +99,25 @@ var config_data = `
 	  "type": "counter",
 	  "defaultValue": 0
 	},
-	{ "name": "Teleop scoring",
+	{ "name": "Coral scoring",
       "code": "ts",
       "type": "radio",
 	  "choices": {
-		  "s": "Speaker only<br>",
-		  "a": "Amp only<br>",
+		  "s": "Reef only<br>",
+		  "a": "Ground only<br>",
 		  "b": "Both<br>",
-		  "x": "no scoring"
+		  "x": "no Coral"
 	  },
 	  "defaultValue": "x"
     },
-	{ "name": "How many in teleop?",
+	{ "name": "How many Coral in teleop?",
 	  "code": "tc", 
 	  "type": "counter",
 	  "defaultValue": 0
 	},
-	{ "name": "Able to do trap?",
-	  "code": "tra",
-	  "type": "bool"
-	},
 	{ "name": "Able to climb?",
 	  "code": "clm",
 	  "type": "bool"
-	},
-	{ "name": "What do they want to use<br>their human player for?",
-	  "code": "hp",
-	  "type": "radio",
-	  "choices": {
-		  "s": "Source<br>",
-		  "a": "Amp<br>",
-		  "d": "Either<br>",
-		  "n": "No human player"
-	  },
-	  "defaultValue": "n"
 	},
 	{ "name": "Comments",
       "code": "co",
