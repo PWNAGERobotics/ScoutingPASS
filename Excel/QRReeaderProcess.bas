@@ -77,6 +77,7 @@ Sub saveData(inp As String)
     ' 2023 Fields
     ' Auto
     mapper.add "as", "autoStartingLocation"
+    mapper.add "al", "leaveStartingZone"
     mapper.add "aon", "autoCoralLOne"
     mapper.add "atw", "autoCoralLTwo"
     mapper.add "ath", "autoCoralLThree"
