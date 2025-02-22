@@ -94,7 +94,7 @@ var config_data = `
 	  "type": "counter"
 	}, 
  { "name": "Algae Missed ",
-	  "code": "aaM",
+	  "code": "aam",
 	  "type": "counter"
 	}
   ],
