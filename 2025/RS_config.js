@@ -131,11 +131,11 @@ var config_data = `
 	  "code": "tam",
 	  "type": "counter"
 	},
-	{ "name": "Where they defended<br>",
+	{ "name": "Were they defended<br>",
 	  "code": "wdt",
 	  "type": "text"
 	},
-    { "name": "Pickup From:",
+    { "name": "Coral Pickup:",
       "code": "tpu",
       "type": "radio",
       "choices": {
@@ -147,7 +147,7 @@ var config_data = `
       "defaultValue": "x"
     },
       { "name": "Algae Pickup:",
-      "code": "tpu",
+      "code": "apu",
       "type": "radio",
       "choices": {
         "s": "Reef <br>",
