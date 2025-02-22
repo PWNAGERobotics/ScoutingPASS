@@ -97,16 +97,18 @@ Sub saveData(inp As String)
     mapper.add "tap", "teleAlgaeProcessor"
     mapper.add "tan", "teleAlgaeNet"
     mapper.add "tam", "teleAlgaeMissed"
-    mapper.add "who", "whoDefended"
+    mapper.add "wdt", "whereTheyDefended"
    // mapper.add "lnk", "smartLinks"
     mapper.add "tpu", "floorPickUp"
    // mapper.add "dt", "dockingTime"
- //   mapper.add "fs", "finalState"
+   mapper.add "fs", "finalState"
   //  mapper.add "dn", "numOfRobotsDocked"
     mapper.add "fp", "finalPosition"
     mapper.add "tc", "timeToClimb"
-    
+
+
     'Endgame
+     mapper.add "who", "whoDefended"
     mapper.add "ds", "driverSkill"
     mapper.add "ls", "linksScored"
     mapper.add "dr", "defenseRating"
