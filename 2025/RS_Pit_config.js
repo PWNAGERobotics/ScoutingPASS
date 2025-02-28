@@ -2,7 +2,7 @@
 var config_data = `
 {
   "title": "Reefscape 2025",
-  "page_title": "reefscape",
+  "page_title": "Reefscape",
   "pitConfig": "true",
   "checkboxAs": "10",
   "prematch": [
