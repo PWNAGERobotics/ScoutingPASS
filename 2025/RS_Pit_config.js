@@ -82,6 +82,17 @@ var config_data = `
 	  },
 	  "defaultValue": "x"
     },
+        { "name": "Main strategy",
+      "code": "str",
+      "type": "radio",
+	  "choices": {
+		  "s": "Algae <br>",
+		  "a": "Coral<br>",
+		  "b": "Defense<br>",
+		  "x": "Anything<br>"
+	  },
+	  "defaultValue": "x"
+    },
 	{ "name": "How many cones in auto?",
 	  "code": "ac", 
 	  "type": "counter",
@@ -92,24 +103,13 @@ var config_data = `
 	  "type": "counter",
 	  "defaultValue": 0
 	},
-	{ "name": "Able to do trap?",
+	{ "name": "Able to deep climb?",
 	  "code": "tra",
 	  "type": "bool"
 	},
-	{ "name": "Able to climb?",
+	{ "name": "Able to shallow climb?",
 	  "code": "clm",
 	  "type": "bool"
-	},
-	{ "name": "What do they want to use<br>their human player for?",
-	  "code": "hp",
-	  "type": "radio",
-	  "choices": {
-		  "s": "Source<br>",
-		  "a": "Amp<br>",
-		  "d": "Either<br>",
-		  "n": "No human player"
-	  },
-	  "defaultValue": "n"
 	},
 	{ "name": "Comments",
       "code": "co",
