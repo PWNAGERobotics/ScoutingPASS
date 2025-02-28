@@ -89,12 +89,12 @@ var config_data = `
 	  },
 	  "defaultValue": "x"
     },
-	{ "name": "How many cones in auto?",
+	{ "name": "How many coral in auto?",
 	  "code": "ac", 
 	  "type": "counter",
 	  "defaultValue": 0
 	},
-	{ "name": "How many cones in teleop?",
+	{ "name": "How many coral in teleop?",
 	  "code": "tc", 
 	  "type": "counter",
 	  "defaultValue": 0
