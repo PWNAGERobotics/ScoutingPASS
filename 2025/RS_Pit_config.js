@@ -60,18 +60,7 @@ var config_data = `
       },
       "defaultValue":"x"
     },
-    { "name": "Game piece pick up location",
-      "code": "pul",
-      "type":"radio",
-      "choices": {
-        "d": "Source/H.P. station only<br>",
-		"f": "Floor pick-up only<br>",
-        "b": "All locations<br>",
-        "x": "Can not manipulate game pieces"
-      },
-      "defaultValue": "x"
-    },
-	{ "name": "Coral Pickup",
+	{ "name": "Coral Pickup Location",
       "code": "asp",
       "type": "radio",
 	  "choices": {
@@ -82,7 +71,7 @@ var config_data = `
 	  },
 	  "defaultValue": "x"
     },
-    { "name": "Coral Place",
+    { "name": "Coral Place Location",
       "code": "asc",
       "type": "radio",
 	  "choices": {
@@ -93,23 +82,12 @@ var config_data = `
 	  },
 	  "defaultValue": "x"
     },
-	{ "name": "How many in auto?",
+	{ "name": "How many cones in auto?",
 	  "code": "ac", 
 	  "type": "counter",
 	  "defaultValue": 0
 	},
-	{ "name": "Teleop scoring",
-      "code": "ts",
-      "type": "radio",
-	  "choices": {
-		  "s": "Speaker only<br>",
-		  "a": "Amp only<br>",
-		  "b": "Both<br>",
-		  "x": "no scoring"
-	  },
-	  "defaultValue": "x"
-    },
-	{ "name": "How many in teleop?",
+	{ "name": "How many cones in teleop?",
 	  "code": "tc", 
 	  "type": "counter",
 	  "defaultValue": 0
