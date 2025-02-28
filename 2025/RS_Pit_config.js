@@ -22,10 +22,6 @@ var config_data = `
       "size": 10,
       "maxSize": 15
     },
-	{ "name": "Can they drive under<br>the stage?",
-	  "code": "dus",
-	  "type": "bool"
-	},
     { "name": "Weight",
       "code": "wei",
       "type": "number",
