@@ -14,9 +14,9 @@ var config_data = `
     { "name": "Event",
       "code": "e",
       "type": "event",
-      "defaultValue": "TestEvent2025",
+      "defaultValue": "2025mifer",
       "required": "true",
-      "disabled": "false"
+      "disabled": "true"
     },
     { "name": "Match Level",
       "code": "l",
