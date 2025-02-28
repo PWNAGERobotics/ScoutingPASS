@@ -71,26 +71,25 @@ var config_data = `
       },
       "defaultValue": "x"
     },
-	{ "name": "Auton Start Position Preference<br>(Based on RED side)",
-      "code": "sp",
+	{ "name": "Coral Pickup",
+      "code": "asp",
       "type": "radio",
 	  "choices": {
-	    "r": "Right<br>",
-		"c": "Center<br>",
-		"l": "Left<br>",
-		"o": "Off Speaker<br>",
-		"v": "Varies/doesn't matter"
+		  "s": "Floor<br>",
+		  "a": "HP<br>",
+		  "b": "Both<br>",
+		  "x": "no coral<br>"
 	  },
-	  "defaultValue": "v"
+	  "defaultValue": "x"
     },
-	{ "name": "Algae Scoring",
+    { "name": "Coral Place",
       "code": "asc",
       "type": "radio",
 	  "choices": {
-		  "s": "Algae off reef<br>",
-		  "a": "Algae Ground <br>",
-		  "b": "Both<br>",
-		  "x": "no Algae<br>"
+		  "s": "L1 only <br>",
+		  "a": "All Levels<br>",
+		  "b": "None<br>",
+		  "x": "L2-L4<br>"
 	  },
 	  "defaultValue": "x"
     },
@@ -99,25 +98,40 @@ var config_data = `
 	  "type": "counter",
 	  "defaultValue": 0
 	},
-	{ "name": "Coral scoring",
+	{ "name": "Teleop scoring",
       "code": "ts",
       "type": "radio",
 	  "choices": {
-		  "s": "Reef only<br>",
-		  "a": "Ground only<br>",
+		  "s": "Speaker only<br>",
+		  "a": "Amp only<br>",
 		  "b": "Both<br>",
-		  "x": "no Coral"
+		  "x": "no scoring"
 	  },
 	  "defaultValue": "x"
     },
-	{ "name": "How many Coral in teleop?",
+	{ "name": "How many in teleop?",
 	  "code": "tc", 
 	  "type": "counter",
 	  "defaultValue": 0
 	},
+	{ "name": "Able to do trap?",
+	  "code": "tra",
+	  "type": "bool"
+	},
 	{ "name": "Able to climb?",
 	  "code": "clm",
 	  "type": "bool"
+	},
+	{ "name": "What do they want to use<br>their human player for?",
+	  "code": "hp",
+	  "type": "radio",
+	  "choices": {
+		  "s": "Source<br>",
+		  "a": "Amp<br>",
+		  "d": "Either<br>",
+		  "n": "No human player"
+	  },
+	  "defaultValue": "n"
 	},
 	{ "name": "Comments",
       "code": "co",
@@ -135,4 +149,3 @@ var config_data = `
   "postmatch": [
   ]
 }`;
-
