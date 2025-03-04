@@ -176,9 +176,9 @@ var config_data = `
       "code": "tc",
       "type":"radio",
       "choices": {
-		    "o": "First Try ~5 Sec<br>",
-		    "h": "Solid Climb ~10 Sec<br>",
-      	    "l": "Struggled ~12 Sec<br>",
+		    "o": "First Try ~10 Sec<br>",
+		    "h": "Solid Climb ~15 Sec<br>",
+      	    "l": "Struggled ~20 Sec<br>",
         "x": "Didnt Climb<br>"
       },
       "defaultValue": "x"
