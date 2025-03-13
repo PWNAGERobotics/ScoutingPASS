@@ -150,7 +150,7 @@ var config_data = `
       "code": "apu",
       "type": "radio",
       "choices": {
-        "s": "Reef <br>",
+        "s": "Reef (Includes knocking it off) <br>",
         "f": "Floor<br>",
         "b": "Both<br>",
         "x": "Not Attempted"
