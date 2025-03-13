@@ -14,7 +14,7 @@ var config_data = `
     { "name": "Event",
       "code": "e",
       "type": "event",
-      "defaultValue": "2025mifer",
+      "defaultValue": "2025MIBKN",
       "required": "true",
       "disabled": "true"
     },
