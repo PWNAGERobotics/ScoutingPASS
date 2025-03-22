@@ -14,7 +14,7 @@ var config_data = `
     { "name": "Event",
       "code": "e",
       "type": "event",
-      "defaultValue": "MiFER",
+      "defaultValue": "2025ilpe",
       "required": "true",
       "disabled": "false"
     },
