@@ -14,7 +14,7 @@ var config_data = `
     { "name": "Event",
       "code": "e",
       "type": "event",
-      "defaultValue": "2025azgl",
+      "defaultValue": "2025micmp4",
       "required": "true",
       "disabled": "false"
     },
