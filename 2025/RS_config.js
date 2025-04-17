@@ -14,7 +14,7 @@ var config_data = `
     { "name": "Event",
       "code": "e",
       "type": "event",
-      "defaultValue": "2025DALY",
+      "defaultValue": "2025daly",
       "required": "true",
       "disabled": "false"
     },
