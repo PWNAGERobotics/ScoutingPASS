@@ -58,7 +58,7 @@ var config_data = `
     { "name": "Auto Start Position",
       "code": "as",
       "type": "clickable_image",
-      "filename": "2025/half_field.png",
+      "filename": "American-style_pool_table_diagram_(empty).png",
       "clickRestriction": "one",
       "dimensions": "6 6",
       "allowableResponses": "1 7 13 19 25 31",
@@ -97,7 +97,7 @@ var config_data = `
     { "name": "Auto Scoring Position",
       "code": "asp",
       "type": "clickable_image",
-      "filename": "2025/reef.png",
+      "filename": "American-style_pool_table_diagram_(empty).png",
       "dimensions": "6 6",
       "allowableResponses": "1 2 3 4 5 6 7 8 9 10 11 12 13 14 17 18 19 20 23 24 25 26 27 28 29 30 31 32 33 34 35 36",
       "shape": "circle 5 black red true"
