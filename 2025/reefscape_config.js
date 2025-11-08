@@ -2,7 +2,7 @@ var config_data = `
 {
   "dataFormat": "tsv",
   "title": "Scouting PASS 2025",
-  "page_title": "REEFSCAPE",
+  "page_title": "Pool Table Test",
   "checkboxAs": "10",
   "prematch": [
     { "name": "Scouter Initials",
@@ -70,20 +70,28 @@ var config_data = `
       "code": "al",
       "type": "bool"
     },
-    { "name": "Coral L1",
+    { "name": "Pocket 1",
       "code": "ac1",
       "type": "counter"
     },
-    { "name": "Coral L2",
+    { "name": "Pocket 2",
       "code": "ac2",
       "type": "counter"
     },
-    { "name": "Coral L3",
+    { "name": "Pocket 3",
       "code": "ac3",
       "type": "counter"
     },
-    { "name": "Coral L4",
+    { "name": "Pocket 4",
       "code": "ac4",
+      "type": "counter" 
+    },
+    { "name": "Pocket 5",
+      "code": "ac5",
+      "type": "counter"
+     },
+    { "name": "Pocket 6",
+      "code": "ac6",
       "type": "counter"
     },
     { "name": "Auto Scoring Position",
@@ -104,20 +112,28 @@ var config_data = `
     }
   ],
   "teleop": [
-    { "name": "Coral L1",
+    { "name": "Pocket 1",
       "code": "tc1",
       "type": "counter"
     },
-    { "name": "Coral L2",
+    { "name": "Pocket 2",
       "code": "tc2",
       "type": "counter"
     },
-    { "name": "Coral L3",
+    { "name": "Pocket 3",
       "code": "tc3",
       "type": "counter"
     },
-    { "name": "Coral L4",
+    { "name": "Pocket 4",
       "code": "tc4",
+      "type": "counter"
+    },
+    { "name": "Pocket 5",
+      "code": "tc5",
+      "type": "counter"
+    },
+    { "name": "Pocket 6",
+      "code": "tc6",
       "type": "counter"
     },
     { "name": "Processor Score",
@@ -167,14 +183,14 @@ var config_data = `
       "code": "cop",
       "type": "bool"
     },
-    { "name": "Algae Left in Reef",
+    { "name": "Balls left to score",
       "code": "alr",
       "type": "number",
       "min": 0,
       "max": 9,
       "defaultValue": 0
     },
-    { "name": "Driver Skill",
+    { "name": "Player Skill",
       "code": "ds",
       "type": "radio",
       "choices": {
@@ -209,7 +225,7 @@ var config_data = `
       },
       "defaultValue":"3"
     },
-    { "name": "Died/Immobilized",
+    { "name": "Forfeit",
       "code": "die",
       "type": "bool"
     },
@@ -217,7 +233,7 @@ var config_data = `
       "code": "tip",
       "type": "bool"
     },
-    { "name": "Dropped Coral (>2)",
+    { "name": "Scratched (>2)",
       "code": "dc",
       "type": "bool"
     },
@@ -225,7 +241,7 @@ var config_data = `
       "code": "da",
       "type": "bool"
     },
-    { "name": "Make good<br>alliance partner?",
+    { "name": "Make good<br>partner?",
       "tooltip": "Would you want this robot on your alliance in eliminations?",
       "code": "all",
       "type": "bool"
@@ -234,7 +250,7 @@ var config_data = `
       "code": "co",
       "type": "text",
       "size": 15,
-      "maxSize": 55
+      "maxSize": 200
     }
   ]
 }`;
