@@ -10,8 +10,7 @@
 <h1></h1>
 
 <!-- TABLE OF CONTENTS -->
-[TOC]
-<!-- <details>
+<details>
   <summary>Table of Contents</summary>
   <ol>
     <li><a href="#features">Features</a></li>
@@ -28,7 +27,7 @@
     <li><a href="#2024-changes">2024 Changes</a></li>
     <li><a href="#2023-changes">2023 Changes</a></li>
   </ol>
-</details> -->
+</details>
 
 <div id="features"></div>
 
@@ -116,7 +115,7 @@ It's really simple to get started:
 <p>
 To enable The Blue Alliance API:
 
-* Put your API token in the authKey variable in the yearly config.  (line 4)
+* Put your API token in the authKey variable in the yearly config.
 * Reload your page.
 
 Note: For this to work, the schedule has to be posted to The Blue Alliance.  That usually doesn't happen until just before the event. (a few days to a few hours)  To test this you can point it to a past event.   Set the event to 2020ilch.   Reload the page to load the schedule for that event. Select Match 6 and Blue-2.  You should see it populate the Team # to 2451, and the next line will show the team name, PWNAGE.
