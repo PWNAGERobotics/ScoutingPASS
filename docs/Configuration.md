@@ -37,6 +37,7 @@ The main section of the JSON contains the global attributes and the 5 sections o
 ## Global attributes
 
 There are only a few global attributes to set up the application:
+
 ```
 { "dataFormat": "kvs",
   "title": "Scouting PASS 2023",
@@ -45,17 +46,24 @@ There are only a few global attributes to set up the application:
   <FIVE GAME SECTIONS>
 }
 ```
+
 ### dataFormat
+
 Two data formats are currently supported:<br>
- * kvs for key=value;key=value;...  (key, value, semicolon)
- * tsv for Tab-Separated Values, convenient for scanning or pasting directly into a spreadsheet row
+
+* kvs for key=value;key=value;...  (key, value, semicolon)
+* tsv for Tab-Separated Values, convenient for scanning or pasting directly into a spreadsheet row
+
 ### title
+
 This is the title that will show up in the tab of the window.
 
 ### page-title
+
 This will set the title at the top of each web page.
 
 ### checkboxAs
+
 This configuration dictates how checkboxes data will be reported.   Default setting is "Y/N".
 
 Acceptable values:<br>
@@ -81,6 +89,7 @@ Each section is defined the same way.   Fields are added to each section to coll
 Each section maps to a separate page on the scouting screen and they progress in the order they are listed above.
 
 The JSON is formatted like this:
+
 ```
 {
   <GLOBAL ATTRIBUTES>,
@@ -164,7 +173,9 @@ The field elements are:
   "tooltip": "Put help or more descriptive text here"
 }
 ```
+
 Specific attributes of text are:
+
 * size (optional) - the number of characters displayed (default is usually 20)
 * maxSize (optional) - the maximum number of characters allowed in this field (default = 524288)
 * disabled (optional) - if "true", input to this field will be disabled. It will be read-only.  (default = false)
@@ -189,7 +200,9 @@ However, they are required to move past Pre-Match as they are key elements to tr
   "tooltip": "Put help or more descriptive text here"
 },
 ```
+
 Specific attributes of number are:
+
 * min (optional) - the lowest number allowed in this field
 * max (optional) - the largest number allowed in this field
 * disabled (optional) - if "true", input to this field will be disabled. It will be read-only.  (default = false)
@@ -210,9 +223,11 @@ Special sub-elements of text are "match" and "team".  These sub-types will updat
   "tooltip": "Put help or more descriptive text here"
 }
 ```
+
 The counter is displayed with two buttons labeled "-" and "+" to increase or decrease the counter number.
 
 Specific attributes of counter are:
+
 * defaultValue (optional) - set the field to start at a certain value
 
 The counter element will be set back to the defaultValue value when the Clear Form button is pressed.  
@@ -235,10 +250,12 @@ If there is no defaultValue it will be reset to zero.
   "tooltip": "Put help or more descriptive text here"
 }
 ```
+
 The radio button element will display all the choices with a selection circle next to each one.
 Click the circle next to the item you want to select.  Only one of the choices can be selected at any given time.
 
 Specific attributes to counter are:
+
 * choices - a map of the choices to select between.  The first string is the value that will be returned in the QR Code and the second string is the description text of the selection that shows on the screen.
 * defaultValue (optional) - set the field to start at a certain value
 
@@ -278,7 +295,7 @@ There are no specific attributes to this element.
 
 The sub-type of timer, cycle timer, will be described in the next section.
 
-### Cycle Timer - Start the timer and with 1 click track cycle times of robots.  
+### Cycle Timer - Start the timer and with 1 click track cycle times of robots  
 
 ```
 { "name": "My Cycle Timer",
@@ -291,7 +308,7 @@ The Cycle Timer element is a specialized Timer element.  It tracks cycles during
 
 There are no specific attributes to this element.
 
-### Clickable Image - Allow recording locations on an image.  
+### Clickable Image - Allow recording locations on an image  
 
 ```
 { "name": "My Clickable Image",
@@ -307,9 +324,11 @@ There are no specific attributes to this element.
   "cycleTimer": "tct"
 }
 ```
+
 The clickable_image element allows the collection of data through images.  The first use case was to record a robot's starting position on the field.  It is also used to record the shooting locations of robots.  The way it works is the image is turned into a grid of boxes.  Each box is numbered.  When the image is clicked, the box number corresponding to the X/Y coordinates is recorded.  Through the attributes of the element, you can record one or many different clicks/boxes.  The number of boxes is configurable as well as the behavior of each click.  You have the option of showing a "Flip" button which will flip the image 180 degrees, which is helpful if your scouters are sitting on the opposite side of the field and they see the field from the opposite direction.  There is also an "Undo" button which allows scouters to remove the last recorded box from the element.  There are also configuration settings for shape, size, color, and fill of the shape to mark your click.  Finally, this element can be tied into a cycle timer.  Every click will start a new cycle.  So, if you have an image of a scoring location, you just need to click the image and the program will not only record the scoring location, but the cycle time as well.
 
 Specific attributes of Cycle Timer are:
+
 * filename - the location of the file image that you want to use.  It must be local to the website you are using.
 * dimensions (optional) - this controls the number of boxes the image will be divided into.  The first value is the number of boxes along the x-axis and the second number is the number of boxes along the y-axis.  (Default values are "12 6" for 72 boxes)
 * toggleClick (optional)- if set to "true", if a box has already been clicked, clicking it again will "unclick" that box.  It will no longer be stored and reported. (Default value: false)

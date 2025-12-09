@@ -1,14 +1,13 @@
 <div id="top"></div>
 
-# Scouting P.A.S.S.
+# Scouting P.A.S.S
 
-#### A scouting system for FIRST FRC competitions developed by [PWNAGE - Team #2451](https://pwnagerobotics.org).
+#### A scouting system for FIRST FRC competitions developed by [PWNAGE - Team #2451](https://pwnagerobotics.org)
 
 <a href="https://PWNAGERobotics.github.io/ScoutingPASS">Live Demo</a> . <a href="https://PWNAGERobotics.github.io/ScoutingPASS/pit.html">Pit Scouting</a> . <a href="#getting-started">Getting Started</a> . <a href="#faq">FAQ</a>
 
 ![Stars](https://img.shields.io/github/stars/PWNAGERobotics/ScoutingPASS?style=plastic) ![Forks](https://img.shields.io/github/forks/PWNAGERobotics/ScoutingPASS?style=plastic) ![watchers](https://img.shields.io/github/watchers/PWNAGERobotics/ScoutingPASS?style=plastic)
 <h1></h1>
-
 
 <!-- TABLE OF CONTENTS -->
 <details>
@@ -32,33 +31,48 @@
 
 <div id="features"></div>
 
-# Features:
+# Features
+
 ### **Configurable**
-  * A JSON configuration file controls the elements of the game to track.  Create a new configuration file each year for the new game, or tweak it week to week to refine your scouting.  No additional coding is needed.  See the [Configuration Docs](docs/Configuration.md) for details.
+
+* A JSON configuration file controls the elements of the game to track.  Create a new configuration file each year for the new game, or tweak it week to week to refine your scouting.  No additional coding is needed.  See the [Configuration Docs](docs/Configuration.md) for details.
+
 ### **Universal**
-  * Works on any device that has a web browser that runs JavaScript.  Apple, Android, phones, tablets, laptops, it works on them all.
+
+* Works on any device that has a web browser that runs JavaScript.  Apple, Android, phones, tablets, laptops, it works on them all.
+
 ### **Low/No Bandwidth**
-  * Neither WiFi nor Cellular is required at the event.  The web page can be downloaded before the event and doesn't need to be reloaded.
+
+* Neither WiFi nor Cellular is required at the event.  The web page can be downloaded before the event and doesn't need to be reloaded.
+
 ### **Easy hosting**
-  * Self-hosting via GitHub. (See directions below)
+
+* Self-hosting via GitHub. (See directions below)
+
 ### [The Blue Alliance Integration](https://thebluealliance.com)
-  * Pull data for the event from The Blue Alliance.  Team #s, Team Names and Schedules
+
+* Pull data for the event from The Blue Alliance.  Team #s, Team Names and Schedules
+
 ### [Google Sheets Integration](docs/GoogleSheets.md)
-  * Details on how to use ScoutingPASS with Google Sheets spreadsheet
+
+* Details on how to use ScoutingPASS with Google Sheets spreadsheet
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 <div id="live-app"></div>
 
 ## Live Application
-This repository is hosted on GitHub Pages.  You can view a live version of it here: https://PWNAGERobotics.github.io/ScoutingPASS.  (You can host your version of the ScoutingPASS application on GitHub Pages as well.)
+
+This repository is hosted on GitHub Pages.  You can view a live version of it here: <https://PWNAGERobotics.github.io/ScoutingPASS>.  (You can host your version of the ScoutingPASS application on GitHub Pages as well.)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 <div id="description"></div>
 
-## Description:
+## Description
+
 Scouting PASS is a web page displayed in a browser.  It consists of 5 "swipeable" pages each representing a specific aspect of a FRC match: Pre-Match, Autonomous, Teleop, End Game and Post-Match.  A configuration file allows the screens to be easily modified to collect any metrics that are important for your scouting needs.  The scouter can use the "Next" or "Prev" buttons or a swiping motion on touchscreens to move between pages.  A QR code is dynamically generated on the last page.  This QR code can be scanned to transfer the data to your data repository.  The QR code can also be stored for processing later using a screenshot or camera.  Once the data has been transferred, the scout hits the clear button and the form is cleared out and ready for the next match.
 
 Configuration is as easy as creating a JSON file with the fields that your scouting team wants to track.  Some fields are common to all teams and years.  The basic fields are:
+
 * Scouter - who is scouting this robot
 * Event - the event that is being scouted
 * Level - The level of competition (Qualifications, Double Elimination, Finals, etc)
@@ -67,6 +81,7 @@ Configuration is as easy as creating a JSON file with the fields that your scout
 * Team # - What team is being scouted
 
 User defined fields can be of several different types:
+
 * Text - A freeform text field
 * Number - Like text, but restricted to numbers
 * Counter - A counter that can be increased or decreased with a click or touch
@@ -80,24 +95,27 @@ These should cover most of your scouting team's data collection needs.  PWNAGE's
 
 Since this is an HTML/JavaScript web page, scouters can use almost any device that has a web browser.  If the device has a touchscreen the screen can be used to swipe back and forth between pages and interact with the data elements.  The webpage only needs to be loaded once.  Once loaded the functionality and data is stored locally in the webpage and doesn't need to be reloaded.  The QR code generation and clear button only resets the form and does not cause the page to reload.  This means that a cellular or WiFi connection is not needed at the competition as long as the webpage is loaded before the event.
 
-If your team has a The Blue Alliance API access token (See https://www.thebluealliance.com/apidocs) the web page will pull team and schedule information from The Blue Alliance.  Put your access token in the authKey variable in resources/js/TBAInterface.js and when the web page is loaded it will load the data (for the event code in the Event field).  This enables some features on the PreMatch Screen.  With the team information the team name will populate just below the Team # field when the team # field is filled in.  If the schedule information is available when the web page is loaded then when the match and robot fields are populated it will automatically populate the team number and team name for the scouter.  This reduces typo errors when entering the team numbers manually.  (Schedules are usually published before the event a day or two before matches start.  However, it may be delayed for various reasons and may only be published hours or minutes before the start of a competition.)
+If your team has a The Blue Alliance API access token (See <https://www.thebluealliance.com/apidocs>) the web page will pull team and schedule information from The Blue Alliance.  Put your access token in the authKey variable in the config file for the year and when the web page is loaded it will load the data (for the event code in the Event field).  This enables some features on the PreMatch Screen.  With the team information the team name will populate just below the Team # field when the team # field is filled in.  If the schedule information is available when the web page is loaded then when the match and robot fields are populated it will automatically populate the team number and team name for the scouter.  This reduces typo errors when entering the team numbers manually.  (Schedules are usually published before the event a day or two before matches start.  However, it may be delayed for various reasons and may only be published hours or minutes before the start of a competition.)
 
 The QR code can be read by a web camera or hand scanner to import the data into the Excel scouting database.  The hand scanner used reads the QR code and inputs the data as if it is typed in from a keyboard.  Included in this repository is the Excel code to pop up an input window and parse the QR data into a row in Excel. (see the [Excel directory](Excel))
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 <div id="getting-started"></div>
 
-## Getting Started:
+## Getting Started
+
 It's really simple to get started:
+
 * Fork GitHub project (as public if you want to host on GitHub Pages)
 * Change configuration file (REEFSCAPE example in [2025](2025) folder)
   * Change the data elements to capture (OPTIONAL: only if desired)
 * Enable GitHub Pages in your repository settings ([GitHub Pages Instructions](https://pages.github.com/))
 * Load page via GitHub pages (https://<your_username>.github.io/ScoutingPASS)
+
 <p>
 To enable The Blue Alliance API:
 
-* Put your API token in the authKey variable in resources/js/TBAInterface.js.  (line 4)
+* Put your API token in the authKey variable in the yearly config.
 * Reload your page.
 
 Note: For this to work, the schedule has to be posted to The Blue Alliance.  That usually doesn't happen until just before the event. (a few days to a few hours)  To test this you can point it to a past event.   Set the event to 2020ilch.   Reload the page to load the schedule for that event. Select Match 6 and Blue-2.  You should see it populate the Team # to 2451, and the next line will show the team name, PWNAGE.
@@ -105,11 +123,11 @@ Note: For this to work, the schedule has to be posted to The Blue Alliance.  Tha
 <p align="right">(<a href="#top">back to top</a>)</p>
 <div id="pit-scouting"></div>
 
-## Pit Scouting:
+## Pit Scouting
 
-ScountingPASS now supports Pit Scouting
+ScoutingPASS now supports Pit Scouting
 
-To access the pit scouting page, add '/pit.html' to the end of your URL.  (i.e. http://pwnagerobotics.github.io/ScoutingPASS/pit.html)
+To access the pit scouting page, add '/pit.html' to the end of your URL.  (i.e. <http://pwnagerobotics.github.io/ScoutingPASS/pit.html>)
 
 It works almost exactly like the main scouting pages, except there is only one page of input.   Once your scouters have filled out the information, swipe left to display the QR code.   That QR code can be scanned to push the data to Excel.
 
@@ -149,7 +167,7 @@ Don't forget to give the project a star!
 <p align="right">(<a href="#top">back to top</a>)</p>
 <div id="faq"></div>
 
-## Frequently Asked Questions:
+## Frequently Asked Questions
 
 <details><summary>Why hardcode and disable the event field?</summary>
 <br />
@@ -189,23 +207,25 @@ Note: The Auto Start (as) element is special in that it will only keep track of 
 <p align="right">(<a href="#top">back to top</a>)</p>
 <div id="things-to-add"></div>
 
-## Things we might want to add someday:
-* Add images to Pit Scouting
-* More options for processing the QR code
-* Mac version of Excel spreadsheet
-* Drag and Drop configuration editing (Avoid JSON editing)
-* Better Google Sheets integration/instructions
-* Improve look and feel
-* Create videos to illustrate how to setup, configure, and use the application
-* Better error messages
-* Pre-parse JSON for validity to avoid cryptic errors when parsing
-* Incorporate [Statbotics.io](http://statbotics.io/) data
-* See [issues](https://github.com/PWNAGERobotics/ScoutingPASS/issues) for more
+## Things we might want to add someday
+
+* [ ] Add images to Pit Scouting
+* [ ] More options for processing the QR code
+* [ ] Mac version of Excel spreadsheet
+* [ ] Drag and Drop configuration editing (Avoid JSON editing)
+* [ ] Better Google Sheets integration/instructions
+* [ ] Improve look and feel
+* [ ] Create videos to illustrate how to setup, configure, and use the application
+* [ ] Better error messages
+* [ ] Pre-parse JSON for validity to avoid cryptic errors when parsing
+* [ ] Incorporate [Statbotics.io](http://statbotics.io/) data
+* [ ] See [issues](https://github.com/PWNAGERobotics/ScoutingPASS/issues) for more
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 <div id="license"></div>
 
 ## License
+
 Distributed under the GNU GPL v3.0 License. See `LICENSE` for more information.
 
 <p align="right">(<a href="#top">back to top</a>)</p>

@@ -1,3 +1,4 @@
+var authKey = "TBA KEY HERE"; // Replace TBA KEY HERE with your actual The Blue Alliance Auth Key
 var config_data = `
 {
   "title": "Scouting PASS 2022",
