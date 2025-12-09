@@ -1,4 +1,4 @@
-// TBAInterface funcitons to pull data from TheBlueAlliance.com
+// TBAInterface functions to pull data from TheBlueAlliance.com
 var teams = null;
 var schedule = null;
 /**

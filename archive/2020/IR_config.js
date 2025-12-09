@@ -1,3 +1,4 @@
+var authKey = "TBA KEY HERE"; // Replace TBA KEY HERE with your actual The Blue Alliance Auth Key
 var config_data = `
 {
   "title":"Scouting PASS 2020",
@@ -77,7 +78,7 @@ var config_data = `
        "code": "ao",
        "type": "counter"
      },
-     { "name": "Auto Aquire PCs",
+     { "name": "Auto Acquire PCs",
        "code": "aa",
        "type": "bool"
      },
