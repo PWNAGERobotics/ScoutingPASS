@@ -24,6 +24,7 @@
     <li><a href="#faq">FAQ</a></li>
     <li><a href="#things-to-add">Things To Add Someday</a></li>
     <li><a href="#license">License</a></li>
+    <li><a href="#2026-changes">2026 Changes</a></li>
     <li><a href="#2025-changes">2025 Changes</a></li>
     <li><a href="#2024-changes">2024 Changes</a></li>
     <li><a href="#2023-changes">2023 Changes</a></li>
@@ -90,7 +91,7 @@ The QR code can be read by a web camera or hand scanner to import the data into 
 ## Getting Started:
 It's really simple to get started:
 * Fork GitHub project (as public if you want to host on GitHub Pages)
-* Change configuration file (REEFSCAPE example in [2025](2025) folder)
+* Change configuration file (REBUILT example in [2026](2026) folder)
   * Change the data elements to capture (OPTIONAL: only if desired)
 * Enable GitHub Pages in your repository settings ([GitHub Pages Instructions](https://pages.github.com/))
 * Load page via GitHub pages (https://<your_username>.github.io/ScoutingPASS)
@@ -113,7 +114,7 @@ To access the pit scouting page, add '/pit.html' to the end of your URL.  (i.e. 
 
 It works almost exactly like the main scouting pages, except there is only one page of input.   Once your scouters have filled out the information, swipe left to display the QR code.   That QR code can be scanned to push the data to Excel.
 
-The default configuration file is 2025/reefscape_pit_config.js.   You can modify that configuration to meet your needs.
+The default configuration file is 2026/rebuilt_pit_config.js.   You can modify that configuration to meet your needs.
 
 We realize that you may not want to lug your computer around the pits to scan each QR code.  Our recommendation is to have your scouters take screenshots of the QR codes.   Then when they are back to the scouting computer, just go through the photos to scan each QR code.
 
@@ -207,6 +208,18 @@ Note: The Auto Start (as) element is special in that it will only keep track of 
 
 ## License
 Distributed under the GNU GPL v3.0 License. See `LICENSE` for more information.
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+<div id="2026-changes"></div>
+
+## 2026 Season Updates
+
+<details open>
+  <summary>2026 Season Updates</summary>
+  <ul>
+    <li>New configurations added for match and pit scouting as well as the new field image</li>
+  </ul>
+</details>
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 <div id="2025-changes"></div>
