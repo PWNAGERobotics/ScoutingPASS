@@ -2,7 +2,7 @@ var config_data = `
 {
   "dataFormat": "tsv",
   "title": "Scouting PASS 2026",
-  "page_title": "REBUILD",
+  "page_title": "REBUILT",
   "checkboxAs": "10",
   "prematch": [
     { "name": "Scouter Initials",
@@ -58,122 +58,90 @@ var config_data = `
     { "name": "Auto Start Position",
       "code": "as",
       "type": "clickable_image",
-      "filename": "2025/half_field.png",
+      "filename": "2026/half_field.png",
       "clickRestriction": "one",
-      "dimensions": "6 6",
-      "allowableResponses": "1 7 13 19 25 31",
+      "dimensions": "7 10",
+      "allowableResponses": "4 11 18 25 32 39 46 53 60 67",
       "shape": "circle 5 black red true"
     }
   ],
   "auton": [
-    { "name": "Leave Starting Line",
-      "code": "al",
-      "type": "bool"
-    },
-    { "name": "Coral L1",
-      "code": "ac1",
-      "type": "counter"
-    },
-    { "name": "Coral L2",
-      "code": "ac2",
-      "type": "counter"
-    },
-    { "name": "Coral L3",
-      "code": "ac3",
-      "type": "counter"
-    },
-    { "name": "Coral L4",
-      "code": "ac4",
-      "type": "counter"
-    },
     { "name": "Auto Scoring Position",
       "code": "asp",
       "type": "clickable_image",
-      "filename": "2025/reef.png",
-      "dimensions": "6 6",
-      "allowableResponses": "1 2 3 4 5 6 7 8 9 10 11 12 13 14 17 18 19 20 23 24 25 26 27 28 29 30 31 32 33 34 35 36",
+      "filename": "2026/half_field.png",
+      "dimensions": "7 10",
+      "allowableResponses": "1 2 3 4 8 9 10 11 15 16 17 18 22 23 24 25 29 30 31 32 36 37 38 39 43 44 45 46 50 51 52 53 57 58 59 60 64 65 66 67",
       "shape": "circle 5 black red true"
     },
-    { "name": "Processor Score",
-      "code": "aps",
+    { "name": "Fuel Scored",
+      "code": "afs",
       "type": "counter"
     },
-    { "name": "Net Score",
-      "code": "ans",
-      "type": "counter"
-    }
-  ],
-  "teleop": [
-    { "name": "Coral L1",
-      "code": "tc1",
-      "type": "counter"
-    },
-    { "name": "Coral L2",
-      "code": "tc2",
-      "type": "counter"
-    },
-    { "name": "Coral L3",
-      "code": "tc3",
-      "type": "counter"
-    },
-    { "name": "Coral L4",
-      "code": "tc4",
-      "type": "counter"
-    },
-    { "name": "Processor Score",
-      "code": "tps",
-      "type": "counter"
-    },
-    { "name": "Net Score",
-      "code": "tns",
-      "type": "counter"
-    },
-    { "name": "Pickup From",
-      "code": "tpu",
+    { "name": "Climb (L1)",
+      "code": "ac",
       "type": "radio",
       "choices": {
-        "s": "Coral Station<br>",
-        "f": "Floor<br>",
-        "b": "Both<br>",
+        "c": "Climbed<br>",
+        "a": "Attempted<br>",
         "x": "Not Attempted"
       },
       "defaultValue": "x"
     },
-    { "name": "Scored in<br>Opponent<br>Processor",
-      "code": "opp",
+    { "name": "Pickup from Depot",
+      "code": "afd",
+      "type": "bool"
+    },
+    { "name": "Pickup from Outpost",
+      "code": "afo",
+      "type": "bool"
+    },
+    { "name": "Pickup from Floor",
+      "code": "aff",
+      "type": "bool"
+    }
+  ],
+  "teleop": [
+    { "name": "Auto Scoring Position",
+      "code": "tsp",
+      "type": "clickable_image",
+      "filename": "2026/half_field.png",
+      "dimensions": "7 10",
+      "allowableResponses": "1 2 3 4 8 9 10 11 15 16 17 18 22 23 24 25 29 30 31 32 36 37 38 39 43 44 45 46 50 51 52 53 57 58 59 60 64 65 66 67",
+      "shape": "circle 5 black red true"
+    },
+    { "name": "Fuel Scored",
+      "code": "tfs",
+      "type": "counter"
+    },
+    { "name": "Pickup from Depot",
+      "code": "tfd",
+      "type": "bool"
+    },
+    { "name": "Pickup from Outpost",
+      "code": "tfo",
+      "type": "bool"
+    },
+    { "name": "Pickup from Floor",
+      "code": "tff",
       "type": "bool"
     }
   ],
   "endgame": [
-    { "name": "Barge Timer",
-      "code": "ebt",
-      "type": "timer"
-    },
-    { "name": "Final Robot Status",
-      "code": "efs",
+    { "name": "Climb",
+      "code": "tc",
       "type": "radio",
       "choices": {
-        "bp": "Parked<br>",
-        "ba": "Parked/Failed Climb<br>",
-        "bs": "Shallow Cage<br>",
-        "bd": "Deep Cage<br>",
-        "x": "Not attempted"
+        "1": "Level 1<br>",
+        "2": "Level 2<br>",
+        "3": "Level 2<br>",
+        "a": "Attempted<br>",
+        "x": "Not Attempted"
       },
       "defaultValue": "x"
     }
   ],
   "postmatch": [
-    { "name": "Attained Coopertition Pt",
-      "code": "cop",
-      "type": "bool"
-    },
-    { "name": "Algae Left in Reef",
-      "code": "alr",
-      "type": "number",
-      "min": 0,
-      "max": 9,
-      "defaultValue": 0
-    },
     { "name": "Driver Skill",
       "code": "ds",
       "type": "radio",
@@ -215,14 +183,6 @@ var config_data = `
     },
     { "name": "Tippy<br>(almost tipped over)",
       "code": "tip",
-      "type": "bool"
-    },
-    { "name": "Dropped Coral (>2)",
-      "code": "dc",
-      "type": "bool"
-    },
-    { "name": "Dropped Algae (>2)",
-      "code": "da",
       "type": "bool"
     },
     { "name": "Make good<br>alliance partner?",
