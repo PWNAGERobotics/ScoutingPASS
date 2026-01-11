@@ -96,7 +96,7 @@ var config_data = `
       "code": "afo",
       "type": "bool"
     },
-    { "name": "Pickup from Floor",
+    { "name": "Pickup from<br>Neutral Zone",
       "code": "aff",
       "type": "bool"
     }
@@ -176,6 +176,18 @@ var config_data = `
         "5": "5 (fast)"
       },
       "defaultValue":"3"
+    },
+    { "name": "Crossed Bump",
+      "code": "bmp",
+      "type": "bool"
+    },
+    { "name": "Crossed Trench",
+      "code": "tre",
+      "type": "bool"
+    },
+    { "name": "Wallbot?",
+      "code": "wbt",
+      "type": "bool"
     },
     { "name": "Died/Immobilized",
       "code": "die",
