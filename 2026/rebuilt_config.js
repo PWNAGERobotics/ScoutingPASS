@@ -55,7 +55,7 @@ var config_data = `
       "min": 1,
       "max": 99999
     },
-    { "name": "Auto Start Position",
+    { "name": "Auto Start Location",
       "code": "as",
       "type": "clickable_image",
       "filename": "2026/half_field.png",
@@ -66,8 +66,8 @@ var config_data = `
     }
   ],
   "auton": [
-    { "name": "Auto Scoring Position",
-      "code": "asp",
+    { "name": "Auto Shooting Location",
+      "code": "asl",
       "type": "clickable_image",
       "filename": "2026/half_field.png",
       "dimensions": "7 10",
@@ -102,8 +102,8 @@ var config_data = `
     }
   ],
   "teleop": [
-    { "name": "Auto Scoring Position",
-      "code": "tsp",
+    { "name": "Shooting Locations",
+      "code": "tsl",
       "type": "clickable_image",
       "filename": "2026/half_field.png",
       "dimensions": "7 10",
@@ -201,6 +201,13 @@ var config_data = `
       "tooltip": "Would you want this robot on your alliance in eliminations?",
       "code": "all",
       "type": "bool"
+    },
+    { "name": "Fuel Percentage",
+      "tooltip": "What percentage of the total fuel for this alliance did this robot score?",
+      "code": "pct",
+      "type": "number",
+      "min": 1,
+      "max": 150
     },
     { "name": "Comments",
       "code": "co",
