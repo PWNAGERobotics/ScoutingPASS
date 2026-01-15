@@ -207,7 +207,7 @@ var config_data = `
       "code": "pct",
       "type": "number",
       "min": 1,
-      "max": 150
+      "max": 100
     },
     { "name": "Comments",
       "code": "co",
