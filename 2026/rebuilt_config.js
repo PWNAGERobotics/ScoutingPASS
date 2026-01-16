@@ -185,10 +185,6 @@ var config_data = `
       "code": "tre",
       "type": "bool"
     },
-    { "name": "Wallbot?",
-      "code": "wbt",
-      "type": "bool"
-    },
     { "name": "Died/Immobilized",
       "code": "die",
       "type": "bool"
@@ -200,6 +196,14 @@ var config_data = `
     { "name": "Make good<br>alliance partner?",
       "tooltip": "Would you want this robot on your alliance in eliminations?",
       "code": "all",
+      "type": "bool"
+    },
+    { "name": "Was Defended",
+      "code": "def",
+      "type": "bool"
+    },
+    { "name": "Excessive Penalties",
+      "code": "pen",
       "type": "bool"
     },
     { "name": "Fuel Percentage",
