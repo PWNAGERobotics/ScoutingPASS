@@ -125,6 +125,14 @@ var config_data = `
     { "name": "Pickup from Floor",
       "code": "tff",
       "type": "bool"
+    },
+    { "name": "Pass from Neutral Zone",
+      "code": "pnz",
+      "type": "bool"
+    },
+    { "name": "Pass from Opp<br>Alliance Zone",
+      "code": "poa",
+      "type": "bool"
     }
   ],
   "endgame": [
