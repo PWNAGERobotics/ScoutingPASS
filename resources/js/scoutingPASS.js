@@ -165,6 +165,14 @@ function addCounter(table, idx, name, data) {
   }
   cell2.classList.add("field");
 
+  if (data.hasOwnProperty('plusX1')) {
+	var buttonX1m = document.createElement("input");
+	buttonX1m.setAttribute("type", "button");
+	buttonX1m.setAttribute("id", "minusX1_" + data.code);
+	buttonX1m.setAttribute("onclick", "counter(this.parentElement, -" + data.plusX1 + ")");
+	buttonX1m.setAttribute("value", "-" + data.plusX1);
+	cell2.appendChild(buttonX1m);
+  }
   var button1 = document.createElement("input");
   button1.setAttribute("type", "button");
   button1.setAttribute("id", "minus_" + data.code);
@@ -194,6 +202,15 @@ function addCounter(table, idx, name, data) {
   button2.setAttribute("onclick", "counter(this.parentElement, 1)");
   button2.setAttribute("value", "+");
   cell2.appendChild(button2);
+
+  if (data.hasOwnProperty('plusX1')) {
+	var buttonX1p = document.createElement("input");
+	buttonX1p.setAttribute("type", "button");
+	buttonX1p.setAttribute("id", "minusX1_" + data.code);
+	buttonX1p.setAttribute("onclick", "counter(this.parentElement, +" + data.plusX1 + ")");
+	buttonX1p.setAttribute("value", "+" + data.plusX1);
+	cell2.appendChild(buttonX1p);
+  }
 
   if (data.hasOwnProperty('cycleTimer')) {
     if (data.cycleTimer != "") {
@@ -1432,3 +1449,4 @@ window.onload = function () {
     }
   }
 };
+
