@@ -262,10 +262,6 @@ function addCounter(table, idx, name, data) {
     cell2.appendChild(def);
   }
 
-  if (data.hasOwnProperty('plusInc1') || data.hasOwnProperty('plusInc2')) {
-    cell1.innerHTML = '</center>';
-  }
-
   return idx + 1;
 }
 
@@ -1485,6 +1481,7 @@ window.onload = function () {
     }
   }
 };
+
 
 
 
