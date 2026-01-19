@@ -155,7 +155,7 @@ function addCounter(table, idx, name, data) {
 	cell1.setAttribute("colspan", 2);
   	cell1.setAttribute("style", "text-align: center;");
 	cell1.style.display = "flex";
-	cell1.style.gap = "10px";
+	cell1.style.gap = "5px";
   }
   cell1.style.width = ColWidth;
   cell1.classList.add("title");
@@ -176,6 +176,11 @@ function addCounter(table, idx, name, data) {
     cell1.setAttribute("title", data.tooltip);
   }
   cell2.classList.add("field");
+
+  if (data.hasOwnProperty('plusX1') || data.hasOwnProperty('plusX2')) {
+    var br = document.createElement("br");
+    cell2.appendChild(br);
+  }
 
   if (data.hasOwnProperty('plusX1')) {
     var buttonX1m = document.createElement("input");
@@ -1480,6 +1485,7 @@ window.onload = function () {
     }
   }
 };
+
 
 
 
