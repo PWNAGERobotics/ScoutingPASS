@@ -169,16 +169,13 @@ function addCounter(table, idx, name, data) {
   if (hasExtraInc) {
     cell1.setAttribute("colspan", 2);
     
-    cell1.style.width = "auto";
 	cell1.style.textAlign = "center";
 
     Object.assign(cell1.style, {
-      display: "inline-flex",
+      display: "flex",
 	  flexDirection: "column",
       alignItems: "center",
       justifyContent: "center",
-      width: "100%",
-      boxSizing: "border-box",
       gap: "8px"
     });
     
@@ -1496,6 +1493,7 @@ window.onload = function () {
     }
   }
 };
+
 
 
 
