@@ -159,25 +159,26 @@ function addCounter(table, idx, name, data) {
     errorCell.innerHTML = `Error: No code specified for ${name}`;
     return idx + 1;
   }  
-	
-// 2. Cell Configuration
-  const cell1 = row.insertCell(0);
-  let targetCell; // Where the buttons will actually go
 
-  cell1.style.width = ColWidth;
+  const cell1 = row.insertCell(0);
+  let targetCell;
+
   cell1.classList.add("title");
   if (data.hasOwnProperty('tooltip')) cell1.setAttribute("title", data.tooltip);
 
   if (hasExtraInc) {
     cell1.setAttribute("colspan", 2);
-    // Apply Vertical Stack to the merged cell
+    
+    // THE FIX: Ensure the flex container fills the entire TD width
     Object.assign(cell1.style, {
-	  display: "flex",
+      display: "flex",
       flexDirection: "column",
-      alignItems: "center",
-      justifyContent: "center",
-      width: "100%",
-      gap: "8px"
+      alignItems: "center",      // Centers items horizontally in a column
+      justifyContent: "center",  // Centers items vertically if there's extra height
+      width: "100%",             // Forces flexbox to span the whole cell
+      boxSizing: "border-box",
+      gap: "8px",
+      textAlign: "center"        // Fallback for non-flex browsers
     });
     
     const label = document.createElement("div");
@@ -186,35 +187,41 @@ function addCounter(table, idx, name, data) {
     
     targetCell = cell1; 
   } else {
+    cell1.style.width = ColWidth;
     cell1.innerHTML = `${name}&nbsp;`;
     targetCell = row.insertCell(1);
     targetCell.style.width = ColWidth;
     targetCell.classList.add("field");
+    // Also center the second cell in standard mode
+    targetCell.style.textAlign = "center"; 
   }
 
-  // 3. Create the Horizontal Button Container
+  // 3. Button Container Alignment
   const buttonGroup = document.createElement("div");
   Object.assign(buttonGroup.style, {
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
-    gap: "4px" // Space between buttons
+    justifyContent: "center", // Ensures buttons stay centered in their row
+    gap: "4px",
+    width: "100%"
   });
   targetCell.appendChild(buttonGroup);
 
-  // 4. Helper function to create inputs
+  // 4. Helper function
   const createInp = (type, id, value, onclickVal) => {
     const el = document.createElement("input");
     el.type = type;
     if (id) el.id = id;
     if (value !== undefined) el.value = value;
     if (onclickVal !== undefined) {
+      // Logic: button -> buttonGroup -> cell
       el.setAttribute("onclick", `counter(this.parentElement.parentElement, ${onclickVal})`);
     }
     return el;
   };
 
-  // 5. Build Button Group (Negatives -> Input -> Positives)
+  // 5. Build Button Group
   if (data.plusInc1) buttonGroup.appendChild(createInp("button", `minusInc1_${data.code}`, -data.plusInc1, -data.plusInc1));
   if (data.plusInc2) buttonGroup.appendChild(createInp("button", `minusInc2_${data.code}`, -data.plusInc2, -data.plusInc2));
   
@@ -223,12 +230,7 @@ function addCounter(table, idx, name, data) {
   const mainInp = createInp("text", `input_${data.code}`, 0);
   mainInp.classList.add("counter");
   mainInp.name = (enableGoogleSheets && data.gsCol) ? data.gsCol : data.code;
-  Object.assign(mainInp.style, { 
-	  backgroundColor: "black",
-	  color: "white",
-	  border: "none",
-	  textAlign: "center" 
-  });
+  Object.assign(mainInp.style, { backgroundColor: "black", color: "white", border: "none", textAlign: "center" });
   mainInp.disabled = true;
   mainInp.size = 2;
   mainInp.maxLength = 2;
@@ -239,7 +241,7 @@ function addCounter(table, idx, name, data) {
   if (data.plusInc2) buttonGroup.appendChild(createInp("button", `plusInc2_${data.code}`, `+${data.plusInc2}`, data.plusInc2));
   if (data.plusInc1) buttonGroup.appendChild(createInp("button", `plusInc1_${data.code}`, `+${data.plusInc1}`, data.plusInc1));
 
-  // 6. Metadata / Hidden Fields
+  // 6. Metadata
   if (data.cycleTimer) {
     const timer = createInp("hidden", `cycleTimer_${data.code}`, data.cycleTimer);
     targetCell.appendChild(timer);
@@ -249,6 +251,7 @@ function addCounter(table, idx, name, data) {
     const def = createInp("hidden", `default_${data.code}`, data.defaultValue);
     targetCell.appendChild(def);
   }
+
   // if (data.hasOwnProperty('cycleTimer')) {
   //   if (data.cycleTimer != "") {
   //     inp = document.createElement('input');
@@ -1486,6 +1489,7 @@ window.onload = function () {
     }
   }
 };
+
 
 
 
