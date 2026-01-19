@@ -166,7 +166,7 @@ function addCounter(table, idx, name, data) {
   var cell2;
   if (data.hasOwnProperty('plusInc1') || data.hasOwnProperty('plusInc2')) {
 	cell2 = cell1
-    cell1.innerHTML = '<center>' + name + '<br>';
+    cell1.innerHTML = name + '<br>';
   } else {
     cell2 = row.insertCell(1);
     cell2.style.width = ColWidth;
@@ -1481,6 +1481,7 @@ window.onload = function () {
     }
   }
 };
+
 
 
 
