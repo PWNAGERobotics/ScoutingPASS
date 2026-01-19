@@ -197,19 +197,20 @@ function addCounter(table, idx, name, data) {
     targetCell.style.textAlign = "center"; 
   }
 
-  // 3. Button Container Alignment
+  targetCell.style.textAlign = "center";
+
+  // Button Container Alignment
   const buttonGroup = document.createElement("div");
   Object.assign(buttonGroup.style, {
-    display: "flex",
+    display: "inline-flex",
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center", // Ensures buttons stay centered in their row
-    gap: "4px",
-    width: "100%"
+    gap: "4px"
   });
   targetCell.appendChild(buttonGroup);
 
-  // 4. Helper function
+  // Helper function
   const createInp = (type, id, value, onclickVal) => {
     const el = document.createElement("input");
     el.type = type;
@@ -222,7 +223,7 @@ function addCounter(table, idx, name, data) {
     return el;
   };
 
-  // 5. Build Button Group
+  // Build Button Group
   if (data.plusInc1) buttonGroup.appendChild(createInp("button", `minusInc1_${data.code}`, -data.plusInc1, -data.plusInc1));
   if (data.plusInc2) buttonGroup.appendChild(createInp("button", `minusInc2_${data.code}`, -data.plusInc2, -data.plusInc2));
   
@@ -231,10 +232,15 @@ function addCounter(table, idx, name, data) {
   const mainInp = createInp("text", `input_${data.code}`, 0);
   mainInp.classList.add("counter");
   mainInp.name = (enableGoogleSheets && data.gsCol) ? data.gsCol : data.code;
-  Object.assign(mainInp.style, { backgroundColor: "black", color: "white", border: "none", textAlign: "center" });
+  Object.assign(mainInp.style, { 
+	backgroundColor: "black",
+	color: "white",
+	border: "none",
+	textAlign: "center",
+	width: "3ch",
+  });
   mainInp.disabled = true;
-  mainInp.size = 2;
-  mainInp.maxLength = 2;
+  mainInp.maxLength = 4;
   buttonGroup.appendChild(mainInp);
 
   buttonGroup.appendChild(createInp("button", `plus_${data.code}`, "+", 1));
@@ -242,7 +248,7 @@ function addCounter(table, idx, name, data) {
   if (data.plusInc2) buttonGroup.appendChild(createInp("button", `plusInc2_${data.code}`, `+${data.plusInc2}`, data.plusInc2));
   if (data.plusInc1) buttonGroup.appendChild(createInp("button", `plusInc1_${data.code}`, `+${data.plusInc1}`, data.plusInc1));
 
-  // 6. Metadata
+  // Metadata
   if (data.cycleTimer) {
     const timer = createInp("hidden", `cycleTimer_${data.code}`, data.cycleTimer);
     targetCell.appendChild(timer);
@@ -1490,6 +1496,7 @@ window.onload = function () {
     }
   }
 };
+
 
 
 
