@@ -155,7 +155,7 @@ function addCounter(table, idx, name, data) {
 	cell1.setAttribute("colspan", 2);
   	cell1.setAttribute("style", "text-align: center;");
 	cell1.style.display = "flex";
-	cell.style.gap = "10px";
+	cell1.style.gap = "10px";
   }
   cell1.style.width = ColWidth;
   cell1.classList.add("title");
@@ -1444,4 +1444,5 @@ window.onload = function () {
     }
   }
 };
+
 
