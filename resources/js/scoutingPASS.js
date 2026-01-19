@@ -151,37 +151,31 @@ function addTimer(table, idx, name, data) {
 function addCounter(table, idx, name, data) {
   var row = table.insertRow(idx);
   var cell1 = row.insertCell(0);
+  if (data.hasOwnProperty('plusX1') || data.hasOwnProperty('plusX2')) {
+	cell1.setAttribute("colspan", 2);
+  	cell1.setAttribute("style", "text-align: center;");
+	cell1.style.display = "flex";
+	cell.style.gap = "10px";
+  }
   cell1.style.width = ColWidth;
   cell1.classList.add("title");
   if (!data.hasOwnProperty('code')) {
     cell1.innerHTML = `Error: No code specified for ${name}`;
     return idx + 1;
   }
-  var cell2 = row.insertCell(1);
-  cell2.style.width = ColWidth;
+  var cell2
+  if (data.hasOwnProperty('plusX1') || data.hasOwnProperty('plusX2')) {
+	cell2 = cell1
+  } else {
+    cell2 = row.insertCell(1);
+    cell2.style.width = ColWidth;
+  }
+
   cell1.innerHTML = name + '&nbsp;';
   if (data.hasOwnProperty('tooltip')) {
     cell1.setAttribute("title", data.tooltip);
   }
   cell2.classList.add("field");
-
-  if (data.hasOwnProperty('plusX1')) {
-	var buttonX1m = document.createElement("input");
-	buttonX1m.setAttribute("type", "button");
-	buttonX1m.setAttribute("id", "minusX1_" + data.code);
-	buttonX1m.setAttribute("onclick", "counter(this.parentElement, -" + data.plusX1 + ")");
-	buttonX1m.setAttribute("value", "-" + data.plusX1);
-	cell2.appendChild(buttonX1m);
-  }
-
-  if (data.hasOwnProperty('plusX2')) {
-	var buttonX2m = document.createElement("input");
-	buttonX2m.setAttribute("type", "button");
-	buttonX2m.setAttribute("id", "minusX2_" + data.code);
-	buttonX2m.setAttribute("onclick", "counter(this.parentElement, -" + data.plusX2 + ")");
-	buttonX2m.setAttribute("value", "-" + data.plusX2);
-	cell2.appendChild(buttonX2m);
-  }
 
   var button1 = document.createElement("input");
   button1.setAttribute("type", "button");
@@ -212,24 +206,6 @@ function addCounter(table, idx, name, data) {
   button2.setAttribute("onclick", "counter(this.parentElement, 1)");
   button2.setAttribute("value", "+");
   cell2.appendChild(button2);
-
-  if (data.hasOwnProperty('plusX2')) {
-	var buttonX2p = document.createElement("input");
-	buttonX2p.setAttribute("type", "button");
-	buttonX2p.setAttribute("id", "plusX2_" + data.code);
-	buttonX2p.setAttribute("onclick", "counter(this.parentElement, +" + data.plusX2 + ")");
-	buttonX2p.setAttribute("value", "+" + data.plusX2);
-	cell2.appendChild(buttonX2p);
-  }
-
-  if (data.hasOwnProperty('plusX1')) {
-	var buttonX1p = document.createElement("input");
-	buttonX1p.setAttribute("type", "button");
-	buttonX1p.setAttribute("id", "plusX1_" + data.code);
-	buttonX1p.setAttribute("onclick", "counter(this.parentElement, +" + data.plusX1 + ")");
-	buttonX1p.setAttribute("value", "+" + data.plusX1);
-	cell2.appendChild(buttonX1p);
-  }
 
   if (data.hasOwnProperty('cycleTimer')) {
     if (data.cycleTimer != "") {
@@ -1468,5 +1444,4 @@ window.onload = function () {
     }
   }
 };
-
 
