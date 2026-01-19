@@ -173,6 +173,16 @@ function addCounter(table, idx, name, data) {
 	buttonX1m.setAttribute("value", "-" + data.plusX1);
 	cell2.appendChild(buttonX1m);
   }
+
+  if (data.hasOwnProperty('plusX2')) {
+	var buttonX2m = document.createElement("input");
+	buttonX2m.setAttribute("type", "button");
+	buttonX2m.setAttribute("id", "minusX2_" + data.code);
+	buttonX2m.setAttribute("onclick", "counter(this.parentElement, -" + data.plusX2 + ")");
+	buttonX2m.setAttribute("value", "-" + data.plusX2);
+	cell2.appendChild(buttonX2m);
+  }
+
   var button1 = document.createElement("input");
   button1.setAttribute("type", "button");
   button1.setAttribute("id", "minus_" + data.code);
@@ -203,10 +213,19 @@ function addCounter(table, idx, name, data) {
   button2.setAttribute("value", "+");
   cell2.appendChild(button2);
 
+  if (data.hasOwnProperty('plusX2')) {
+	var buttonX2p = document.createElement("input");
+	buttonX2p.setAttribute("type", "button");
+	buttonX2p.setAttribute("id", "plusX2_" + data.code);
+	buttonX2p.setAttribute("onclick", "counter(this.parentElement, +" + data.plusX2 + ")");
+	buttonX2p.setAttribute("value", "+" + data.plusX2);
+	cell2.appendChild(buttonX2p);
+  }
+
   if (data.hasOwnProperty('plusX1')) {
 	var buttonX1p = document.createElement("input");
 	buttonX1p.setAttribute("type", "button");
-	buttonX1p.setAttribute("id", "minusX1_" + data.code);
+	buttonX1p.setAttribute("id", "plusX1_" + data.code);
 	buttonX1p.setAttribute("onclick", "counter(this.parentElement, +" + data.plusX1 + ")");
 	buttonX1p.setAttribute("value", "+" + data.plusX1);
 	cell2.appendChild(buttonX1p);
@@ -1449,4 +1468,5 @@ window.onload = function () {
     }
   }
 };
+
 
