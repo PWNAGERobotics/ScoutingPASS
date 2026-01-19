@@ -79,11 +79,14 @@ var config_data = `
       "code": "afs",
       "expectedMax": 32,
       "plusX1": 10,
+      "plusX2": 5,
       "type": "counter"
     },
     { "name": "Pass from Neutral Zone",
       "code": "apn",
       "expectedMax": 60,
+      "plusX1": 10,
+      "plusX2": 5,
       "type": "counter"
     },
     { "name": "Climb (L1)",
@@ -122,11 +125,15 @@ var config_data = `
     { "name": "Fuel Scored",
       "code": "tfs",
       "expectedMax": 150,
+      "plusX1": 10,
+      "plusX2": 5,
       "type": "counter"
     },
     { "name": "Pass from Neutral Zone",
       "code": "pnz",
       "expectedMax": 250,
+      "plusX1": 10,
+      "plusX2": 5,
       "type": "counter"
     },
     { "name": "Pass from Opp<br>Alliance Zone",
