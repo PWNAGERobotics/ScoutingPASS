@@ -166,21 +166,17 @@ function addCounter(table, idx, name, data) {
   var cell2
   if (data.hasOwnProperty('plusX1') || data.hasOwnProperty('plusX2')) {
 	cell2 = cell1
+    cell1.innerHTML = '<center>' + name + '<br>';
   } else {
     cell2 = row.insertCell(1);
     cell2.style.width = ColWidth;
+    cell1.innerHTML = name + '&nbsp;';
   }
 
-  cell1.innerHTML = name + '&nbsp;';
   if (data.hasOwnProperty('tooltip')) {
     cell1.setAttribute("title", data.tooltip);
   }
   cell2.classList.add("field");
-
-  if (data.hasOwnProperty('plusX1') || data.hasOwnProperty('plusX2')) {
-    var br = document.createElement("br");
-    cell2.appendChild(br);
-  }
 
   if (data.hasOwnProperty('plusX1')) {
     var buttonX1m = document.createElement("input");
@@ -264,6 +260,10 @@ function addCounter(table, idx, name, data) {
     def.setAttribute("type", "hidden");
     def.setAttribute("value", data.defaultValue);
     cell2.appendChild(def);
+  }
+
+  if (data.hasOwnProperty('plusX1') || data.hasOwnProperty('plusX2')) {
+    cell1.innerHTML = '</center>';
   }
 
   return idx + 1;
@@ -1485,6 +1485,7 @@ window.onload = function () {
     }
   }
 };
+
 
 
 
