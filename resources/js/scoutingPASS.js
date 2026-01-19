@@ -149,118 +149,121 @@ function addTimer(table, idx, name, data) {
 }
 
 function addCounter(table, idx, name, data) {
-  var row = table.insertRow(idx);
-  var cell1 = row.insertCell(0);
-  if (data.hasOwnProperty('plusInc1') || data.hasOwnProperty('plusInc2')) {
-	cell1.setAttribute("colspan", 2);
-  	cell1.setAttribute("style", "text-align: center;");
-	cell1.style.display = "flex";
-	cell1.style.gap = "5px";
-  }
+  const row = table.insertRow(idx);
+  const hasExtraInc = data.hasOwnProperty('plusInc1') || data.hasOwnProperty('plusInc2');
+  
+  // Error Handling
+  if (!data.hasOwnProperty('code')) {
+    const errorCell = row.insertCell(0);
+    errorCell.classList.add("title");
+    errorCell.innerHTML = `Error: No code specified for ${name}`;
+    return idx + 1;
+  }  
+	
+// 2. Cell Configuration
+  const cell1 = row.insertCell(0);
+  let targetCell; // Where the buttons will actually go
+
   cell1.style.width = ColWidth;
   cell1.classList.add("title");
-  if (!data.hasOwnProperty('code')) {
-    cell1.innerHTML = `Error: No code specified for ${name}`;
-    return idx + 1;
-  }
-  var cell2;
-  if (data.hasOwnProperty('plusInc1') || data.hasOwnProperty('plusInc2')) {
-	cell2 = cell1
-    cell1.innerHTML = name + '<br>';
+  if (data.hasOwnProperty('tooltip')) cell1.setAttribute("title", data.tooltip);
+
+  if (hasExtraInc) {
+    cell1.setAttribute("colspan", 2);
+    // Apply Vertical Stack to the merged cell
+    Object.assign(cell1.style, {
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      gap: "8px"
+    });
+    
+    const label = document.createElement("div");
+    label.textContent = name;
+    cell1.appendChild(label);
+    
+    targetCell = cell1; 
   } else {
-    cell2 = row.insertCell(1);
-    cell2.style.width = ColWidth;
-    cell1.innerHTML = name + '&nbsp;';
+    cell1.innerHTML = `${name}&nbsp;`;
+    targetCell = row.insertCell(1);
+    targetCell.style.width = ColWidth;
+    targetCell.classList.add("field");
   }
 
-  if (data.hasOwnProperty('tooltip')) {
-    cell1.setAttribute("title", data.tooltip);
-  }
-  cell2.classList.add("field");
+  // 3. Create the Horizontal Button Container
+  const buttonGroup = document.createElement("div");
+  Object.assign(buttonGroup.style, {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    gap: "4px" // Space between buttons
+  });
+  targetCell.appendChild(buttonGroup);
 
-  if (data.hasOwnProperty('plusInc1')) {
-    var buttonInc1m = document.createElement("input");
-    buttonInc1m.setAttribute("type", "button");
-    buttonInc1m.setAttribute("id", "minusInc1_" + data.code);
-    buttonInc1m.setAttribute("onclick", "counter(this.parentElement, -" + data.plusInc1 + ")");
-    buttonInc1m.setAttribute("value", "-" + data.plusInc1);
-    cell2.appendChild(buttonInc1m);
-  }
-
-  if (data.hasOwnProperty('plusInc2')) {
-    var buttonInc2m = document.createElement("input");
-    buttonInc2m.setAttribute("type", "button");
-    buttonInc2m.setAttribute("id", "minusInc2_" + data.code);
-    buttonInc2m.setAttribute("onclick", "counter(this.parentElement, -" + data.plusInc2 + ")");
-    buttonInc2m.setAttribute("value", "-" + data.plusInc2);
-    cell2.appendChild(buttonInc2m);
-  }
-
-  var button1 = document.createElement("input");
-  button1.setAttribute("type", "button");
-  button1.setAttribute("id", "minus_" + data.code);
-  button1.setAttribute("onclick", "counter(this.parentElement, -1)");
-  button1.setAttribute("value", "-");
-  cell2.appendChild(button1);
-
-  var inp = document.createElement("input");
-  inp.classList.add("counter");
-  inp.setAttribute("id", "input_" + data.code);
-  inp.setAttribute("type", "text");
-  if (enableGoogleSheets && data.hasOwnProperty('gsCol')) {
-    inp.setAttribute("name", data.gsCol);
-  } else {
-    inp.setAttribute("name", data.code);
-  }
-  inp.setAttribute("style", "background-color: black; color: white;border: none; text-align: center;");
-  inp.setAttribute("disabled", "");
-  inp.setAttribute("value", 0);
-  inp.setAttribute("size", 2);
-  inp.setAttribute("maxLength", 2);
-  cell2.appendChild(inp);
-
-  var button2 = document.createElement("input");
-  button2.setAttribute("type", "button");
-  button2.setAttribute("id", "plus_" + data.code);
-  button2.setAttribute("onclick", "counter(this.parentElement, 1)");
-  button2.setAttribute("value", "+");
-  cell2.appendChild(button2);
-
-  if (data.hasOwnProperty('plusInc2')) {
-    var buttonInc2p = document.createElement("input");
-    buttonInc2p.setAttribute("type", "button");
-    buttonInc2p.setAttribute("id", "plusInc2_" + data.code);
-    buttonInc2p.setAttribute("onclick", "counter(this.parentElement, " + data.plusInc2 + ")");
-    buttonInc2p.setAttribute("value", "+" + data.plusInc2);
-    cell2.appendChild(buttonInc2p);
-  }
-
-  if (data.hasOwnProperty('plusInc1')) {
-    var buttonInc1p = document.createElement("input");
-    buttonInc1p.setAttribute("type", "button");
-    buttonInc1p.setAttribute("id", "plusInc1_" + data.code);
-    buttonInc1p.setAttribute("onclick", "counter(this.parentElement, " + data.plusInc1 + ")");
-    buttonInc1p.setAttribute("value", "+" + data.plusInc1);
-    cell2.appendChild(buttonInc1p);
-  }
-
-  if (data.hasOwnProperty('cycleTimer')) {
-    if (data.cycleTimer != "") {
-      inp = document.createElement('input');
-      inp.setAttribute("hidden", "");
-      inp.setAttribute("id", "cycleTimer_" + data.code);
-      inp.setAttribute("value", data.cycleTimer);
-      cell.appendChild(inp);
+  // 4. Helper function to create inputs
+  const createInp = (type, id, value, onclickVal) => {
+    const el = document.createElement("input");
+    el.type = type;
+    if (id) el.id = id;
+    if (value !== undefined) el.value = value;
+    if (onclickVal !== undefined) {
+      el.setAttribute("onclick", `counter(this.parentElement.parentElement, ${onclickVal})`);
     }
+    return el;
+  };
+
+  // 5. Build Button Group (Negatives -> Input -> Positives)
+  if (data.plusInc1) buttonGroup.appendChild(createInp("button", `minusInc1_${data.code}`, -data.plusInc1, -data.plusInc1));
+  if (data.plusInc2) buttonGroup.appendChild(createInp("button", `minusInc2_${data.code}`, -data.plusInc2, -data.plusInc2));
+  
+  buttonGroup.appendChild(createInp("button", `minus_${data.code}`, "-", -1));
+
+  const mainInp = createInp("text", `input_${data.code}`, 0);
+  mainInp.classList.add("counter");
+  mainInp.name = (enableGoogleSheets && data.gsCol) ? data.gsCol : data.code;
+  Object.assign(mainInp.style, { 
+	  backgroundColor: "black",
+	  color: "white",
+	  border: "none",
+	  textAlign: "center" 
+  });
+  mainInp.disabled = true;
+  mainInp.size = 2;
+  mainInp.maxLength = 2;
+  buttonGroup.appendChild(mainInp);
+
+  buttonGroup.appendChild(createInp("button", `plus_${data.code}`, "+", 1));
+  
+  if (data.plusInc2) buttonGroup.appendChild(createInp("button", `plusInc2_${data.code}`, `+${data.plusInc2}`, data.plusInc2));
+  if (data.plusInc1) buttonGroup.appendChild(createInp("button", `plusInc1_${data.code}`, `+${data.plusInc1}`, data.plusInc1));
+
+  // 6. Metadata / Hidden Fields
+  if (data.cycleTimer) {
+    const timer = createInp("hidden", `cycleTimer_${data.code}`, data.cycleTimer);
+    targetCell.appendChild(timer);
   }
 
   if (data.hasOwnProperty('defaultValue')) {
-    var def = document.createElement("input");
-    def.setAttribute("id", "default_" + data.code)
-    def.setAttribute("type", "hidden");
-    def.setAttribute("value", data.defaultValue);
-    cell2.appendChild(def);
+    const def = createInp("hidden", `default_${data.code}`, data.defaultValue);
+    targetCell.appendChild(def);
   }
+  // if (data.hasOwnProperty('cycleTimer')) {
+  //   if (data.cycleTimer != "") {
+  //     inp = document.createElement('input');
+  //     inp.setAttribute("hidden", "");
+  //     inp.setAttribute("id", "cycleTimer_" + data.code);
+  //     inp.setAttribute("value", data.cycleTimer);
+  //     cell.appendChild(inp);
+  //   }
+  // }
+
+  // if (data.hasOwnProperty('defaultValue')) {
+  //   var def = document.createElement("input");
+  //   def.setAttribute("id", "default_" + data.code)
+  //   def.setAttribute("type", "hidden");
+  //   def.setAttribute("value", data.defaultValue);
+  //   cell2.appendChild(def);
+  // }
 
   return idx + 1;
 }
@@ -1481,6 +1484,7 @@ window.onload = function () {
     }
   }
 };
+
 
 
 
