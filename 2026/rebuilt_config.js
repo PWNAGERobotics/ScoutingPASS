@@ -78,6 +78,7 @@ var config_data = `
     { "name": "Fuel Scored",
       "code": "afs",
       "expectedMax": 32,
+      "plusX1": 10,
       "type": "counter"
     },
     { "name": "Pass from Neutral Zone",
