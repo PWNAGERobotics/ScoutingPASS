@@ -172,9 +172,11 @@ function addCounter(table, idx, name, data) {
     cell1.setAttribute("colspan", 2);
     // Apply Vertical Stack to the merged cell
     Object.assign(cell1.style, {
-      display: "flex",
+	  display: "flex",
       flexDirection: "column",
       alignItems: "center",
+      justifyContent: "center",
+      width: "100%",
       gap: "8px"
     });
     
@@ -1484,6 +1486,7 @@ window.onload = function () {
     }
   }
 };
+
 
 
 
