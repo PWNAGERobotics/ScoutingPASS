@@ -169,17 +169,17 @@ function addCounter(table, idx, name, data) {
   if (hasExtraInc) {
     cell1.setAttribute("colspan", 2);
     
-    // THE FIX: Ensure the flex container fills the entire TD width
+    cell1.style.width = "auto";
+	cell1.style.textAlign = "center";
+
     Object.assign(cell1.style, {
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",      // Centers items horizontally in a column
-      justifyContent: "center",  // Centers items vertically if there's extra height
-      width: "100%",             // Forces flexbox to span the whole cell
+      display: "inline-flex",
+	  flexDirection: "column",
+      alignItems: "center",
+      justifyContent: "center",
+      width: "100%",
       boxSizing: "border-box",
-	  margin: "0 auto",
-	  gap: "8px",
-      textAlign: "center"        // Fallback for non-flex browsers
+      gap: "8px"
     });
     
     const label = document.createElement("div");
@@ -1490,6 +1490,7 @@ window.onload = function () {
     }
   }
 };
+
 
 
 
