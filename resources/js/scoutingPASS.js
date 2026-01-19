@@ -151,7 +151,7 @@ function addTimer(table, idx, name, data) {
 function addCounter(table, idx, name, data) {
   var row = table.insertRow(idx);
   var cell1 = row.insertCell(0);
-  if (data.hasOwnProperty('plusX1') || data.hasOwnProperty('plusX2')) {
+  if (data.hasOwnProperty('plusInc1') || data.hasOwnProperty('plusInc2')) {
 	cell1.setAttribute("colspan", 2);
   	cell1.setAttribute("style", "text-align: center;");
 	cell1.style.display = "flex";
@@ -163,8 +163,8 @@ function addCounter(table, idx, name, data) {
     cell1.innerHTML = `Error: No code specified for ${name}`;
     return idx + 1;
   }
-  var cell2
-  if (data.hasOwnProperty('plusX1') || data.hasOwnProperty('plusX2')) {
+  var cell2;
+  if (data.hasOwnProperty('plusInc1') || data.hasOwnProperty('plusInc2')) {
 	cell2 = cell1
     cell1.innerHTML = '<center>' + name + '<br>';
   } else {
@@ -178,22 +178,22 @@ function addCounter(table, idx, name, data) {
   }
   cell2.classList.add("field");
 
-  if (data.hasOwnProperty('plusX1')) {
-    var buttonX1m = document.createElement("input");
-    buttonX1m.setAttribute("type", "button");
-    buttonX1m.setAttribute("id", "minusX1_" + data.code);
-    buttonX1m.setAttribute("onclick", "counter(this.parentElement, -" + data.plusX1 + ")");
-    buttonX1m.setAttribute("value", "-" + data.plusX1);
-    cell2.appendChild(buttonX1m);
+  if (data.hasOwnProperty('plusInc1')) {
+    var buttonInc1m = document.createElement("input");
+    buttonInc1m.setAttribute("type", "button");
+    buttonInc1m.setAttribute("id", "minusInc1_" + data.code);
+    buttonInc1m.setAttribute("onclick", "counter(this.parentElement, -" + data.plusInc1 + ")");
+    buttonInc1m.setAttribute("value", "-" + data.plusInc1);
+    cell2.appendChild(buttonInc1m);
   }
 
-  if (data.hasOwnProperty('plusX2')) {
-    var buttonX2m = document.createElement("input");
-    buttonX2m.setAttribute("type", "button");
-    buttonX2m.setAttribute("id", "minusX2_" + data.code);
-    buttonX2m.setAttribute("onclick", "counter(this.parentElement, -" + data.plusX2 + ")");
-    buttonX2m.setAttribute("value", "-" + data.plusX2);
-    cell2.appendChild(buttonX2m);
+  if (data.hasOwnProperty('plusInc2')) {
+    var buttonInc2m = document.createElement("input");
+    buttonInc2m.setAttribute("type", "button");
+    buttonInc2m.setAttribute("id", "minusInc2_" + data.code);
+    buttonInc2m.setAttribute("onclick", "counter(this.parentElement, -" + data.plusInc2 + ")");
+    buttonInc2m.setAttribute("value", "-" + data.plusInc2);
+    cell2.appendChild(buttonInc2m);
   }
 
   var button1 = document.createElement("input");
@@ -226,22 +226,22 @@ function addCounter(table, idx, name, data) {
   button2.setAttribute("value", "+");
   cell2.appendChild(button2);
 
-  if (data.hasOwnProperty('plusX2')) {
-    var buttonX2p = document.createElement("input");
-    buttonX2p.setAttribute("type", "button");
-    buttonX2p.setAttribute("id", "plusX2_" + data.code);
-    buttonX2p.setAttribute("onclick", "counter(this.parentElement, " + data.plusX2 + ")");
-    buttonX2p.setAttribute("value", "+" + data.plusX2);
-    cell2.appendChild(buttonX2p);
+  if (data.hasOwnProperty('plusInc2')) {
+    var buttonInc2p = document.createElement("input");
+    buttonInc2p.setAttribute("type", "button");
+    buttonInc2p.setAttribute("id", "plusInc2_" + data.code);
+    buttonInc2p.setAttribute("onclick", "counter(this.parentElement, " + data.plusInc2 + ")");
+    buttonInc2p.setAttribute("value", "+" + data.plusInc2);
+    cell2.appendChild(buttonInc2p);
   }
 
-  if (data.hasOwnProperty('plusX1')) {
-    var buttonX1p = document.createElement("input");
-    buttonX1p.setAttribute("type", "button");
-    buttonX1p.setAttribute("id", "plusX1_" + data.code);
-    buttonX1p.setAttribute("onclick", "counter(this.parentElement, " + data.plusX1 + ")");
-    buttonX1p.setAttribute("value", "+" + data.plusX1);
-    cell2.appendChild(buttonX1p);
+  if (data.hasOwnProperty('plusInc1')) {
+    var buttonInc1p = document.createElement("input");
+    buttonInc1p.setAttribute("type", "button");
+    buttonInc1p.setAttribute("id", "plusInc1_" + data.code);
+    buttonInc1p.setAttribute("onclick", "counter(this.parentElement, " + data.plusInc1 + ")");
+    buttonInc1p.setAttribute("value", "+" + data.plusInc1);
+    cell2.appendChild(buttonInc1p);
   }
 
   if (data.hasOwnProperty('cycleTimer')) {
@@ -262,7 +262,7 @@ function addCounter(table, idx, name, data) {
     cell2.appendChild(def);
   }
 
-  if (data.hasOwnProperty('plusX1') || data.hasOwnProperty('plusX2')) {
+  if (data.hasOwnProperty('plusInc1') || data.hasOwnProperty('plusInc2')) {
     cell1.innerHTML = '</center>';
   }
 
@@ -1485,6 +1485,7 @@ window.onload = function () {
     }
   }
 };
+
 
 
 
