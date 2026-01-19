@@ -177,7 +177,8 @@ function addCounter(table, idx, name, data) {
       justifyContent: "center",  // Centers items vertically if there's extra height
       width: "100%",             // Forces flexbox to span the whole cell
       boxSizing: "border-box",
-      gap: "8px",
+	  margin: "0 auto",
+	  gap: "8px",
       textAlign: "center"        // Fallback for non-flex browsers
     });
     
@@ -1489,6 +1490,7 @@ window.onload = function () {
     }
   }
 };
+
 
 
 
