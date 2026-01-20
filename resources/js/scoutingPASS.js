@@ -148,135 +148,6 @@ function addTimer(table, idx, name, data) {
   return idx + 1;
 }
 
-// function addCounter(table, idx, name, data) {
-//   const row = table.insertRow(idx);
-//   const hasExtraInc = data.hasOwnProperty('plusInc1') || data.hasOwnProperty('plusInc2');
-  
-//   // Error Handling
-//   if (!data.hasOwnProperty('code')) {
-//     const errorCell = row.insertCell(0);
-//     errorCell.classList.add("title");
-//     errorCell.innerHTML = `Error: No code specified for ${name}`;
-//     return idx + 1;
-//   }  
-
-//   const cell1 = row.insertCell(0);
-//   let targetCell;
-
-//   cell1.classList.add("title");
-//   if (data.hasOwnProperty('tooltip')) cell1.setAttribute("title", data.tooltip);
-
-//   if (hasExtraInc) {
-//     cell1.setAttribute("colspan", 2);
-    
-// 	cell1.style.textAlign = "center";
-
-//     Object.assign(cell1.style, {
-//       display: "flex",
-// 	  flexDirection: "column",
-//       alignItems: "center",
-//       justifyContent: "center",
-//       gap: "8px"
-//     });
-    
-//     const label = document.createElement("div");
-//     label.textContent = name;
-//     cell1.appendChild(label);
-    
-//     targetCell = cell1; 
-//   } else {
-//     cell1.style.width = ColWidth;
-//     cell1.innerHTML = `${name}&nbsp;`;
-//     targetCell = row.insertCell(1);
-//     targetCell.style.width = ColWidth;
-//     targetCell.classList.add("field");
-//     // Also center the second cell in standard mode
-//     targetCell.style.textAlign = "center"; 
-//   }
-
-//   targetCell.style.textAlign = "center";
-
-//   // Button Container Alignment
-//   const buttonGroup = document.createElement("div");
-//   Object.assign(buttonGroup.style, {
-//     display: "inline-flex",
-//     flexDirection: "row",
-//     alignItems: "center",
-//     justifyContent: "center", // Ensures buttons stay centered in their row
-//     gap: "4px"
-//   });
-//   targetCell.appendChild(buttonGroup);
-
-//   // Helper function
-//   const createInp = (type, id, value, onclickVal) => {
-//     const el = document.createElement("input");
-//     el.type = type;
-//     if (id) el.id = id;
-//     if (value !== undefined) el.value = value;
-//     if (onclickVal !== undefined) {
-//       // Logic: button -> buttonGroup -> cell
-//       el.setAttribute("onclick", `counter(this.parentElement.parentElement, ${onclickVal})`);
-//     }
-//     return el;
-//   };
-
-//   // Build Button Group
-//   if (data.plusInc1) buttonGroup.appendChild(createInp("button", `minusInc1_${data.code}`, -data.plusInc1, -data.plusInc1));
-//   if (data.plusInc2) buttonGroup.appendChild(createInp("button", `minusInc2_${data.code}`, -data.plusInc2, -data.plusInc2));
-  
-//   buttonGroup.appendChild(createInp("button", `minus_${data.code}`, "-", -1));
-
-//   const mainInp = createInp("text", `input_${data.code}`, 0);
-//   mainInp.classList.add("counter");
-//   mainInp.name = (enableGoogleSheets && data.gsCol) ? data.gsCol : data.code;
-//   Object.assign(mainInp.style, { 
-// 	backgroundColor: "black",
-// 	color: "white",
-// 	border: "none",
-// 	textAlign: "center",
-// 	width: "3ch",
-//   });
-//   mainInp.disabled = true;
-//   mainInp.maxLength = 4;
-//   buttonGroup.appendChild(mainInp);
-
-//   buttonGroup.appendChild(createInp("button", `plus_${data.code}`, "+", 1));
-  
-//   if (data.plusInc2) buttonGroup.appendChild(createInp("button", `plusInc2_${data.code}`, `+${data.plusInc2}`, data.plusInc2));
-//   if (data.plusInc1) buttonGroup.appendChild(createInp("button", `plusInc1_${data.code}`, `+${data.plusInc1}`, data.plusInc1));
-
-//   // Metadata
-//   if (data.cycleTimer) {
-//     const timer = createInp("hidden", `cycleTimer_${data.code}`, data.cycleTimer);
-//     targetCell.appendChild(timer);
-//   }
-
-//   if (data.hasOwnProperty('defaultValue')) {
-//     const def = createInp("hidden", `default_${data.code}`, data.defaultValue);
-//     targetCell.appendChild(def);
-//   }
-
-//   // if (data.hasOwnProperty('cycleTimer')) {
-//   //   if (data.cycleTimer != "") {
-//   //     inp = document.createElement('input');
-//   //     inp.setAttribute("hidden", "");
-//   //     inp.setAttribute("id", "cycleTimer_" + data.code);
-//   //     inp.setAttribute("value", data.cycleTimer);
-//   //     cell.appendChild(inp);
-//   //   }
-//   // }
-
-//   // if (data.hasOwnProperty('defaultValue')) {
-//   //   var def = document.createElement("input");
-//   //   def.setAttribute("id", "default_" + data.code)
-//   //   def.setAttribute("type", "hidden");
-//   //   def.setAttribute("value", data.defaultValue);
-//   //   cell2.appendChild(def);
-//   // }
-
-//   return idx + 1;
-// }
-
 function addCounter(table, idx, name, data) {
   const row = table.insertRow(idx);
   const hasExtraInc = data.hasOwnProperty('plusInc1') || data.hasOwnProperty('plusInc2');
@@ -310,7 +181,7 @@ function addCounter(table, idx, name, data) {
     // Create label
     const label = document.createElement("div");
     label.textContent = name;
-    label.style.cssText = 'margin-bottom: 8px;';
+    label.style.cssText = 'margin-bottom: 12px;';
     wrapper.appendChild(label);
     
     titleCell.appendChild(wrapper);
@@ -1612,6 +1483,7 @@ window.onload = function () {
     }
   }
 };
+
 
 
 
