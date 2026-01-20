@@ -181,7 +181,7 @@ function addCounter(table, idx, name, data) {
     // Create label
     const label = document.createElement("div");
     label.textContent = name;
-    label.style.cssText = 'margin-bottom: 12px;';
+    label.style.cssText = 'margin-bottom: 20px;';
     wrapper.appendChild(label);
     
     titleCell.appendChild(wrapper);
@@ -1483,6 +1483,7 @@ window.onload = function () {
     }
   }
 };
+
 
 
 
