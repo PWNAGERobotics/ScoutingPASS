@@ -181,7 +181,7 @@ function addCounter(table, idx, name, data) {
     // Create label
     const label = document.createElement("div");
     label.textContent = name;
-    label.style.cssText = 'margin-bottom: 20px;';
+    label.style.cssText = 'margin-bottom: 4px;';
     wrapper.appendChild(label);
     
     titleCell.appendChild(wrapper);
@@ -203,7 +203,7 @@ function addCounter(table, idx, name, data) {
   
   // Create button group
   const buttonGroup = document.createElement("div");
-  buttonGroup.style.cssText = 'display: inline-flex; align-items: center; gap: 4px;';
+  buttonGroup.style.cssText = 'display: inline-flex; align-items: center; gap: 10px;';
 
   // Helper to create input elements
   const createInput = (type, id, value, incrementValue) => {
@@ -1487,6 +1487,7 @@ window.onload = function () {
     }
   }
 };
+
 
 
 
