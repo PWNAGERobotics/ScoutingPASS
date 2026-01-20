@@ -78,11 +78,15 @@ var config_data = `
     { "name": "Fuel Scored",
       "code": "afs",
       "expectedMax": 32,
+      "altInc1": 10,
+      "altInc2": 5,
       "type": "counter"
     },
     { "name": "Pass from Neutral Zone",
       "code": "apn",
       "expectedMax": 60,
+      "altInc1": 10,
+      "altInc2": 5,
       "type": "counter"
     },
     { "name": "Climb (L1)",
@@ -121,16 +125,22 @@ var config_data = `
     { "name": "Fuel Scored",
       "code": "tfs",
       "expectedMax": 150,
+      "altInc1": 10,
+      "altInc2": 5,
       "type": "counter"
     },
     { "name": "Pass from Neutral Zone",
       "code": "pnz",
       "expectedMax": 250,
+      "altInc1": 10,
+      "altInc2": 5,
       "type": "counter"
     },
     { "name": "Pass from Opp<br>Alliance Zone",
       "code": "poa",
       "expectedMax": 250,
+      "altInc1": 10,
+      "altInc2": 5,
       "type": "counter"
     },
     { "name": "Pickup from Depot",
@@ -153,7 +163,7 @@ var config_data = `
       "choices": {
         "1": "Level 1<br>",
         "2": "Level 2<br>",
-        "3": "Level 2<br>",
+        "3": "Level 3<br>",
         "a": "Attempted<br>",
         "x": "Not Attempted"
       },

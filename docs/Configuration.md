@@ -207,6 +207,9 @@ Special sub-elements of text are "match" and "team".  These sub-types will updat
   "code": "mc",
   "type": "counter",
   "defaultValue": 0,
+  "altInc1": 10,
+  "altInc2": 5,
+  "expectedMax": 99,
   "tooltip": "Put help or more descriptive text here"
 }
 ```
@@ -214,6 +217,9 @@ The counter is displayed with two buttons labeled "-" and "+" to increase or dec
 
 Specific attributes of counter are:
 * defaultValue (optional) - set the field to start at a certain value
+* altInc1 (optional) - Add an additional button to increment/decrement the counter by the specified amount
+* altInc2 (optional) - Add a 2nd additional button to increment/decrement the counter by the specified amount
+* expectedMax (optional) - used by the data generation program to generate reasonable expected values
 
 The counter element will be set back to the defaultValue value when the Clear Form button is pressed.  
 If there is no defaultValue it will be reset to zero.
@@ -304,6 +310,7 @@ There are no specific attributes to this element.
   "showFlip": "false",
   "showUndo": "false",
   "shape": "circle 12 black red true",
+  "expectedMax": 20,
   "cycleTimer": "tct"
 }
 ```
@@ -326,6 +333,7 @@ Specific attributes of Cycle Timer are:
   * fillColor - color to fill in the shape (Default value: none)
   * fill - if true, fill in the shape with the fillColor, otherwise do not fill in the shape
   * Note: Use predefined [HTML color names](https://www.w3schools.com/colors/colors_names.asp) only
+* expectedMax (optional) - used by the data generation program to generate reasonable expected values
 * cycleTimer (optional) - tie clicks into a cycle timer to start new cycles every time the image is clicked.
 
 The element field_image has been deprecated in favor of the new more flexible clickable_image.  It is currently still supported but may be removed from future releases.
