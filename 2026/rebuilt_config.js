@@ -163,7 +163,7 @@ var config_data = `
       "choices": {
         "1": "Level 1<br>",
         "2": "Level 2<br>",
-        "3": "Level 2<br>",
+        "3": "Level 3<br>",
         "a": "Attempted<br>",
         "x": "Not Attempted"
       },
