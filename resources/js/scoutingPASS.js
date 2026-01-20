@@ -150,7 +150,7 @@ function addTimer(table, idx, name, data) {
 
 function addCounter(table, idx, name, data) {
   const row = table.insertRow(idx);
-  const hasExtraInc = data.hasOwnProperty('plusInc1') || data.hasOwnProperty('plusInc2');
+  const hasExtraInc = data.hasOwnProperty('altInc1') || data.hasOwnProperty('altInc2');
   
   // Error Handling
   if (!data.hasOwnProperty('code')) {
@@ -224,12 +224,12 @@ function addCounter(table, idx, name, data) {
   };
 
   // Build buttons from left to right
-  if (data.plusInc1) {
-    buttonGroup.appendChild(createInput("button", `minusInc1_${data.code}`, -data.plusInc1, -data.plusInc1));
+  if (data.altInc1) {
+    buttonGroup.appendChild(createInput("button", `minusInc1_${data.code}`, -data.altInc1, -data.altInc1));
   }
   
-  if (data.plusInc2) {
-    buttonGroup.appendChild(createInput("button", `minusInc2_${data.code}`, -data.plusInc2, -data.plusInc2));
+  if (data.altInc2) {
+    buttonGroup.appendChild(createInput("button", `minusInc2_${data.code}`, -data.altInc2, -data.altInc2));
   }
   
   buttonGroup.appendChild(createInput("button", `minus_${data.code}`, "-", -1));
@@ -245,12 +245,12 @@ function addCounter(table, idx, name, data) {
 
   buttonGroup.appendChild(createInput("button", `plus_${data.code}`, "+", 1));
   
-  if (data.plusInc2) {
-    buttonGroup.appendChild(createInput("button", `plusInc2_${data.code}`, `+${data.plusInc2}`, data.plusInc2));
+  if (data.altInc2) {
+    buttonGroup.appendChild(createInput("button", `plusInc2_${data.code}`, `+${data.altInc2}`, data.altInc2));
   }
   
-  if (data.plusInc1) {
-    buttonGroup.appendChild(createInput("button", `plusInc1_${data.code}`, `+${data.plusInc1}`, data.plusInc1));
+  if (data.altInc1) {
+    buttonGroup.appendChild(createInput("button", `plusInc1_${data.code}`, `+${data.altInc1}`, data.altInc1));
   }
 
   // Nest: centerContainer -> buttonGroup
@@ -1487,6 +1487,7 @@ window.onload = function () {
     }
   }
 };
+
 
 
 
