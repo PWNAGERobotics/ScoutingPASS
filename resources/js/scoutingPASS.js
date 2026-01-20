@@ -216,6 +216,10 @@ function addCounter(table, idx, name, data) {
         counter(this.parentElement.parentElement.parentElement, incrementValue);
       };
     }
+	// Prevent double-tap zoom on buttons
+    if (type === "button") {
+      input.style.touchAction = 'manipulation';
+    }
     return input;
   };
 
@@ -1483,6 +1487,7 @@ window.onload = function () {
     }
   }
 };
+
 
 
 
