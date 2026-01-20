@@ -2,7 +2,7 @@
 
 # Scouting P.A.S.S.
 
-#### A scouting system for FIRST FRC competitions developed by [PWNAGE - Team #2451](https://pwnagerobotics.org).
+#### A scouting system for FIRST FRC competitions developed by [PWNAGE - Team #2451](https://pwnagerobotics.org)
 
 <a href="https://PWNAGERobotics.github.io/ScoutingPASS">Live Demo</a> . <a href="https://PWNAGERobotics.github.io/ScoutingPASS/pit.html">Pit Scouting</a> . <a href="#getting-started">Getting Started</a> . <a href="#faq">FAQ</a>
 
@@ -77,7 +77,7 @@ User defined fields can be of several different types:
 * Cycle Timer - Start the timer and with 1 click track cycle times of robots.  
 * Field Image - Using an image of the field, select positions on the field. (Use to record starting point or shooting locations)
 
-These should cover most of your scouting team's data collection needs.  PWNAGE's 2020 Infinite Recharge configuration file is included as an example.  The import of the configuration file is in index.html and would need to be updated to import a different configuration file. Only import one configuration file.
+These should cover most of your scouting team's data collection needs.  The REBUIT (2026) configuration file is included as an example.  The import of the configuration file is in index.html and would need to be updated to import a different configuration file. Only import one configuration file.
 
 Since this is an HTML/JavaScript web page, scouters can use almost any device that has a web browser.  If the device has a touchscreen the screen can be used to swipe back and forth between pages and interact with the data elements.  The webpage only needs to be loaded once.  Once loaded the functionality and data is stored locally in the webpage and doesn't need to be reloaded.  The QR code generation and clear button only resets the form and does not cause the page to reload.  This means that a cellular or WiFi connection is not needed at the competition as long as the webpage is loaded before the event.
 
@@ -108,7 +108,7 @@ Note: For this to work, the schedule has to be posted to The Blue Alliance.  Tha
 
 ## Pit Scouting:
 
-ScountingPASS now supports Pit Scouting
+ScoutingPASS now supports Pit Scouting
 
 To access the pit scouting page, add '/pit.html' to the end of your URL.  (i.e. http://pwnagerobotics.github.io/ScoutingPASS/pit.html)
 
@@ -218,6 +218,7 @@ Distributed under the GNU GPL v3.0 License. See `LICENSE` for more information.
   <summary>2026 Season Updates</summary>
   <ul>
     <li>New configurations added for match and pit scouting as well as the new field image</li>
+    <li>Add alternate increment/decrement configurations for the counter element</li>
   </ul>
 </details>
 
