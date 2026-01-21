@@ -107,7 +107,7 @@ var config_data = `
       "code": "afo",
       "type": "bool"
     },
-    { "name": "Pickup from<br>Neutral Zone",
+    { "name": "Pickup from Neutral Zone",
       "code": "aff",
       "type": "bool"
     }
@@ -136,7 +136,7 @@ var config_data = `
       "altInc2": 5,
       "type": "counter"
     },
-    { "name": "Pass from Opp<br>Alliance Zone",
+    { "name": "Pass from Opp Alliance Zone",
       "code": "poa",
       "expectedMax": 250,
       "altInc1": 10,
