@@ -46,6 +46,7 @@ var config_data = `
         "3": "L3 (6.12:1)<br>",
         "4": "L4 (5.14:1)<br>",
         "o": "Other ratio (put in comments)<br>",
+        "n": "Not known<br>",
         "x": "Not Swerve"
       },
       "defaultValue":"x"

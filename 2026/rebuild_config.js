@@ -2,7 +2,7 @@ var config_data = `
 {
   "dataFormat": "tsv",
   "title": "Scouting PASS 2026",
-  "page_title": "REBUILD",
+  "page_title": "<b>REBUILD</b>",
   "checkboxAs": "10",
   "prematch": [
     { "name": "Scouter Initials",
@@ -10,13 +10,13 @@ var config_data = `
       "type": "scouter",
       "size": 5,
       "maxSize": 5,
-      "required": "true"
+      "required": "false"
     },
     { "name": "Event",
       "code": "e",
       "type": "event",
-      "defaultValue": "2025ilpe",
-      "required": "true"
+      "defaultValue": "2026pnst",
+      "required": "false"
     },
     { "name": "Match Level",
       "code": "l",
@@ -27,14 +27,14 @@ var config_data = `
         "f": "Finals"
       },
       "defaultValue": "qm",
-      "required": "true"
+      "required": "false"
     },
     { "name": "Match #",
       "code": "m",
       "type": "match",
       "min": 1,
       "max": 150,
-      "required": "true"
+      "required": "false"
     },
     { "name": "Robot",
       "code": "r",
@@ -47,22 +47,13 @@ var config_data = `
         "r3": "Red-3",
         "b3": "Blue-3"
       },
-      "required": "true"
+      "required": "false"
     },
     { "name": "Team #",
       "code": "t",
       "type": "team",
       "min": 1,
       "max": 99999
-    },
-    { "name": "Auto Start Position",
-      "code": "as",
-      "type": "clickable_image",
-      "filename": "2025/half_field.png",
-      "clickRestriction": "one",
-      "dimensions": "6 6",
-      "allowableResponses": "1 7 13 19 25 31",
-      "shape": "circle 5 black red true"
     }
   ],
   "auton": [
@@ -70,83 +61,53 @@ var config_data = `
       "code": "al",
       "type": "bool"
     },
-    { "name": "Coral L1",
-      "code": "ac1",
-      "type": "counter"
+    { "name": "Pre-Loaded",
+      "code": "pl",
+      "type": "bool"
     },
-    { "name": "Coral L2",
-      "code": "ac2",
-      "type": "counter"
+    { "name": "Climbed to Level 1",
+      "code": "clo",
+      "type": "bool"
     },
-    { "name": "Coral L3",
-      "code": "ac3",
-      "type": "counter"
+    { "name": "Collect From Depot",
+      "code": "cfd",
+      "type": "bool"
     },
-    { "name": "Coral L4",
-      "code": "ac4",
-      "type": "counter"
+    { "name": "Scored Into Hub",
+      "code": "sih",
+      "type": "bool"
     },
-    { "name": "Auto Scoring Position",
-      "code": "asp",
-      "type": "clickable_image",
-      "filename": "2025/reef.png",
-      "dimensions": "6 6",
-      "allowableResponses": "1 2 3 4 5 6 7 8 9 10 11 12 13 14 17 18 19 20 23 24 25 26 27 28 29 30 31 32 33 34 35 36",
-      "shape": "circle 5 black red true"
-    },
-    { "name": "Processor Score",
-      "code": "aps",
-      "type": "counter"
-    },
-    { "name": "Net Score",
-      "code": "ans",
-      "type": "counter"
+    { "name": "Collect From Neutral",
+      "code": "cfn",
+      "type": "bool"
     }
   ],
   "teleop": [
-    { "name": "Coral L1",
-      "code": "tc1",
+    { "name": "Full Sets of Coral Scored",
+      "code": "scs",
       "type": "counter"
     },
-    { "name": "Coral L2",
-      "code": "tc2",
-      "type": "counter"
+
+    { "name": "Pickup From Neutral",
+      "code": "pfn",
+      "type": "bool"
     },
-    { "name": "Coral L3",
-      "code": "tc3",
-      "type": "counter"
+    { "name": "Pickup from depot",
+      "code": "pfd",
+      "type": "bool"
     },
-    { "name": "Coral L4",
-      "code": "tc4",
-      "type": "counter"
+    { "name": "goes under trench",
+      "code": "gut",
+      "type": "bool"
     },
-    { "name": "Processor Score",
-      "code": "tps",
-      "type": "counter"
-    },
-    { "name": "Net Score",
-      "code": "tns",
-      "type": "counter"
-    },
-    { "name": "Pickup From",
-      "code": "tpu",
-      "type": "radio",
-      "choices": {
-        "s": "Coral Station<br>",
-        "f": "Floor<br>",
-        "b": "Both<br>",
-        "x": "Not Attempted"
-      },
-      "defaultValue": "x"
-    },
-    { "name": "Scored in<br>Opponent<br>Processor",
-      "code": "opp",
+    { "name": "Goes Over Bump",
+      "code": "gob",
       "type": "bool"
     }
   ],
   "endgame": [
-    { "name": "Barge Timer",
-      "code": "ebt",
+    { "name": "climb timer",
+      "code": "clt",
       "type": "timer"
     },
     { "name": "Final Robot Status",
@@ -155,18 +116,16 @@ var config_data = `
       "choices": {
         "bp": "Parked<br>",
         "ba": "Parked/Failed Climb<br>",
-        "bs": "Shallow Cage<br>",
-        "bd": "Deep Cage<br>",
+        "bb": "Level 1<br>",
+        "bc": "Level 2<br>",
+        "bd": "Level 3<br>",
+        
         "x": "Not attempted"
       },
       "defaultValue": "x"
     }
   ],
   "postmatch": [
-    { "name": "Attained Coopertition Pt",
-      "code": "cop",
-      "type": "bool"
-    },
     { "name": "Algae Left in Reef",
       "code": "alr",
       "type": "number",
@@ -178,9 +137,9 @@ var config_data = `
       "code": "ds",
       "type": "radio",
       "choices": {
-        "n": "Not Effective<br>",
+        "b": "Bad<br>",
         "a": "Average<br>",
-        "v": "Very Effective<br>",
+        "g": "Good<br>",
         "x": "Not Observed"
       },
       "defaultValue": "x"
@@ -189,25 +148,30 @@ var config_data = `
       "code": "dr",
       "type": "radio",
       "choices": {
-        "b": "Below Average<br>",
+        "b": "Bad<br>",
         "a": "Average<br>",
         "g": "Good<br>",
-        "e": "Excellent<br>",
         "x": "Did not play defense"
       },
       "defaultValue": "x"
-    },
+    }, 
     { "name": "Speed Rating",
       "code": "sr",
       "type": "radio",
       "choices": {
         "1": "1 (slow)<br>",
         "2": "2<br>",
-        "3": "3<br>",
-        "4": "4<br>",
-        "5": "5 (fast)"
+        "3": "3 (fast)<br>"
       },
-      "defaultValue":"3"
+      "defaultValue":"2"
+    },
+    { "name": "energized",
+      "code": "egz",
+      "type": "bool"
+    },
+    { "name": "supercharged",
+      "code": "sch",
+      "type": "bool"
     },
     { "name": "Died/Immobilized",
       "code": "die",
@@ -215,14 +179,6 @@ var config_data = `
     },
     { "name": "Tippy<br>(almost tipped over)",
       "code": "tip",
-      "type": "bool"
-    },
-    { "name": "Dropped Coral (>2)",
-      "code": "dc",
-      "type": "bool"
-    },
-    { "name": "Dropped Algae (>2)",
-      "code": "da",
       "type": "bool"
     },
     { "name": "Make good<br>alliance partner?",

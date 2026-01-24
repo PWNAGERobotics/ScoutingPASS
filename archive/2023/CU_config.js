@@ -55,14 +55,6 @@ var config_data = `
       "type": "team",
       "min": 1,
       "max": 99999
-    },
-    { "name": "Auto Start Position",
-      "code": "as",
-      "type": "clickable_image",
-      "filename": "2023/field_image.png",
-      "clickRestriction": "one",
-      "allowableResponses": "2 3 4 9 10 11 14 15 16 21 22 23 26 27 28 33 34 35 38 39 46 47",
-      "shape": "circle 5 black red true"
     }
   ],
   "auton": [

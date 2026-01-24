@@ -62,12 +62,6 @@ var config_data = `
       "type": "team",
       "min": 1,
       "max": 99999
-    },
-    { "name": "Auto Start Position",
-      "gsCol": "autoStartPos",
-      "code": "as",
-      "type": "field_image",
-      "filename": "2022/field_image.png"
     }
   ],
   "auton": [

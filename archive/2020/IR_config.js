@@ -57,11 +57,6 @@ var config_data = `
        "type": "team",
        "min": 1,
        "max": 99999
-     },
-     { "name": "Auto Start Position",
-       "code": "as",
-       "type": "field_image",
-       "filename": "2020/field_image.png"
      }
    ],
    "auton": [
