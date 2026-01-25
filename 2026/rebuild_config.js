@@ -5,11 +5,11 @@ var config_data = `
   "page_title": "<b>REBUILD</b>",
   "checkboxAs": "10",
   "prematch": [
-    { "name": "Scouter Initials",
+    { "name": "Scouter Name",
       "code": "s",
       "type": "scouter",
-      "size": 5,
-      "maxSize": 5,
+      "size": 20,
+      "maxSize": 20,
       "required": "false"
     },
     { "name": "Event",

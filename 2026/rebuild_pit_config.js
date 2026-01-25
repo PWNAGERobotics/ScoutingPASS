@@ -2,9 +2,18 @@ var config_data = `
 {
   "dataFormat": "tsv",
   "title": "Scouting PASS 2024",
-  "page_title": "Crescendo",
+  "page_title": "<b>REBUILD</b>",
   "pitConfig": "true",
   "prematch": [
+
+    { "name": "Scouter Name",
+      "code": "s",
+      "type": "scouter",
+      "size": 20,
+      "maxSize": 20,
+      "required": "false"
+    },
+
     { "name": "Team Number",
       "code": "t",
       "type": "number"
@@ -41,12 +50,23 @@ var config_data = `
         "s": "Swerve<br>",
         "w": "West Coast/Tank<br>",
         "b": "Butterfly/Grashopper<br>",
-        "m": "Mechanum<br>",
-        "o": "Other<br>",
-        "n": "Not known<br>"
+        "m": "Mechanum<br>"
       },
       "defaultValue": "o"
     },
+
+    { "name": "Drivetrain Motor",
+      "code": "mot",
+      "type": "radio",
+      "choices": {
+        "n": "Neo<br>",
+        "f": "Falcon<br>",
+        "c": "CIM<br>",
+        "k": "Kraken<br>"
+      },
+      "defaultValue":"x"
+    },
+
     { "name": "Other Drivetrain",
       "code": "odt",
       "type": "text",
@@ -66,17 +86,7 @@ var config_data = `
      "defaultValue": "0"
     },
 
-    { "name": "Drivetrain Motor",
-      "code": "mot",
-      "type": "radio",
-      "choices": {
-        "n": "Neo<br>",
-        "f": "Falcon<br>",
-        "c": "CIM<br>",
-        "x": "Other<br>"
-      },
-      "defaultValue":"x"
-    },
+
 
     { "name": "Go over bump",
       "code": "gob",
