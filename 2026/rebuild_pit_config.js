@@ -44,6 +44,12 @@ var config_data = `
       "defaultValue": "0"
     },
 
+        { "name": "speed(m/s)",
+      "code": "spd",
+      "type": "number",
+      "defaultValue": "0"
+    },
+
     { "name": "Drivetrain",
       "code": "drv",
       "type": "radio",
@@ -67,6 +73,14 @@ var config_data = `
       },
       "defaultValue":"x"
     },
+
+    {"name": "intake type",
+    "code": "it",
+    "type": "text",
+    "size": 20,
+    "maxSize": 100
+    },
+
 
     { "name": "fuel intake amount",
      "code": "fia",
@@ -92,6 +106,11 @@ var config_data = `
      "type": "bool"
     },
 
+    { "name": "can go under ladder",
+     "code": "gul",
+     "type": "bool"
+    },
+
     { "name": "climb level",
      "code": "cl",
      "type": "radio",
@@ -102,6 +121,17 @@ var config_data = `
             "3": "Level 3<br>"
         },
         "defaultValue":"0"
+    },
+
+        { "name": "Climb Sides",
+     "code": "cs",
+     "type": "radio",
+        "choices": {
+            "l": "Left<br>",
+            "c": "Center<br>",
+            "r": "Right<br>"
+        },
+        "defaultValue":"l"
     },
 
 
@@ -118,24 +148,6 @@ var config_data = `
      "defaultValue": "0"
     },
 
-    { "name": "auto tower climb level",
-     "code": "atcl",
-     "type": "radio",
-        "choices": {
-            "0": "No climb<br>",
-            "1": "Level 1<br>",
-            "2": "Level 2<br>",
-            "3": "Level 3<br>"
-        },
-        "defaultValue":"0"
-    },
-
-    {"name": "intake type",
-    "code": "it",
-    "type": "text",
-    "size": 20,
-    "maxSize": 100
-    },
 
     { "name": "avg fuel per second",
      "code": "afps",
