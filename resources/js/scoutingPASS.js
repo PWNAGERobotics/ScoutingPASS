@@ -853,7 +853,9 @@ function getData(dataFormat) {
     if (thisField.type == 'checkbox') {
       var thisFieldValue = thisField.checked ? checkedChar : uncheckedChar;
     } else {
-      var thisFieldValue = thisField.value ? thisField.value.replace(/"/g, '').replace(/;/g,"-") : "";
+      var thisFieldValue = thisField.value
+        ? thisField.value.replace(/"/g, '').replace(/;/g, "-").replace(/\|/g, "-")
+        : "";
     }
     fd.append(fieldname, thisFieldValue)
   })
@@ -868,8 +870,33 @@ function getData(dataFormat) {
       str.push(fd.get(thisKey))
     });
     return str.join("\t")
+  } else if (dataFormat == "psv") {
+    Array.from(fd.keys()).forEach(thisKey => {
+      str.push(fd.get(thisKey))
+    });
+    return str.join("|")
   } else {
     return "unsupported dataFormat"
+  }
+}
+
+function updateExportHeader() {
+  let str = 'Event: !EVENT! Match: !MATCH! Robot: !ROBOT! Team: !TEAM!';
+
+  if (!pitScouting) {
+    str = str
+      .replace('!EVENT!', document.getElementById("input_e").value)
+      .replace('!MATCH!', document.getElementById("input_m").value)
+      .replace('!ROBOT!', document.getElementById("display_r").value)
+      .replace('!TEAM!', document.getElementById("input_t").value);
+  } else {
+    str = 'Pit Scouting - Team !TEAM!'
+      .replace('!TEAM!', document.getElementById("input_t").value);
+  }
+
+  var header = document.getElementById("display_export-info");
+  if (header) {
+    header.textContent = str;
   }
 }
 
@@ -887,17 +914,33 @@ function updateQRHeader() {
       .replace('!TEAM!', document.getElementById("input_t").value);
   }
 
-  document.getElementById("display_qr-info").textContent = str;
+  var header = document.getElementById("display_qr-info");
+  if (header) {
+    header.textContent = str;
+  }
 }
 
-
-function qr_regenerate() {
+function export_prepare() {
   // Validate required pre-match date (event, match, level, robot, scouter)
-  if (!pitScouting) {  
+  if (!pitScouting) {
     if (validateData() == false) {
       // Don't allow a swipe until all required data is filled in
       return false
     }
+  }
+
+  updateExportHeader()
+  updateQRHeader()
+  return true
+}
+
+function qr_regenerate() {
+  if (export_prepare() == false) {
+    return false
+  }
+
+  if (typeof qr === 'undefined') {
+    return true
   }
 
   // Get data
@@ -906,12 +949,73 @@ function qr_regenerate() {
   // Regenerate QR Code
   qr.makeCode(data)
 
-  updateQRHeader()
   return true
 }
 
 function qr_clear() {
+  if (typeof qr === 'undefined') {
+    return
+  }
   qr.clear()
+}
+
+function formatExportTimestamp() {
+  var now = new Date();
+  var pad = (value) => String(value).padStart(2, '0');
+  return `${now.getFullYear()}${pad(now.getMonth() + 1)}${pad(now.getDate())}_${pad(now.getHours())}${pad(now.getMinutes())}${pad(now.getSeconds())}`;
+}
+
+function buildExportFilename() {
+  var mode = pitScouting ? 'Pit' : 'Match';
+  return `4564_ScoutExport_${mode}_${formatExportTimestamp()}.psv`;
+}
+
+async function generateExportFile() {
+  if (!export_prepare()) {
+    return;
+  }
+
+  var exportData = getData('psv');
+  var filename = buildExportFilename();
+  var status = document.getElementById('export-status');
+
+  try {
+    if (window.showSaveFilePicker) {
+      var handle = await window.showSaveFilePicker({
+        suggestedName: filename,
+        types: [
+          {
+            description: 'Pipe Separated Values',
+            accept: { 'text/plain': ['.psv'] }
+          }
+        ]
+      });
+      var writable = await handle.createWritable();
+      await writable.write(exportData + "\n");
+      await writable.close();
+      if (status) {
+        status.textContent = `Saved export file: ${handle.name}`;
+      }
+      return;
+    }
+
+    var blob = new Blob([exportData + "\n"], { type: 'text/plain' });
+    var url = URL.createObjectURL(blob);
+    var link = document.createElement('a');
+    link.href = url;
+    link.download = filename;
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    URL.revokeObjectURL(url);
+    if (status) {
+      status.textContent = `Downloaded export file: ${filename}`;
+    }
+  } catch (err) {
+    if (status) {
+      status.textContent = `Export canceled or failed: ${err.message}`;
+    }
+  }
 }
 
 function clearForm() {
@@ -1034,15 +1138,27 @@ function moveTouch(e) {
 };
 
 function swipePage(increment) {
-  if (qr_regenerate() == true) {
+  var canSwipe = false;
+  if (typeof qr !== 'undefined') {
+    canSwipe = qr_regenerate() == true;
+  } else {
+    canSwipe = export_prepare() == true;
+  }
+  if (canSwipe) {
     slides = document.getElementById("main-panel-holder").children
     if (slide + increment < slides.length && slide + increment >= 0) {
       slides[slide].style.display = "none";
       slide += increment;
       window.scrollTo(0, 0);
       slides[slide].style.display = "table";
-      document.getElementById('data').innerHTML = "";
-      document.getElementById('copyButton').setAttribute('value','Copy Data');
+      var dataDisplay = document.getElementById('data');
+      if (dataDisplay) {
+        dataDisplay.innerHTML = "";
+      }
+      var copyButton = document.getElementById('copyButton');
+      if (copyButton) {
+        copyButton.setAttribute('value','Copy Data');
+      }
     }
   }
 }
@@ -1426,9 +1542,5 @@ window.onload = function () {
       getSchedule(ec);
     }
     this.drawFields();
-    if (enableGoogleSheets) {
-      console.log("Enabling Google Sheets.");
-      setUpGoogleSheets();
-    }
   }
 };
