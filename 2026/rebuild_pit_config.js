@@ -11,12 +11,13 @@ var config_data = `
       "type": "scouter",
       "size": 20,
       "maxSize": 20,
-      "required": "false"
+      "required": "true"
     },
 
     { "name": "Team Number",
       "code": "t",
-      "type": "number"
+      "type": "number",
+      "required": "true"
     },
     
     { "name": "length(in)",
@@ -49,8 +50,8 @@ var config_data = `
       "choices": {
         "s": "Swerve<br>",
         "w": "West Coast/Tank<br>",
-        "b": "Butterfly/Grashopper<br>",
-        "m": "Mechanum<br>"
+        "b": "Butterfly/Grasshopper<br>",
+        "m": "Mecanum<br>"
       },
       "defaultValue": "o"
     },
@@ -65,13 +66,6 @@ var config_data = `
         "k": "Kraken<br>"
       },
       "defaultValue":"x"
-    },
-
-    { "name": "Other Drivetrain",
-      "code": "odt",
-      "type": "text",
-      "size": 20,
-      "maxSize": 50
     },
 
     { "name": "fuel intake amount",

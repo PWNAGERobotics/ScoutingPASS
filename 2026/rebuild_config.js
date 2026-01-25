@@ -10,7 +10,7 @@ var config_data = `
       "type": "scouter",
       "size": 20,
       "maxSize": 20,
-      "required": "false"
+      "required": "true"
     },
     { "name": "Event",
       "code": "e",
@@ -53,7 +53,8 @@ var config_data = `
       "code": "t",
       "type": "team",
       "min": 1,
-      "max": 99999
+      "max": 99999,
+      "required": "true"
     }
   ],
   "auton": [
