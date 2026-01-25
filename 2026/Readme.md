@@ -120,6 +120,7 @@ During both the **AUTO** and **TELEOP** periods, scouts will be trained to recor
 *   **Differentiating Capacity**: A robot shooting a single round of 10 **FUEL** at max speed might be recorded as scoring 9, while a high-tier robot shooting 30 **FUEL** might be estimated at 25.
 *   **Metric Priority**: Even with variance, the data clearly identifies the higher-volume shooter, which is the primary metric needed for alliance selection.
 *   **Period Consistency**: This estimation is applied across both game periods to ensure a continuous profile of the robot's scoring capabilities.
+*   **Additional ScoutingPASS Features**: ScoutingPASS has added the ability to add additional buttons to the counter field to allow adding to the counter in increments larger than 1. The REBUILT configuration adds +/-5 and +/-10 buttons to each Fuel counter allowing scouts to increase Fuel tracked by larger amounts.
 
 #### Method 2: The Alliance Huddle and TBA Allocation
 
