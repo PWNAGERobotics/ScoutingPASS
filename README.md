@@ -43,7 +43,7 @@
 ### **Easy hosting**
   * Self-hosting via GitHub. (See directions below)
 ### [The Blue Alliance Integration](https://thebluealliance.com)
-  * Pull data for the event from The Blue Alliance.  Team #s, Team Names and Schedules
+  * Pull data for the event from The Blue Alliance.  Team #s, Team Names, and Schedules
 ### [Google Sheets Integration](docs/GoogleSheets.md)
   * Details on how to use ScoutingPASS with Google Sheets spreadsheet
 
@@ -57,7 +57,7 @@ This repository is hosted on GitHub Pages.  You can view a live version of it he
 <div id="description"></div>
 
 ## Description:
-Scouting PASS is a web page displayed in a browser.  It consists of 5 "swipeable" pages each representing a specific aspect of a FRC match: Pre-Match, Autonomous, Teleop, End Game and Post-Match.  A configuration file allows the screens to be easily modified to collect any metrics that are important for your scouting needs.  The scouter can use the "Next" or "Prev" buttons or a swiping motion on touchscreens to move between pages.  A QR code is dynamically generated on the last page.  This QR code can be scanned to transfer the data to your data repository.  The QR code can also be stored for processing later using a screenshot or camera.  Once the data has been transferred, the scout hits the clear button and the form is cleared out and ready for the next match.
+Scouting PASS is a web page displayed in a browser.  It consists of 5 "swipeable" pages, each representing a specific aspect of a FRC match: Pre-Match, Autonomous, Teleop, End Game, and Post-Match.  A configuration file allows the screens to be easily modified to collect any metrics that are important for your scouting needs.  The scouter can use the "Next" or "Prev" buttons or a swiping motion on touchscreens to move between pages.  A QR code is dynamically generated on the last page.  This QR code can be scanned to transfer the data to your data repository.  The QR code can also be stored for processing later using a screenshot or camera.  Once the data has been transferred, the scout hits the clear button, and the form is cleared out and ready for the next match.
 
 Configuration is as easy as creating a JSON file with the fields that your scouting team wants to track.  Some fields are common to all teams and years.  The basic fields are:
 * Scouter - who is scouting this robot
@@ -67,7 +67,7 @@ Configuration is as easy as creating a JSON file with the fields that your scout
 * Robot - Which robot is being scouted (Red-1, Blue-1, etc.)
 * Team # - What team is being scouted
 
-User defined fields can be of several different types:
+User-defined fields can be of several different types:
 * Text - A freeform text field
 * Number - Like text, but restricted to numbers
 * Counter - A counter that can be increased or decreased with a click or touch
@@ -79,9 +79,9 @@ User defined fields can be of several different types:
 
 These should cover most of your scouting team's data collection needs.  The REBUIT (2026) configuration file is included as an example.  The import of the configuration file is in index.html and would need to be updated to import a different configuration file. Only import one configuration file.
 
-Since this is an HTML/JavaScript web page, scouters can use almost any device that has a web browser.  If the device has a touchscreen the screen can be used to swipe back and forth between pages and interact with the data elements.  The webpage only needs to be loaded once.  Once loaded the functionality and data is stored locally in the webpage and doesn't need to be reloaded.  The QR code generation and clear button only resets the form and does not cause the page to reload.  This means that a cellular or WiFi connection is not needed at the competition as long as the webpage is loaded before the event.
+Since this is an HTML/JavaScript web page, scouters can use almost any device that has a web browser.  If the device has a touchscreen, the screen can be used to swipe back and forth between pages and interact with the data elements.  The webpage only needs to be loaded once.  Once loaded, the functionality and data is stored locally in the webpage and doesn't need to be reloaded.  The QR code generation and clear button only reset the form and do not cause the page to reload.  This means that a cellular or WiFi connection is not needed at the competition as long as the webpage is loaded before the event.
 
-If your team has a The Blue Alliance API access token (See https://www.thebluealliance.com/apidocs) the web page will pull team and schedule information from The Blue Alliance.  Put your access token in the authKey variable in resources/js/TBAInterface.js and when the web page is loaded it will load the data (for the event code in the Event field).  This enables some features on the PreMatch Screen.  With the team information the team name will populate just below the Team # field when the team # field is filled in.  If the schedule information is available when the web page is loaded then when the match and robot fields are populated it will automatically populate the team number and team name for the scouter.  This reduces typo errors when entering the team numbers manually.  (Schedules are usually published before the event a day or two before matches start.  However, it may be delayed for various reasons and may only be published hours or minutes before the start of a competition.)
+If your team has a The Blue Alliance API access token (See https://www.thebluealliance.com/apidocs), the web page will pull team and schedule information from The Blue Alliance.  Put your access token in the authKey variable in resources/js/TBAInterface.js and when the web page is loaded, it will load the data (for the event code in the Event field).  This enables some features on the PreMatch Screen.  With the team information, the team name will populate just below the Team # field when the team # field is filled in.  If the schedule information is available when the web page is loaded, then when the match and robot fields are populated, it will automatically populate the team number and team name for the scouter.  This reduces typo errors when entering the team numbers manually.  (Schedules are usually published before the event a day or two before matches start.  However, it may be delayed for various reasons and may only be published hours or minutes before the start of a competition.)
 
 The QR code can be read by a web camera or hand scanner to import the data into the Excel scouting database.  The hand scanner used reads the QR code and inputs the data as if it is typed in from a keyboard.  Included in this repository is the Excel code to pop up an input window and parse the QR data into a row in Excel. (see the [Excel directory](Excel))
 
@@ -101,7 +101,7 @@ To enable The Blue Alliance API:
 * Put your API token in the authKey variable in resources/js/TBAInterface.js.  (line 4)
 * Reload your page.
 
-Note: For this to work, the schedule has to be posted to The Blue Alliance.  That usually doesn't happen until just before the event. (a few days to a few hours)  To test this you can point it to a past event.   Set the event to 2020ilch.   Reload the page to load the schedule for that event. Select Match 6 and Blue-2.  You should see it populate the Team # to 2451, and the next line will show the team name, PWNAGE.
+Note: For this to work, the schedule has to be posted to The Blue Alliance.  That usually doesn't happen until just before the event. (a few days to a few hours)  To test this, you can point it to a past event.   Set the event to 2020ilch.   Reload the page to load the schedule for that event. Select Match 6 and Blue-2.  You should see it populate the Team # to 2451, and the next line will show the team name, PWNAGE.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 <div id="pit-scouting"></div>
@@ -110,13 +110,13 @@ Note: For this to work, the schedule has to be posted to The Blue Alliance.  Tha
 
 ScoutingPASS now supports Pit Scouting
 
-To access the pit scouting page, add '/pit.html' to the end of your URL.  (i.e. http://pwnagerobotics.github.io/ScoutingPASS/pit.html)
+To access the pit scouting page, add '/pit.html' to the end of your URL.  (i.e., http://pwnagerobotics.github.io/ScoutingPASS/pit.html)
 
 It works almost exactly like the main scouting pages, except there is only one page of input.   Once your scouters have filled out the information, swipe left to display the QR code.   That QR code can be scanned to push the data to Excel.
 
 The default configuration file is 2026/rebuilt_pit_config.js.   You can modify that configuration to meet your needs.
 
-We realize that you may not want to lug your computer around the pits to scan each QR code.  Our recommendation is to have your scouters take screenshots of the QR codes.   Then when they are back to the scouting computer, just go through the photos to scan each QR code.
+We realize that you may not want to lug your computer around the pits to scan each QR code.  Our recommendation is to have your scouters take screenshots of the QR codes.   Then, when they are back to the scouting computer, just go through the photos to scan each QR code.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 <div id="how-we-scout"></div>
@@ -131,7 +131,7 @@ At the end of each match, the lead scout kicks off an Excel macro that pops up a
 
 We use custom Excel screens and graphs to determine a strategy for each of our matches.
 
-The night before Eliminations we load the Excel data into Tableau where we use the data mining/graphing capabilities to make a pick list.
+The night before Eliminations, we load the Excel data into Tableau, where we use the data mining/graphing capabilities to make a pick list.
 
 The pick list can be modified up to Alliance Selection based on the data that is continued to be collected up to the last match.
 
@@ -140,7 +140,7 @@ The pick list can be modified up to Alliance Selection based on the data that is
 
 ## Contributing
 
-Contributions are what makes the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
 If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply [open an issue](https://github.com/PWNAGERobotics/ScoutingPASS/issues/new) if anything is missing or unclear in this
   documentation. to let us know what you'd like changed.
@@ -154,14 +154,14 @@ Don't forget to give the project a star!
 
 <details><summary>Why hardcode and disable the event field?</summary>
 <br />
-<strike>The biggest reason is so it doesn't get changed during the event.  If it's changed and you're using the TBA features they will not work correctly.  There is no reason to change it during the event and easy to change for your next event.  One more way to reduce mistakes during the event.</strike>
+<strike>The biggest reason is that it doesn't get changed during the event.  If it's changed and you're using the TBA features, they will not work correctly.  There is no reason to change it during the event, and easy to change for your next event.  One more way to reduce mistakes during the event.</strike>
 
-In past years the event has been protected and can only be changed with a GitHub commit.  As the popularity of ScoutingPASS grows more teams want to use the default ScoutingPASS site.  We've unprotected the event field so that teams can use it for any event.
+In past years, the event has been protected and can only be changed with a GitHub commit.  As the popularity of ScoutingPASS grows, more teams want to use the default ScoutingPASS site.  We've unprotected the event field so that teams can use it for any event.
 </details>
 
 <details><summary>Why doesn't my configuration file load?</summary>
 <br />
-JSON is a stickler for commas and brackets.  If you see JSON errors check your JSON for missing or extra commas or brackets when adding or removing elements
+JSON is a stickler for commas and brackets.  If you see JSON errors, check your JSON for missing or extra commas or brackets when adding or removing elements
 </details>
 
 <details><summary>What does P.A.S.S. stand for?</summary>
@@ -171,20 +171,20 @@ PWNAGE Analytical Strategy System
 
 <details><summary>How does the Field Image element work?</summary>
 <br />
-The Field Image element allows tracking of the location of a robot.  It does this by dividing the field into 72 different boxes, 12 boxes (across the longest side of a field) by 6 boxes (across the shortest side of the field).   A box represents a 4.5' x 4.5' square on the field.  Each box is numbered from 1 to 72 per the diagram below.
+The Field Image element allows tracking of the location of a robot.  It does this by dividing the field into 72 different boxes, 12 boxes (across the longest side of the field) by 6 boxes (across the shortest side of the field).   A box represents a 4.5' x 4.5' square on the field.  Each box is numbered from 1 to 72 per the diagram below.
 <br />
 <br />
 Field Location Key:
 
 ![Field Location Key](resources/images/field_location_key.png)
 
-When a scouter clicks on the image the coordinates of the click location are translated into a box and that number is stored into an array.   The array is passed as the data for the field element.  
+When a scouter clicks on the image, the coordinates of the click location are translated into a box, and that number is stored in an array.   The array is passed as the data for the field element.  
 
-The scouter can click as many times as they want and duplicate clicks (boxes) are recorded.  
+The scouter can click as many times as they want, and duplicate clicks (boxes) are recorded.  
 
 This could be used (as in our demo) to collect shooting information and create heat maps for each robot.
 
-Note: The Auto Start (as) element is special in that it will only keep track of one location.  There can only be one starting location.  Therefore if you click more than once it will only record the last location.
+Note: The Auto Start (as) element is special in that it will only keep track of one location.  There can only be one starting location.  Therefore, if you click more than once, it will only record the last location.
 </details>
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -197,7 +197,7 @@ Note: The Auto Start (as) element is special in that it will only keep track of 
 * Drag and Drop configuration editing (Avoid JSON editing)
 * Better Google Sheets integration/instructions
 * Improve look and feel
-* Create videos to illustrate how to setup, configure, and use the application
+* Create videos to illustrate how to set up, configure, and use the application
 * Better error messages
 * Pre-parse JSON for validity to avoid cryptic errors when parsing
 * Incorporate [Statbotics.io](http://statbotics.io/) data
@@ -217,8 +217,10 @@ Distributed under the GNU GPL v3.0 License. See `LICENSE` for more information.
 <details open>
   <summary>2026 Season Updates</summary>
   <ul>
-    <li>New configurations added for match and pit scouting as well as the new field image</li>
-    <li>Add alternate increment/decrement configurations for the counter element</li>
+    <li>New configurations added for match and pit scouting, as well as the new field image</li>
+    <li>Add the ability to add additional buttons to counters to increase/decrease the counter by a specified amount. (i.e. +5 or +10)</li>
+    <li>Heat Map example created to demonstrate how to track shooting locations</li>
+    <li>Script to generate test data.  It uses the configuration file to determine data points.</li>
   </ul>
 </details>
 
@@ -230,9 +232,9 @@ Distributed under the GNU GPL v3.0 License. See `LICENSE` for more information.
 <details open>
   <summary>2025 Season Updates</summary>
   <ul>
-    <li>New configurations added for match and pit scouting as well as the new field image</li>
-    <li>Clean up files structure which was getting cluttered with all the years in the top folder.  See old configuration files in the archive folder.</li>
-    <li>Warning: Default dataFormat continues to be tab delimited (tsv)<br>This allows for easier Excel input.  No Excel macro needed.  Just put the cursor in Column A of a blank row and scan the QR code.  To switch back change the dataFormat configuration item from tsv to ksv.</li>
+    <li>New configurations added for match and pit scouting, as well as the new field image</li>
+    <li>Clean up files structur,e which was getting cluttered with all the years in the top folder.  See old configuration files in the archive folder.</li>
+    <li>Warning: Default dataFormat continues to be tab delimited (tsv)<br>This allows for easier Excel input.  No Excel macro needed.  Just put the cursor in Column A of a blank row and scan the QR code.  To switch back, change the dataFormat configuration item from tsv to ksv.</li>
   </ul>
 </details>
 
