@@ -45,7 +45,7 @@
 ### [The Blue Alliance Integration](https://thebluealliance.com)
   * Pull data for the event from The Blue Alliance.  Team #s, Team Names, and Schedules
 ### [Google Sheets Integration](docs/GoogleSheets.md)
-  * Details on how to use ScoutingPASS with Google Sheets spreadsheet
+  * Details on how to use ScoutingPASS with a Google Sheets spreadsheet
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 <div id="live-app"></div>
@@ -83,7 +83,7 @@ Since this is an HTML/JavaScript web page, scouters can use almost any device th
 
 If your team has a The Blue Alliance API access token (See https://www.thebluealliance.com/apidocs), the web page will pull team and schedule information from The Blue Alliance.  Put your access token in the authKey variable in resources/js/TBAInterface.js and when the web page is loaded, it will load the data (for the event code in the Event field).  This enables some features on the PreMatch Screen.  With the team information, the team name will populate just below the Team # field when the team # field is filled in.  If the schedule information is available when the web page is loaded, then when the match and robot fields are populated, it will automatically populate the team number and team name for the scouter.  This reduces typo errors when entering the team numbers manually.  (Schedules are usually published before the event a day or two before matches start.  However, it may be delayed for various reasons and may only be published hours or minutes before the start of a competition.)
 
-The QR code can be read by a web camera or hand scanner to import the data into the Excel scouting database.  The hand scanner used reads the QR code and inputs the data as if it is typed in from a keyboard.  Included in this repository is the Excel code to pop up an input window and parse the QR data into a row in Excel. (see the [Excel directory](Excel))
+The QR code can be read by a web camera or hand scanner to import the data into the Excel scouting database.  The hand scanner used reads the QR code and inputs the data as if it were typed in from a keyboard.  Included in this repository is the Excel code to pop up an input window and parse the QR data into a row in Excel. (see the [Excel directory](Excel))
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 <div id="getting-started"></div>
@@ -127,13 +127,13 @@ We have 6 scouts per match.  One for each robot.  Each scout has this website pr
 
 The lead scout has a laptop with Excel and a wired handheld scanner in the stands with the scouts.  ([Nadomoo Bur3072 - ~$55](https://www.amazon.com/NADAMOO-Wireless-Barcode-Cordless-Computer/dp/B06Y2RMM51?th=1))
 
-At the end of each match, the lead scout kicks off an Excel macro that pops up an input box. (See an example Excel spreadsheet in the Excel directory)  The scouts show their QR code to the lead scout, one by one, who scans the QR code.  The data from the QR code is parsed and a row is added to the Scouting Data Table in Excel.   If the table doesn't exist, it will create it.
+At the end of each match, the lead scout kicks off an Excel macro that pops up an input box. (See an example Excel spreadsheet in the Excel directory)  The scouts show their QR code to the lead scout, one by one, who scans the QR code.  The data from the QR code is parsed, and a row is added to the Scouting Data Table in Excel.   If the table doesn't exist, it will create it.
 
 We use custom Excel screens and graphs to determine a strategy for each of our matches.
 
 The night before Eliminations, we load the Excel data into Tableau, where we use the data mining/graphing capabilities to make a pick list.
 
-The pick list can be modified up to Alliance Selection based on the data that is continued to be collected up to the last match.
+The pick list can be modified up to Alliance Selection based on the data that is still being collected up to the last match.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 <div id="contributing"></div>
@@ -184,7 +184,7 @@ The scouter can click as many times as they want, and duplicate clicks (boxes) a
 
 This could be used (as in our demo) to collect shooting information and create heat maps for each robot.
 
-Note: The Auto Start (as) element is special in that it will only keep track of one location.  There can only be one starting location.  Therefore, if you click more than once, it will only record the last location.
+Note: The Auto Start (as) element is special in that it will only track one location.  There can only be one starting location.  Therefore, if you click more than once, it will only record the last location.
 </details>
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -193,7 +193,7 @@ Note: The Auto Start (as) element is special in that it will only keep track of 
 ## Things we might want to add someday:
 * Add images to Pit Scouting
 * More options for processing the QR code
-* Mac version of Excel spreadsheet
+* Mac version of the Excel spreadsheet
 * Drag and Drop configuration editing (Avoid JSON editing)
 * Better Google Sheets integration/instructions
 * Improve look and feel
@@ -218,8 +218,8 @@ Distributed under the GNU GPL v3.0 License. See `LICENSE` for more information.
   <summary>2026 Season Updates</summary>
   <ul>
     <li>New configurations added for match and pit scouting, as well as the new field image</li>
-    <li>Add the ability to add additional buttons to counters to increase/decrease the counter by a specified amount. (i.e. +5 or +10)</li>
-    <li>Heat Map example created to demonstrate how to track shooting locations</li>
+    <li>Add the ability to add additional buttons to counters to increase/decrease the counter by a specified amount. (i.e., +5 or +10)</li>
+    <li>Heat Map Excel example created to demonstrate how to track shooting locations</li>
     <li>Script to generate test data.  It uses the configuration file to determine data points.</li>
   </ul>
 </details>
@@ -229,7 +229,7 @@ Distributed under the GNU GPL v3.0 License. See `LICENSE` for more information.
 
 ## 2025 Season Updates
 
-<details open>
+<details>
   <summary>2025 Season Updates</summary>
   <ul>
     <li>New configurations added for match and pit scouting, as well as the new field image</li>
@@ -246,8 +246,8 @@ Distributed under the GNU GPL v3.0 License. See `LICENSE` for more information.
 <details>
   <summary>2024 Season Updates</summary>
   <ul>
-    <li>New configurations added for match and pit scouting as well as the new field image</li>
-    <li>Warning: Default dataFormat has been switched from semicolon delimited (ksv) to tab delimited (tsv)<br>This allows for easier Excel input.  No macro needed.  Just put the cursor in the Column A and scan the QR code.  To switch back change the dataFormat configuration from tsv to ksv.</li>
+    <li>New configurations added for match and pit scouting, as well as the new field image</li>
+    <li>Warning: Default dataFormat has been switched from semicolon delimited (ksv) to tab delimited (tsv)<br>This allows for easier Excel input.  No macro needed.  Just put the cursor in Column A and scan the QR code.  To switch back, change the dataFormat configuration from tsv to ksv.</li>
   </ul>
 </details>
 
