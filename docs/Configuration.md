@@ -217,7 +217,7 @@ The counter is displayed with two buttons labeled "-" and "+" to increase or dec
 
 Specific attributes of counter are:
 * defaultValue (optional) - set the field to start at a certain value
-* altInc1 (optional) - Add an additional button to increment/decrement the counter by the specified amount
+* altInc1 (optional) - Add a button to increment/decrement the counter by the specified amount
 * altInc2 (optional) - Add a 2nd additional button to increment/decrement the counter by the specified amount
 * expectedMax (optional) - used by the data generation program to generate reasonable expected values
 
