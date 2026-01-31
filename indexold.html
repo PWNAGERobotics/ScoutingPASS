@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, maximum-scale=1.0">
+		<title>Scouting PASS</title>
+		<link rel="shortcut icon" href="favicon.ico">
+		<link rel="icon" sizes="16x16 32x32 64x64" href="favicon.ico">
+		<script src="resources/js/easy.qrcode.min.js"></script>
+		<script src="resources/js/TBAInterface.js"></script>
+		<script src="resources/js/googleSheets.js"></script>
+		<script src="resources/js/scoutingPASS.js"></script>
+		<script src="2026/rebuilt_config.js"></script>
+		<link rel="stylesheet" href="resources/css/scoutingPASS.css">
+	</head>
+
+	<body>
+		<form id="scoutingForm" onsubmit="return false" name="scoutingForm">
+			<div id="main-panel-holder">
+				<div id="prematch" class="main-panel" style="background-color: black;">
+					<h1 id="prematchHeader1" class="page_title"><span class="odd">P</span><span class="even">W</span><span class="odd">N</span><span class="even">A</span><span class="odd">G</span><span class="even">E</span><br>Scouting PASS</h1>
+					<h2 id="prematchHeader2">pre-match</h2>
+					<p class="match-label"><input type="button" value="Next" id="nextButton1" onclick="swipePage(1)"></p>
+					<table id="prematch_table" style="font: Roboto">
+					<!-- ###PRE-MATCH-COMPONENTS###-->
+					</table>
+					<p class="match-label"><input type="button" value="Next" id="nextButton2" onclick="swipePage(1)"></p>
+				</div>
+
+				<div id="auton" class="main-panel" style="background-color: rgb(123, 168, 184);">
+					<h1 id="autonHeader1" class="page_title"><span class="odd">P</span><span class="even">W</span><span class="odd">n</span><span class="even">A</span><span class="odd">G</span><span class="even">E</span><br>Scouting PASS</h1>
+					<h2 id="autonHeader2">Auton</h2>
+					<p class="match-label"><input type="button" value="Prev" id="prevButton1" onclick="swipePage(-1)"><input type="button" value="Next" id="nextButton3" onclick="swipePage(1)"></p>
+					<table id="auton_table">
+					<!-- ###AUTON-COMPONENTS###-->
+					</table>
+					<p class="match-label"><input type="button" value="Prev" id="prevButton2" onclick="swipePage(-1)"> <input type="button" value="Next" id="nextButton4" onclick="swipePage(1)"></p>
+				</div>
+
+				<div id="teleop" class="main-panel" style="background-color: rgb(175, 207, 163);">
+					<h1 id="teleopHeader1" class="page_title"><span class="odd">P</span><span class="even">W</span><span class="odd">n</span><span class="even">A</span><span class="odd">G</span><span class="even">E</span><br>Scouting PASS</h1>
+					<h2 id="teleopHeader2" >Teleop</h2>
+					<p class="match-label"><input type="button" value="Prev" id="prevButton3" onclick="swipePage(-1)"><input type="button" value="Next" id="nextButton5" onclick="swipePage(1)"></p>
+					<table id="teleop_table">
+						<!-- ###TELEOP-COMPONENTS###-->
+					</table>
+					<p class="match-label"><input type="button" value="Prev" id="prevButton4" onclick="swipePage(-1)"> <input type="button" value="Next" id="nextButton6" onclick="swipePage(1)"></p>
+				</div>
+
+				<div id="endgame" class="main-panel" style="background-color: rgb(198, 186, 222);">
+					<h1 id="endgameHeader1" class="page_title"><span class="odd">P</span><span class="even">W</span><span class="odd">n</span><span class="even">A</span><span class="odd">G</span><span class="even">E</span><br>Scouting PASS</h1>
+					<h2 id="endgameHeader2">Endgame</h2>
+					<p class="match-label"><input type="button" value="Prev" id="prevButton5" onclick="swipePage(-1)"><input type="button" value="Next" id="nextButton7" onclick="swipePage(1)"></p>
+					<table id="endgame_table">
+						<!-- ###ENDGAME-COMPONENTS###-->
+					</table>
+					<p class="match-label"><input type="button" value="Prev" id="prevButton6" onclick="swipePage(-1)"> <input type="button" value="Next" id="nextButton8" onclick="swipePage(1)"></p>
+				</div>
+
+				<div id="post-match" class="main-panel" style="background-color: rgb(89, 134, 168);">
+					<h1 id="postmatchHeader" class="page_title"><span class="odd">P</span><span class="even">W</span><span class="odd">n</span><span class="even">A</span><span class="odd">G</span><span class="even">E</span><br>Scouting PASS</h1>
+					<h2>Miscellaneous</h2>
+					<p class="match-label"><input type="button" value="Prev" id="prevButton7" onclick="swipePage(-1)"><input type="button" value="Next" id="nextButton9" onclick="swipePage(1)"></p>
+					<table id="postmatch_table">
+						<!-- ###POST-MATCH-COMPONENTS###-->
+					</table>
+					<p class="match-label"><input type="button" value="Prev" id="prevButton8" onclick="swipePage(-1)"> <input type="button" value="Next" id="nextButton10" onclick="swipePage(1)"></p>
+				</div>
+
+				<div id="qr-code" class="main-panel" style="background-color: white;">
+					<h1 id="qrHeader1" class="page_title"><span class="odd">P</span><span class="even">W</span><span class="odd">n</span><span class="even">A</span><span class="odd">G</span><span class="even">E</span><br>Scouting 2026</h1>
+					<h2 id="qrHeader2">Generate QR Code</h2>
+					<p class="match-label"><input type="button" value="Prev" id="prevButton9" onclick="swipePage(-1)"></p>
+					<p id="qr-info"><span id="display_qr-info" style="border: none; text-align: center;"></span></p>
+					<script>
+    					window.goatcounter = { path: function(p) { return location.host + p }}
+					</script>
+					<script data-goatcounter="https://scoutingpass.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+					<table id="qr-table"><tr><td width="5%">&nbsp;</td><td width="90%">
+						<div id="qrcode" style="text-align:center">
+							<script>
+						// Create QRCode Object
+								qr = new QRCode(document.getElementById("qrcode"), options)
+					</script>
+					</div>
+				</td><td width="5%">&nbsp;</td></tr>
+				<tr><td width="5%">&nbsp;</td><td width="90%">
+					<div>
+						<p id="data" style="text-align:center"></p>
+					</div>
+				</td><td width="5%">&nbsp;</td></tr>
+			</table>
+					<p></p>
+					<p class="match-label"><input type="button" value="Display Data" id="displayButton" onclick="displayData()"><input type="button" value="Copy Data" id="copyButton" onclick="copyData()"></p>
+					<div id="submitButton">
+					<button id="submit" type="button" class="submitForm" onclick="submitData()">
+						Send Data to data.txt
+					</button>
+					</div>
+					<div id="clearButton">
+						<button type="button" class="clearForm" onclick="clearForm()">Clear Form</button>
+					</div>
+					<br>
+				</div>
+			</div>
+		</form>
+	</body>
+	<script>
+(() => {
+  const CSV_URL = "teams.csv"; // <-- change if needed
+
+  let scheduleMap = null; // { "1": { "r1": {team:"5492", name:"Robo..."}, ... }, ... }
+
+  function parseCSVLine(line) {
+    const out = [];
+    let cur = "";
+    let inQuotes = false;
+
+    for (let i = 0; i < line.length; i++) {
+      const ch = line[i];
+      if (ch === '"') {
+        if (inQuotes && line[i + 1] === '"') { cur += '"'; i++; }
+        else { inQuotes = !inQuotes; }
+      } else if (ch === "," && !inQuotes) {
+        out.push(cur); cur = "";
+      } else {
+        cur += ch;
+      }
+    }
+    out.push(cur);
+    return out.map(s => s.trim());
+  }
+
+  async function loadSchedule() {
+    const resp = await fetch(CSV_URL, { cache: "no-store" });
+    if (!resp.ok) throw new Error(`Failed to fetch ${CSV_URL}: HTTP ${resp.status}`);
+
+    const text = await resp.text();
+    const lines = text.split(/\r?\n/).map(l => l.trim()).filter(Boolean);
+    if (lines.length < 2) throw new Error("CSV has no data rows");
+
+    const map = {};
+    // skip header row
+    for (let i = 1; i < lines.length; i++) {
+      const cols = parseCSVLine(lines[i]);
+      if (cols.length < 3) continue;
+
+      const match = String(cols[0]);
+      const robot = String(cols[1]).toLowerCase();
+      const team = String(cols[2]);
+      const name = cols[3] ? String(cols[3]) : "";
+
+      if (!map[match]) map[match] = {};
+      map[match][robot] = { team, name };
+    }
+
+    scheduleMap = map;
+    console.log("Loaded local schedule:", scheduleMap);
+  }
+
+  function getSelectedRobot() {
+    const checked = document.querySelector('input[name="r"]:checked');
+    return checked ? checked.value.toLowerCase() : "";
+  }
+
+  function getMatchNumber() {
+    const m = document.getElementById("input_m");
+    return m ? String(m.value).trim() : "";
+  }
+
+  function setTeamNumber(teamNumber) {
+    const teamInput = document.getElementById("input_t");
+    if (!teamInput) return;
+
+    teamInput.value = teamNumber;
+
+    // fire events so any other code listening updates too
+    teamInput.dispatchEvent(new Event("input", { bubbles: true }));
+    teamInput.dispatchEvent(new Event("change", { bubbles: true }));
+
+    // optional: if your scoutingPASS.js has onTeamnameChange, call it
+    if (typeof window.onTeamnameChange === "function") {
+      try { window.onTeamnameChange(); } catch (e) {}
+    }
+  }
+
+  function autofillTeam() {
+    if (!scheduleMap) return;
+
+    const match = getMatchNumber();
+    const robot = getSelectedRobot();
+    if (!match || !robot) return;
+
+    const entry = scheduleMap[match]?.[robot];
+    if (!entry || !entry.team) return;
+
+    setTeamNumber(entry.team);
+  }
+
+  function attachWatchers() {
+    // match number field
+    const matchEl = document.getElementById("input_m");
+    if (matchEl) {
+      matchEl.addEventListener("input", autofillTeam);
+      matchEl.addEventListener("change", autofillTeam);
+    }
+
+    // robot radios (r1/r2/... b3)
+    document.addEventListener("change", (e) => {
+      const t = e.target;
+      if (t && t.matches && t.matches('input[name="r"]')) {
+        autofillTeam();
+      }
+    });
+
+    // run once in case defaults already selected
+    autofillTeam();
+  }
+
+  // Wait until the whole page + your other scripts have built the form from config
+  window.addEventListener("load", async () => {
+    try {
+      await loadSchedule();
+    } catch (e) {
+      console.log("Could not load local schedule CSV:", e.message);
+      return;
+    }
+    attachWatchers();
+  });
+})();
+</script>
+
+</html>
+
+
+
+

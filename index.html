@@ -1,109 +1,377 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, maximum-scale=1.0">
-		<title>Scouting PASS</title>
-		<link rel="shortcut icon" href="favicon.ico">
-		<link rel="icon" sizes="16x16 32x32 64x64" href="favicon.ico">
-		<script src="resources/js/easy.qrcode.min.js"></script>
-		<script src="resources/js/TBAInterface.js"></script>
-		<script src="resources/js/googleSheets.js"></script>
-		<script src="resources/js/scoutingPASS.js"></script>
-		<script src="2026/rebuilt_config.js"></script>
-		<link rel="stylesheet" href="resources/css/scoutingPASS.css">
-	</head>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, maximum-scale=1.0">
+    <title>Scouting PASS</title>
 
-	<body>
-		<form id="scoutingForm" onsubmit="return false" name="scoutingForm">
-			<div id="main-panel-holder">
-				<div id="prematch" class="main-panel" style="background-color: black;">
-					<h1 id="prematchHeader1" class="page_title"><span class="odd">P</span><span class="even">W</span><span class="odd">N</span><span class="even">A</span><span class="odd">G</span><span class="even">E</span><br>Scouting PASS</h1>
-					<h2 id="prematchHeader2">pre-match</h2>
-					<p class="match-label"><input type="button" value="Next" id="nextButton1" onclick="swipePage(1)"></p>
-					<table id="prematch_table" style="font: Roboto">
-					<!-- ###PRE-MATCH-COMPONENTS###-->
-					</table>
-					<p class="match-label"><input type="button" value="Next" id="nextButton2" onclick="swipePage(1)"></p>
-				</div>
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="icon" sizes="16x16 32x32 64x64" href="favicon.ico">
 
-				<div id="auton" class="main-panel" style="background-color: rgb(123, 168, 184);">
-					<h1 id="autonHeader1" class="page_title"><span class="odd">P</span><span class="even">W</span><span class="odd">n</span><span class="even">A</span><span class="odd">G</span><span class="even">E</span><br>Scouting PASS</h1>
-					<h2 id="autonHeader2">Auton</h2>
-					<p class="match-label"><input type="button" value="Prev" id="prevButton1" onclick="swipePage(-1)"><input type="button" value="Next" id="nextButton3" onclick="swipePage(1)"></p>
-					<table id="auton_table">
-					<!-- ###AUTON-COMPONENTS###-->
-					</table>
-					<p class="match-label"><input type="button" value="Prev" id="prevButton2" onclick="swipePage(-1)"> <input type="button" value="Next" id="nextButton4" onclick="swipePage(1)"></p>
-				</div>
+    <!-- QR / App scripts -->
+    <script src="resources/js/easy.qrcode.min.js"></script>
 
-				<div id="teleop" class="main-panel" style="background-color: rgb(175, 207, 163);">
-					<h1 id="teleopHeader1" class="page_title"><span class="odd">P</span><span class="even">W</span><span class="odd">n</span><span class="even">A</span><span class="odd">G</span><span class="even">E</span><br>Scouting PASS</h1>
-					<h2 id="teleopHeader2" >Teleop</h2>
-					<p class="match-label"><input type="button" value="Prev" id="prevButton3" onclick="swipePage(-1)"><input type="button" value="Next" id="nextButton5" onclick="swipePage(1)"></p>
-					<table id="teleop_table">
-						<!-- ###TELEOP-COMPONENTS###-->
-					</table>
-					<p class="match-label"><input type="button" value="Prev" id="prevButton4" onclick="swipePage(-1)"> <input type="button" value="Next" id="nextButton6" onclick="swipePage(1)"></p>
-				</div>
+    <!-- Disable ALL online lookups (TBA) by not loading TBAInterface.js
+         and by no-op'ing any calls scoutingPASS.js might make. -->
+    <script>
+      window.getTeams = () => {};
+      window.getSchedule = () => {};
+    </script>
 
-				<div id="endgame" class="main-panel" style="background-color: rgb(198, 186, 222);">
-					<h1 id="endgameHeader1" class="page_title"><span class="odd">P</span><span class="even">W</span><span class="odd">n</span><span class="even">A</span><span class="odd">G</span><span class="even">E</span><br>Scouting PASS</h1>
-					<h2 id="endgameHeader2">Endgame</h2>
-					<p class="match-label"><input type="button" value="Prev" id="prevButton5" onclick="swipePage(-1)"><input type="button" value="Next" id="nextButton7" onclick="swipePage(1)"></p>
-					<table id="endgame_table">
-						<!-- ###ENDGAME-COMPONENTS###-->
-					</table>
-					<p class="match-label"><input type="button" value="Prev" id="prevButton6" onclick="swipePage(-1)"> <input type="button" value="Next" id="nextButton8" onclick="swipePage(1)"></p>
-				</div>
+    <!-- Keep googleSheets.js loaded if you still use it; otherwise remove it too -->
+    <script src="resources/js/googleSheets.js"></script>
 
-				<div id="post-match" class="main-panel" style="background-color: rgb(89, 134, 168);">
-					<h1 id="postmatchHeader" class="page_title"><span class="odd">P</span><span class="even">W</span><span class="odd">n</span><span class="even">A</span><span class="odd">G</span><span class="even">E</span><br>Scouting PASS</h1>
-					<h2>Miscellaneous</h2>
-					<p class="match-label"><input type="button" value="Prev" id="prevButton7" onclick="swipePage(-1)"><input type="button" value="Next" id="nextButton9" onclick="swipePage(1)"></p>
-					<table id="postmatch_table">
-						<!-- ###POST-MATCH-COMPONENTS###-->
-					</table>
-					<p class="match-label"><input type="button" value="Prev" id="prevButton8" onclick="swipePage(-1)"> <input type="button" value="Next" id="nextButton10" onclick="swipePage(1)"></p>
-				</div>
+    <script src="resources/js/scoutingPASS.js"></script>
+    <script src="2026/rebuilt_config.js"></script>
 
-				<div id="qr-code" class="main-panel" style="background-color: white;">
-					<h1 id="qrHeader1" class="page_title"><span class="odd">P</span><span class="even">W</span><span class="odd">n</span><span class="even">A</span><span class="odd">G</span><span class="even">E</span><br>Scouting 2026</h1>
-					<h2 id="qrHeader2">Generate QR Code</h2>
-					<p class="match-label"><input type="button" value="Prev" id="prevButton9" onclick="swipePage(-1)"></p>
-					<p id="qr-info"><span id="display_qr-info" style="border: none; text-align: center;"></span></p>
-					<script>
-    					window.goatcounter = { path: function(p) { return location.host + p }}
-					</script>
-					<script data-goatcounter="https://scoutingpass.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
-					<table id="qr-table"><tr><td width="5%">&nbsp;</td><td width="90%">
-						<div id="qrcode" style="text-align:center">
-							<script>
-						// Create QRCode Object
-								qr = new QRCode(document.getElementById("qrcode"), options)
-					</script>
-					</div>
-				</td><td width="5%">&nbsp;</td></tr>
-				<tr><td width="5%">&nbsp;</td><td width="90%">
-					<div>
-						<p id="data" style="text-align:center"></p>
-					</div>
-				</td><td width="5%">&nbsp;</td></tr>
-			</table>
-					<p></p>
-					<p class="match-label"><input type="button" value="Display Data" id="displayButton" onclick="displayData()"><input type="button" value="Copy Data" id="copyButton" onclick="copyData()"></p>
-					<div id="submitButton">
-						<button id="submit" type="submit" class="submitForm">Send to Google Sheets</button>
-					</div>
-					<div id="clearButton">
-						<button type="button" class="clearForm" onclick="clearForm()">Clear Form</button>
-					</div>
-					<br>
-				</div>
-			</div>
-		</form>
-	</body>
+    <link rel="stylesheet" href="resources/css/scoutingPASS.css">
+  </head>
+
+  <body>
+    <form id="scoutingForm" onsubmit="return false" name="scoutingForm">
+      <div id="main-panel-holder">
+
+        <div id="prematch" class="main-panel" style="background-color: black;">
+          <h1 id="prematchHeader1" class="page_title">
+            <span class="odd">P</span><span class="even">W</span><span class="odd">N</span><span class="even">A</span><span class="odd">G</span><span class="even">E</span>
+            <br>Scouting PASS
+          </h1>
+          <h2 id="prematchHeader2">pre-match</h2>
+
+          <p class="match-label"><input type="button" value="Next" id="nextButton1" onclick="swipePage(1)"></p>
+
+          <table id="prematch_table" style="font: Roboto">
+            <!-- ###PRE-MATCH-COMPONENTS###-->
+          </table>
+
+          <p class="match-label"><input type="button" value="Next" id="nextButton2" onclick="swipePage(1)"></p>
+        </div>
+
+        <div id="auton" class="main-panel" style="background-color: rgb(123, 168, 184);">
+          <h1 id="autonHeader1" class="page_title">
+            <span class="odd">P</span><span class="even">W</span><span class="odd">n</span><span class="even">A</span><span class="odd">G</span><span class="even">E</span>
+            <br>Scouting PASS
+          </h1>
+          <h2 id="autonHeader2">Auton</h2>
+
+          <p class="match-label">
+            <input type="button" value="Prev" id="prevButton1" onclick="swipePage(-1)">
+            <input type="button" value="Next" id="nextButton3" onclick="swipePage(1)">
+          </p>
+
+          <table id="auton_table">
+            <!-- ###AUTON-COMPONENTS###-->
+          </table>
+
+          <p class="match-label">
+            <input type="button" value="Prev" id="prevButton2" onclick="swipePage(-1)">
+            <input type="button" value="Next" id="nextButton4" onclick="swipePage(1)">
+          </p>
+        </div>
+
+        <div id="teleop" class="main-panel" style="background-color: rgb(175, 207, 163);">
+          <h1 id="teleopHeader1" class="page_title">
+            <span class="odd">P</span><span class="even">W</span><span class="odd">n</span><span class="even">A</span><span class="odd">G</span><span class="even">E</span>
+            <br>Scouting PASS
+          </h1>
+          <h2 id="teleopHeader2">Teleop</h2>
+
+          <p class="match-label">
+            <input type="button" value="Prev" id="prevButton3" onclick="swipePage(-1)">
+            <input type="button" value="Next" id="nextButton5" onclick="swipePage(1)">
+          </p>
+
+          <table id="teleop_table">
+            <!-- ###TELEOP-COMPONENTS###-->
+          </table>
+
+          <p class="match-label">
+            <input type="button" value="Prev" id="prevButton4" onclick="swipePage(-1)">
+            <input type="button" value="Next" id="nextButton6" onclick="swipePage(1)">
+          </p>
+        </div>
+
+        <div id="endgame" class="main-panel" style="background-color: rgb(198, 186, 222);">
+          <h1 id="endgameHeader1" class="page_title">
+            <span class="odd">P</span><span class="even">W</span><span class="odd">n</span><span class="even">A</span><span class="odd">G</span><span class="even">E</span>
+            <br>Scouting PASS
+          </h1>
+          <h2 id="endgameHeader2">Endgame</h2>
+
+          <p class="match-label">
+            <input type="button" value="Prev" id="prevButton5" onclick="swipePage(-1)">
+            <input type="button" value="Next" id="nextButton7" onclick="swipePage(1)">
+          </p>
+
+          <table id="endgame_table">
+            <!-- ###ENDGAME-COMPONENTS###-->
+          </table>
+
+          <p class="match-label">
+            <input type="button" value="Prev" id="prevButton6" onclick="swipePage(-1)">
+            <input type="button" value="Next" id="nextButton8" onclick="swipePage(1)">
+          </p>
+        </div>
+
+        <div id="post-match" class="main-panel" style="background-color: rgb(89, 134, 168);">
+          <h1 id="postmatchHeader" class="page_title">
+            <span class="odd">P</span><span class="even">W</span><span class="odd">n</span><span class="even">A</span><span class="odd">G</span><span class="even">E</span>
+            <br>Scouting PASS
+          </h1>
+          <h2>Miscellaneous</h2>
+
+          <p class="match-label">
+            <input type="button" value="Prev" id="prevButton7" onclick="swipePage(-1)">
+            <input type="button" value="Next" id="nextButton9" onclick="swipePage(1)">
+          </p>
+
+          <table id="postmatch_table">
+            <!-- ###POST-MATCH-COMPONENTS###-->
+          </table>
+
+          <p class="match-label">
+            <input type="button" value="Prev" id="prevButton8" onclick="swipePage(-1)">
+            <input type="button" value="Next" id="nextButton10" onclick="swipePage(1)">
+          </p>
+        </div>
+
+        <div id="qr-code" class="main-panel" style="background-color: white;">
+          <h1 id="qrHeader1" class="page_title">
+            <span class="odd">P</span><span class="even">W</span><span class="odd">n</span><span class="even">A</span><span class="odd">G</span><span class="even">E</span>
+            <br>Scouting 2026
+          </h1>
+          <h2 id="qrHeader2">Generate QR Code</h2>
+
+          <p class="match-label">
+            <input type="button" value="Prev" id="prevButton9" onclick="swipePage(-1)">
+          </p>
+
+          <p id="qr-info">
+            <span id="display_qr-info" style="border: none; text-align: center;"></span>
+          </p>
+
+          <table id="qr-table">
+            <tr>
+              <td width="5%">&nbsp;</td>
+              <td width="90%">
+                <div id="qrcode" style="text-align:center">
+                  <script>
+                    // Create QRCode Object (options comes from scoutingPASS.js)
+                    qr = new QRCode(document.getElementById("qrcode"), options);
+                  </script>
+                </div>
+              </td>
+              <td width="5%">&nbsp;</td>
+            </tr>
+            <tr>
+              <td width="5%">&nbsp;</td>
+              <td width="90%">
+                <div>
+                  <p id="data" style="text-align:center"></p>
+                </div>
+              </td>
+              <td width="5%">&nbsp;</td>
+            </tr>
+          </table>
+
+          <p></p>
+
+          <p class="match-label">
+            <input type="button" value="Display Data" id="displayButton" onclick="displayData()">
+            <input type="button" value="Copy Data" id="copyButton" onclick="copyData()">
+          </p>
+
+          <div id="submitButton">
+            <button id="submit" type="button" class="submitForm" onclick="submitData()">
+              Send Data to data.txt
+            </button>
+          </div>
+
+          <div id="clearButton">
+            <button type="button" class="clearForm" onclick="clearForm()">Clear Form</button>
+          </div>
+
+          <br>
+        </div>
+
+      </div>
+    </form>
+
+    <!-- =========================================================
+         LOCAL CSV AUTO-FILL (NO ONLINE LOOKUPS)
+         Expects a local CSV at: 2026/schedule.csv
+         Format:
+           match,robot,team_number,team_name
+           1,r1,5492,Robo Jockeys
+           ...
+         ========================================================= -->
+    <script>
+      (() => {
+        const CSV_URL = "teams.csv"; // <-- put your CSV here
+
+        let scheduleMap = null; // { "1": { "r1": {team:"5492", name:"Robo Jockeys"} } }
+
+        function parseCSVLine(line) {
+          const out = [];
+          let cur = "";
+          let inQuotes = false;
+
+          for (let i = 0; i < line.length; i++) {
+            const ch = line[i];
+            if (ch === '"') {
+              if (inQuotes && line[i + 1] === '"') { cur += '"'; i++; }
+              else { inQuotes = !inQuotes; }
+            } else if (ch === "," && !inQuotes) {
+              out.push(cur); cur = "";
+            } else {
+              cur += ch;
+            }
+          }
+          out.push(cur);
+          return out.map(s => s.trim());
+        }
+
+        async function loadSchedule() {
+          const resp = await fetch(CSV_URL, { cache: "no-store" });
+          if (!resp.ok) throw new Error(`Failed to fetch ${CSV_URL}: HTTP ${resp.status}`);
+
+          const text = await resp.text();
+          const lines = text.split(/\r?\n/).map(l => l.trim()).filter(Boolean);
+          if (lines.length < 2) throw new Error("CSV has no data rows");
+
+          const map = {};
+          for (let i = 1; i < lines.length; i++) {
+            const cols = parseCSVLine(lines[i]);
+            if (cols.length < 3) continue;
+
+            const match = String(cols[0]);
+            const robot = String(cols[1]).toLowerCase(); // r1/b2
+            const team  = String(cols[2]);
+            const name  = cols[3] ? String(cols[3]) : "";
+
+            if (!map[match]) map[match] = {};
+            map[match][robot] = { team, name };
+          }
+
+          scheduleMap = map;
+          console.log("Loaded local schedule CSV");
+        }
+
+        function getSelectedRobot() {
+          const checked = document.querySelector('input[name="r"]:checked');
+          return checked ? checked.value.toLowerCase() : "";
+        }
+
+        function getMatchNumber() {
+          const m = document.getElementById("input_m");
+          return m ? String(m.value).trim() : "";
+        }
+
+        function setTeamNumber(teamNumber) {
+          const teamInput = document.getElementById("input_t");
+          if (!teamInput) return;
+
+          teamInput.value = teamNumber;
+          teamInput.dispatchEvent(new Event("input", { bubbles: true }));
+          teamInput.dispatchEvent(new Event("change", { bubbles: true }));
+        }
+
+        function setTeamLabel(teamNumber, teamName) {
+          const label = document.getElementById("teamname-label");
+          if (!label) return;
+
+          const tn = String(teamNumber || "").trim();
+          const nm = String(teamName || "").trim();
+
+          if (!tn) {
+            label.innerText = "";
+            return;
+          }
+
+          // Exactly what you asked for:
+          // "You are scouting Team XXXX Team_Name"
+          label.innerText = nm
+            ? `You are scouting Team ${tn} ${nm}`
+            : `You are scouting Team ${tn}`;
+        }
+
+        function lookupByMatchRobot(match, robot) {
+          return scheduleMap?.[match]?.[robot] || null;
+        }
+
+        function lookupNameByMatchTeam(match, teamNumber) {
+          const bucket = scheduleMap?.[match];
+          if (!bucket) return "";
+          const tn = String(teamNumber).trim();
+          for (const k of Object.keys(bucket)) {
+            if (bucket[k]?.team === tn) return bucket[k]?.name || "";
+          }
+          return "";
+        }
+
+        function autofillTeamAndLabel() {
+          if (!scheduleMap) return;
+
+          const match = getMatchNumber();
+          const robot = getSelectedRobot();
+          if (!match || !robot) return;
+
+          const entry = lookupByMatchRobot(match, robot);
+          if (!entry || !entry.team) return;
+
+          setTeamNumber(entry.team);
+          setTeamLabel(entry.team, entry.name);
+        }
+
+        function attachWatchers() {
+          const matchEl = document.getElementById("input_m");
+          if (matchEl) {
+            matchEl.addEventListener("input", autofillTeamAndLabel);
+            matchEl.addEventListener("change", autofillTeamAndLabel);
+          }
+
+          // Robot radios (r1/r2/b1/etc)
+          document.addEventListener("change", (e) => {
+            const t = e.target;
+            if (t && t.matches && t.matches('input[name="r"]')) {
+              autofillTeamAndLabel();
+            }
+          });
+
+          // If user manually edits team number, still show the friendly label (from CSV if possible)
+          const teamEl = document.getElementById("input_t");
+          if (teamEl) {
+            teamEl.addEventListener("input", () => {
+              const match = getMatchNumber();
+              const tn = teamEl.value;
+              const name = match ? lookupNameByMatchTeam(match, tn) : "";
+              setTeamLabel(tn, name);
+            });
+          }
+
+          // OVERRIDE: never print the online-validation message.
+          // This replaces scoutingPASS.js's onTeamnameChange() behavior.
+          window.onTeamnameChange = function () {
+            const teamEl = document.getElementById("input_t");
+            const match = getMatchNumber();
+            const tn = teamEl ? teamEl.value : "";
+            const name = match ? lookupNameByMatchTeam(match, tn) : "";
+            setTeamLabel(tn, name);
+          };
+
+          // Initial pass (in case fields already have values)
+          autofillTeamAndLabel();
+        }
+
+        window.addEventListener("load", async () => {
+          try {
+            await loadSchedule();
+          } catch (e) {
+            console.log("Could not load local schedule CSV:", e.message);
+            return;
+          }
+          attachWatchers();
+        });
+      })();
+    </script>
+  </body>
 </html>
-
-
-
-
