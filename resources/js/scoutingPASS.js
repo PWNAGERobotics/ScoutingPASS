@@ -831,9 +831,12 @@ function configure() {
     idx = addElement(pmt, idx, element);
   });
 
-  if (!enableGoogleSheets) {
-    document.getElementById("submit").style.display = "none";
+  // We still want "submit" visible for saving to data.txt even if Google Sheets is off.
+  // Only hide it if the button doesn't exist for some reason.
+  if (!document.getElementById("submit")) {
+    console.log("No submit button found in HTML.");
   }
+
 
   return 0
 }
@@ -1466,6 +1469,46 @@ function displayData(){
 function copyData(){
   navigator.clipboard.writeText(getData(dataFormat));
   document.getElementById('copyButton').setAttribute('value','Copied');
+}
+async function submitData() {
+  // If you want the same "required fields" behavior before saving:
+  if (!pitScouting) {
+    if (validateData() == false) {
+      return false;
+    }
+  }
+
+  const payload = getData(dataFormat);
+
+  // OPTIONAL: timestamp line prefix (uncomment if you want it)
+  // const payload = new Date().toISOString() + "\t" + getData(dataFormat);
+
+  try {
+    // This endpoint must exist on your server and append to data.txt
+    const resp = await fetch("submit.php", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8" },
+      body: "data=" + encodeURIComponent(payload)
+    });
+
+    const text = await resp.text();
+
+    if (!resp.ok) {
+      alert("Save failed: " + text);
+      return false;
+    }
+
+    // Success UI feedback
+    alert("Saved to data.txt");
+    // Optionally clear the form after saving:
+    // clearForm();
+
+    return true;
+  } catch (err) {
+    console.log(err);
+    alert("Save failed (network/server): " + err.message);
+    return false;
+  }
 }
 
 window.onload = function () {
